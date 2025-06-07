@@ -18,7 +18,7 @@ public class DialogoManager : MonoBehaviour
 
     private static DialogoManager instance;
 
-
+    private bool puedeAvanzar = false; // Indica si el jugador puede avanzar en el diálogo
 
     private void Awake()
     {
@@ -46,7 +46,7 @@ public class DialogoManager : MonoBehaviour
 
     private void Update()
     {
-        if (!dialogoActivo)
+        if (!dialogoActivo || !puedeAvanzar)
         {
             // Si el diálogo no está activo, no se hace nada
             return;
@@ -68,6 +68,9 @@ public class DialogoManager : MonoBehaviour
         uiDialogo.SetActive(true); // Activa el UI del diálogo
 
         ContinuarHistoria(); // Muestra el primer fragmento del diálogo o el que sigue
+
+        puedeAvanzar = false;
+        StartCoroutine(EsperarAntesDePermitirAvance()); // Inicia una corrutina para esperar antes de permitir que el jugador avance en el diálogo
 
         Debug.Log("Entrando en modo diálogo"); // Mensaje de depuración para confirmar que se ha entrado en modo diálogo
     }
@@ -96,5 +99,11 @@ public class DialogoManager : MonoBehaviour
             Debug.Log("No hay más contenido en la historia"); // Mensaje de depuración si no hay más contenido
             StartCoroutine(FinalizarDialogo()); // Si no hay más contenido, finaliza el diálogo
         }
+    }
+
+    private IEnumerator EsperarAntesDePermitirAvance()
+    {
+        yield return new WaitForSeconds(0.2f); // Espera medio segundo antes de permitir que el jugador avance en el diálogo
+        puedeAvanzar = true; // Permite que el jugador avance en el diálogo
     }
 }
