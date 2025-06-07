@@ -112,7 +112,12 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			JumpAndGravity();
+            if (DialogoManager.GetInstance().dialogoActivo)
+            {
+				return; // Si el diálogo está activo, no se permite el movimiento del jugador
+            }
+
+            JumpAndGravity();
 			GroundedCheck();
 			Move();
 		}
@@ -196,6 +201,7 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
 		}
 
 		private void JumpAndGravity()
