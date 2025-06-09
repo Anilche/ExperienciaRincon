@@ -22,25 +22,21 @@ public class DialogoTrigger : MonoBehaviour
 
     private void Update()
     {
-        // Si el jugador está en rango, se mostrará el botón de interacción, sino, no se mostrará
+        // Si el jugador está en rango, se mostrará el botón de interacción
         if (jugadorEnRango && !DialogoManager.GetInstance().dialogoActivo)
         {
-            botonInteraccion.SetActive(true);
+            //botonInteraccion.SetActive(true);
 
             // Si el jugador presiona la tecla E, se activa el diálogo
             if (Input.GetKeyDown(KeyCode.E))
             {
                 DialogoManager.GetInstance().EntrarModoDialogo(inkJSON);
             }
-
-            //Debug.Log("Jugador en rango de interacción");
-
         }
         // Si el jugador no está en rango, se desactiva el botón de interacción
         else
         {
-            botonInteraccion.SetActive(false);
-            //Debug.Log("Jugador fuera de rango de interacción");
+            //botonInteraccion.SetActive(false);
         }
 
     }
@@ -51,7 +47,7 @@ public class DialogoTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnRango = true;
-            
+            botonInteraccion.SetActive(true);
         }
     }
 
@@ -61,7 +57,7 @@ public class DialogoTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnRango = false;
-            
+            botonInteraccion.SetActive(false);
         }
     }
 

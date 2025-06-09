@@ -112,7 +112,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
-            if (DialogoManager.GetInstance().dialogoActivo)
+            if (DialogoManager.GetInstance().dialogoActivo || Elecciones.GetInstance().eleccionActiva)
             {
 				return; // Si el diálogo está activo, no se permite el movimiento del jugador
             }
