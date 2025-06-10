@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,13 @@ public class Elecciones : MonoBehaviour
 {
     [Header("Boton Interaccion")]
     [SerializeField] private GameObject botonInteraccion;
+
+    [Header("Camaras")]
+    //[SerializeField] private GameObject camaraJugador; // Referencia a la cámara principal
+    //[SerializeField] private GameObject camaraEleccion; // Referencia a la cámara de elecciones
+
+    [SerializeField] private CinemachineVirtualCamera vcamJugador;
+    [SerializeField] private CinemachineVirtualCamera vcamEleccion;
 
     [Header("UI Elecciones")]
     [SerializeField] private GameObject uiElecciones; // Referencia al UI de elecciones
@@ -39,6 +47,12 @@ public class Elecciones : MonoBehaviour
     private void Awake()
     {
         uiElecciones.SetActive(false); // Desactiva el UI de elecciones al inicio
+        objeto1.SetActive(false); // Desactiva el objeto 1 al inicio
+        objeto2.SetActive(false); // Desactiva el objeto 2 al inicio
+        objeto3.SetActive(false); // Desactiva el objeto 3 al inicio
+
+        ActivarCamaraJugador(); // Activa la cámara del jugador al inicio
+
         jugadorEnRango = false; // Inicializa el estado del jugador fuera de rango
 
         instance = this;
@@ -58,19 +72,18 @@ public class Elecciones : MonoBehaviour
         if (jugadorEnRango && !DialogoManager.GetInstance().dialogoActivo && faseActual >= numFaseNecesaria)
         {
 
-            //botonInteraccion.SetActive(true);
-
             // Si el jugador presiona la tecla E, se activa la elección
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && eleccionActiva == false)
             {
-                uiElecciones.SetActive(true);
                 Debug.Log("Comienzo de elecciones");
+                IniciarEleccion();
             }
-        }
-        // Si el jugador no está en rango, se desactiva el botón de interacción
-        else
-        {
-            //botonInteraccion.SetActive(false);
+
+            if (Input.GetKeyDown(KeyCode.X) && eleccionActiva == true)
+            {
+                Debug.Log("Fin de elecciones");
+                ConfirmarSeleccion();
+            }
         }
     }
 
@@ -92,7 +105,46 @@ public class Elecciones : MonoBehaviour
         {
             jugadorEnRango = false;
             Debug.Log("Jugador fuera de rango de interacción");
-            botonInteraccion.SetActive(false);
+            botonInteraccion.SetActive(false); // Desactiva el botón de interacción si el jugador sale del rango
         }
+    }
+
+    private void IniciarEleccion()
+    {
+        eleccionActiva = true; // Marca que la elección está activa
+        uiElecciones.SetActive(true); // Activa el UI de elecciones
+        botonInteraccion.SetActive(false); // Desactiva el botón de interacción
+
+        Cursor.visible = true; // Hace visible el cursor
+        Cursor.lockState = CursorLockMode.None;
+
+        ActivarCamaraEleccion(); // Activa la cámara de elecciones
+    }
+
+    private void ActivarCamaraJugador()
+    {
+        vcamJugador.Priority = 10;
+        vcamEleccion.Priority = 0;
+    }
+
+    private void ActivarCamaraEleccion()
+    {
+        vcamJugador.Priority = 0;
+        vcamEleccion.Priority = 10;
+    }
+
+    private void SeleccionarObjeto()
+    {
+        
+    }
+
+    private void ConfirmarSeleccion()
+    {
+        ActivarCamaraJugador(); // Activa la cámara del jugador
+        uiElecciones.SetActive(false); // Desactiva el UI de elecciones
+        eleccionActiva = false; // Marca que la elección ya no está activa
+
+        Cursor.visible = false; // Hace invisible el cursor
+        Cursor.lockState = CursorLockMode.Confined;
     }
 }
