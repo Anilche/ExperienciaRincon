@@ -25,9 +25,9 @@ public class Elecciones : MonoBehaviour
 
     [Header("Opciones de Objetos")]
     // Los objetos que se pueden elegir
-    [SerializeField] private GameObject objeto1;
-    [SerializeField] private GameObject objeto2;
-    [SerializeField] private GameObject objeto3;
+    [SerializeField] public GameObject objeto1;
+    [SerializeField] public GameObject objeto2;
+    [SerializeField] public GameObject objeto3;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] private int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -133,12 +133,7 @@ public class Elecciones : MonoBehaviour
         vcamEleccion.Priority = 10;
     }
 
-    private void SeleccionarObjeto()
-    {
-        
-    }
-
-    private void ConfirmarSeleccion()
+    public void ConfirmarSeleccion()
     {
         ActivarCamaraJugador(); // Activa la cámara del jugador
         uiElecciones.SetActive(false); // Desactiva el UI de elecciones
