@@ -30,19 +30,11 @@ public class Elecciones : MonoBehaviour
     [SerializeField] public GameObject objeto3;
 
     [Header("Requerimientos para utilizarse")]
-    [SerializeField] private int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
+    [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
     private bool jugadorEnRango;
     private static Elecciones instance;
     public bool eleccionActiva { get; private set; } // Indica si la elección está activa o no
-
-
-
-
-    private int faseActual; // Fase actual del jugador, se puede setear desde otro script
-
-
-
 
     private void Awake()
     {
@@ -56,9 +48,6 @@ public class Elecciones : MonoBehaviour
         jugadorEnRango = false; // Inicializa el estado del jugador fuera de rango
 
         instance = this;
-
-        //////////Borrar para setear deesde otro script después ///////////////////
-        faseActual = 0; // Inicializa la fase actual del jugador (esto debería ser seteado desde otro script)
     }
 
     public static Elecciones GetInstance()
@@ -69,7 +58,7 @@ public class Elecciones : MonoBehaviour
     void Update()
     {
         // Si el jugador está en rango y no está hablando, se mostrará el botón de interacción
-        if (jugadorEnRango && !DialogoManager.GetInstance().dialogoActivo && faseActual >= numFaseNecesaria)
+        if (jugadorEnRango && !DialogoManager.GetInstance().dialogoActivo && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
 
             // Si el jugador presiona la tecla E, se activa la elección
@@ -141,5 +130,6 @@ public class Elecciones : MonoBehaviour
 
         Cursor.visible = false; // Hace invisible el cursor
         Cursor.lockState = CursorLockMode.Confined;
+        GameManager.GetInstance().SetFaseActual(1);
     }
 }

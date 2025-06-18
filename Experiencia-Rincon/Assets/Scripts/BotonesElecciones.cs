@@ -50,5 +50,15 @@ public class BotonesElecciones : MonoBehaviour
     {
         // Se confirma la selección y se cierra el UI de elecciones
         Elecciones.GetInstance().ConfirmarSeleccion();
+
+        if (GameManager.GetInstance().faseAhora > Elecciones.GetInstance().numFaseNecesaria)
+        {
+            return; // Si la fase actual es mayor a la necesaria, no se hace nada
+        }
+        else if (GameManager.GetInstance().faseAhora == Elecciones.GetInstance().numFaseNecesaria)
+        {
+            GameManager.GetInstance().faseAhora = + 1; // Si la fase actual es igual a la necesaria, se incrementa la fase actual
+            Debug.Log("Fase actual incrementada a: " + GameManager.GetInstance().faseAhora);
+        }
     }
 }

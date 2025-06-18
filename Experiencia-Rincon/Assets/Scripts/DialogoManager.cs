@@ -61,9 +61,22 @@ public class DialogoManager : MonoBehaviour
         
     }
 
+    private void RegistrarFuncionesExternas()
+    {
+        estaHistoria.BindExternalFunction("SetFaseActual", (int nuevaFase) =>
+        {
+            GameManager.GetInstance().SetFaseActual(nuevaFase);
+        });
+    }
+
     public void EntrarModoDialogo(TextAsset inkJSON)
     {
         estaHistoria = new Story(inkJSON.text); // Crea una nueva historia a partir del JSON de Ink
+
+        
+        RegistrarFuncionesExternas(); // Registra las funciones externas que se pueden llamar desde Ink
+        
+
         dialogoActivo = true; // Cambia el estado del diálogo a activo
         uiDialogo.SetActive(true); // Activa el UI del diálogo
 
@@ -72,7 +85,7 @@ public class DialogoManager : MonoBehaviour
         puedeAvanzar = false;
         StartCoroutine(EsperarAntesDePermitirAvance()); // Inicia una corrutina para esperar antes de permitir que el jugador avance en el diálogo
 
-        Debug.Log("Entrando en modo diálogo"); // Mensaje de depuración para confirmar que se ha entrado en modo diálogo
+        Debug.Log("Entrando en modo diálogo");
     }
 
     private IEnumerator FinalizarDialogo()
@@ -84,7 +97,7 @@ public class DialogoManager : MonoBehaviour
         uiDialogo.SetActive(false); // Desactiva el UI del diálogo
         textoDialogo.text = ""; // Limpia el texto del diálogo
 
-        Debug.Log("Finalizando diálogo"); // Mensaje de depuración para confirmar que se ha finalizado el diálogo
+        Debug.Log("Finalizando diálogo");
     }
 
     private void ContinuarHistoria()
@@ -92,11 +105,10 @@ public class DialogoManager : MonoBehaviour
         if (estaHistoria.canContinue)
         {
             textoDialogo.text = estaHistoria.Continue(); // Muestra el primer fragmento del diálogo o el que sigue
-            Debug.Log("Continuando historia: " + textoDialogo.text); // Mensaje de depuración para mostrar el texto actual del diálogo
+            Debug.Log("Continuando historia: " + textoDialogo.text);
         }
         else
         {
-            Debug.Log("No hay más contenido en la historia"); // Mensaje de depuración si no hay más contenido
             StartCoroutine(FinalizarDialogo()); // Si no hay más contenido, finaliza el diálogo
         }
     }
@@ -106,4 +118,5 @@ public class DialogoManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f); // Espera medio segundo antes de permitir que el jugador avance en el diálogo
         puedeAvanzar = true; // Permite que el jugador avance en el diálogo
     }
+
 }

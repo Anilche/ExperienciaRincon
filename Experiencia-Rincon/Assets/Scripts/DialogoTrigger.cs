@@ -60,5 +60,4 @@ public class DialogoTrigger : MonoBehaviour
             botonInteraccion.SetActive(false);
         }
     }
-
 }
