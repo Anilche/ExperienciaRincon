@@ -67,19 +67,13 @@ public class Elecciones : MonoBehaviour
                 Debug.Log("Comienzo de elecciones");
                 IniciarEleccion();
             }
-
-            if (Input.GetKeyDown(KeyCode.X) && eleccionActiva == true)
-            {
-                Debug.Log("Fin de elecciones");
-                ConfirmarSeleccion();
-            }
         }
     }
 
     // Al entrar al trigger se setea que el jugador está en rango
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             jugadorEnRango = true;
             Debug.Log("Jugador en rango de interacción de eleccion");
@@ -130,6 +124,11 @@ public class Elecciones : MonoBehaviour
 
         Cursor.visible = false; // Hace invisible el cursor
         Cursor.lockState = CursorLockMode.Confined;
-        GameManager.GetInstance().SetFaseActual(1);
+
+        //Si la fase actual es mayor a la necesaria, no se aumenta de fase, porque se estaría revisitando una anterior
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
+        {
+            GameManager.GetInstance().SetFaseActual(1);
+        }
     }
 }

@@ -1,8 +1,9 @@
+using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Ink.Runtime;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DialogoManager : MonoBehaviour
 {
@@ -102,15 +103,26 @@ public class DialogoManager : MonoBehaviour
 
     private void ContinuarHistoria()
     {
-        if (estaHistoria.canContinue)
+        // Verifica si la historia puede continuar
+        while (estaHistoria.canContinue)
         {
-            textoDialogo.text = estaHistoria.Continue(); // Muestra el primer fragmento del diálogo o el que sigue
-            Debug.Log("Continuando historia: " + textoDialogo.text);
+            string linea = estaHistoria.Continue();
+
+            // Si la línea no está vacía o no son solo espacios
+            if (!string.IsNullOrWhiteSpace(linea))
+            {
+                textoDialogo.text = linea;
+                Debug.Log("Continuando historia: " + linea);
+                return; // Salimos de la función mostrando esta línea
+            }
+
+            // Si está vacía, seguimos al siguiente fragmento automáticamente
+            Debug.Log("Línea vacía ignorada");
         }
-        else
-        {
-            StartCoroutine(FinalizarDialogo()); // Si no hay más contenido, finaliza el diálogo
-        }
+        
+        // Si no hay más contenido después de ignorar líneas vacías
+        Debug.Log("No hay más contenido en la historia");
+        StartCoroutine(FinalizarDialogo());
     }
 
     private IEnumerator EsperarAntesDePermitirAvance()
