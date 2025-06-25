@@ -68,6 +68,11 @@ public class DialogoManager : MonoBehaviour
         {
             GameManager.GetInstance().SetFaseActual(nuevaFase);
         });
+
+        estaHistoria.BindExternalFunction("GetFase", () =>
+        {
+            return GameManager.GetInstance().faseAhora;
+        });
     }
 
     public void EntrarModoDialogo(TextAsset inkJSON)

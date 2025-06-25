@@ -10,6 +10,14 @@ public class GameManager : MonoBehaviour
 
     private static GameManager instance;
 
+    private void Update()
+    {
+        if (faseAhora == 1)
+        {
+
+        }
+    }
+
     void Start()
     {
         faseAhora = 0; // Inicializa la fase actual del jugador

@@ -17360,7 +17360,6 @@ MonoBehaviour:
   objeto2: {fileID: 1809372474}
   objeto3: {fileID: 815331595}
   numFaseNecesaria: 1
-  faseActual: 0
 --- !u!65 &1779031528
 BoxCollider:
   m_ObjectHideFlags: 0
