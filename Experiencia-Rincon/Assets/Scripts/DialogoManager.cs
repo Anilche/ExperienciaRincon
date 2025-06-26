@@ -36,7 +36,6 @@ public class DialogoManager : MonoBehaviour
     public static DialogoManager GetInstance()
     {
         return instance;
-        
     }
 
     private void Start()
@@ -53,13 +52,11 @@ public class DialogoManager : MonoBehaviour
             return;
         }
 
-        
         // Si el jugador presiona la tecla E, se continúa con el diálogo
         if (Input.GetKeyDown(KeyCode.E))
         {
             ContinuarHistoria(); // Muestra el siguiente fragmento del diálogo
         }
-        
     }
 
     private void RegistrarFuncionesExternas()
@@ -79,10 +76,8 @@ public class DialogoManager : MonoBehaviour
     {
         estaHistoria = new Story(inkJSON.text); // Crea una nueva historia a partir del JSON de Ink
 
-        
         RegistrarFuncionesExternas(); // Registra las funciones externas que se pueden llamar desde Ink
         
-
         dialogoActivo = true; // Cambia el estado del diálogo a activo
         uiDialogo.SetActive(true); // Activa el UI del diálogo
 
@@ -104,6 +99,8 @@ public class DialogoManager : MonoBehaviour
         textoDialogo.text = ""; // Limpia el texto del diálogo
 
         Debug.Log("Finalizando diálogo");
+
+        MovimientoRino.GetInstance().moverRino();
     }
 
     private void ContinuarHistoria()

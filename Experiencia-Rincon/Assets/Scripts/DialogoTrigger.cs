@@ -23,20 +23,13 @@ public class DialogoTrigger : MonoBehaviour
     private void Update()
     {
         // Si el jugador está en rango, se mostrará el botón de interacción
-        if (jugadorEnRango && !DialogoManager.GetInstance().dialogoActivo)
+        if (jugadorEnRango && !DialogoManager.GetInstance().dialogoActivo && !MovimientoRino.GetInstance().enMovimiento)
         {
-            //botonInteraccion.SetActive(true);
-
             // Si el jugador presiona la tecla E, se activa el diálogo
             if (Input.GetKeyDown(KeyCode.E))
             {
                 DialogoManager.GetInstance().EntrarModoDialogo(inkJSON);
             }
-        }
-        // Si el jugador no está en rango, se desactiva el botón de interacción
-        else
-        {
-            //botonInteraccion.SetActive(false);
         }
 
     }

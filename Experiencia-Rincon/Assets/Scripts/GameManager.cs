@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (faseAhora == 1)
+        /*if (faseAhora == 1)
         {
 
-        }
+        }*///
     }
 
     void Start()
