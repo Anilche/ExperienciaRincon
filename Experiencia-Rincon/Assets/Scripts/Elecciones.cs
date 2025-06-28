@@ -29,6 +29,9 @@ public class Elecciones : MonoBehaviour
     [SerializeField] public GameObject objeto2;
     [SerializeField] public GameObject objeto3;
 
+    [Header("Indicador particulas")]
+    [SerializeField] public GameObject particulas;
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -42,6 +45,7 @@ public class Elecciones : MonoBehaviour
         objeto1.SetActive(false); // Desactiva el objeto 1 al inicio
         objeto2.SetActive(false); // Desactiva el objeto 2 al inicio
         objeto3.SetActive(false); // Desactiva el objeto 3 al inicio
+        particulas.SetActive(false); // Desactiva las particulas al inicio
 
         ActivarCamaraJugador(); // Activa la cámara del jugador al inicio
 
@@ -57,6 +61,11 @@ public class Elecciones : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
+        {
+            particulas.SetActive(true);
+        }
+
         // Si el jugador está en rango y no está hablando, se mostrará el botón de interacción
         if (jugadorEnRango && !DialogoManager.GetInstance().dialogoActivo && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
@@ -130,5 +139,7 @@ public class Elecciones : MonoBehaviour
         {
             GameManager.GetInstance().SetFaseActual(1);
         }
+
+        particulas.SetActive(false);
     }
 }
