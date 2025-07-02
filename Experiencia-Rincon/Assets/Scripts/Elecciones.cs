@@ -28,6 +28,12 @@ public class Elecciones : MonoBehaviour
     [SerializeField] public GameObject objeto1;
     [SerializeField] public GameObject objeto2;
     [SerializeField] public GameObject objeto3;
+    /*
+    [Header("Animators de Objetos")]
+    // Los objetos que se pueden elegir
+    [SerializeField] public GameObject animObjeto1;
+    [SerializeField] public GameObject animObjeto2;
+    [SerializeField] public GameObject animObjeto3;*/
 
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;

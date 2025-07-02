@@ -18,21 +18,20 @@ EXTERNAL GetFase()
 }
 
 === F0 ===
+Bienvenido
 Inicio
-Test1
-Test2
-Test3
 ~ SetFaseActual(1)
 -> END
 
 === F1 ===
-fase1
+fase1 - eleccion
 -> END
 
 === F2 ===
-fase2
+fase2 - continuar
+~ SetFaseActual(1)
 -> END
 
 === F3 ===
-fase3
+fase3 - eleccion
 -> END

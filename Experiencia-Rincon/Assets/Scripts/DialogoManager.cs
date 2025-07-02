@@ -86,7 +86,7 @@ public class DialogoManager : MonoBehaviour
         puedeAvanzar = false;
         StartCoroutine(EsperarAntesDePermitirAvance()); // Inicia una corrutina para esperar antes de permitir que el jugador avance en el diálogo
 
-        Debug.Log("Entrando en modo diálogo");
+        //Debug.Log("Entrando en modo diálogo");
     }
 
     private IEnumerator FinalizarDialogo()
@@ -98,7 +98,7 @@ public class DialogoManager : MonoBehaviour
         uiDialogo.SetActive(false); // Desactiva el UI del diálogo
         textoDialogo.text = ""; // Limpia el texto del diálogo
 
-        Debug.Log("Finalizando diálogo");
+        //Debug.Log("Finalizando diálogo");
 
         MovimientoRino.GetInstance().moverRino();
     }
@@ -119,11 +119,11 @@ public class DialogoManager : MonoBehaviour
             }
 
             // Si está vacía, seguimos al siguiente fragmento automáticamente
-            Debug.Log("Línea vacía ignorada");
+            //Debug.Log("Línea vacía ignorada");
         }
         
         // Si no hay más contenido después de ignorar líneas vacías
-        Debug.Log("No hay más contenido en la historia");
+        //Debug.Log("No hay más contenido en la historia");
         StartCoroutine(FinalizarDialogo());
     }
 

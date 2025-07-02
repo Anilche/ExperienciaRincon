@@ -10,6 +10,15 @@ public class BotonesElecciones : MonoBehaviour
     private GameObject objeto2;
     private GameObject objeto3;
 
+    /*
+    private GameObject animObjeto1;
+    private GameObject animObjeto2;
+    private GameObject animObjeto3;*/
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip sonidoSeleccion;
+
+
     // Referencia al script Elecciones para que sea mas fácil de llamar
     private Elecciones elecciones;
 
@@ -20,6 +29,11 @@ public class BotonesElecciones : MonoBehaviour
         objeto1 = elecciones.objeto1;
         objeto2 = elecciones.objeto2;
         objeto3 = elecciones.objeto3;
+
+        /* En caso de tener mas de una animación por objeto
+        animObjeto1 = elecciones.animObjeto1;
+        animObjeto2 = elecciones.animObjeto2;
+        animObjeto3 = elecciones.animObjeto3;*/
     }
 
     public void Eleccion1()
@@ -28,6 +42,10 @@ public class BotonesElecciones : MonoBehaviour
         objeto1.SetActive(true);
         objeto2.SetActive(false);
         objeto3.SetActive(false);
+
+        //animObjeto1.GetComponent<Animator>().Play("prueba");
+
+        audioSource.PlayOneShot(sonidoSeleccion);
     }
 
     public void Eleccion2()
@@ -36,6 +54,8 @@ public class BotonesElecciones : MonoBehaviour
         objeto1.SetActive(false);
         objeto2.SetActive(true);
         objeto3.SetActive(false);
+
+        audioSource.PlayOneShot(sonidoSeleccion);
     }
 
     public void Eleccion3()
@@ -44,21 +64,27 @@ public class BotonesElecciones : MonoBehaviour
         objeto1.SetActive(false);
         objeto2.SetActive(false);
         objeto3.SetActive(true);
+
+        audioSource.PlayOneShot(sonidoSeleccion);
     }
 
     public void Confirmar()
     {
         // Se confirma la selección y se cierra el UI de elecciones
+        audioSource.PlayOneShot(sonidoSeleccion);
         Elecciones.GetInstance().ConfirmarSeleccion();
 
+        /*
         if (GameManager.GetInstance().faseAhora > Elecciones.GetInstance().numFaseNecesaria)
         {
-            return; // Si la fase actual es mayor a la necesaria, no se hace nada
+            // Si la fase actual es mayor a la necesaria, no se hace nada
+            return;
         }
         else if (GameManager.GetInstance().faseAhora == Elecciones.GetInstance().numFaseNecesaria)
         {
-            GameManager.GetInstance().faseAhora = + 1; // Si la fase actual es igual a la necesaria, se incrementa la fase actual
+            // Si la fase actual es igual a la necesaria, se incrementa la fase actual
+            GameManager.GetInstance().SetFaseActual(1);
             Debug.Log("Fase actual incrementada a: " + GameManager.GetInstance().faseAhora);
-        }
+        }*/
     }
 }
