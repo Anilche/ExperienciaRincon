@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [SerializeField] private CinemachineVirtualCamera vcamJugador;
-    [SerializeField] private CinemachineVirtualCamera vcamEleccion;
+    [SerializeField] private CinemachineVirtualCamera vcamHabilitarBonus;
 
     private void Update()
     {
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
         ActivarCamaraDesbloqueo(); // Cambia a la cámara de desbloqueo
 
-        ///////////////////// Acá va el cambio de cámara + la animación de desbloqueo de la sala bonus
+        ///////////////////// Acá va la animación de desbloqueo de la sala bonus
 
         Debug.Log("Sala bonus desbloqueada");
 
@@ -62,12 +62,12 @@ public class GameManager : MonoBehaviour
     private void ActivarCamaraJugador()
     {
         vcamJugador.Priority = 10;
-        vcamEleccion.Priority = 0;
+        vcamHabilitarBonus.Priority = 0;
     }
 
     private void ActivarCamaraDesbloqueo()
     {
         vcamJugador.Priority = 0;
-        vcamEleccion.Priority = 10;
+        vcamHabilitarBonus.Priority = 10;
     }
 }

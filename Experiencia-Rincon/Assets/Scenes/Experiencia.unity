@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faseAhora: 0
   vcamJugador: {fileID: 740413737}
-  vcamEleccion: {fileID: 1693404773}
+  vcamHabilitarBonus: {fileID: 0}
 --- !u!1 &35013375
 GameObject:
   m_ObjectHideFlags: 0
@@ -6688,7 +6688,7 @@ GameObject:
   - component: {fileID: 250434327}
   - component: {fileID: 250434326}
   m_Layer: 0
-  m_Name: Cubo
+  m_Name: Cubo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13046,7 +13046,7 @@ GameObject:
   - component: {fileID: 536875610}
   - component: {fileID: 536875609}
   m_Layer: 0
-  m_Name: Esfera
+  m_Name: Esfera1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15007,7 +15007,7 @@ GameObject:
   - component: {fileID: 785449580}
   - component: {fileID: 785449579}
   m_Layer: 0
-  m_Name: TriggerE1
+  m_Name: TriggerE2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15575,7 +15575,7 @@ GameObject:
   - component: {fileID: 848575338}
   - component: {fileID: 848575337}
   m_Layer: 0
-  m_Name: Cilindro
+  m_Name: Cilindro1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
