@@ -9,9 +9,6 @@ public class Elecciones : MonoBehaviour
     [SerializeField] private GameObject botonInteraccion;
 
     [Header("Camaras")]
-    //[SerializeField] private GameObject camaraJugador; // Referencia a la cámara principal
-    //[SerializeField] private GameObject camaraEleccion; // Referencia a la cámara de elecciones
-
     [SerializeField] private CinemachineVirtualCamera vcamJugador;
     [SerializeField] private CinemachineVirtualCamera vcamEleccion;
 
@@ -42,8 +39,6 @@ public class Elecciones : MonoBehaviour
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
     private bool jugadorEnRango;
-    private static Elecciones instance;
-    public bool eleccionActiva { get; private set; } // Indica si la elección está activa o no
 
     private void Awake()
     {
@@ -56,13 +51,6 @@ public class Elecciones : MonoBehaviour
         ActivarCamaraJugador(); // Activa la cámara del jugador al inicio
 
         jugadorEnRango = false; // Inicializa el estado del jugador fuera de rango
-
-        instance = this;
-    }
-
-    public static Elecciones GetInstance()
-    {
-        return instance;
     }
 
     void Update()
@@ -77,7 +65,7 @@ public class Elecciones : MonoBehaviour
         {
 
             // Si el jugador presiona la tecla E, se activa la elección
-            if (Input.GetKeyDown(KeyCode.E) && eleccionActiva == false)
+            if (Input.GetKeyDown(KeyCode.E) && GameManager.GetInstance().eleccionActiva == false)
             {
                 Debug.Log("Comienzo de elecciones");
                 IniciarEleccion();
@@ -109,7 +97,7 @@ public class Elecciones : MonoBehaviour
 
     private void IniciarEleccion()
     {
-        eleccionActiva = true; // Marca que la elección está activa
+        GameManager.GetInstance().eleccionActiva = true; // Marca que la elección está activa
         uiElecciones.SetActive(true); // Activa el UI de elecciones
         botonInteraccion.SetActive(false); // Desactiva el botón de interacción
 
@@ -135,7 +123,7 @@ public class Elecciones : MonoBehaviour
     {
         ActivarCamaraJugador(); // Activa la cámara del jugador
         uiElecciones.SetActive(false); // Desactiva el UI de elecciones
-        eleccionActiva = false; // Marca que la elección ya no está activa
+        GameManager.GetInstance().eleccionActiva = false; // Marca que la elección ya no está activa
 
         Cursor.visible = false; // Hace invisible el cursor
         Cursor.lockState = CursorLockMode.Confined;

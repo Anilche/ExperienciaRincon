@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public int faseAhora; // Fase actual del jugador, se puede setear desde otro script
+
+    public bool eleccionActiva;
 
     private static GameManager instance;
 
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         faseAhora = 0; // Inicializa la fase actual del jugador
+        eleccionActiva = false; // Inicializa el estado de la elección como no activa
     }
 
     private void Awake()
@@ -39,7 +41,6 @@ public class GameManager : MonoBehaviour
     public void SetFaseActual(int nuevaFase)
     {
         GameManager.GetInstance().faseAhora = GameManager.GetInstance().faseAhora + nuevaFase; // Actualiza la fase actual del jugador modificando la variable ubicada en GameManager
-        //faseActual = faseActual + nuevaFase; // Actualiza la fase actual del jugador modificando la variable ubicada en GameManager
         Debug.Log("Fase actual: " + GameManager.GetInstance().faseAhora);
     }
 
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Sala bonus desbloqueada");
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(5f);
 
         ActivarCamaraJugador(); // Vuelve a activar la cámara del jugador después de la animación de desbloqueo
 

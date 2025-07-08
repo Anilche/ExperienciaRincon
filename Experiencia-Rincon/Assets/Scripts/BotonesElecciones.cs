@@ -20,12 +20,12 @@ public class BotonesElecciones : MonoBehaviour
 
 
     // Referencia al script Elecciones para que sea mas fácil de llamar
-    private Elecciones elecciones;
+    //private Elecciones elecciones;
+    [SerializeField] private Elecciones elecciones;
 
     private void Start()
     {
         // Se obtiene la instancia del script Elecciones y se asignan los objetos a las variables ya creadas, para manejarlo más fácilmente
-        elecciones = Elecciones.GetInstance();
         objeto1 = elecciones.objeto1;
         objeto2 = elecciones.objeto2;
         objeto3 = elecciones.objeto3;
@@ -72,19 +72,6 @@ public class BotonesElecciones : MonoBehaviour
     {
         // Se confirma la selección y se cierra el UI de elecciones
         audioSource.PlayOneShot(sonidoSeleccion);
-        Elecciones.GetInstance().ConfirmarSeleccion();
-
-        /*
-        if (GameManager.GetInstance().faseAhora > Elecciones.GetInstance().numFaseNecesaria)
-        {
-            // Si la fase actual es mayor a la necesaria, no se hace nada
-            return;
-        }
-        else if (GameManager.GetInstance().faseAhora == Elecciones.GetInstance().numFaseNecesaria)
-        {
-            // Si la fase actual es igual a la necesaria, se incrementa la fase actual
-            GameManager.GetInstance().SetFaseActual(1);
-            Debug.Log("Fase actual incrementada a: " + GameManager.GetInstance().faseAhora);
-        }*/
+        elecciones.ConfirmarSeleccion();
     }
 }

@@ -15,6 +15,12 @@ EXTERNAL GetFase()
     -> F2
 - fase == 3:
     -> F3
+- fase == 4:
+    -> F4
+- fase == 5:
+    -> F5
+- fase == 6:
+    -> F6
 }
 
 === F0 ===
@@ -34,4 +40,17 @@ fase2 - continuar
 
 === F3 ===
 fase3 - eleccion
+-> END
+
+=== F4 ===
+fase4 - continuar
+~ SetFaseActual(1)
+-> END
+
+=== F5 ===
+fase5 - simulacro final
+-> END
+
+=== F6 ===
+fase6 - simulacro final
 -> END
