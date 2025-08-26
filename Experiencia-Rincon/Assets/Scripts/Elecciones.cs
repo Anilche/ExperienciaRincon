@@ -105,6 +105,24 @@ public class Elecciones : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         ActivarCamaraEleccion(); // Activa la cámara de elecciones
+        
+        // Elegir la opción de elección según la fase necesaria
+        switch (numFaseNecesaria)
+        {
+            case 1:
+
+                //Eleccion1();
+                break;
+            case 2:
+                // Eleccion2(); // Implementar la lógica para la segunda elección
+                break;
+            case 3:
+                // Eleccion3(); // Implementar la lógica para la tercera elección
+                break;
+            default:
+                Debug.LogWarning("Selección no válida");
+                break;
+        }
     }
 
     private void ActivarCamaraJugador()
@@ -121,6 +139,7 @@ public class Elecciones : MonoBehaviour
 
     public void ConfirmarSeleccion()
     {
+        
         ActivarCamaraJugador(); // Activa la cámara del jugador
         uiElecciones.SetActive(false); // Desactiva el UI de elecciones
         GameManager.GetInstance().eleccionActiva = false; // Marca que la elección ya no está activa
@@ -135,5 +154,6 @@ public class Elecciones : MonoBehaviour
         }
 
         particulas.SetActive(false);
+        
     }
 }
