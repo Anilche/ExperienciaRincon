@@ -26,6 +26,9 @@ public class OutlineSelection : MonoBehaviour
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
 
+    [Header("Niebla")]
+    [SerializeField] public GameObject niebla;
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -119,6 +122,8 @@ public class OutlineSelection : MonoBehaviour
                                 GameManager.GetInstance().SetFaseActual(1);
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
                                 //Animaciones de salida de los portales/tablero/base central
+                                //Animacion de salida de la niebla
+                                particulas.SetActive(false);
                                 break;
 
                             default:
