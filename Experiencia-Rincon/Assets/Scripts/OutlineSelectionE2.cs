@@ -17,8 +17,17 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public GameObject objeto2;
     [SerializeField] public GameObject objeto3;
 
+    [Header("Pantallas")]
+    // Pantallas que tendran animacion luego
+    [SerializeField] public GameObject pantalla1;
+    [SerializeField] public GameObject pantalla2;
+    [SerializeField] public GameObject pantalla3;
+
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
+
+    [Header("Tablero")]
+    [SerializeField] public GameObject tablero2;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -37,7 +46,10 @@ public class OutlineSelectionE2 : MonoBehaviour
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             particulas.SetActive(true);
-            //paredes.SetActive(true);
+
+            pantalla1.SetActive(true);
+            pantalla2.SetActive(true);
+            pantalla3.SetActive(true);
         }
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
@@ -112,7 +124,12 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 Debug.Log("Eleccion Confirmada");
                                 GameManager.GetInstance().SetFaseActual(1);
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
-                                //Animaciones de salida de los portales/tablero/base central
+
+                                //Animaciones de salida de los portales/tablero
+                                pantalla1.SetActive(false);
+                                pantalla2.SetActive(false);
+                                pantalla3.SetActive(false);
+
                                 particulas.SetActive(false);
                                 break;
 

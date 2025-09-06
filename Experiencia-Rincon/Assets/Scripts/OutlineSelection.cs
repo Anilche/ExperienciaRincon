@@ -17,12 +17,21 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public GameObject objeto2;
     [SerializeField] public GameObject objeto3;
 
+    [Header("Portales")]
+    // Portales que tendran animacion luego
+    [SerializeField] public GameObject portal1;
+    [SerializeField] public GameObject portal2;
+    [SerializeField] public GameObject portal3;
+
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
 
     [Header("Niebla")]
     [SerializeField] public GameObject niebla;
     [SerializeField] private Animator animControllerNiebla;
+
+    [Header("Tablero")]
+    [SerializeField] public GameObject tablero1;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -41,7 +50,7 @@ public class OutlineSelection : MonoBehaviour
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             particulas.SetActive(true);
-            //paredes.SetActive(true);
+            //Animacion de entrada de los portales
         }
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
@@ -116,9 +125,15 @@ public class OutlineSelection : MonoBehaviour
                                 Debug.Log("Eleccion Confirmada");
                                 GameManager.GetInstance().SetFaseActual(1);
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
-                                //Animaciones de salida de los portales/tablero/base central
+                                
+                                //Animaciones de salida de los portales
+                                portal1.SetActive(false);
+                                portal2.SetActive(false);
+                                portal3.SetActive(false); //Cambiar a animaciones de salida después
+
                                 particulas.SetActive(false);
                                 animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
+                                //tablero1.SetActive(false);
                                 break;
 
                             default:

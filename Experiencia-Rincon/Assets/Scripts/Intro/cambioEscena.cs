@@ -7,6 +7,11 @@ public class VideoSceneChanger : MonoBehaviour
     public VideoPlayer reproductor; // Reproductor de video asignado en el Inspector
     public string escenaACargar; // Nombre de la escena a cargar
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void Update()
     {
         long frame = reproductor.frame;

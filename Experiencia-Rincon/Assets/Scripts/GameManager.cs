@@ -17,16 +17,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        /* final
         if (faseAhora == 5)
         {
             StartCoroutine(DesbloqueoSalaBonus()); // Llama a la función para desbloquear la sala bonus si la fase actual es X
-        }
+        }*/
     }
 
     void Start()
     {
         faseAhora = 0; // Inicializa la fase actual del jugador
         eleccionActiva = false; // Inicializa el estado de la elección como no activa
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Awake()

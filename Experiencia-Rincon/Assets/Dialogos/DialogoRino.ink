@@ -21,6 +21,8 @@ EXTERNAL GetFase()
     -> F5
 - fase == 6:
     -> F6
+- fase == 7:
+    -> F7   
 }
 
 === F0 ===
@@ -37,6 +39,7 @@ Todo arranca por el suelo que pisás… ¿Cómo querés que te reciba este lugar
 === F2 ===
 //Instancia 1 - Fin
 fase2 - continuar
+Ahora levantá la mirada. Lo que te rodea también importa. Colores, texturas, formas… todo influye en cómo te sentís. Vamos a terminar de darle vida a este espacio.
 ~ SetFaseActual(1)
 -> END
 
