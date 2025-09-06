@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OutlineSelection : MonoBehaviour
+public class OutlineSelectionE2 : MonoBehaviour
 {
     private Transform highlight;
     private Transform selection;
@@ -19,10 +19,6 @@ public class OutlineSelection : MonoBehaviour
 
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
-
-    [Header("Niebla")]
-    [SerializeField] public GameObject niebla;
-    [SerializeField] private Animator animControllerNiebla;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -118,7 +114,6 @@ public class OutlineSelection : MonoBehaviour
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
                                 //Animaciones de salida de los portales/tablero/base central
                                 particulas.SetActive(false);
-                                animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
                                 break;
 
                             default:
