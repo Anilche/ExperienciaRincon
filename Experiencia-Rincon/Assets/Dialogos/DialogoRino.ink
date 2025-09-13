@@ -23,6 +23,12 @@ EXTERNAL GetFase()
     -> F6
 - fase == 7:
     -> F7   
+- fase == 8:
+    -> F8  
+- fase == 9:
+    -> F9
+- fase == 10:
+    -> F10   
 }
 
 === F0 ===
@@ -57,14 +63,34 @@ fase4 - continuar
 === F5 ===
 //Rino se dirige al centro
 Así está mejor, ¿no? Este lugar empieza a parecerte familiar. Y eso es porque ya tiene algo tuyo. Vamos al próximo paso.
+~ SetFaseActual(1)
 -> END
 
 === F6 ===
 //Instancia 3
+INSTANCIA 3
 Acá podés dejar eso que querés tener a la vista. Cosas tuyas. Cosas que te acompañan, aunque no hablen. Elegí lo que querés que viva en esta estantería.
+~ SetFaseActual(1)
 -> END
 
 === F7 ===
 //Instancia 3 - Fin
 fase7 - continuar
+~ SetFaseActual(1)
+-> END
+
+=== F8 ===
+//Instancia 4 
+Elegí la musica que quieras y volvé a hablarme cuando encuentres la que mas te guste, igualmente podés cambiarla en cualquier momento de la experiencia
+-> END
+
+=== F9 ===
+//Instancia 4 - Fin
+fase9 - continuar
+~ SetFaseActual(1)
+-> END
+
+=== F10 ===
+//Instancia 5
+Instancia5
 -> END

@@ -10,12 +10,17 @@ public class Instancia4 : MonoBehaviour
     private RaycastHit raycastHit;
 
     private bool estaEnAreaDeElecciones = false;
+    
+    [Header("AudioSource")]
+    public AudioSource Source;
 
-    [Header("Musicas")]
+    [Header("Audio Clips Musicas")]
     // Los objetos que se pueden elegir
-    [SerializeField] public GameObject musica1;
-    [SerializeField] public GameObject musica2;
-    [SerializeField] public GameObject musica3;
+    [SerializeField] public AudioClip audioClipMusica1;
+    [SerializeField] public AudioClip audioClipMusica2;
+    [SerializeField] public AudioClip audioClipMusica3;
+    
+    
 
     [Header("Portadas")]
     // Pantallas que tendran animacion luego
@@ -35,6 +40,10 @@ public class Instancia4 : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    private void Start()
+    {
+        Source.Stop();
+    }
     private void Awake()
     {
         particulas.SetActive(false); // Desactiva las particulas al inicio
@@ -46,16 +55,12 @@ public class Instancia4 : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             particulas.SetActive(true);
         }
-        else
-        {
-            particulas.SetActive(false);
-        }
 
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeElecciones)
         {
             // Highlight
             if (highlight != null)
@@ -109,21 +114,54 @@ public class Instancia4 : MonoBehaviour
                             disco1.SetActive(true);
                             disco2.SetActive(false);
                             disco3.SetActive(false);
-                            //Musica1
+                            
+                            //Cambio de musica
+                            Source.Stop();
+                            Source.clip = audioClipMusica1;
+                            Source.Play();
+
+                            particulas.SetActive(false);
+                            selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+
+                            cambiarFase();
+                            Debug.Log("Fase actual: " + GameManager.GetInstance().faseAhora);
+
                             break;
 
                         case "Portada2":
                             disco1.SetActive(false);
                             disco2.SetActive(true);
                             disco3.SetActive(false);
-                            //Musica2
+
+                            //Cambio de musica
+                            Source.Stop();
+                            Source.clip = audioClipMusica2;
+                            Source.Play();
+
+                            particulas.SetActive(false);
+                            selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+
+                            cambiarFase();
+                            Debug.Log("Fase actual: " + GameManager.GetInstance().faseAhora);
+
                             break;
 
                         case "Portada3":
                             disco1.SetActive(false);
                             disco2.SetActive(false);
                             disco3.SetActive(true);
-                            //Musica3
+
+                            //Cambio de musica
+                            Source.Stop();
+                            Source.clip = audioClipMusica3;
+                            Source.Play();
+
+                            particulas.SetActive(false);
+                            selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+
+                            cambiarFase();
+                            Debug.Log("Fase actual: " + GameManager.GetInstance().faseAhora);
+
                             break;
 
                         default:
@@ -158,6 +196,14 @@ public class Instancia4 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             estaEnAreaDeElecciones = false;
+        }
+    }
+
+    private void cambiarFase()
+    {
+        if (GameManager.GetInstance().faseAhora == 8)
+        {
+            GameManager.GetInstance().faseAhora += 1; // Cambia la fase a 9 para que no se vuelva a llamar esta función
         }
     }
 }
