@@ -20,8 +20,6 @@ public class Instancia4 : MonoBehaviour
     [SerializeField] public AudioClip audioClipMusica2;
     [SerializeField] public AudioClip audioClipMusica3;
     
-    
-
     [Header("Portadas")]
     // Pantallas que tendran animacion luego
     [SerializeField] public GameObject portada1;
