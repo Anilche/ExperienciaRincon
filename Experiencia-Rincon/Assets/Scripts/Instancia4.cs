@@ -53,7 +53,7 @@ public class Instancia4 : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             particulas.SetActive(true);
         }

@@ -23420,7 +23420,7 @@ MonoBehaviour:
   disco2: {fileID: 601325664}
   disco3: {fileID: 96187705}
   particulas: {fileID: 173729482}
-  numFaseNecesaria: 0
+  numFaseNecesaria: 8
 --- !u!1 &342648843
 GameObject:
   m_ObjectHideFlags: 0
@@ -111467,9 +111467,9 @@ SceneRoots:
   - {fileID: 1328984108}
   - {fileID: 114979656}
   - {fileID: 732332851}
+  - {fileID: 148817438}
   - {fileID: 1646328172}
   - {fileID: 2078797113}
   - {fileID: 1433940915}
   - {fileID: 998957894}
-  - {fileID: 148817438}
   - {fileID: 2141137823}
