@@ -32,6 +32,9 @@ public class Instancia4 : MonoBehaviour
     [SerializeField] public GameObject disco2;
     [SerializeField] public GameObject disco3;
 
+    [Header("Animaciones")]
+    [SerializeField] public Animator animatorTocadiscos;
+
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
 
@@ -201,6 +204,7 @@ public class Instancia4 : MonoBehaviour
     {
         if (GameManager.GetInstance().faseAhora == 8)
         {
+            animatorTocadiscos.SetBool("TapaCerrada", true);
             GameManager.GetInstance().faseAhora += 1; // Cambia la fase a 9 para que no se vuelva a llamar esta función
         }
     }

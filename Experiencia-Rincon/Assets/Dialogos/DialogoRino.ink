@@ -70,7 +70,6 @@ Así está mejor, ¿no? Este lugar empieza a parecerte familiar. Y eso es porque
 //Instancia 3
 INSTANCIA 3
 Acá podés dejar eso que querés tener a la vista. Cosas tuyas. Cosas que te acompañan, aunque no hablen. Elegí lo que querés que viva en esta estantería.
-~ SetFaseActual(1)
 -> END
 
 === F7 ===
