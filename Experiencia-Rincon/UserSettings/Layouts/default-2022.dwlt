@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 16146
+  controlID: 127
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 16147
+  controlID: 68
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 16148
+  controlID: 69
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -350,7 +350,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -421,7 +421,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ac40feff1043feff740f0100321301002a1601004816010080170100
+      m_ExpandedIDs: c8e9ffff68f5ffff08fbffff34a90000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -854,9 +854,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.6873016, y: -0.6080151, z: -20.75665}
+    m_Target: {x: -16.691492, y: 4.7622004, z: 0.17394681}
     speed: 2
-    m_Value: {x: -3.6873016, y: -0.6080151, z: -20.75665}
+    m_Value: {x: -16.691492, y: 4.7622004, z: 0.17394681}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -902,20 +902,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0033816686, y: -0.9992499, z: 0.047949973, w: 0.025081906}
+    m_Target: {x: -0.22332168, y: 0.5281387, z: -0.14622109, w: -0.8070309}
     speed: 2
-    m_Value: {x: 0.0033417447, y: -0.9986019, z: 0.04641763, w: 0.025068894}
+    m_Value: {x: -0.22436464, y: 0.52752745, z: -0.14690591, w: -0.80609804}
   m_Size:
-    m_Target: 0.7389226
+    m_Target: 1.1967345
     speed: 2
-    m_Value: 0.70710295
+    m_Value: 1.1452005
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.060969997
-    m_SpeedNormalized: 0.03
+    m_Speed: 0.30084997
+    m_SpeedNormalized: 0.14999999
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1137,7 +1137,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Art/Modelados/Bonus/Proyector/Tex
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1145,16 +1145,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets
+  - Assets/Art/Modelados/Bonus/Proyector/Tex
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Github\ExperienciaRincon\Experiencia-Rincon
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 06060000
-    m_LastClickedID: 1542
-    m_ExpandedIDs: 00000000060600008a060000d607000000ca9a3b
+    m_SelectedIDs: 88c50000
+    m_LastClickedID: 50568
+    m_ExpandedIDs: 00000000088b0000808b00008a8b0000da8b000000c5000056c5000062c5000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1182,7 +1182,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000606000000ca9a3b
+    m_ExpandedIDs: 00000000088b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1310,7 +1310,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -319814
+  m_LastSelectedObjectID: -1290
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
