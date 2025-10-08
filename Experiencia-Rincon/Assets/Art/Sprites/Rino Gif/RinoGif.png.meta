@@ -1,0 +1,1258 @@
+fileFormatVersion: 2
+guid: 7e2c238f0189ad444b68caa135ac7161
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RinoGif2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23663b489e728344b8f61bf24f40d432
+      internalID: -1938083736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_1
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 8000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5310981e08497b042981a8404e987699
+      internalID: -452813241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_2
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 8000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543c95a5a05aed845ad98d3557e03f08
+      internalID: 1471453911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_3
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 8000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6957e9625a2d1f546b16e0cc3ebb38b2
+      internalID: -1337098922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_4
+      rect:
+        serializedVersion: 2
+        x: 7112
+        y: 8000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1db7ced248f584c81a5f0cddef9228
+      internalID: 1586010488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_5
+      rect:
+        serializedVersion: 2
+        x: 8890
+        y: 8000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6a226655bbee649b27034e0828ffcb
+      internalID: 1541463473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b0585494ecdba94f8f030dcb8e22d50
+      internalID: -2059975420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_7
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 7000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c73fc31c3e540947ad4d60058cbabc7
+      internalID: -294904745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_8
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 7000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d5d9bcfc28d1ad46b7ff8946324e974
+      internalID: -1823752939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_9
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 7000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1db95a5f7859db44b2baac33258481d
+      internalID: -1448609625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_10
+      rect:
+        serializedVersion: 2
+        x: 7112
+        y: 7000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90d76104ec7b8d04a8d156c48eb8f289
+      internalID: 1288836889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_11
+      rect:
+        serializedVersion: 2
+        x: 8890
+        y: 7000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a68cecf48c747448dfeb16005ce45a
+      internalID: 2110167178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672509b3e6f636a4c9ca32ab16239c54
+      internalID: -1976385475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_13
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 6000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11039f6881d741448f2d725fdaa0a05
+      internalID: 242716736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_14
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 6000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb85008e8f049c45bd51b9d9c46197f
+      internalID: -1046773360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_15
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 6000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85aea56fabb6444fa48a469e8d2cf6a
+      internalID: -1281003847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_16
+      rect:
+        serializedVersion: 2
+        x: 7112
+        y: 6000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d178dea49f396b1468840f48a8ea6ae6
+      internalID: 1464010052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_17
+      rect:
+        serializedVersion: 2
+        x: 8890
+        y: 6000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77a1f17423a546409bb1ddf95423595
+      internalID: 262861804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5379b0cb38f986f4abae233f91555c3c
+      internalID: -896044567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_19
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 5000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab39282e49c5e9244ad08ac51e9c7f7e
+      internalID: -1566606237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_20
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 5000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3311176fc9a05f545aa6afb6e4a38294
+      internalID: 1602166380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_21
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 5000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5fd570c670afe47ae26dfe1630980b
+      internalID: 2054029099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_22
+      rect:
+        serializedVersion: 2
+        x: 7112
+        y: 5000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f716064330e4f8a4fbb001c23868f625
+      internalID: -1879974080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_23
+      rect:
+        serializedVersion: 2
+        x: 8890
+        y: 5000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bece3d33082d7a43848a358375c3e03
+      internalID: -546514803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2e7614ed767c641a2b4a50a56b1c4d
+      internalID: -838942809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_25
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 4000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09705b07d2acb6641af340e85eb47bd7
+      internalID: -758776835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_26
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 4000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56767f16dc1c02f4e8e8689d69176da7
+      internalID: 1676949468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_27
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 4000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca7b8106563d67468f3c85547517ed0
+      internalID: -882285737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_28
+      rect:
+        serializedVersion: 2
+        x: 7112
+        y: 4000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12c1badddf17b6478a1ee240eb4a878
+      internalID: 1887891032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_29
+      rect:
+        serializedVersion: 2
+        x: 8890
+        y: 4000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e503805640b6984ca43af30e7401970
+      internalID: 2101017945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93653801f6ac32f408ce6b75f66795e4
+      internalID: 169195637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_31
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 3000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814f7f55a7f79f34b85c7c4e436e91ee
+      internalID: 1995675433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_32
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 3000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8128261830959458b246449b3ed485
+      internalID: -193574979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_33
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 3000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7fe3ea919c69d4a8875ebd781a6de3
+      internalID: 55327403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_34
+      rect:
+        serializedVersion: 2
+        x: 7112
+        y: 3000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f312107e85a9144a8a6dd29ca0a033e
+      internalID: 1291400676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_35
+      rect:
+        serializedVersion: 2
+        x: 8890
+        y: 3000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b3a63e828841f4ab215d1dc3c7825e
+      internalID: -1970324638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e50ebe3f0ef0db4d992519c41c9c9a3
+      internalID: -1991941912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_37
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 2000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7878e828002ece747854150868a44d15
+      internalID: -1451609282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_38
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 2000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2acd0f9353e6a0488fb78203339964f
+      internalID: 389471238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_39
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 2000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5203a569d138b541b132313b5873348
+      internalID: 295474380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_40
+      rect:
+        serializedVersion: 2
+        x: 7112
+        y: 2000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0719d5b4fd157214994f76a3f82f21a9
+      internalID: 255435261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_41
+      rect:
+        serializedVersion: 2
+        x: 8890
+        y: 2000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339b4de09b1fe014bad29c707f881a6e
+      internalID: -395968466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e027413523fcc544acdb953c565785b
+      internalID: 1720389720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_43
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 1000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0599a31a8d76d4e8252e3404781a82
+      internalID: -1151976623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_44
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 1000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfd09c4bd9802a49871690f35bbc6be
+      internalID: 1923412937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_45
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 1000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c942a012a604fec4fa00fdc40c8eb3e9
+      internalID: 1127714477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_46
+      rect:
+        serializedVersion: 2
+        x: 7112
+        y: 1000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9945aba344fa44a8e44f4375f7503c
+      internalID: -38018274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_47
+      rect:
+        serializedVersion: 2
+        x: 8890
+        y: 1000
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36bb89bf82130944a26af5969f6810c
+      internalID: 767311122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43a998d62682fd4c8eeee76e2a9a202
+      internalID: 1850653037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_49
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 0
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13a08473ee882149a7e81bf4f35c216
+      internalID: 1331921073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_50
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 0
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47107be41b19e5343841e95c16ca6157
+      internalID: 938348363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RinoGif2_51
+      rect:
+        serializedVersion: 2
+        x: 5334
+        y: 0
+        width: 1778
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b9b7b51bc276340b74cc4e6867a59b
+      internalID: 436351938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: abe6068f61578a346aa0dce8162f3a13
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RinoGif2_0: -1938083736
+      RinoGif2_1: -452813241
+      RinoGif2_10: 1288836889
+      RinoGif2_11: 2110167178
+      RinoGif2_12: -1976385475
+      RinoGif2_13: 242716736
+      RinoGif2_14: -1046773360
+      RinoGif2_15: -1281003847
+      RinoGif2_16: 1464010052
+      RinoGif2_17: 262861804
+      RinoGif2_18: -896044567
+      RinoGif2_19: -1566606237
+      RinoGif2_2: 1471453911
+      RinoGif2_20: 1602166380
+      RinoGif2_21: 2054029099
+      RinoGif2_22: -1879974080
+      RinoGif2_23: -546514803
+      RinoGif2_24: -838942809
+      RinoGif2_25: -758776835
+      RinoGif2_26: 1676949468
+      RinoGif2_27: -882285737
+      RinoGif2_28: 1887891032
+      RinoGif2_29: 2101017945
+      RinoGif2_3: -1337098922
+      RinoGif2_30: 169195637
+      RinoGif2_31: 1995675433
+      RinoGif2_32: -193574979
+      RinoGif2_33: 55327403
+      RinoGif2_34: 1291400676
+      RinoGif2_35: -1970324638
+      RinoGif2_36: -1991941912
+      RinoGif2_37: -1451609282
+      RinoGif2_38: 389471238
+      RinoGif2_39: 295474380
+      RinoGif2_4: 1586010488
+      RinoGif2_40: 255435261
+      RinoGif2_41: -395968466
+      RinoGif2_42: 1720389720
+      RinoGif2_43: -1151976623
+      RinoGif2_44: 1923412937
+      RinoGif2_45: 1127714477
+      RinoGif2_46: -38018274
+      RinoGif2_47: 767311122
+      RinoGif2_48: 1850653037
+      RinoGif2_49: 1331921073
+      RinoGif2_5: 1541463473
+      RinoGif2_50: 938348363
+      RinoGif2_51: 436351938
+      RinoGif2_6: -2059975420
+      RinoGif2_7: -294904745
+      RinoGif2_8: -1823752939
+      RinoGif2_9: -1448609625
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
