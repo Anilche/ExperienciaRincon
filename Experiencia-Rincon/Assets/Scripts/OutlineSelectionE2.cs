@@ -17,6 +17,13 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public GameObject objeto2;
     [SerializeField] public GameObject objeto3;
 
+    [Header("Animator Botones")]
+    // Los objetos que se pueden elegir
+    [SerializeField] public Animator animBoton1;
+    [SerializeField] public Animator animBoton2;
+    [SerializeField] public Animator animBoton3;
+    [SerializeField] public Animator animBotonConfirmar;
+
     [Header("Pantallas")]
     // Pantallas que tendran animacion luego
     [SerializeField] public GameObject pantalla1;
@@ -106,18 +113,27 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 objeto1.SetActive(true);
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(false);
+
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
+                                animBoton1.SetTrigger("pulsarBoton");
                                 break;
 
                             case "BotonPortal2":
                                 objeto1.SetActive(false);
                                 objeto2.SetActive(true);
                                 objeto3.SetActive(false);
+
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
+                                animBoton2.SetTrigger("pulsarBoton");
                                 break;
 
                             case "BotonPortal3":
                                 objeto1.SetActive(false);
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(true);
+
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
+                                animBoton3.SetTrigger("pulsarBoton");
                                 break;
 
                             case "BotonConfirmar":
@@ -131,6 +147,8 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 pantalla3.SetActive(false);
 
                                 particulas.SetActive(false);
+
+                                animBotonConfirmar.SetTrigger("pulsarBoton");
                                 break;
 
                             default:

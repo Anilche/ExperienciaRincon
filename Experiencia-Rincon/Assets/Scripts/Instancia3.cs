@@ -22,6 +22,7 @@ public class Instancia3 : MonoBehaviour
     [SerializeField] public GameObject objeto4;
     [SerializeField] public GameObject objeto5;
     [SerializeField] public GameObject objeto6;
+    [SerializeField] public GameObject objeto7;
 
     [Header("Estanteria Seleccion")]
     [SerializeField] public GameObject estanteriaSeleccion;
@@ -33,6 +34,7 @@ public class Instancia3 : MonoBehaviour
     [SerializeField] public GameObject objetoSeleccion4;
     [SerializeField] public GameObject objetoSeleccion5;
     [SerializeField] public GameObject objetoSeleccion6;
+    [SerializeField] public GameObject objetoSeleccion7;
 
     [Header("Objeto Terminar Elecciones")]
     // Pantallas que tendran animacion luego
@@ -52,15 +54,11 @@ public class Instancia3 : MonoBehaviour
         objeto4.SetActive(false);
         objeto5.SetActive(false);
         objeto6.SetActive(false);
+        objeto7.SetActive(false);
     }
 
     void Update()
     {
-        /*
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            particulas.SetActive(true);
-        }*/
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
         {
@@ -106,7 +104,7 @@ public class Instancia3 : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    Debug.Log(highlight.gameObject);
+                    //Debug.Log(highlight.gameObject);
 
                     string objetoSeleccionado = highlight.gameObject.name;
 
@@ -148,6 +146,12 @@ public class Instancia3 : MonoBehaviour
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
 
+                        case "ObjSeleccion7":
+                            objeto7.SetActive(true);
+
+                            selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            break;
+
 
                         case "ObjFinal1":
                             objeto1.SetActive(false);
@@ -181,6 +185,12 @@ public class Instancia3 : MonoBehaviour
 
                         case "ObjFinal6":
                             objeto6.SetActive(false);
+
+                            selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            break;
+
+                        case "ObjFinal7":
+                            objeto7.SetActive(false);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
