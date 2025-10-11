@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Instancia5 : MonoBehaviour
 {
@@ -8,13 +9,20 @@ public class Instancia5 : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    //private bool estaEnAreaDeElecciones = false;
+    private bool estaEnAreaDeElecciones = false;
 
-    [Header("Cuadros")]
-    // Pantallas que tendran animacion luego
-    [SerializeField] public GameObject cuadro1;
-    [SerializeField] public GameObject cuadro2;
-    [SerializeField] public GameObject cuadro3;
+    [Header("Cuadros tirados")]
+    [SerializeField] public GameObject cuadrosTirados;
+
+    [Header("Cuadros En Mano")]
+    [SerializeField] public GameObject cuadroMano1;
+    [SerializeField] public GameObject cuadroMano2;
+    [SerializeField] public GameObject cuadroMano3;
+
+    [Header("Cuadros Colgando")]
+    [SerializeField] public GameObject cuadroColgando1;
+    [SerializeField] public GameObject cuadroColgando2;
+    [SerializeField] public GameObject cuadroColgando3;
 
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
@@ -29,6 +37,97 @@ public class Instancia5 : MonoBehaviour
 
     void Update()
     {
-        
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
+        {
+            // Highlight
+            if (highlight != null)
+            {
+                highlight.gameObject.GetComponent<Outline>().enabled = false;
+                highlight = null;
+            }
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
+            {
+                highlight = raycastHit.transform;
+                if (highlight.CompareTag("Seleccionable") && highlight != selection)
+                {
+                    if (highlight.gameObject.GetComponent<Outline>() != null)
+                    {
+                        highlight.gameObject.GetComponent<Outline>().enabled = true;
+                    }
+                    else
+                    {
+                        Outline outline = highlight.gameObject.AddComponent<Outline>();
+                        outline.enabled = true;
+                        highlight.gameObject.GetComponent<Outline>().OutlineColor = Color.yellow;
+                        highlight.gameObject.GetComponent<Outline>().OutlineWidth = 7.0f;
+                    }
+                }
+                else
+                {
+                    highlight = null;
+                }
+            }
+
+            // Selection
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (highlight)
+                {
+                    if (selection != null)
+                    {
+                        selection.gameObject.GetComponent<Outline>().enabled = false;
+                    }
+                    selection = raycastHit.transform;
+                    selection.gameObject.GetComponent<Outline>().enabled = true;
+
+                    Debug.Log(highlight.gameObject);
+
+                    string objetoSeleccionado = highlight.gameObject.name;
+
+                    /*
+                    switch (objetoSeleccionado)
+                    {
+                        case "BotonPortal1":
+                            objeto1.SetActive(true);
+                            objeto2.SetActive(false);
+                            objeto3.SetActive(false);
+
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                            animBoton1.SetTrigger("pulsarBoton");
+                            break;
+
+                        default:
+                            Debug.Log("Objeto no reconocido");
+                            break;
+                    }*/
+
+                    highlight = null;
+                }
+                else
+                {
+                    if (selection)
+                    {
+                        selection.gameObject.GetComponent<Outline>().enabled = false;
+                        selection = null;
+                    }
+                }
+            }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
+        {
+            estaEnAreaDeElecciones = true;
+            //particulas.SetActive(true);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            estaEnAreaDeElecciones = false;
+        }
     }
 }
