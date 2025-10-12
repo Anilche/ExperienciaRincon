@@ -32,43 +32,43 @@ EXTERNAL GetFase()
 }
 
 === F0 ===
-//Inicio
-Bienvenido
+//Inicio - Cuando esta todo vacio
+Comencemos con la personalización. Vení seguime, te va a gustar, vas a ver unos lindos portales.
+Todo arranca por el suelo que pisás… ¿Cómo querés que te reciba este lugar?
 ~ SetFaseActual(1)
 -> END
 
 === F1 ===
-//Instancia 1
-Todo arranca por el suelo que pisás… ¿Cómo querés que te reciba este lugar?
+//Instancia 1 - Si intentas hablar durante la instancia
+Elegí entre las 3 opciones que tenés. ¿Cuál preferís?
 -> END
 
 === F2 ===
-//Instancia 1 - Fin
-fase2 - continuar
-Ahora levantá la mirada. Lo que te rodea también importa. Colores, texturas, formas… todo influye en cómo te sentís. Vamos a terminar de darle vida a este espacio.
+//Instancia 1 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
+¡Muy buena elección! Me gusta. 
+Ahora levantá la mirada. Lo que te rodea también es importante. Los colores, las texturas, las formas… todo influye en cómo te sentís. Terminemos de darle vida a este espacio.
 ~ SetFaseActual(1)
 -> END
 
 === F3 ===
 //Instancia 2
-Ahora levantá la mirada. Lo que te rodea también importa. Colores, texturas, formas… todo influye en cómo te sentís. Vamos a terminar de darle vida a este espacio.
+¿Lindas pantallas no? Acercate a la botonera y elegí lo que más te guste.
 -> END
 
 === F4 ===
-//Instancia 2 - Fin
-fase4 - continuar
+//Instancia 2 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
+Esoooo, me gusta me gusta. Yo hubiera elegido lo mismo jajaja. Vení seguime, esto te va a interesar bastante.
 ~ SetFaseActual(1)
 -> END
 
 === F5 ===
-//Rino se dirige al centro
-Así está mejor, ¿no? Este lugar empieza a parecerte familiar. Y eso es porque ya tiene algo tuyo. Vamos al próximo paso.
+//Instancia 3 - Antes del desbloqueo - Rino se dirige a la instancia 3 y el jugador debe interactuar antes de que se desbloquee
+Acá vamos a poner algunos objetos que te gustaría tener a la vista. Cosas tuyas. Cosas que te acompañen. Elegí lo que querés que viva en esta estantería.
 ~ SetFaseActual(1)
 -> END
 
 === F6 ===
 //Instancia 3
-INSTANCIA 3
 Acá podés dejar eso que querés tener a la vista. Cosas tuyas. Cosas que te acompañan, aunque no hablen. Elegí lo que querés que viva en esta estantería.
 -> END
 

@@ -40,6 +40,12 @@ public class OutlineSelection : MonoBehaviour
     [Header("Tablero y Base")]
     [SerializeField] public GameObject tableroYBase;
 
+    [Header("Spotlights")]
+    [SerializeField] public GameObject spotlightBase;
+    [SerializeField] public GameObject spotlightPortal1;
+    [SerializeField] public GameObject spotlightPortal2;
+    [SerializeField] public GameObject spotlightPortal3;
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -55,6 +61,10 @@ public class OutlineSelection : MonoBehaviour
         portal3.SetActive(false);
 
         tableroYBase.SetActive(false);
+        spotlightBase.SetActive(false);
+        spotlightPortal1.SetActive(false);
+        spotlightPortal2.SetActive(false);
+        spotlightPortal3.SetActive(false);
     }
 
     void Update()
@@ -70,6 +80,10 @@ public class OutlineSelection : MonoBehaviour
             portal3.SetActive(true);
 
             tableroYBase.SetActive(true);
+            spotlightBase.SetActive(true);
+            spotlightPortal1.SetActive(true);
+            spotlightPortal2.SetActive(true);
+            spotlightPortal3.SetActive(true);
 
         }
 
