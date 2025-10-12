@@ -37,8 +37,8 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public GameObject niebla;
     [SerializeField] private Animator animControllerNiebla;
 
-    [Header("Tablero")]
-    [SerializeField] public GameObject tablero1;
+    [Header("Tablero y Base")]
+    [SerializeField] public GameObject tableroYBase;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -53,6 +53,8 @@ public class OutlineSelection : MonoBehaviour
         portal1.SetActive(false); // desactiva el portal 1 al inicio
         portal2.SetActive(false);
         portal3.SetActive(false);
+
+        tableroYBase.SetActive(false);
     }
 
     void Update()
@@ -60,12 +62,14 @@ public class OutlineSelection : MonoBehaviour
         
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-            particulas.SetActive(true);
+            //particulas.SetActive(true);
 
             //Animacion de entrada de los portales
             portal1.SetActive(true); //Activa el portal 1
             portal2.SetActive(true);
             portal3.SetActive(true);
+
+            tableroYBase.SetActive(true);
 
         }
 
@@ -157,7 +161,7 @@ public class OutlineSelection : MonoBehaviour
                                 portal2.SetActive(false);
                                 portal3.SetActive(false); //Cambiar a animaciones de salida después
 
-                                particulas.SetActive(false);
+                                //particulas.SetActive(false);
                                 animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
 
                                 animBotonConfirmar.SetTrigger("pulsarBoton");
