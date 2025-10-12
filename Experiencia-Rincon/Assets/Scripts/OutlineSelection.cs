@@ -49,6 +49,10 @@ public class OutlineSelection : MonoBehaviour
         objeto2.SetActive(false); // Desactiva el objeto 2 al inicio
         objeto3.SetActive(false); // Desactiva el objeto 3 al inicio
         particulas.SetActive(false); // Desactiva las particulas al inicio
+
+        portal1.SetActive(false); // desactiva el portal 1 al inicio
+        portal2.SetActive(false);
+        portal3.SetActive(false);
     }
 
     void Update()
@@ -57,7 +61,12 @@ public class OutlineSelection : MonoBehaviour
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             particulas.SetActive(true);
+
             //Animacion de entrada de los portales
+            portal1.SetActive(true); //Activa el portal 1
+            portal2.SetActive(true);
+            portal3.SetActive(true);
+
         }
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
