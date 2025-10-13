@@ -29,6 +29,18 @@ EXTERNAL GetFase()
     -> F9
 - fase == 10:
     -> F10   
+- fase == 11:
+    -> F11  
+- fase == 12:
+    -> F12
+- fase == 13:
+    -> F13
+- fase == 14:
+    -> F14  
+- fase == 15:
+    -> FB1  
+- fase == 16:
+    -> FB2 
 }
 
 === F0 ===
@@ -68,28 +80,71 @@ Acá vamos a poner algunos objetos que te gustaría tener a la vista. Cosas tuya
 -> END
 
 === F6 ===
-//Instancia 3
-Acá podés dejar eso que querés tener a la vista. Cosas tuyas. Cosas que te acompañan, aunque no hablen. Elegí lo que querés que viva en esta estantería.
+//Instancia 3 - Si intentas hablar durante la instancia
+Está difícil elegir acá, ¿no? Son bastantes objetos, ni yo me decido jaja.
 -> END
 
 === F7 ===
-//Instancia 3 - Fin
-fase7 - continuar
+//Instancia 3 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
+Tremendo, lo dejaste impecable. De a poco ya va tomando forma este lugar. Continuemos. Podríamos escuchar unas canciones mientras, ¿No? Así se nos hace más divertido. Seguime.
 ~ SetFaseActual(1)
 -> END
 
 === F8 ===
-//Instancia 4 
-Elegí la musica que quieras y volvé a hablarme cuando encuentres la que mas te guste, igualmente podés cambiarla en cualquier momento de la experiencia
+//Instancia 4 - Antes del desbloqueo
+Elegí la música que quieras y volvé a hablarme cuando encuentres la que más te guste, igualmente podés cambiarla en cualquier momento.
 -> END
 
 === F9 ===
 //Instancia 4 - Fin
-fase9 - continuar
+Uuuuh, que buena canción. Si que tenés buen gusto eeeh.
+Continuemos, esto me está gustando cada vez más y empieza a parecerse más a vos. Ya se está sintiendo tuyo.
 ~ SetFaseActual(1)
 -> END
 
 === F10 ===
-//Instancia 5
-Instancia5
+//Instancia 5 - Antes del desbloqueo
+Todavía no terminamos de arreglar el lugar eh, hay cosas que ni vimos. 
+Uh, había preparado unos cuadros pero al parecer se cayeron, ¿podrías ir a colgarlos de nuevo?
+-> END
+
+=== F11 ===
+//Instancia 5 - Después de colgar los marcos - Si se puede que aparezca automático mejor
+¿Qué opinas? Te preparé estos cuadros porque pensé que te podría llegar a gustar tenerlos a la vista.
+Ya casi terminas de armar tu rincón, me encanta cómo nos está quedando. Vení que hay una cosita más que te va a interesar.
+~ SetFaseActual(1)
+-> END
+
+=== F12 ===
+//Instancia 6/7 - Antes del desbloqueo
+//Sonido de hambre
+Che tengo un poco de hambre, y supongo que vos también. ¿Te parece si terminamos con algo rico?
+-> END
+
+=== F13 ===
+//Instancia 6/7 Después de dar confirmación - Si se puede que aparezca automático mejor
+Ufff que ricooo. Me encantó. Bueno, ya llegamos al final, poco a poco fuiste personalizando ese lugar gris y oscuro en el que empezó todo. Me encanta cómo lo dejaste, te armaste un hermoso rincón.
+Antes de salir de tu rincón, me gustaría que hagas un pequeño recorrido extra para apreciarlo más a detalle y que sepas que este lugar es tuyo para siempre. Cuando termines de recorrerlo, vení que te llevo a un lugar que nos queda pendiente.
+~ SetFaseActual(1)
+-> END
+
+=== F14 ===
+//Después de recorrer el resultado final
+Pasá sin miedo, yo te voy a estar esperando del otro lado.
+~ SetFaseActual(1)
+//Fase 15 usarla para que se mueva a traves de la puerta
+-> END
+
+=== FB1 ===
+//RINCON BONUS
+Pasá y sentate cómodo, vamos a ver una peli. Dejame que te traigo unos pochoclos.
+-> END
+
+=== FB2 ===
+//RINCON BONUS
+Me alegra que hayas encontrado tu propio rincón.
+Espero que hayas disfrutado de este proceso tanto como yo disfruté acompañarte.
+Mi trabajo termina acá, pero todavía tengo una sorpresa más para vos.
+¿Te acordás de la caja en la que llegó la llave de tu Rincón?
+Llegó el momento de abrirla y disfrutar de los últimos detalles de tu rincón.
 -> END

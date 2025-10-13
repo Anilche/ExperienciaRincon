@@ -29,6 +29,9 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public GameObject portal1;
     [SerializeField] public GameObject portal2;
     [SerializeField] public GameObject portal3;
+    [SerializeField] public Animator animPortal1;
+    [SerializeField] public Animator animPortal2;
+    [SerializeField] public Animator animPortal3;
 
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
@@ -45,6 +48,9 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public GameObject spotlightPortal1;
     [SerializeField] public GameObject spotlightPortal2;
     [SerializeField] public GameObject spotlightPortal3;
+    [SerializeField] public Animator animSpotlight1;
+    [SerializeField] public Animator animSpotlight2;
+    [SerializeField] public Animator animSpotlight3;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -170,15 +176,18 @@ public class OutlineSelection : MonoBehaviour
                                 GameManager.GetInstance().SetFaseActual(1);
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
                                 
-                                //Animaciones de salida de los portales
-                                portal1.SetActive(false);
-                                portal2.SetActive(false);
-                                portal3.SetActive(false); //Cambiar a animaciones de salida después
-
                                 //particulas.SetActive(false);
-                                animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
-
+                                
                                 animBotonConfirmar.SetTrigger("pulsarBoton");
+
+                                //Animaciones de salida de niebla, portales y spotlights
+                                animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
+                                animSpotlight1.SetBool("AnimacionSalida", true);
+                                animSpotlight2.SetBool("AnimacionSalida", true);
+                                animSpotlight3.SetBool("AnimacionSalida", true);
+                                animPortal1.SetBool("AnimacionSalida", true);
+                                animPortal2.SetBool("AnimacionSalida", true);
+                                animPortal3.SetBool("AnimacionSalida", true);
                                 break;
 
                             default:

@@ -39,6 +39,11 @@ public class Instancia3 : MonoBehaviour
     [Header("Objeto Terminar Elecciones")]
     // Pantallas que tendran animacion luego
     [SerializeField] public GameObject objTerminar;
+    
+    [Header("Animator Terminar Elecciones")]
+    // Pantallas que tendran animacion luego
+    [SerializeField] public Animator animObjTerminar;
+
 
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
@@ -198,7 +203,7 @@ public class Instancia3 : MonoBehaviour
 
                         case "TerminarElecciones":
                             GameManager.GetInstance().SetFaseActual(1); // Cambia la fase
-                            objTerminar.SetActive(false);
+                            animObjTerminar.SetBool("BotonPresionado", true);
                             estanteriaSeleccion.SetActive(false);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
