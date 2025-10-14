@@ -11,6 +11,13 @@ public class OutlineSelection : MonoBehaviour
 
     private bool estaEnAreaDeElecciones = false;
 
+    [Header("Opciones de Pisos")]
+    // Los objetos que se pueden elegir
+    [SerializeField] public GameObject piso1;
+    [SerializeField] public GameObject piso2;
+    [SerializeField] public GameObject piso3;
+    [SerializeField] public GameObject pisoBase;
+
     [Header("Opciones de Objetos")]
     // Los objetos que se pueden elegir
     [SerializeField] public GameObject objeto1;
@@ -75,7 +82,6 @@ public class OutlineSelection : MonoBehaviour
 
     void Update()
     {
-        
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             //particulas.SetActive(true);
@@ -90,7 +96,6 @@ public class OutlineSelection : MonoBehaviour
             spotlightPortal1.SetActive(true);
             spotlightPortal2.SetActive(true);
             spotlightPortal3.SetActive(true);
-
         }
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
@@ -148,6 +153,11 @@ public class OutlineSelection : MonoBehaviour
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(false);
 
+                                piso1.SetActive(true);
+                                piso2.SetActive(false);
+                                piso3.SetActive(false);
+                                pisoBase.SetActive(false);
+
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton1.SetTrigger("pulsarBoton");
 
@@ -158,6 +168,11 @@ public class OutlineSelection : MonoBehaviour
                                 objeto2.SetActive(true);
                                 objeto3.SetActive(false);
 
+                                piso1.SetActive(false);
+                                piso2.SetActive(true);
+                                piso3.SetActive(false);
+                                pisoBase.SetActive(false);
+
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton2.SetTrigger("pulsarBoton");
                                 break;
@@ -166,6 +181,11 @@ public class OutlineSelection : MonoBehaviour
                                 objeto1.SetActive(false);
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(true);
+
+                                piso1.SetActive(false);
+                                piso2.SetActive(false);
+                                piso3.SetActive(true);
+                                pisoBase.SetActive(false);
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton3.SetTrigger("pulsarBoton");
@@ -188,6 +208,9 @@ public class OutlineSelection : MonoBehaviour
                                 animPortal1.SetBool("AnimacionSalida", true);
                                 animPortal2.SetBool("AnimacionSalida", true);
                                 animPortal3.SetBool("AnimacionSalida", true);
+
+                                //Añadir corutina para desactivar los objetos luego de que termine su animación
+                                //Añadir sonido de confirmacion
                                 break;
 
                             default:
@@ -224,4 +247,6 @@ public class OutlineSelection : MonoBehaviour
             estaEnAreaDeElecciones = false;
         }
     }
+
+
 }
