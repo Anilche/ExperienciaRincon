@@ -18,11 +18,14 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public GameObject piso3;
     [SerializeField] public GameObject pisoBase;
 
-    [Header("Opciones de Objetos")]
+    [Header("Objetos Extras")]
     // Los objetos que se pueden elegir
     [SerializeField] public GameObject objeto1;
     [SerializeField] public GameObject objeto2;
     [SerializeField] public GameObject objeto3;
+    //[SerializeField] public Animator animObj1;
+    //[SerializeField] public Animator animObj2;
+    //[SerializeField] public Animator animObj3;
 
     [Header("Animator Botones")]
     // Los objetos que se pueden elegir
