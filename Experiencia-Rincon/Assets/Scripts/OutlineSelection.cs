@@ -23,9 +23,6 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public GameObject objeto1;
     [SerializeField] public GameObject objeto2;
     [SerializeField] public GameObject objeto3;
-    //[SerializeField] public Animator animObj1;
-    //[SerializeField] public Animator animObj2;
-    //[SerializeField] public Animator animObj3;
 
     [Header("Animator Botones")]
     // Los objetos que se pueden elegir
@@ -199,22 +196,16 @@ public class OutlineSelection : MonoBehaviour
                                 GameManager.GetInstance().SetFaseActual(1);
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
                                 
-                                //particulas.SetActive(false);
+                                particulas.SetActive(false);
                                 
                                 animBotonConfirmar.SetTrigger("pulsarBoton");
 
                                 //Animaciones de salida de niebla, portales y spotlights
                                 animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
-                                animSpotlight1.SetBool("AnimacionSalida", true);
-                                animSpotlight2.SetBool("AnimacionSalida", true);
-                                animSpotlight3.SetBool("AnimacionSalida", true);
-                                animPortal1.SetBool("AnimacionSalida", true);
-                                animPortal2.SetBool("AnimacionSalida", true);
-                                animPortal3.SetBool("AnimacionSalida", true);
-
-                                //Añadir corutina para desactivar los objetos luego de que termine su animación
+                                StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Inicia la corutina para desactivar los objetos luego de la animacion
+                                
                                 //Añadir sonido de confirmacion
-                                break;
+                            break;
 
                             default:
                                 Debug.Log("Objeto no reconocido");
@@ -251,5 +242,22 @@ public class OutlineSelection : MonoBehaviour
         }
     }
 
-
+    IEnumerator DesactivarObjetosDespuesDeAnimacion()
+    {
+        animSpotlight1.SetBool("AnimacionSalida", true);
+        animSpotlight2.SetBool("AnimacionSalida", true);
+        animSpotlight3.SetBool("AnimacionSalida", true);
+        animPortal1.SetBool("AnimacionSalida", true);
+        animPortal2.SetBool("AnimacionSalida", true);
+        animPortal3.SetBool("AnimacionSalida", true);
+        yield return new WaitForSeconds(3f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
+        // Desactiva los objetos despues de la animacion
+        portal1.SetActive(false);
+        portal2.SetActive(false);
+        portal3.SetActive(false);
+        spotlightPortal1.SetActive(false);
+        spotlightPortal2.SetActive(false);
+        spotlightPortal3.SetActive(false);
+        niebla.SetActive(false);
+    }
 }

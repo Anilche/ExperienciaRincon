@@ -29,6 +29,9 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public GameObject pantalla1;
     [SerializeField] public GameObject pantalla2;
     [SerializeField] public GameObject pantalla3;
+    [SerializeField] public Animator animPantalla1;
+    [SerializeField] public Animator animPantalla2;
+    [SerializeField] public Animator animPantalla3;
 
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
@@ -44,6 +47,9 @@ public class OutlineSelectionE2 : MonoBehaviour
         objeto1.SetActive(false); // Desactiva el objeto 1 al inicio
         objeto2.SetActive(false); // Desactiva el objeto 2 al inicio
         objeto3.SetActive(false); // Desactiva el objeto 3 al inicio
+        pantalla1.SetActive(false); // Desactiva la pantalla 1 al inicio
+        pantalla2.SetActive(false); // Desactiva la pantalla 2 al inicio
+        pantalla3.SetActive(false); // Desactiva la pantalla 3 al inicio
         particulas.SetActive(false); // Desactiva las particulas al inicio
     }
 
@@ -141,14 +147,12 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 GameManager.GetInstance().SetFaseActual(1);
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
 
-                                //Animaciones de salida de los portales/tablero
-                                pantalla1.SetActive(false);
-                                pantalla2.SetActive(false);
-                                pantalla3.SetActive(false);
-
                                 particulas.SetActive(false);
 
                                 animBotonConfirmar.SetTrigger("pulsarBoton");
+
+                                //Animaciones de salida de los portales/tablero
+                                StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
                                 break;
 
                             default:
@@ -184,5 +188,17 @@ public class OutlineSelectionE2 : MonoBehaviour
         {
             estaEnAreaDeElecciones = false;
         }
+    }
+
+    IEnumerator DesactivarObjetosDespuesDeAnimacion()
+    {
+        animPantalla1.SetBool("AnimacionSalida", true);
+        animPantalla2.SetBool("AnimacionSalida", true);
+        animPantalla3.SetBool("AnimacionSalida", true);
+        yield return new WaitForSeconds(3f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
+        // Desactiva los objetos despues de la animacion
+        pantalla1.SetActive(false);
+        pantalla2.SetActive(false);
+        pantalla3.SetActive(false);
     }
 }
