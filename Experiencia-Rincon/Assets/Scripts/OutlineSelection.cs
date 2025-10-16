@@ -47,6 +47,9 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public GameObject niebla;
     [SerializeField] private Animator animControllerNiebla;
 
+    [Header("Parpados")]
+    [SerializeField] public GameObject parpados;
+
     [Header("Tablero y Base")]
     [SerializeField] public GameObject tableroYBase;
 
@@ -153,14 +156,15 @@ public class OutlineSelection : MonoBehaviour
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(false);
 
-                                piso1.SetActive(true);
+                                /*piso1.SetActive(true);
                                 piso2.SetActive(false);
                                 piso3.SetActive(false);
-                                pisoBase.SetActive(false);
+                                pisoBase.SetActive(false);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton1.SetTrigger("pulsarBoton");
 
+                                StartCoroutine(parpadearYCambiar(piso1)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
                                 break;
 
                             case "BotonPortal2":
@@ -168,13 +172,15 @@ public class OutlineSelection : MonoBehaviour
                                 objeto2.SetActive(true);
                                 objeto3.SetActive(false);
 
-                                piso1.SetActive(false);
+                                /*piso1.SetActive(false);
                                 piso2.SetActive(true);
                                 piso3.SetActive(false);
-                                pisoBase.SetActive(false);
+                                pisoBase.SetActive(false);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton2.SetTrigger("pulsarBoton");
+
+                                StartCoroutine(parpadearYCambiar(piso2)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
                                 break;
 
                             case "BotonPortal3":
@@ -182,13 +188,15 @@ public class OutlineSelection : MonoBehaviour
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(true);
 
-                                piso1.SetActive(false);
+                                /*piso1.SetActive(false);
                                 piso2.SetActive(false);
                                 piso3.SetActive(true);
-                                pisoBase.SetActive(false);
+                                pisoBase.SetActive(false);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton3.SetTrigger("pulsarBoton");
+
+                                StartCoroutine(parpadearYCambiar(piso3)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
                                 break;
 
                             case "BotonConfirmar":
@@ -205,7 +213,7 @@ public class OutlineSelection : MonoBehaviour
                                 StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Inicia la corutina para desactivar los objetos luego de la animacion
                                 
                                 //Añadir sonido de confirmacion
-                            break;
+                                break;
 
                             default:
                                 Debug.Log("Objeto no reconocido");
@@ -240,6 +248,18 @@ public class OutlineSelection : MonoBehaviour
         {
             estaEnAreaDeElecciones = false;
         }
+    }
+
+    IEnumerator parpadearYCambiar(GameObject pisoAElegir) { 
+        parpados.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        piso1.SetActive(false);
+        piso2.SetActive(false);
+        piso3.SetActive(false);
+        pisoAElegir.SetActive(true);
+        pisoBase.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        parpados.SetActive(false);
     }
 
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
