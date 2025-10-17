@@ -26,6 +26,7 @@ public class Instancia3 : MonoBehaviour
 
     [Header("Estanteria Seleccion")]
     [SerializeField] public GameObject estanteriaSeleccion;
+    [SerializeField] public Animator animEstanteriaSeleccion;
 
     [Header("Objetos Estanteria Seleccion")]
     [SerializeField] public GameObject objetoSeleccion1;
@@ -37,11 +38,9 @@ public class Instancia3 : MonoBehaviour
     [SerializeField] public GameObject objetoSeleccion7;
 
     [Header("Objeto Terminar Elecciones")]
-    // Pantallas que tendran animacion luego
     [SerializeField] public GameObject objTerminar;
     
     [Header("Animator Terminar Elecciones")]
-    // Pantallas que tendran animacion luego
     [SerializeField] public Animator animObjTerminar;
 
 
@@ -60,13 +59,24 @@ public class Instancia3 : MonoBehaviour
         objeto5.SetActive(false);
         objeto6.SetActive(false);
         objeto7.SetActive(false);
+
+        //estanteriaSeleccion.SetActive(false);
+        //estanteriasFinales.SetActive(false);
     }
 
     void Update()
     {
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
+        {
+            //particulas.SetActive(true);
+
+            //estanteriaSeleccion.SetActive(true);
+            //estanteriasFinales.SetActive(true);
+        }
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
         {
+
             // Highlight
             if (highlight != null)
             {
@@ -204,7 +214,8 @@ public class Instancia3 : MonoBehaviour
                         case "TerminarElecciones":
                             GameManager.GetInstance().SetFaseActual(1); // Cambia la fase
                             animObjTerminar.SetBool("BotonPresionado", true);
-                            estanteriaSeleccion.SetActive(false);
+                            //animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
+                            StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
@@ -233,7 +244,14 @@ public class Instancia3 : MonoBehaviour
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             estaEnAreaDeElecciones = true;
-            //particulas.SetActive(true);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
+        {
+            estaEnAreaDeElecciones = true;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -242,5 +260,13 @@ public class Instancia3 : MonoBehaviour
         {
             estaEnAreaDeElecciones = false;
         }
+    }
+
+    IEnumerator DesactivarObjetosDespuesDeAnimacion()
+    {
+        animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
+        yield return new WaitForSeconds(3f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
+        // Desactiva los objetos despues de la animacion
+        estanteriaSeleccion.SetActive(false);
     }
 }

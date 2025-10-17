@@ -9,17 +9,25 @@ public class TriggerInstancia3 : MonoBehaviour
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
     [Header("Objetos a Mostrarse")]
-    [SerializeField] public GameObject Objeto1;
-    //[SerializeField] public GameObject Objeto2;
+    [SerializeField] public GameObject Objetos;
+    [SerializeField] public GameObject estanteriaSeleccion;
+    [SerializeField] public GameObject estanteriaFinal;
 
-    //Ver tema animaciones
+
+    private void Awake()
+    {
+        Objetos.SetActive(false); // Desactiva los objetos al inicio
+        estanteriaSeleccion.SetActive(false); // Desactiva la estanteria al inicio
+        estanteriaFinal.SetActive(false); // Activa la estanteria final al inicio
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-            Objeto1.SetActive(true);
-            //Objeto2.SetActive(true);
+            Objetos.SetActive(true);
+            estanteriaSeleccion.SetActive(true);
+            estanteriaFinal.SetActive(true);
             Debug.Log("Spawneando objetos");
         }
     }

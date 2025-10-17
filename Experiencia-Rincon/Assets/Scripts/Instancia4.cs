@@ -14,20 +14,21 @@ public class Instancia4 : MonoBehaviour
     [Header("AudioSource")]
     public AudioSource Source;
 
+    [Header("Mesa")]
+    [SerializeField] public GameObject mesa;
+
     [Header("Audio Clips Musicas")]
-    // Los objetos que se pueden elegir
+    // Los audios que se pueden elegir
     [SerializeField] public AudioClip audioClipMusica1;
     [SerializeField] public AudioClip audioClipMusica2;
     [SerializeField] public AudioClip audioClipMusica3;
     
     [Header("Portadas")]
-    // Pantallas que tendran animacion luego
     [SerializeField] public GameObject portada1;
     [SerializeField] public GameObject portada2;
     [SerializeField] public GameObject portada3;
 
     [Header("Discos")]
-    // Pantallas que tendran animacion luego
     [SerializeField] public GameObject disco1;
     [SerializeField] public GameObject disco2;
     [SerializeField] public GameObject disco3;
@@ -51,6 +52,7 @@ public class Instancia4 : MonoBehaviour
         disco1.SetActive(false);
         disco2.SetActive(false);
         disco3.SetActive(false);
+        mesa.SetActive(false);
     }
 
     void Update()
@@ -58,7 +60,8 @@ public class Instancia4 : MonoBehaviour
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-            particulas.SetActive(true);
+            //particulas.SetActive(true);
+            mesa.SetActive(true);
         }
 
         if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeElecciones)
@@ -189,7 +192,7 @@ public class Instancia4 : MonoBehaviour
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             estaEnAreaDeElecciones = true;
-            particulas.SetActive(true);
+            //particulas.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)

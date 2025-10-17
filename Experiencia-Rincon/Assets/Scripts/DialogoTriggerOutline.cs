@@ -117,6 +117,15 @@ public class DialogoTriggerOutline : MonoBehaviour
             botonInteraccion.SetActive(true);
         }
     }
+    
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jugadorEnRango = true;
+            botonInteraccion.SetActive(true);
+        }
+    }
 
     // Al salir del trigger se setea que el jugador no está en rango
     private void OnTriggerExit(Collider other)
