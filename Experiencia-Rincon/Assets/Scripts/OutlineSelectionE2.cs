@@ -179,7 +179,14 @@ public class OutlineSelectionE2 : MonoBehaviour
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             estaEnAreaDeElecciones = true;
-            //particulas.SetActive(true);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
+        {
+            estaEnAreaDeElecciones = true;
         }
     }
     private void OnTriggerExit(Collider other)

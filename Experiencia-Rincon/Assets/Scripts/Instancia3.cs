@@ -265,7 +265,7 @@ public class Instancia3 : MonoBehaviour
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
     {
         animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
-        yield return new WaitForSeconds(3f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
+        yield return new WaitForSeconds(6f); // Espera X segundos (ajustar el tiempo a la duracion de la animacion)
         // Desactiva los objetos despues de la animacion
         estanteriaSeleccion.SetActive(false);
     }

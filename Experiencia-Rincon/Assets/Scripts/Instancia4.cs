@@ -192,9 +192,17 @@ public class Instancia4 : MonoBehaviour
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             estaEnAreaDeElecciones = true;
-            //particulas.SetActive(true);
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
+        {
+            estaEnAreaDeElecciones = true;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -207,7 +215,7 @@ public class Instancia4 : MonoBehaviour
     {
         if (GameManager.GetInstance().faseAhora == 8)
         {
-            animatorTocadiscos.SetBool("TapaCerrada", true);
+            animatorTocadiscos.SetBool("CerrarTapa", true);
             GameManager.GetInstance().faseAhora += 1; // Cambia la fase a 9 para que no se vuelva a llamar esta función
         }
     }

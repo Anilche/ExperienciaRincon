@@ -53,9 +53,9 @@ public class MovimientoRino : MonoBehaviour
                 indicePuntoActual = 1;
                 break;
 
-            /*case 5:
+            case 8:
                 indicePuntoActual = 2;
-                break;*/
+                break;
 
             default:
                 // Lógica para otros puntos
