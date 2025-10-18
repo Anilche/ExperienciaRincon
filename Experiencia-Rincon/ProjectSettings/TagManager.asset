@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Seleccionable
+  - Audio
   layers:
   - Default
   - TransparentFX

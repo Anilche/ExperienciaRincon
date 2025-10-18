@@ -42,8 +42,11 @@ public class OutlineSelectionE2 : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    AudioManager audioManager;
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         objeto1.SetActive(false); // Desactiva el objeto 1 al inicio
         objeto2.SetActive(false); // Desactiva el objeto 2 al inicio
         objeto3.SetActive(false); // Desactiva el objeto 3 al inicio
@@ -121,7 +124,10 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 objeto3.SetActive(false);
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
+
                                 animBoton1.SetTrigger("pulsarBoton");
+
+                                audioManager.PlaySFX(audioManager.seleccionSFX);
                                 break;
 
                             case "BotonPortal2":
@@ -130,7 +136,10 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 objeto3.SetActive(false);
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
+
                                 animBoton2.SetTrigger("pulsarBoton");
+
+                                audioManager.PlaySFX(audioManager.seleccionSFX);
                                 break;
 
                             case "BotonPortal3":
@@ -139,7 +148,10 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 objeto3.SetActive(true);
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
+
                                 animBoton3.SetTrigger("pulsarBoton");
+
+                                audioManager.PlaySFX(audioManager.seleccionSFX);
                                 break;
 
                             case "BotonConfirmar":
@@ -148,6 +160,8 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
 
                                 particulas.SetActive(false);
+
+                                audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
 
                                 animBotonConfirmar.SetTrigger("pulsarBoton");
 

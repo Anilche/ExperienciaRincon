@@ -50,6 +50,13 @@ public class Instancia3 : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    AudioManager audioManager;
+
+    void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         objeto1.SetActive(false);
@@ -128,11 +135,15 @@ public class Instancia3 : MonoBehaviour
                         case "ObjSeleccion1":
                             objeto1.SetActive(true);
 
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
 
                         case "ObjSeleccion2":
                             objeto2.SetActive(true);
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
@@ -140,11 +151,15 @@ public class Instancia3 : MonoBehaviour
                         case "ObjSeleccion3":
                             objeto3.SetActive(true);
 
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
 
                         case "ObjSeleccion4":
                             objeto4.SetActive(true);
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
@@ -152,17 +167,23 @@ public class Instancia3 : MonoBehaviour
                         case "ObjSeleccion5":
                             objeto5.SetActive(true);
 
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
 
                         case "ObjSeleccion6":
                             objeto6.SetActive(true);
 
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
 
                         case "ObjSeleccion7":
                             objeto7.SetActive(true);
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
@@ -171,11 +192,15 @@ public class Instancia3 : MonoBehaviour
                         case "ObjFinal1":
                             objeto1.SetActive(false);
 
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
 
                         case "ObjFinal2":
                             objeto2.SetActive(false);
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
@@ -183,11 +208,15 @@ public class Instancia3 : MonoBehaviour
                         case "ObjFinal3":
                             objeto3.SetActive(false);
 
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
 
                         case "ObjFinal4":
                             objeto4.SetActive(false);
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
@@ -195,11 +224,15 @@ public class Instancia3 : MonoBehaviour
                         case "ObjFinal5":
                             objeto5.SetActive(false);
 
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
 
                         case "ObjFinal6":
                             objeto6.SetActive(false);
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
@@ -207,14 +240,18 @@ public class Instancia3 : MonoBehaviour
                         case "ObjFinal7":
                             objeto7.SetActive(false);
 
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;
-
 
                         case "TerminarElecciones":
                             GameManager.GetInstance().SetFaseActual(1); // Cambia la fase
                             animObjTerminar.SetBool("BotonPresionado", true);
                             //animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
+
+                            audioManager.PlaySFX(audioManager.confirmacionSFX);
+
                             StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar

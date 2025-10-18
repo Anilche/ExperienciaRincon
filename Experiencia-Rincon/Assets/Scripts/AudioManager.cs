@@ -16,4 +16,18 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = backgroundMusic;
         musicSource.Play();
     }
+
+    public void ChangeMusic(AudioClip clip)
+    {
+        musicSource.Stop();
+        Debug.Log("Changing music to: " + clip.name);
+        musicSource.clip = clip;
+        musicSource.volume = 0.05f;
+        musicSource.Play();
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip);
+    }
 }

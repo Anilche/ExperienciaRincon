@@ -42,12 +42,17 @@ public class Instancia4 : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
-    private void Start()
-    {
-        Source.Stop();
-    }
+    [Header("Audios")]
+    [SerializeField] AudioClip audioClipSeleccion1;
+    [SerializeField] AudioClip audioClipSeleccion2;
+    [SerializeField] AudioClip audioClipSeleccion3;
+
+    AudioManager audioManager;
+
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         particulas.SetActive(false); // Desactiva las particulas al inicio
         disco1.SetActive(false);
         disco2.SetActive(false);
@@ -118,11 +123,9 @@ public class Instancia4 : MonoBehaviour
                             disco1.SetActive(true);
                             disco2.SetActive(false);
                             disco3.SetActive(false);
-                            
+
                             //Cambio de musica
-                            Source.Stop();
-                            Source.clip = audioClipMusica1;
-                            Source.Play();
+                            audioManager.ChangeMusic(audioClipSeleccion1);
 
                             particulas.SetActive(false);
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
@@ -137,10 +140,12 @@ public class Instancia4 : MonoBehaviour
                             disco2.SetActive(true);
                             disco3.SetActive(false);
 
-                            //Cambio de musica
+                            /*Cambio de musica
                             Source.Stop();
                             Source.clip = audioClipMusica2;
-                            Source.Play();
+                            Source.Play();*/
+
+                            audioManager.ChangeMusic(audioClipSeleccion2);
 
                             particulas.SetActive(false);
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
@@ -156,9 +161,7 @@ public class Instancia4 : MonoBehaviour
                             disco3.SetActive(true);
 
                             //Cambio de musica
-                            Source.Stop();
-                            Source.clip = audioClipMusica3;
-                            Source.Play();
+                            audioManager.ChangeMusic(audioClipSeleccion3);
 
                             particulas.SetActive(false);
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar

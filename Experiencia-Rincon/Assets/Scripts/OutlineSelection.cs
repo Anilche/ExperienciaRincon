@@ -65,8 +65,12 @@ public class OutlineSelection : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    AudioManager audioManager;
+
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         objeto1.SetActive(false); // Desactiva el objeto 1 al inicio
         objeto2.SetActive(false); // Desactiva el objeto 2 al inicio
         objeto3.SetActive(false); // Desactiva el objeto 3 al inicio
@@ -152,39 +156,31 @@ public class OutlineSelection : MonoBehaviour
                         switch (objetoSeleccionado)
                         {
                             case "BotonPortal1":
-                                /*objeto1.SetActive(true);
-                                objeto2.SetActive(false);
-                                objeto3.SetActive(false);
-
-                                piso1.SetActive(true);
-                                piso2.SetActive(false);
-                                piso3.SetActive(false);
-                                pisoBase.SetActive(false);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton1.SetTrigger("pulsarBoton");
+
+                                audioManager.PlaySFX(audioManager.seleccionSFX);
 
                                 StartCoroutine(parpadearYCambiar(piso1, objeto1)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
                                 break;
 
                             case "BotonPortal2":
-                                /*objeto1.SetActive(false);
-                                objeto2.SetActive(true);
-                                objeto3.SetActive(false);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton2.SetTrigger("pulsarBoton");
+
+                                audioManager.PlaySFX(audioManager.seleccionSFX);
 
                                 StartCoroutine(parpadearYCambiar(piso2, objeto2)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
                                 break;
 
                             case "BotonPortal3":
-                                /*objeto1.SetActive(false);
-                                objeto2.SetActive(false);
-                                objeto3.SetActive(true);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
                                 animBoton3.SetTrigger("pulsarBoton");
+                                
+                                audioManager.PlaySFX(audioManager.seleccionSFX);
 
                                 StartCoroutine(parpadearYCambiar(piso3, objeto3)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
                                 break;
@@ -198,11 +194,11 @@ public class OutlineSelection : MonoBehaviour
                                 
                                 animBotonConfirmar.SetTrigger("pulsarBoton");
 
+                                audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
+
                                 //Animaciones de salida de niebla, portales y spotlights
                                 animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
                                 StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Inicia la corutina para desactivar los objetos luego de la animacion
-                                
-                                //Añadir sonido de confirmacion
                                 break;
 
                             default:
