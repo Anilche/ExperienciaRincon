@@ -36,8 +36,8 @@ public class OutlineSelectionE2 : MonoBehaviour
     [Header("Indicador particulas")]
     [SerializeField] public GameObject particulas;
 
-    [Header("Tablero")]
-    [SerializeField] public GameObject tablero2;
+    [Header("Animator Tablero")]
+    [SerializeField] public Animator animTablero;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -163,7 +163,7 @@ public class OutlineSelectionE2 : MonoBehaviour
 
                                 audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
 
-                                animBotonConfirmar.SetTrigger("pulsarBoton");
+                                
 
                                 //Animaciones de salida de los portales/tablero
                                 StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
@@ -213,9 +213,11 @@ public class OutlineSelectionE2 : MonoBehaviour
 
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
     {
+        animBotonConfirmar.SetTrigger("pulsarBoton");
         animPantalla1.SetBool("AnimacionSalida", true);
         animPantalla2.SetBool("AnimacionSalida", true);
         animPantalla3.SetBool("AnimacionSalida", true);
+        animTablero.SetBool("SalidaTablero", true);
         yield return new WaitForSeconds(3f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
         // Desactiva los objetos despues de la animacion
         pantalla1.SetActive(false);
