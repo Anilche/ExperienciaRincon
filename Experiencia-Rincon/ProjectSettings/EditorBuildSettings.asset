@@ -10,7 +10,10 @@ EditorBuildSettings:
     guid: ed0e7cd381daaae4fbbc76fce727a924
   - enabled: 1
     path: Assets/Scenes/Afuera.unity
-    guid: 8a00701242d712a4c8b05450058f5841
+    guid: dbcb69234b8937a46b1b05fbfb43a38d
+  - enabled: 1
+    path: Assets/Scenes/VideoEntrada.unity
+    guid: a76ea87a8e5e918458e7b13c0a8f3a8c
   - enabled: 1
     path: Assets/Scenes/Experiencia.unity
     guid: 99c9720ab356a0642a771bea13969a05

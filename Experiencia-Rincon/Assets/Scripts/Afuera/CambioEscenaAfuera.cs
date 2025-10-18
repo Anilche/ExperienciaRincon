@@ -33,7 +33,7 @@ public class CambioEscenaAfuera : MonoBehaviour
     public void FadeOut()
     {
         StartCoroutine(FadeCanvasGroup(canvasGroupOut, canvasGroupOut.alpha, 0, fadeDuration));
-        SceneManager.LoadScene("Experiencia");
+        SceneManager.LoadScene("VideoEntrada");
     }
 
     private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)
