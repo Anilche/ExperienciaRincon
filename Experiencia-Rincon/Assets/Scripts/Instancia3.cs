@@ -247,7 +247,7 @@ public class Instancia3 : MonoBehaviour
 
                         case "TerminarElecciones":
                             GameManager.GetInstance().SetFaseActual(1); // Cambia la fase
-                            animObjTerminar.SetBool("BotonPresionado", true);
+                            
                             //animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
 
                             audioManager.PlaySFX(audioManager.confirmacionSFX);
@@ -301,6 +301,8 @@ public class Instancia3 : MonoBehaviour
 
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
     {
+        animObjTerminar.SetBool("BotonPresionado", true);
+        yield return new WaitForSeconds(1.5f);
         animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
         yield return new WaitForSeconds(6f); // Espera X segundos (ajustar el tiempo a la duracion de la animacion)
         // Desactiva los objetos despues de la animacion

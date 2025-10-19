@@ -21,8 +21,12 @@ public class DialogoManager : MonoBehaviour
 
     private bool puedeAvanzar = false; // Indica si el jugador puede avanzar en el diálogo
 
+    AudioManager audioManager;
+
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         // Verifica si ya existe una instancia de DialogoManager
         if (instance != null)
         {
@@ -70,6 +74,17 @@ public class DialogoManager : MonoBehaviour
         {
             return GameManager.GetInstance().faseAhora;
         });
+
+        estaHistoria.BindExternalFunction("ReproducirDialogo", (int numeroLineaDeVoz) =>
+        {
+            audioManager.PlayDialogo(numeroLineaDeVoz);
+        });
+    }
+
+    private void DejarDeRegistrarFuncionesExternas()
+    {
+        estaHistoria.UnbindExternalFunction("SetFaseActual");
+        estaHistoria.UnbindExternalFunction("GetFase");
     }
 
     public void EntrarModoDialogo(TextAsset inkJSON)
@@ -99,6 +114,8 @@ public class DialogoManager : MonoBehaviour
         textoDialogo.text = ""; // Limpia el texto del diálogo
 
         //Debug.Log("Finalizando diálogo");
+
+        //DejarDeRegistrarFuncionesExternas(); // Deja de registrar las funciones externas
 
         MovimientoRino.GetInstance().moverRino();
     }
