@@ -17,6 +17,21 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public GameObject objeto2;
     [SerializeField] public GameObject objeto3;
 
+    [Header("Opciones de Paredes")]
+    // Los objetos que se pueden elegir
+    [SerializeField] public GameObject paredBase;
+    [SerializeField] public GameObject pared1;
+    [SerializeField] public GameObject pared2;
+    [SerializeField] public GameObject pared3;
+
+
+    [Header("Opciones de Techos")]
+    // Los objetos que se pueden elegir
+    [SerializeField] public GameObject techoBase;
+    [SerializeField] public GameObject techo1;
+    [SerializeField] public GameObject techo2;
+    [SerializeField] public GameObject techo3;
+
     [Header("Animator Botones")]
     // Los objetos que se pueden elegir
     [SerializeField] public Animator animBoton1;
@@ -123,6 +138,16 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(false);
 
+                                paredBase.SetActive(false);
+                                pared1.SetActive(true);
+                                pared2.SetActive(false);
+                                pared3.SetActive(false);
+
+                                techoBase.SetActive(false);
+                                techo1.SetActive(true);
+                                techo2.SetActive(false);
+                                techo3.SetActive(false);
+
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
 
                                 animBoton1.SetTrigger("pulsarBoton");
@@ -135,6 +160,16 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 objeto2.SetActive(true);
                                 objeto3.SetActive(false);
 
+                                paredBase.SetActive(false);
+                                pared1.SetActive(false);
+                                pared2.SetActive(true);
+                                pared3.SetActive(false);
+
+                                techoBase.SetActive(false);
+                                techo1.SetActive(false);
+                                techo2.SetActive(true);
+                                techo3.SetActive(false);
+
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
 
                                 animBoton2.SetTrigger("pulsarBoton");
@@ -146,6 +181,16 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 objeto1.SetActive(false);
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(true);
+
+                                paredBase.SetActive(false);
+                                pared1.SetActive(false);
+                                pared2.SetActive(false);
+                                pared3.SetActive(true);
+
+                                techoBase.SetActive(false);
+                                techo1.SetActive(false);
+                                techo2.SetActive(false);
+                                techo3.SetActive(true);
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
 
