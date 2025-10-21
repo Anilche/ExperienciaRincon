@@ -244,7 +244,8 @@ public class OutlineSelection : MonoBehaviour
         }
     }
 
-    IEnumerator parpadearYCambiar(GameObject pisoAElegir, GameObject objetosExtras) { 
+    IEnumerator parpadearYCambiar(GameObject pisoAElegir, GameObject objetosExtras) {
+        parpados.SetActive(false);
         parpados.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         piso1.SetActive(false);

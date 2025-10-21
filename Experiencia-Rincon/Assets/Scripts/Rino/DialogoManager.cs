@@ -79,6 +79,11 @@ public class DialogoManager : MonoBehaviour
         {
             audioManager.PlayDialogo(numeroLineaDeVoz);
         });
+
+        estaHistoria.BindExternalFunction("OcultarBotonesInst1", () =>
+        {
+            GameManager.GetInstance().OcultarBotonesInst1();
+        });
     }
 
     private void DejarDeRegistrarFuncionesExternas()

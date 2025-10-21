@@ -1,6 +1,7 @@
 EXTERNAL SetFaseActual(nuevaFase)
 EXTERNAL GetFase()
 EXTERNAL ReproducirDialogo(numeroLineaDeVoz)
+EXTERNAL OcultarBotonesInst1()
 
 -> elegir_fase
 
@@ -65,6 +66,7 @@ Elegí entre las 3 opciones que tenés. ¿Cuál preferís?
 ¡Muy buena elección! Me gusta.
 ~ ReproducirDialogo(4)
 Ahora levantá la mirada. Lo que te rodea también es importante. Los colores, las texturas, las formas… todo influye en cómo te sentís. Terminemos de darle vida a este espacio.
+~ OcultarBotonesInst1()
 ~ SetFaseActual(1)
 -> END
 

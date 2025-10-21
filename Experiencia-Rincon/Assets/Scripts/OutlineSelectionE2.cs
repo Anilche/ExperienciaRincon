@@ -54,6 +54,19 @@ public class OutlineSelectionE2 : MonoBehaviour
     [Header("Animator Tablero")]
     [SerializeField] public Animator animTablero;
 
+    [Header("Transiciones")]
+    [SerializeField] public GameObject transPelotas;
+    [SerializeField] public GameObject transMedialunas;
+    [SerializeField] public GameObject transMonedas;
+
+    [Header("Spotlights")]
+    [SerializeField] public GameObject spotlightPantalla1;
+    [SerializeField] public GameObject spotlightPantalla2;
+    [SerializeField] public GameObject spotlightPantalla3;
+    [SerializeField] public Animator animSpotlight1;
+    [SerializeField] public Animator animSpotlight2;
+    [SerializeField] public Animator animSpotlight3;
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -69,6 +82,10 @@ public class OutlineSelectionE2 : MonoBehaviour
         pantalla2.SetActive(false); // Desactiva la pantalla 2 al inicio
         pantalla3.SetActive(false); // Desactiva la pantalla 3 al inicio
         particulas.SetActive(false); // Desactiva las particulas al inicio
+
+        spotlightPantalla1.SetActive(false);
+        spotlightPantalla2.SetActive(false);
+        spotlightPantalla3.SetActive(false);
     }
 
     void Update()
@@ -81,6 +98,10 @@ public class OutlineSelectionE2 : MonoBehaviour
             pantalla1.SetActive(true);
             pantalla2.SetActive(true);
             pantalla3.SetActive(true);
+
+            spotlightPantalla1.SetActive(true);
+            spotlightPantalla2.SetActive(true);
+            spotlightPantalla3.SetActive(true);
         }
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
@@ -133,8 +154,8 @@ public class OutlineSelectionE2 : MonoBehaviour
 
                         switch (objetoSeleccionado)
                         {
-                            case "BotonPortal1":
-                                objeto1.SetActive(true);
+                            case "BotonPantalla1":
+                                /*objeto1.SetActive(true);
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(false);
 
@@ -146,17 +167,19 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 techoBase.SetActive(false);
                                 techo1.SetActive(true);
                                 techo2.SetActive(false);
-                                techo3.SetActive(false);
+                                techo3.SetActive(false);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
 
                                 animBoton1.SetTrigger("pulsarBoton");
 
                                 audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                                StartCoroutine(transicionYCambiar(transPelotas, pared1, techo1, objeto1));
                                 break;
 
-                            case "BotonPortal2":
-                                objeto1.SetActive(false);
+                            case "BotonPantalla2":
+                                /*objeto1.SetActive(false);
                                 objeto2.SetActive(true);
                                 objeto3.SetActive(false);
 
@@ -168,17 +191,19 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 techoBase.SetActive(false);
                                 techo1.SetActive(false);
                                 techo2.SetActive(true);
-                                techo3.SetActive(false);
+                                techo3.SetActive(false);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
 
                                 animBoton2.SetTrigger("pulsarBoton");
 
                                 audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                                StartCoroutine(transicionYCambiar(transMedialunas, pared2, techo2, objeto2));
                                 break;
 
-                            case "BotonPortal3":
-                                objeto1.SetActive(false);
+                            case "BotonPantalla3":
+                                /*objeto1.SetActive(false);
                                 objeto2.SetActive(false);
                                 objeto3.SetActive(true);
 
@@ -190,13 +215,15 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 techoBase.SetActive(false);
                                 techo1.SetActive(false);
                                 techo2.SetActive(false);
-                                techo3.SetActive(true);
+                                techo3.SetActive(true);*/
 
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
 
                                 animBoton3.SetTrigger("pulsarBoton");
 
                                 audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                                StartCoroutine(transicionYCambiar(transMonedas, pared3, techo3, objeto3));
                                 break;
 
                             case "BotonConfirmar":
@@ -256,12 +283,40 @@ public class OutlineSelectionE2 : MonoBehaviour
         }
     }
 
+    IEnumerator transicionYCambiar(GameObject transicion, GameObject paredAElegir, GameObject techoAElegir, GameObject objetosExtras)
+    {
+        transicion.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        techo1.SetActive(false);
+        techo2.SetActive(false);
+        techo3.SetActive(false);
+        techoAElegir.SetActive(true);
+        techoBase.SetActive(false);
+
+        pared1.SetActive(false);
+        pared2.SetActive(false);
+        pared3.SetActive(false);
+        paredAElegir.SetActive(true);
+        paredBase.SetActive(false);
+
+        objeto1.SetActive(false);
+        objeto2.SetActive(false);
+        objeto3.SetActive(false);
+        objetosExtras.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+        transicion.SetActive(false);
+    }
+
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
     {
         animBotonConfirmar.SetTrigger("pulsarBoton");
         animPantalla1.SetBool("AnimacionSalida", true);
         animPantalla2.SetBool("AnimacionSalida", true);
         animPantalla3.SetBool("AnimacionSalida", true);
+        animSpotlight1.SetBool("AnimacionSalida", true);
+        animSpotlight2.SetBool("AnimacionSalida", true);
+        animSpotlight3.SetBool("AnimacionSalida", true);
         animTablero.SetBool("SalidaTablero", true);
         yield return new WaitForSeconds(3f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
         // Desactiva los objetos despues de la animacion

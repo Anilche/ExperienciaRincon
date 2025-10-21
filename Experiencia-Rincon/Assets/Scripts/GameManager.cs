@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     public bool eleccionActiva;
 
+    [SerializeField] public GameObject botonesInst1;
+    [SerializeField] public GameObject botonesInst2;
+
     private static GameManager instance;
 
     [SerializeField] private CinemachineVirtualCamera vcamJugador;
@@ -44,6 +47,12 @@ public class GameManager : MonoBehaviour
     {
         GameManager.GetInstance().faseAhora = GameManager.GetInstance().faseAhora + nuevaFase; // Actualiza la fase actual del jugador modificando la variable ubicada en GameManager
         Debug.Log("Fase actual: " + GameManager.GetInstance().faseAhora);
+    }
+
+    public void OcultarBotonesInst1()
+    {
+        botonesInst1.SetActive(false);
+        botonesInst2.SetActive(true);
     }
 
     private IEnumerator DesbloqueoSalaBonus()
