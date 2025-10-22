@@ -37,6 +37,9 @@ public class Instancia3 : MonoBehaviour
     [SerializeField] public GameObject objetoSeleccion6;
     [SerializeField] public GameObject objetoSeleccion7;
 
+    [Header("Objetos Extras Confirmacion")]
+    [SerializeField] public GameObject objsExtras;
+
     [Header("Objeto Terminar Elecciones")]
     [SerializeField] public GameObject objTerminar;
     
@@ -66,6 +69,7 @@ public class Instancia3 : MonoBehaviour
         objeto5.SetActive(false);
         objeto6.SetActive(false);
         objeto7.SetActive(false);
+        objsExtras.SetActive(false);
 
         //estanteriaSeleccion.SetActive(false);
         //estanteriasFinales.SetActive(false);
@@ -251,6 +255,8 @@ public class Instancia3 : MonoBehaviour
                             //animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
 
                             audioManager.PlaySFX(audioManager.confirmacionSFX);
+
+                            objsExtras.SetActive(true);
 
                             StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
 

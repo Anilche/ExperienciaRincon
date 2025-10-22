@@ -33,6 +33,11 @@ public class Instancia4 : MonoBehaviour
     [SerializeField] public GameObject disco2;
     [SerializeField] public GameObject disco3;
 
+    [Header("Objetos Extras")]
+    [SerializeField] public GameObject objsSpinetta;
+    [SerializeField] public GameObject objsTheW;
+    [SerializeField] public GameObject objsJBIS;
+
     [Header("Animaciones")]
     [SerializeField] public Animator animatorTocadiscos;
 
@@ -58,6 +63,10 @@ public class Instancia4 : MonoBehaviour
         disco2.SetActive(false);
         disco3.SetActive(false);
         mesa.SetActive(false);
+
+        objsSpinetta.SetActive(false);
+        objsTheW.SetActive(false);
+        objsJBIS.SetActive(false);
     }
 
     void Update()
@@ -124,6 +133,10 @@ public class Instancia4 : MonoBehaviour
                             disco2.SetActive(false);
                             disco3.SetActive(false);
 
+                            objsSpinetta.SetActive(true);
+                            objsTheW.SetActive(false);
+                            objsJBIS.SetActive(false);
+
                             //Cambio de musica
                             audioManager.ChangeMusic(audioClipSeleccion1);
 
@@ -140,10 +153,9 @@ public class Instancia4 : MonoBehaviour
                             disco2.SetActive(true);
                             disco3.SetActive(false);
 
-                            /*Cambio de musica
-                            Source.Stop();
-                            Source.clip = audioClipMusica2;
-                            Source.Play();*/
+                            objsSpinetta.SetActive(false);
+                            objsTheW.SetActive(true);
+                            objsJBIS.SetActive(false);
 
                             audioManager.ChangeMusic(audioClipSeleccion2);
 
@@ -159,6 +171,10 @@ public class Instancia4 : MonoBehaviour
                             disco1.SetActive(false);
                             disco2.SetActive(false);
                             disco3.SetActive(true);
+
+                            objsSpinetta.SetActive(false);
+                            objsTheW.SetActive(false);
+                            objsJBIS.SetActive(true);
 
                             //Cambio de musica
                             audioManager.ChangeMusic(audioClipSeleccion3);
