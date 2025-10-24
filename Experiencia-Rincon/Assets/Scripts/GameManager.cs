@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [SerializeField] private CinemachineVirtualCamera vcamJugador;
-    [SerializeField] private CinemachineVirtualCamera vcamHabilitarBonus;
+    //[SerializeField] private CinemachineVirtualCamera vcamHabilitarBonus;
 
     private void Update()
     {
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         botonesInst1.SetActive(false);
         botonesInst2.SetActive(true);
     }
-
+    /*
     private IEnumerator DesbloqueoSalaBonus()
     {
         SetFaseActual(1); // Aumenta la fase actual en 1 al desbloquear la sala bonus (para que deje de llamarse la función en cada frame)
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         ActivarCamaraJugador(); // Vuelve a activar la cámara del jugador después de la animación de desbloqueo
 
     }
-
+    
     private void ActivarCamaraJugador()
     {
         vcamJugador.Priority = 10;
@@ -81,5 +81,5 @@ public class GameManager : MonoBehaviour
     {
         vcamJugador.Priority = 0;
         vcamHabilitarBonus.Priority = 10;
-    }
+    }*/
 }
