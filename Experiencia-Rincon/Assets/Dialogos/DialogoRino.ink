@@ -64,17 +64,21 @@ Elegí entre las 3 opciones que tenés. ¿Cuál preferís?
 //Instancia 1 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
 ~ ReproducirDialogo(3)
 ¡Muy buena elección! Me gusta.
-~ ReproducirDialogo(4)
-Ahora levantá la mirada. Lo que te rodea también es importante. Los colores, las texturas, las formas… todo influye en cómo te sentís. Terminemos de darle vida a este espacio.
-~ OcultarBotonesInst1()
+//~ ReproducirDialogo(4)
+No te olvides de mirar un poco tus alrededores al ir armando tu rincón para familiarizarte con el lugar y volvé a hablarme cuando estés listo para continuar.
 ~ SetFaseActual(1)
 -> END
 
 === F3 ===
-//Instancia 2
-~ ReproducirDialogo(5)
-¿Lindas pantallas no? Acercate a la botonera y elegí lo que más te guste.
+//Instancia 1 - Fin - Al hablar de nuevo
+~ OcultarBotonesInst1()
+//~ ReproducirDialogo(5)
+Ahora levantá la mirada. Lo que te rodea también es importante. Los colores, las texturas, las formas… todo influye en cómo te sentís. Terminemos de darle vida a este espacio.
+~ SetFaseActual(1)
 -> END
+
+
+//Cambiar a partir de aca
 
 === F4 ===
 //Instancia 2 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
