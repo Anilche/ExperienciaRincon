@@ -8,7 +8,10 @@ public class Interaccion1Natural : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    //private bool estaEnAreaDeInteraccion = false;
+    private bool estaEnAreaDeInteraccion = false;
+
+    private string tagSeleccionable = "Seleccionable";
+
     private int contadorManzanasRecogidas = 0;
 
     [Header("Manzanas")]
@@ -52,8 +55,15 @@ public class Interaccion1Natural : MonoBehaviour
             manzana6.GetComponent<Rigidbody>().isKinematic = false;
         }
             
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeInteraccion)
         {
+            manzana1.tag = tagSeleccionable;
+            manzana2.tag = tagSeleccionable;
+            manzana3.tag = tagSeleccionable;
+            manzana4.tag = tagSeleccionable;
+            manzana5.tag = tagSeleccionable;
+            manzana6.tag = tagSeleccionable;
+
             // Highlight
             if (highlight != null)
             {
@@ -206,7 +216,7 @@ public class Interaccion1Natural : MonoBehaviour
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
-            //estaEnAreaDeInteraccion = true;
+            estaEnAreaDeInteraccion = true;
             Debug.Log("Jugador en area de interaccion natural");
         }
     }
@@ -215,7 +225,7 @@ public class Interaccion1Natural : MonoBehaviour
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
-            //estaEnAreaDeInteraccion = true;
+            estaEnAreaDeInteraccion = true;
         }
     }
 
@@ -223,7 +233,7 @@ public class Interaccion1Natural : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //estaEnAreaDeInteraccion = false;
+            estaEnAreaDeInteraccion = false;
             Debug.Log("Jugador salio del area de interaccion natural");
         }
     }
