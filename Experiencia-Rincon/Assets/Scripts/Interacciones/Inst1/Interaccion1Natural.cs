@@ -22,10 +22,14 @@ public class Interaccion1Natural : MonoBehaviour
     [SerializeField] public GameObject manzana5;
     [SerializeField] public GameObject manzana6;
 
-    [Header("Montones Manzanas Canasta")]
-    [SerializeField] public GameObject montonManzanas1;
-    [SerializeField] public GameObject montonManzanas2;
-    [SerializeField] public GameObject montonManzanas3;
+    [Header("Manzanas Canasta")]
+    [SerializeField] public GameObject manzanaCanasta1;
+    [SerializeField] public GameObject manzanaCanasta2;
+    [SerializeField] public GameObject manzanaCanasta3;
+    [SerializeField] public GameObject manzanaCanasta4;
+    [SerializeField] public GameObject manzanaCanasta5;
+    [SerializeField] public GameObject manzanaCanasta6;
+
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -41,6 +45,13 @@ public class Interaccion1Natural : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
+
+        manzanaCanasta1.SetActive(false);
+        manzanaCanasta2.SetActive(false);
+        manzanaCanasta3.SetActive(false);
+        manzanaCanasta4.SetActive(false);
+        manzanaCanasta5.SetActive(false);
+        manzanaCanasta6.SetActive(false);
     }
 
     void Update()
@@ -126,6 +137,8 @@ public class Interaccion1Natural : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             manzana1.SetActive(false);
+                            manzanaCanasta1.SetActive(true);
+
                             contadorManzanasRecogidas++;
                             Debug.Log("Manzanas recogidas: " + contadorManzanasRecogidas);
                             break;
@@ -136,6 +149,8 @@ public class Interaccion1Natural : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             manzana2.SetActive(false);
+                            manzanaCanasta2.SetActive(true);
+
                             contadorManzanasRecogidas++;
                             Debug.Log("Manzanas recogidas: " + contadorManzanasRecogidas);
                             break;
@@ -146,6 +161,8 @@ public class Interaccion1Natural : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             manzana3.SetActive(false);
+                            manzanaCanasta3.SetActive(true);
+
                             contadorManzanasRecogidas++;
                             Debug.Log("Manzanas recogidas: " + contadorManzanasRecogidas);
                             break;
@@ -156,6 +173,8 @@ public class Interaccion1Natural : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             manzana4.SetActive(false);
+                            manzanaCanasta4.SetActive(true);
+
                             contadorManzanasRecogidas++;
                             Debug.Log("Manzanas recogidas: " + contadorManzanasRecogidas);
                             break;
@@ -166,6 +185,8 @@ public class Interaccion1Natural : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             manzana5.SetActive(false);
+                            manzanaCanasta5.SetActive(true);
+
                             contadorManzanasRecogidas++;
                             Debug.Log("Manzanas recogidas: " + contadorManzanasRecogidas);
                             break;
@@ -176,6 +197,8 @@ public class Interaccion1Natural : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             manzana6.SetActive(false);
+                            manzanaCanasta6.SetActive(true);
+
                             contadorManzanasRecogidas++;
                             Debug.Log("Manzanas recogidas: " + contadorManzanasRecogidas);
                             break;
@@ -196,19 +219,6 @@ public class Interaccion1Natural : MonoBehaviour
                     }
                 }
             }
-        }
-
-        if (contadorManzanasRecogidas == 1)
-        {
-            montonManzanas1.SetActive(true);
-        }
-        if (contadorManzanasRecogidas == 3)
-        {
-            montonManzanas2.SetActive(true);
-        }
-        if (contadorManzanasRecogidas == 6)
-        {
-            montonManzanas3.SetActive(true);
         }
     }
 
