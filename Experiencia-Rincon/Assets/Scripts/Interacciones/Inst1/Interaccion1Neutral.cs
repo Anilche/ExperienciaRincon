@@ -12,6 +12,9 @@ public class Interaccion1Neutral : MonoBehaviour
     private bool estaEnAreaDeInteraccion = false;
 
     private string tagSeleccionable = "Seleccionable";
+    private string tagNoSeleccionable = "Untagged";
+
+    private bool monedaTirada = false;
 
     [Header("Moneda")]
     [SerializeField] public GameObject moneda;
@@ -40,7 +43,14 @@ public class Interaccion1Neutral : MonoBehaviour
 
         if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeInteraccion)
         {
-            moneda.tag = tagSeleccionable;
+            if (monedaTirada == false) { 
+                moneda.tag = tagSeleccionable;
+            }
+
+            if (monedaTirada == true)
+            {
+                moneda.tag = tagNoSeleccionable;
+            }
 
             // Highlight
             if (highlight != null)
@@ -103,7 +113,7 @@ public class Interaccion1Neutral : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
                             animMoneda.SetBool("TirarMoneda", true);
-
+                            monedaTirada = true;
                             break;
 
                         default:
