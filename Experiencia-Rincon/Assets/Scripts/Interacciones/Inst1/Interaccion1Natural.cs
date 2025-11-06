@@ -30,6 +30,9 @@ public class Interaccion1Natural : MonoBehaviour
     [SerializeField] public GameObject manzanaCanasta5;
     [SerializeField] public GameObject manzanaCanasta6;
 
+    [Header("Regadera y hongos")]
+    [SerializeField] public Animator animRegaderaHongos;
+    [SerializeField] public GameObject regadera;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -74,6 +77,7 @@ public class Interaccion1Natural : MonoBehaviour
             manzana4.tag = tagSeleccionable;
             manzana5.tag = tagSeleccionable;
             manzana6.tag = tagSeleccionable;
+            regadera.tag = tagSeleccionable;
 
             // Highlight
             if (highlight != null)
@@ -201,6 +205,13 @@ public class Interaccion1Natural : MonoBehaviour
 
                             contadorManzanasRecogidas++;
                             Debug.Log("Manzanas recogidas: " + contadorManzanasRecogidas);
+                            break;
+
+                        case "Regadera":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+                            animRegaderaHongos.SetBool("regarHongos", true);
                             break;
 
                         default:

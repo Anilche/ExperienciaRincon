@@ -2383,7 +2383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &63987276
 Transform:
   m_ObjectHideFlags: 0
@@ -2393,7 +2393,7 @@ Transform:
   m_GameObject: {fileID: 63987275}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000002533197}
-  m_LocalPosition: {x: -70.87, y: 0.00000047683716, z: -66.25}
+  m_LocalPosition: {x: -70.87, y: 0.00000047683716, z: -70.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8099,7 +8099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &104303115
 Transform:
   m_ObjectHideFlags: 0
@@ -8480,7 +8480,7 @@ Transform:
   m_GameObject: {fileID: 119473300}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.15, y: -0.12, z: 15.9}
+  m_LocalPosition: {x: -6.73, y: -0.12, z: 14.02}
   m_LocalScale: {x: 0.15147, y: 0.15147, z: 0.15147}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28371,6 +28371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sillon
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c1f4144038122143855e65c568f44ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2273227230858210905, guid: 9c1f4144038122143855e65c568f44ec,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -40352,6 +40357,8 @@ MonoBehaviour:
   manzanaCanasta4: {fileID: 1066297778}
   manzanaCanasta5: {fileID: 1593039527}
   manzanaCanasta6: {fileID: 2027054026}
+  animRegaderaHongos: {fileID: 652783681}
+  regadera: {fileID: 1212053046}
   distanciaMaxima: 3
   numFaseNecesaria: 2
 --- !u!65 &632483829
@@ -58557,7 +58564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1055316866
 Transform:
   m_ObjectHideFlags: 0
@@ -64073,7 +64080,7 @@ MonoBehaviour:
   objTerminar: {fileID: 6534816765334297499}
   animObjTerminar: {fileID: 919132148439650374}
   particulas: {fileID: 755295474}
-  numFaseNecesaria: 6
+  numFaseNecesaria: 7
 --- !u!1 &1241710593
 GameObject:
   m_ObjectHideFlags: 0
@@ -65826,17 +65833,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dc2e505bd186d35408a3c050e7d63f47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.929001
+      value: 13.77
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc2e505bd186d35408a3c050e7d63f47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.815077
+      value: -21.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc2e505bd186d35408a3c050e7d63f47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.32
+      value: -55.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc2e505bd186d35408a3c050e7d63f47,
         type: 3}
@@ -66748,13 +66755,13 @@ MonoBehaviour:
   backgroundMusic: {fileID: 8300000, guid: 19d8b3e958f98884ba5c8a18ca7b8557, type: 3}
   seleccionSFX: {fileID: 8300000, guid: ee3d3906f105f24479eeef596ae2aa96, type: 3}
   confirmacionSFX: {fileID: 8300000, guid: 9e9e8c6ba10645d43a36dfd57ba72a78, type: 3}
-  f0: {fileID: 8300000, guid: 58712a0bb281655428dede55c2b17e56, type: 3}
-  f02: {fileID: 8300000, guid: 34efd35f0c763da488c5ada1f47c6aff, type: 3}
-  f1: {fileID: 8300000, guid: ddebe4a5dc2f43945bb38dff95652080, type: 3}
-  f2: {fileID: 8300000, guid: b3d2f572021e15f4ea61c7f31b23889e, type: 3}
-  f22: {fileID: 8300000, guid: 3f1c7a4b8b0fea14da145f0edd139bc2, type: 3}
-  f3: {fileID: 8300000, guid: 1c0d3a2414efab6478559c5965f780f6, type: 3}
-  f4: {fileID: 8300000, guid: 2bd3a1704711fe64e98a13d118342a26, type: 3}
+  f0: {fileID: 8300000, guid: a0d06a4d707a19a4ea9c272986f2bdd6, type: 3}
+  f02: {fileID: 8300000, guid: 49c5f8a952666194e8fb23466abbdd42, type: 3}
+  f1: {fileID: 8300000, guid: a2f8eb5fb96d1804aa7197b8accc7b62, type: 3}
+  f2: {fileID: 8300000, guid: 5a640e6e3ebc84345ab64b32b8dca6ff, type: 3}
+  f22: {fileID: 8300000, guid: 3711f26b748d93e45b8f85e54201fd55, type: 3}
+  f3: {fileID: 8300000, guid: 52aaae978493179489c334d03ecb5921, type: 3}
+  f4: {fileID: 8300000, guid: ab68f2ba00c4bd64cacf7cca9ea12050, type: 3}
   f5: {fileID: 8300000, guid: b4bf6696a18064e4ca42e3acc2845c28, type: 3}
   f6: {fileID: 8300000, guid: 06e9b536094efd64e8b6f13ff6d39e04, type: 3}
   f7: {fileID: 8300000, guid: 47fb4da6a39985a488845733eac7f9b2, type: 3}
@@ -70352,8 +70359,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399293708}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.199997, y: -0.6199999, z: 0}
+  m_LocalRotation: {x: -0, y: -0.3068671, z: -0, w: 0.95175236}
+  m_LocalPosition: {x: -26.61, y: -0.6199999, z: 13.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -70361,7 +70368,7 @@ Transform:
   - {fileID: 6908836337430398484}
   - {fileID: 85961822}
   m_Father: {fileID: 63987276}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -35.741, z: 0}
 --- !u!95 &1399293710
 Animator:
   serializedVersion: 5
@@ -72121,7 +72128,7 @@ MonoBehaviour:
   animSpotlight1: {fileID: 2035666081}
   animSpotlight2: {fileID: 29161678}
   animSpotlight3: {fileID: 1982040266}
-  numFaseNecesaria: 3
+  numFaseNecesaria: 4
 --- !u!1 &1431242147
 GameObject:
   m_ObjectHideFlags: 0
@@ -72284,7 +72291,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 37, y: 5, z: 1}
+  m_Size: {x: 30, y: 5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1433742312
 MonoBehaviour:
@@ -72298,7 +72305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc9d0b13df19b94883825bcffd80de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numFaseNecesaria: 5
+  numFaseNecesaria: 6
   Objetos: {fileID: 1684016871}
   estanteriaSeleccion: {fileID: 1399293708}
   estanteriaFinal: {fileID: 1772891258}
@@ -79291,7 +79298,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.03, y: 0.03, z: -0.04}
+  m_Size: {x: 0.03, y: 0.03, z: 0.04}
   m_Center: {x: 0, y: 0.01, z: -0.01}
 --- !u!4 &1700609163 stripped
 Transform:
