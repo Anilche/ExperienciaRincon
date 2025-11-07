@@ -112,7 +112,8 @@ public class Interaccion1Neutral : MonoBehaviour
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
-                            animMoneda.SetBool("TirarMoneda", true);
+                            //animMoneda.SetBool("TirarMoneda", true);
+                            StartCoroutine(animacionYSonido());
                             monedaTirada = true;
                             break;
 
@@ -159,5 +160,12 @@ public class Interaccion1Neutral : MonoBehaviour
             estaEnAreaDeInteraccion = false;
             Debug.Log("Jugador salio del area de interaccion natural");
         }
+    }
+
+    IEnumerator animacionYSonido()
+    {
+        animMoneda.SetBool("TirarMoneda", true);
+        yield return new WaitForSeconds(0.4f);
+        audioManager.PlaySFX(audioManager.sonidoMoneda);
     }
 }

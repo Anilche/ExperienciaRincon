@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.8
   contrast:
     m_OverrideState: 1
     m_Value: 3.64
@@ -148,7 +148,7 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 36
+    m_Value: 30
   tint:
     m_OverrideState: 0
     m_Value: 0
@@ -167,9 +167,9 @@ MonoBehaviour:
   components:
   - {fileID: 4369852148047315471}
   - {fileID: -4244169115128503122}
+  - {fileID: -1990501156604637255}
   - {fileID: -6873810796192954943}
   - {fileID: 5050585738836445027}
-  - {fileID: -1990501156604637255}
   - {fileID: -3149849645757618984}
   - {fileID: -1178478907521678756}
 --- !u!114 &4369852148047315471
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   lift:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.97493726, z: 0.97493726, w: 0}

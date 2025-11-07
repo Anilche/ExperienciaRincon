@@ -62,6 +62,9 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public Animator animSpotlight2;
     [SerializeField] public Animator animSpotlight3;
 
+    /*[Header("Luz General")]
+    [SerializeField] public GameObject dlInicio;*/
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 

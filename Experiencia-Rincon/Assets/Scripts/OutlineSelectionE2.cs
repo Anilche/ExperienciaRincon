@@ -246,6 +246,7 @@ public class OutlineSelectionE2 : MonoBehaviour
 
     IEnumerator transicionYCambiar(GameObject transicion, GameObject paredAElegir, GameObject techoAElegir, GameObject objetosExtras)
     {
+        transicion.SetActive(false);
         transicion.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         techo1.SetActive(false);
