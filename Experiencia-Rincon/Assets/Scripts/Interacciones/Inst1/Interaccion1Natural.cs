@@ -69,7 +69,7 @@ public class Interaccion1Natural : MonoBehaviour
             manzana6.GetComponent<Rigidbody>().isKinematic = false;
         }
             
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeInteraccion)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
         {
             manzana1.tag = tagSeleccionable;
             manzana2.tag = tagSeleccionable;

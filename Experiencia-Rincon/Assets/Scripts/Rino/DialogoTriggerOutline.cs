@@ -29,12 +29,6 @@ public class DialogoTriggerOutline : MonoBehaviour
         // Si el jugador está en rango y no hay un diálogo activo ni el Rino está en movimiento
         if (jugadorEnRango && !DialogoManager.GetInstance().dialogoActivo && !MovimientoRino.GetInstance().enMovimiento)
         {
-            /* Si el jugador presiona la tecla E, se activa el diálogo
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                DialogoManager.GetInstance().EntrarModoDialogo(inkJSON);
-            }*/
-
 
             // Highlight
             if (highlight != null)

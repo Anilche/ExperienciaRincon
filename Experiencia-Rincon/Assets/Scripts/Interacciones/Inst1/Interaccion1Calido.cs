@@ -388,11 +388,11 @@ public class Interaccion1Calido : MonoBehaviour
         {
             montonRamitas1.SetActive(true);
         }
-        if (contadorRamitasRecogidas == 10)
+        if (contadorRamitasRecogidas == 8)
         {
             montonRamitas2.SetActive(true);
         }
-        if (contadorRamitasRecogidas == 20)
+        if (contadorRamitasRecogidas == 15)
         {
             montonRamitas3.SetActive(true);
         }

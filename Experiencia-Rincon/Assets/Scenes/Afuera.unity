@@ -328,8 +328,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faseAhora: 0
   eleccionActiva: 0
+  botonesInst1: {fileID: 0}
+  botonesInst2: {fileID: 0}
   vcamJugador: {fileID: 0}
-  vcamHabilitarBonus: {fileID: 0}
 --- !u!1 &35013375
 GameObject:
   m_ObjectHideFlags: 0
@@ -14937,6 +14938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _movementSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819436869084022926, guid: 318eb5c02520d044ba2db275b95681a4,
+        type: 3}
+      propertyPath: _mouseSensitivity
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
