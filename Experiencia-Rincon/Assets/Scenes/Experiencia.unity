@@ -2045,27 +2045,27 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1024736968}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2087ac663b919194b9dcf8e6a91b5132,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.65
+      value: -25.31221
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2087ac663b919194b9dcf8e6a91b5132,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.72
+      value: 7.439
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2087ac663b919194b9dcf8e6a91b5132,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.91
+      value: -5.6720324
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2087ac663b919194b9dcf8e6a91b5132,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7295505
+      value: 0.9540884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2087ac663b919194b9dcf8e6a91b5132,
         type: 3}
@@ -2075,7 +2075,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2087ac663b919194b9dcf8e6a91b5132,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.683927
+      value: 0.29952535
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2087ac663b919194b9dcf8e6a91b5132,
         type: 3}
@@ -2179,6 +2179,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.059750874, y: 0.01885387, z: 0.012944341}
   m_Center: {x: 0.06919732, y: 0.004064165, z: -0.013085998}
+--- !u!4 &79744742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2087ac663b919194b9dcf8e6a91b5132,
+    type: 3}
+  m_PrefabInstance: {fileID: 79744737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85265550
 GameObject:
   m_ObjectHideFlags: 0
@@ -30075,7 +30081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &415073182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55832,6 +55838,7 @@ Transform:
   - {fileID: 543450652757649276}
   - {fileID: 543450651604158919}
   - {fileID: 1012599672}
+  - {fileID: 79744742}
   m_Father: {fileID: 1924342893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026717686
@@ -110927,4 +110934,3 @@ SceneRoots:
   - {fileID: 1797095339}
   - {fileID: 2074030348}
   - {fileID: 1429657869}
-  - {fileID: 79744737}
