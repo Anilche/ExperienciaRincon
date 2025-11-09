@@ -40,8 +40,8 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public Animator animPortal2;
     [SerializeField] public Animator animPortal3;
 
-    [Header("Indicador particulas")]
-    [SerializeField] public GameObject particulas;
+    [Header("Box Volume Inicio")]
+    [SerializeField] public GameObject postproInicio;
 
     [Header("Niebla")]
     [SerializeField] public GameObject niebla;
@@ -62,9 +62,6 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public Animator animSpotlight2;
     [SerializeField] public Animator animSpotlight3;
 
-    /*[Header("Luz General")]
-    [SerializeField] public GameObject dlInicio;*/
-
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -77,7 +74,6 @@ public class OutlineSelection : MonoBehaviour
         objeto1.SetActive(false); // Desactiva el objeto 1 al inicio
         objeto2.SetActive(false); // Desactiva el objeto 2 al inicio
         objeto3.SetActive(false); // Desactiva el objeto 3 al inicio
-        particulas.SetActive(false); // Desactiva las particulas al inicio
 
         portal1.SetActive(false); // desactiva el portal 1 al inicio
         portal2.SetActive(false);
@@ -94,7 +90,6 @@ public class OutlineSelection : MonoBehaviour
     {
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-            //particulas.SetActive(true);
 
             //Animacion de entrada de los portales
             portal1.SetActive(true); //Activa el portal 1
@@ -165,7 +160,7 @@ public class OutlineSelection : MonoBehaviour
 
                                 audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                                StartCoroutine(parpadearYCambiar(piso1, objeto1)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+                            StartCoroutine(parpadearYCambiar(piso1, objeto1)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
                                 break;
 
                             case "BotonPortal2":
@@ -192,8 +187,6 @@ public class OutlineSelection : MonoBehaviour
                                 Debug.Log("Eleccion Confirmada");
                                 GameManager.GetInstance().SetFaseActual(1);
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
-                                
-                                particulas.SetActive(false);
                                 
                                 animBotonConfirmar.SetTrigger("pulsarBoton");
 
@@ -256,6 +249,8 @@ public class OutlineSelection : MonoBehaviour
         piso3.SetActive(false);
         pisoAElegir.SetActive(true);
         pisoBase.SetActive(false);
+
+        postproInicio.SetActive(false);
 
         objeto1.SetActive(false);
         objeto2.SetActive(false);

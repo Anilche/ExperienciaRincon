@@ -8,7 +8,7 @@ public class Interaccion1Natural : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeInteraccion = false;
+    //private bool estaEnAreaDeInteraccion = false;
 
     private string tagSeleccionable = "Seleccionable";
 
@@ -233,6 +233,7 @@ public class Interaccion1Natural : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
@@ -257,5 +258,5 @@ public class Interaccion1Natural : MonoBehaviour
             estaEnAreaDeInteraccion = false;
             Debug.Log("Jugador salio del area de interaccion natural");
         }
-    }
+    }*/
 }
