@@ -9,7 +9,7 @@ public class Arcade : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeInteraccion = false;
+    //private bool estaEnAreaDeInteraccion = false;
 
     private string tagSeleccionable = "Seleccionable";
 
@@ -43,7 +43,7 @@ public class Arcade : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeInteraccion)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
         {
             botonPantalla1.tag = tagSeleccionable;
             botonPantalla2.tag = tagSeleccionable;
@@ -168,13 +168,13 @@ public class Arcade : MonoBehaviour
             }
         }
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             estaEnAreaDeInteraccion = true;
-            Debug.Log("Jugador en area de interaccion calido");
+            Debug.Log("Jugador en area de interaccion juegos");
         }
     }
 
@@ -191,7 +191,7 @@ public class Arcade : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             estaEnAreaDeInteraccion = false;
-            Debug.Log("Jugador salio del area de interaccion calido");
+            Debug.Log("Jugador salio del area de interaccion juegos");
         }
-    }
+    }*/
 }
