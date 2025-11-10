@@ -39,9 +39,10 @@ EXTERNAL OcultarBotonesInst1()
     -> F13
 - fase == 14:
     -> F14  
-- fase == 15:
+    
+- fase == 26:
     -> FB1  
-- fase == 16:
+- fase == 27:
     -> FB2 
 }
 
