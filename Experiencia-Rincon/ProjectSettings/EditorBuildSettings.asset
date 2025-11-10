@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Experiencia.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/RinconBonus.unity
+    guid: 9cf73e9669ff38d4aabf64a2fdb01495
+  - enabled: 1
+    path: Assets/Scenes/Manifiesto.unity
+    guid: bc762c0fa57c1d1469b54d521bd0f64b
   m_configObjects: {}

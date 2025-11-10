@@ -12,6 +12,8 @@ EXTERNAL OcultarBotonesInst1()
 - fase == 0:
     -> FB1
 - fase == 1:
+    -> FB1
+- fase == 2:
     -> FB2
 }
 

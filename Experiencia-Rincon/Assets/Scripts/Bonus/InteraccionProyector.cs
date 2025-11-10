@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class InteraccionProyector : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class InteraccionProyector : MonoBehaviour
 
     private bool estaEnAreaDeElecciones = false;
 
+    public GameObject pochoclos;
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -19,10 +22,16 @@ public class InteraccionProyector : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        pochoclos.SetActive(false);
     }
 
     void Update()
     {
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
+        {
+            pochoclos.SetActive(true);
+        }
+
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
         {
@@ -79,8 +88,8 @@ public class InteraccionProyector : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            Debug.Log("Has seleccionado la silla del proyector.");
-
+                            Debug.Log("Has seleccionado la silla del proyector. Pasa a video Manifiesto");
+                            SceneManager.LoadScene("Manifiesto");
                             break;
 
                         default:
