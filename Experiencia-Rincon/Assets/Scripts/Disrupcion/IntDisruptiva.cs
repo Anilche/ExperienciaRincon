@@ -66,18 +66,76 @@ public class IntDisruptiva : MonoBehaviour
 
     void Update()
     {
-        if (palanquita1Arriba == true && palanquita2Arriba == true && palanquita3Arriba == false && palanquita4Arriba == true && palanquita5Arriba == false)
+        if (palanquita1Arriba == true && palanquita2Arriba == true && palanquita3Arriba == false && palanquita4Arriba == true && palanquita5Arriba == false && GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             panelActivado = true;
             panelLucesDesconectado.SetActive(false);
             panelLucesConectado.SetActive(true);
+
+            //Animacion luces de vuelta
+
+            GameManager.GetInstance().SetFaseActual(1);
         }
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeInteraccion && panelActivado == false)
+        if (palanquita1Arriba == true)
         {
-            /*botonPantalla1.tag = tagSeleccionable;
-            botonPantalla2.tag = tagSeleccionable;
-            botonPantalla3.tag = tagSeleccionable;*/
+            luzRojaPalanquita1.SetActive(false);
+            luzVerdePalanquita1.SetActive(true);
+        }
+        else
+        {
+            luzRojaPalanquita1.SetActive(true);
+            luzVerdePalanquita1.SetActive(false);
+        }
+
+        if (palanquita2Arriba == true)
+        {
+            luzRojaPalanquita2.SetActive(false);
+            luzVerdePalanquita2.SetActive(true);
+        }
+        else
+        {
+            luzRojaPalanquita2.SetActive(true);
+            luzVerdePalanquita2.SetActive(false);
+        }
+
+        if (palanquita3Arriba == false)
+        {
+            luzRojaPalanquita3.SetActive(false);
+            luzVerdePalanquita3.SetActive(true);
+        }
+        else
+        {
+            luzRojaPalanquita3.SetActive(true);
+            luzVerdePalanquita3.SetActive(false);
+        }
+
+        if (palanquita4Arriba == true)
+        {
+            luzRojaPalanquita4.SetActive(false);
+            luzVerdePalanquita4.SetActive(true);
+        }
+        else
+        {
+            luzRojaPalanquita4.SetActive(true);
+            luzVerdePalanquita4.SetActive(false);
+        }
+
+        if (palanquita5Arriba == false)
+        {
+            luzRojaPalanquita5.SetActive(false);
+            luzVerdePalanquita5.SetActive(true);
+        }
+        else
+        {
+            luzRojaPalanquita5.SetActive(true);
+            luzVerdePalanquita5.SetActive(false);
+        }
+
+
+
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeInteraccion && panelActivado == false)
+        {
 
             // Highlight
             if (highlight != null)
@@ -175,7 +233,7 @@ public class IntDisruptiva : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             palanquita4Arriba = !palanquita4Arriba;
-                            animPalanquita3.SetBool("PalanquitaArriba", palanquita4Arriba);
+                            animPalanquita4.SetBool("PalanquitaArriba", palanquita4Arriba);
 
                             Debug.Log("Palanquita4");
                             break;

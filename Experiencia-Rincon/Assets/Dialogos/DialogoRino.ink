@@ -89,24 +89,41 @@ Ahora levantá la mirada. Lo que te rodea también es importante. Los colores, l
 === F5 ===
 //Instancia 2 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
 ~ ReproducirDialogo(7)
-Esoooo, me gusta me gusta. Yo hubiera elegido lo mismo jajaja. Vení seguime, esto te va a interesar bastante.
+Esoooo, me gusta me gusta. Yo hubiera elegido lo mismo jajaja.
+~ ReproducirDialogo(8)
+Me encanta como va tomando forma el lugar, ya se va pareciendo más a vos.
+~ ReproducirDialogo(9)
+Vení seguime, esto te va a interesar bastante.
+~ ReproducirDialogo(10)
+//[Sonido raro, como de chispazos]
+//~ reproducirSonido
+Oh, oh ¿escuchás eso?
+~ ReproducirDialogo(11)
+Parece que algo extraño está sucediendo
+//~ ApagarLuces (y esperar 2 segs)
+~ ReproducirDialogo(12)
+Uh! Nos quedamos sin luz!
+~ ReproducirDialogo(13)
+Va a estar difícil seguir si no podemos ver por dónde vamos, ¿podrías arreglarlo?
+~ SetFaseActual(1)
+-> END
+
+=== F6 ===
+//Instancia disruptiva - Si intentas hablar durante la instancia
+~ ReproducirDialogo(14)
+Todavía no volvió la luz, ¿no pudiste arreglarlo?.
+-> END
+
+=== F7 ===
+//Instancia disruptiva Fin
+~ ReproducirDialogo(15)
+Bueno, problema resuelto! A veces crear nuestro propio rincón puede ser un poco caótico, pero el caos es parte del proceso.
+~ ReproducirDialogo(16)
+Ahora que ya está todo bien, continuemos.
 ~ SetFaseActual(1)
 -> END
 
 //Cambiar a partir de aca
-
-=== F6 ===
-//Instancia 3 - Antes del desbloqueo - Rino se dirige a la instancia 3 y el jugador debe interactuar antes de que se desbloquee
-~ ReproducirDialogo(7)
-Acá vamos a poner algunos objetos que te gustaría tener a la vista. Cosas tuyas. Cosas que te acompañen. Elegí lo que querés que viva en esta estantería.
-~ SetFaseActual(1)
--> END
-
-=== F7 ===
-//Instancia 3 - Si intentas hablar durante la instancia
-~ ReproducirDialogo(8)
-Está difícil elegir acá, ¿no? Son bastantes objetos, ni yo me decido jaja.
--> END
 
 === F8 ===
 //Instancia 3 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
