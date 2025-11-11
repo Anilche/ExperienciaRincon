@@ -3392,7 +3392,7 @@ Scene: Experiencia
       - m_CameraCutEvent (BrainEvent): Cinemachine.CinemachineBrain+BrainEvent Cinemachine.CinemachineBrain+BrainEvent
       - m_CameraActivatedEvent (VcamActivatedEvent): Cinemachine.CinemachineBrain+VcamActivatedEvent Cinemachine.CinemachineBrain+VcamActivatedEvent
       - mPhysicsCoroutine (Coroutine): UnityEngine.Coroutine
-      - m_LastFrameUpdated (Int32): 192
+      - m_LastFrameUpdated (Int32): 67
       - mWaitForFixedUpdate (WaitForFixedUpdate): UnityEngine.WaitForFixedUpdate
       - mFrameStack (List`1): [Cinemachine.CinemachineBrain+BrainFrame, ]
       - mNextFrameId (Int32): 1
@@ -5169,105 +5169,6 @@ Scene: Experiencia
                 [Component] Transform
                 [Component] MeshFilter
                 [Component] MeshRenderer
-            - Ramitas2_1
-              [Component] Transform
-              [Component] BoxCollider
-              - Cylinder.004
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.006
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.010
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.011
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.013
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.014
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.015
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.016
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.019
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.021
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.023
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.025
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.026
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.027
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.029
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.030
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.032
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.033
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.034
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.038
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.039
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.041
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.042
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.044
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
             - Ramitas3
               [Component] Transform
               [Component] BoxCollider
@@ -6214,10 +6115,6 @@ Scene: Experiencia
                 [Component] Transform
                 [Component] MeshFilter
                 [Component] MeshRenderer
-              - Cylinder.008
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
               - Cylinder.010
                 [Component] Transform
                 [Component] MeshFilter
@@ -6239,10 +6136,6 @@ Scene: Experiencia
                 [Component] MeshFilter
                 [Component] MeshRenderer
               - Cylinder.016
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.018
                 [Component] Transform
                 [Component] MeshFilter
                 [Component] MeshRenderer
@@ -6270,10 +6163,6 @@ Scene: Experiencia
                 [Component] Transform
                 [Component] MeshFilter
                 [Component] MeshRenderer
-              - Cylinder.028
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
               - Cylinder.029
                 [Component] Transform
                 [Component] MeshFilter
@@ -6294,10 +6183,6 @@ Scene: Experiencia
                 [Component] Transform
                 [Component] MeshFilter
                 [Component] MeshRenderer
-              - Cylinder.036
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
               - Cylinder.038
                 [Component] Transform
                 [Component] MeshFilter
@@ -6315,129 +6200,6 @@ Scene: Experiencia
                 [Component] MeshFilter
                 [Component] MeshRenderer
               - Cylinder.044
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.046
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-            - Ramitas12_1
-              [Component] Transform
-              [Component] BoxCollider
-              - Cylinder.004
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.006
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.008
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.010
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.011
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.013
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.014
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.015
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.016
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.018
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.019
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.021
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.023
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.025
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.026
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.027
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.028
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.029
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.030
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.032
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.033
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.034
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.036
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.038
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.039
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.041
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.042
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.044
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cylinder.046
                 [Component] Transform
                 [Component] MeshFilter
                 [Component] MeshRenderer
@@ -7553,6 +7315,59 @@ Scene: Experiencia
                 [Component] Transform
                 [Component] MeshFilter
                 [Component] MeshRenderer
+        - Tirantes
+          [Component] Transform
+          [Component] MeshCollider
+          - default
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+        - Lianas-Sola
+          [Component] Transform
+          - default
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+        - Liana-1
+          [Component] Transform
+          - NurbsCurve:040
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Plane:006
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+        - Liana-2
+          [Component] Transform
+          - NurbsCurve:023
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Plane:004
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+        - Liana-3
+          [Component] Transform
+          - NurbsCurve:009
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Plane:018
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+        - Liana-4
+          [Component] Transform
+          - NurbsCurve:020
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Plane:025
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
       - Objetos Neutral
         [Component] Transform
         - Box Volume Neutral
@@ -8523,6 +8338,139 @@ Scene: Experiencia
         - animSpotlight3 (Animator): Component('Animator') on 'SpotLight Inst2 Pantalla3'
         - numFaseNecesaria (Int32): 4
         - audioManager (AudioManager): null
+    - Pantallas
+      [Component] Transform
+      - PantallaFutbol
+        [Component] Transform
+        [Component] Animator
+        - SpotLight Inst2 Pantalla1
+          [Component] Transform
+          [Component] Light
+            - m_BakedIndex (Int32): 0
+          [Component] UniversalAdditionalLightData
+            - m_Version (Int32): 3
+            - m_UsePipelineSettings (Boolean): True
+            - m_Light (Light): null
+            - m_AdditionalLightsShadowResolutionTier (Int32): 2
+            - m_LightLayerMask (LightLayerEnum): LightLayerDefault
+            - m_RenderingLayers (UInt32): 1
+            - m_CustomShadowLayers (Boolean): False
+            - m_ShadowLayerMask (LightLayerEnum): LightLayerDefault
+            - m_ShadowRenderingLayers (UInt32): 1
+            - m_LightCookieSize (Vector2): Vector2(1,00, 1,00)
+            - m_LightCookieOffset (Vector2): Vector2(0,00, 0,00)
+            - m_SoftShadowQuality (SoftShadowQuality): UsePipelineSettings
+          [Component] Animator
+        - Pantalla
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+          [Component] BoxCollider
+        - Brazo
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Pelota
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Pelota_1
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Pelota_2
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+      - PantallaComida
+        [Component] Transform
+        [Component] Animator
+        - taza
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - SpotLight Inst2 Pantalla2
+          [Component] Transform
+          [Component] Light
+            - m_BakedIndex (Int32): 0
+          [Component] UniversalAdditionalLightData
+            - m_Version (Int32): 3
+            - m_UsePipelineSettings (Boolean): True
+            - m_Light (Light): null
+            - m_AdditionalLightsShadowResolutionTier (Int32): 2
+            - m_LightLayerMask (LightLayerEnum): LightLayerDefault
+            - m_RenderingLayers (UInt32): 1
+            - m_CustomShadowLayers (Boolean): False
+            - m_ShadowLayerMask (LightLayerEnum): LightLayerDefault
+            - m_ShadowRenderingLayers (UInt32): 1
+            - m_LightCookieSize (Vector2): Vector2(1,00, 1,00)
+            - m_LightCookieOffset (Vector2): Vector2(0,00, 0,00)
+            - m_SoftShadowQuality (SoftShadowQuality): UsePipelineSettings
+          [Component] Animator
+        - Pantalla
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+          [Component] BoxCollider
+        - Brazo
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Medialuna
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Medialuna_1
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Medialuna_2
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+      - PantallaJuegos
+        [Component] Transform
+        [Component] Animator
+        - SpotLight Inst2 Pantalla3
+          [Component] Transform
+          [Component] Light
+            - m_BakedIndex (Int32): 0
+          [Component] UniversalAdditionalLightData
+            - m_Version (Int32): 3
+            - m_UsePipelineSettings (Boolean): True
+            - m_Light (Light): null
+            - m_AdditionalLightsShadowResolutionTier (Int32): 2
+            - m_LightLayerMask (LightLayerEnum): LightLayerDefault
+            - m_RenderingLayers (UInt32): 1
+            - m_CustomShadowLayers (Boolean): False
+            - m_ShadowLayerMask (LightLayerEnum): LightLayerDefault
+            - m_ShadowRenderingLayers (UInt32): 1
+            - m_LightCookieSize (Vector2): Vector2(1,00, 1,00)
+            - m_LightCookieOffset (Vector2): Vector2(0,00, 0,00)
+            - m_SoftShadowQuality (SoftShadowQuality): UsePipelineSettings
+          [Component] Animator
+        - Pantalla
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+          [Component] BoxCollider
+        - Brazo
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - moneda
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - moneda_1
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+          [Component] BoxCollider
+        - CuboMario
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
     - Paredes
       [Component] Transform
       - Futbol
@@ -8841,6 +8789,36 @@ Scene: Experiencia
               [Component] Transform
               [Component] MeshFilter
               [Component] MeshRenderer
+        - Ventanas
+          [Component] Transform
+          - Ventana-left
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Ventana-right
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Marco
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Fondo
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Sosten
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cortinas-animadas
+            [Component] Transform
+            - Plane.003
+              [Component] Transform
+              [Component] SkinnedMeshRenderer
+            - Plane.004
+              [Component] Transform
+              [Component] SkinnedMeshRenderer
       - Comida
         [Component] Transform
         - atril
@@ -9004,6 +8982,70 @@ Scene: Experiencia
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
+        - Comidas mini instancia
+          [Component] Transform
+          - Empanadas
+            [Component] Transform
+            - Cube:006
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube:012
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube:017
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+          - Tarta-1
+            [Component] Transform
+            - Cylinder
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Plane
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+          - Tarta-2
+            [Component] Transform
+            - Cylinder:001
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Plane:001
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+          - Tarta-3
+            [Component] Transform
+            - Cylinder:002
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Plane:002
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+          - Pizza
+            [Component] Transform
+            - Empezada
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Entera
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Migas
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Ultima
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
         - Libros
           [Component] Transform
           - libro
@@ -9218,6 +9260,37 @@ Scene: Experiencia
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
+        - silla
+          [Component] Transform
+          [Component] MeshCollider
+          - Cylinder.001
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cylinder.002
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cylinder.003
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cylinder.004
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cylinder.005
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Retopo_Curve.002
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Retopo_Curve.003
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
       - Juegos
         [Component] Transform
         - Luces
@@ -9244,159 +9317,6 @@ Scene: Experiencia
               [Component] Transform
               [Component] MeshFilter
               [Component] MeshRenderer
-        - InteraccionJuegos
-          [Component] Transform
-          [Component] Arcade
-            - highlight (Transform): [Unassigned Unity Object]
-            - selection (Transform): [Unassigned Unity Object]
-            - raycastHit (RaycastHit): UnityEngine.RaycastHit
-            - estaEnAreaDeInteraccion (Boolean): False
-            - tagSeleccionable (String): "Seleccionable"
-            - botonPantalla1 (GameObject): GameObject('BotonTetris')
-            - botonPantalla2 (GameObject): GameObject('BotonPacman')
-            - botonPantalla3 (GameObject): GameObject('BotonPuzzleBobble')
-            - pantalla1 (GameObject): GameObject('Tetris')
-            - pantalla2 (GameObject): GameObject('Pacman')
-            - pantalla3 (GameObject): GameObject('Puzzle Bubble')
-            - distanciaMaxima (Single): 3,00
-            - numFaseNecesaria (Int32): 5
-            - camara (Camera): [Unassigned Unity Object]
-            - audioManager (AudioManager): null
-          - Arcade
-            [Component] Transform
-            - BotonesJuegos
-              [Component] Transform
-              - BotonTetris
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-                [Component] BoxCollider
-              - BotonPacman
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-                [Component] BoxCollider
-              - BotonPuzzleBobble
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-                [Component] BoxCollider
-            - Arcade
-              [Component] Transform
-              [Component] Animator
-              - Circle
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Circle.001
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Circle:001
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Circle:001.001
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Circle:002
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Circle:002.001
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Circle:003
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Circle:003.001
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cube
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cube:001
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-                [Component] MeshCollider
-              - Cube:001.001
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cube:002
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cube:003
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Cube:004
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Plane
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Sphere
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-              - Sphere.002
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-            - Juegos
-              [Component] Transform
-              - Tetris
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-                [Component] MeshCollider
-                [Component] VideoPlayer
-                  - prepareCompleted (EventHandler): null
-                  - loopPointReached (EventHandler): null
-                  - started (EventHandler): null
-                  - frameDropped (EventHandler): null
-                  - errorReceived (ErrorEventHandler): null
-                  - seekCompleted (EventHandler): null
-                  - clockResyncOccurred (TimeEventHandler): null
-                  - frameReady (FrameReadyEventHandler): null
-              - Pacman
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-                [Component] MeshCollider
-                [Component] VideoPlayer
-                  - prepareCompleted (EventHandler): null
-                  - loopPointReached (EventHandler): null
-                  - started (EventHandler): null
-                  - frameDropped (EventHandler): null
-                  - errorReceived (ErrorEventHandler): null
-                  - seekCompleted (EventHandler): null
-                  - clockResyncOccurred (TimeEventHandler): null
-                  - frameReady (FrameReadyEventHandler): null
-              - Puzzle Bubble
-                [Component] Transform
-                [Component] MeshFilter
-                [Component] MeshRenderer
-                [Component] MeshCollider
-                [Component] VideoPlayer
-                  - prepareCompleted (EventHandler): null
-                  - loopPointReached (EventHandler): null
-                  - started (EventHandler): null
-                  - frameDropped (EventHandler): null
-                  - errorReceived (ErrorEventHandler): null
-                  - seekCompleted (EventHandler): null
-                  - clockResyncOccurred (TimeEventHandler): null
-                  - frameReady (FrameReadyEventHandler): null
         - robot textura
           [Component] Transform
           [Component] BoxCollider
@@ -9790,136 +9710,371 @@ Scene: Experiencia
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
-    - Pantallas
+        - InteraccionJuegos
+          [Component] Transform
+          [Component] Arcade
+            - highlight (Transform): [Unassigned Unity Object]
+            - selection (Transform): [Unassigned Unity Object]
+            - raycastHit (RaycastHit): UnityEngine.RaycastHit
+            - tagSeleccionable (String): "Seleccionable"
+            - botonPantalla1 (GameObject): GameObject('BotonTetris')
+            - botonPantalla2 (GameObject): GameObject('BotonPacman')
+            - botonPantalla3 (GameObject): GameObject('BotonPuzzleBobble')
+            - pantalla1 (GameObject): GameObject('Tetris')
+            - pantalla2 (GameObject): GameObject('Pacman')
+            - pantalla3 (GameObject): GameObject('Puzzle Bubble')
+            - distanciaMaxima (Single): 3,00
+            - numFaseNecesaria (Int32): 5
+            - camara (Camera): [Unassigned Unity Object]
+            - audioManager (AudioManager): null
+          - Arcade
+            [Component] Transform
+            - BotonesJuegos
+              [Component] Transform
+              - BotonTetris
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+                [Component] BoxCollider
+              - BotonPacman
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+                [Component] BoxCollider
+              - BotonPuzzleBobble
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+                [Component] BoxCollider
+            - Arcade
+              [Component] Transform
+              [Component] Animator
+              - Circle
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Circle.001
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Circle:001
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Circle:001.001
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Circle:002
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Circle:002.001
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Circle:003
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Circle:003.001
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Cube
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Cube:001
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+                [Component] MeshCollider
+              - Cube:001.001
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Cube:002
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Cube:003
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Cube:004
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Plane
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Sphere
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+              - Sphere.002
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+            - Juegos
+              [Component] Transform
+              - Tetris
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+                [Component] MeshCollider
+                [Component] VideoPlayer
+                  - prepareCompleted (EventHandler): null
+                  - loopPointReached (EventHandler): null
+                  - started (EventHandler): null
+                  - frameDropped (EventHandler): null
+                  - errorReceived (ErrorEventHandler): null
+                  - seekCompleted (EventHandler): null
+                  - clockResyncOccurred (TimeEventHandler): null
+                  - frameReady (FrameReadyEventHandler): null
+              - Pacman
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+                [Component] MeshCollider
+                [Component] VideoPlayer
+                  - prepareCompleted (EventHandler): null
+                  - loopPointReached (EventHandler): null
+                  - started (EventHandler): null
+                  - frameDropped (EventHandler): null
+                  - errorReceived (ErrorEventHandler): null
+                  - seekCompleted (EventHandler): null
+                  - clockResyncOccurred (TimeEventHandler): null
+                  - frameReady (FrameReadyEventHandler): null
+              - Puzzle Bubble
+                [Component] Transform
+                [Component] MeshFilter
+                [Component] MeshRenderer
+                [Component] MeshCollider
+                [Component] VideoPlayer
+                  - prepareCompleted (EventHandler): null
+                  - loopPointReached (EventHandler): null
+                  - started (EventHandler): null
+                  - frameDropped (EventHandler): null
+                  - errorReceived (ErrorEventHandler): null
+                  - seekCompleted (EventHandler): null
+                  - clockResyncOccurred (TimeEventHandler): null
+                  - frameReady (FrameReadyEventHandler): null
+  - InstanciaDisruptiva
+    [Component] Transform
+    [Component] IntDisruptiva
+      - highlight (Transform): [Unassigned Unity Object]
+      - selection (Transform): [Unassigned Unity Object]
+      - raycastHit (RaycastHit): UnityEngine.RaycastHit
+      - estaEnAreaDeInteraccion (Boolean): False
+      - panelLuces (GameObject): GameObject('PanelLuces')
+      - panelLucesDesconectado (GameObject): GameObject('PantallaDesconectado')
+      - panelLucesConectado (GameObject): GameObject('PantallaConectado')
+      - animPalanquita1 (Animator): Component('Animator') on 'Palanquita1'
+      - animPalanquita2 (Animator): Component('Animator') on 'Palanquita1'
+      - animPalanquita3 (Animator): Component('Animator') on 'Palanquita1'
+      - animPalanquita4 (Animator): Component('Animator') on 'Palanquita1'
+      - animPalanquita5 (Animator): Component('Animator') on 'Palanquita1'
+      - luzRojaPalanquita1 (GameObject): GameObject('Luz1')
+      - luzRojaPalanquita2 (GameObject): GameObject('Luz2')
+      - luzRojaPalanquita3 (GameObject): GameObject('Luz3')
+      - luzRojaPalanquita4 (GameObject): GameObject('Luz4')
+      - luzRojaPalanquita5 (GameObject): GameObject('Luz5')
+      - luzVerdePalanquita1 (GameObject): GameObject('Luz1')
+      - luzVerdePalanquita2 (GameObject): GameObject('Luz2')
+      - luzVerdePalanquita3 (GameObject): GameObject('Luz3')
+      - luzVerdePalanquita4 (GameObject): GameObject('Luz4')
+      - luzVerdePalanquita5 (GameObject): GameObject('Luz5')
+      - distanciaMaxima (Single): 3,00
+      - numFaseNecesaria (Int32): 0
+      - panelActivado (Boolean): False
+      - palanquita1Arriba (Boolean): False
+      - palanquita2Arriba (Boolean): True
+      - palanquita3Arriba (Boolean): True
+      - palanquita4Arriba (Boolean): True
+      - palanquita5Arriba (Boolean): True
+      - camara (Camera): [Unassigned Unity Object]
+      - audioManager (AudioManager): null
+    [Component] BoxCollider
+    - Luces Emergencia
       [Component] Transform
-      - PantallaFutbol
+      - luces emergencia_1
         [Component] Transform
-        [Component] Animator
-        - SpotLight Inst2 Pantalla1
-          [Component] Transform
-          [Component] Light
-            - m_BakedIndex (Int32): 0
-          [Component] UniversalAdditionalLightData
-            - m_Version (Int32): 3
-            - m_UsePipelineSettings (Boolean): True
-            - m_Light (Light): null
-            - m_AdditionalLightsShadowResolutionTier (Int32): 2
-            - m_LightLayerMask (LightLayerEnum): LightLayerDefault
-            - m_RenderingLayers (UInt32): 1
-            - m_CustomShadowLayers (Boolean): False
-            - m_ShadowLayerMask (LightLayerEnum): LightLayerDefault
-            - m_ShadowRenderingLayers (UInt32): 1
-            - m_LightCookieSize (Vector2): Vector2(1,00, 1,00)
-            - m_LightCookieOffset (Vector2): Vector2(0,00, 0,00)
-            - m_SoftShadowQuality (SoftShadowQuality): UsePipelineSettings
-          [Component] Animator
-        - Pantalla
+        - Cube
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
-          [Component] BoxCollider
-        - Brazo
+        - Cylinder
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
-        - Pelota
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Pelota_1
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Pelota_2
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-      - PantallaComida
+      - luces emergencia_7
         [Component] Transform
-        [Component] Animator
-        - taza
+        - Cube
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
-        - SpotLight Inst2 Pantalla2
-          [Component] Transform
-          [Component] Light
-            - m_BakedIndex (Int32): 0
-          [Component] UniversalAdditionalLightData
-            - m_Version (Int32): 3
-            - m_UsePipelineSettings (Boolean): True
-            - m_Light (Light): null
-            - m_AdditionalLightsShadowResolutionTier (Int32): 2
-            - m_LightLayerMask (LightLayerEnum): LightLayerDefault
-            - m_RenderingLayers (UInt32): 1
-            - m_CustomShadowLayers (Boolean): False
-            - m_ShadowLayerMask (LightLayerEnum): LightLayerDefault
-            - m_ShadowRenderingLayers (UInt32): 1
-            - m_LightCookieSize (Vector2): Vector2(1,00, 1,00)
-            - m_LightCookieOffset (Vector2): Vector2(0,00, 0,00)
-            - m_SoftShadowQuality (SoftShadowQuality): UsePipelineSettings
-          [Component] Animator
-        - Pantalla
+        - Cylinder
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
-          [Component] BoxCollider
-        - Brazo
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Medialuna
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Medialuna_1
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Medialuna_2
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-      - PantallaJuegos
+      - luces emergencia_2
         [Component] Transform
-        [Component] Animator
-        - SpotLight Inst2 Pantalla3
+        - Cube
           [Component] Transform
-          [Component] Light
-            - m_BakedIndex (Int32): 0
-          [Component] UniversalAdditionalLightData
-            - m_Version (Int32): 3
-            - m_UsePipelineSettings (Boolean): True
-            - m_Light (Light): null
-            - m_AdditionalLightsShadowResolutionTier (Int32): 2
-            - m_LightLayerMask (LightLayerEnum): LightLayerDefault
-            - m_RenderingLayers (UInt32): 1
-            - m_CustomShadowLayers (Boolean): False
-            - m_ShadowLayerMask (LightLayerEnum): LightLayerDefault
-            - m_ShadowRenderingLayers (UInt32): 1
-            - m_LightCookieSize (Vector2): Vector2(1,00, 1,00)
-            - m_LightCookieOffset (Vector2): Vector2(0,00, 0,00)
-            - m_SoftShadowQuality (SoftShadowQuality): UsePipelineSettings
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Cylinder
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+      - luces emergencia_4
+        [Component] Transform
+        - Cube
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Cylinder
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+      - luces emergencia_5
+        [Component] Transform
+        - Cube
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Cylinder
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+      - luces emergencia_6
+        [Component] Transform
+        - Cube
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Cylinder
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+      - luces emergencia_3
+        [Component] Transform
+        - Cube
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - Cylinder
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+    - PanelLuces
+      [Component] Transform
+      - Base
+        [Component] Transform
+        - Base
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - BaseMarco
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - BasePalanquita
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - PantallaMarco
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+      - Palanquitas
+        [Component] Transform
+        - Palanquita1
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
           [Component] Animator
-        - Pantalla
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
           [Component] BoxCollider
-        - Brazo
+        - Palanquita2
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
-        - moneda
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - moneda_1
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
+          [Component] Animator
           [Component] BoxCollider
-        - CuboMario
+        - Palanquita3
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+          [Component] Animator
+          [Component] BoxCollider
+        - Palanquita4
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+          [Component] Animator
+          [Component] BoxCollider
+        - Palanquita5
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+          [Component] Animator
+          [Component] BoxCollider
+      - Luces
+        [Component] Transform
+        - Luces rojas
+          [Component] Transform
+          - Luz1
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Luz2
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Luz3
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Luz4
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Luz5
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+        - Luces verdes
+          [Component] Transform
+          - Luz1
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Luz2
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Luz3
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Luz4
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Luz5
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+      - Pantallas
+        [Component] Transform
+        - PantallaDesconectado
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+        - PantallaConectado
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
@@ -10334,6 +10489,24 @@ Scene: Experiencia
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
+          - luz
+            [Component] Transform
+            - Cube
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube.001
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube.002
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cylinder
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
         - Estanteria_1
           [Component] Transform
           - Retopo_Curve.003
@@ -10344,6 +10517,24 @@ Scene: Experiencia
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
+          - luz_1
+            [Component] Transform
+            - Cube
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube.001
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube.002
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cylinder
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
         - Estanteria_2
           [Component] Transform
           - Retopo_Curve.003
@@ -10354,6 +10545,24 @@ Scene: Experiencia
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
+          - luz_2
+            [Component] Transform
+            - Cube
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube.001
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube.002
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cylinder
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
     - Luego de apretar el boton confirmar
       [Component] Transform
       - triciclo_1
@@ -11616,7 +11825,7 @@ Scene: Experiencia
         - objsJBIS (GameObject): GameObject('JBIS')
         - animatorTocadiscos (Animator): Component('Animator') on 'Mesa con objetos'
         - particulas (GameObject): GameObject('Particulas4')
-        - numFaseNecesaria (Int32): 8
+        - numFaseNecesaria (Int32): 9
         - audioClipSeleccion1 (AudioClip): Luis Alberto Spinetta - Almendra (UnityEngine.AudioClip)
         - audioClipSeleccion2 (AudioClip): The Weeknd - Blinding Lights (UnityEngine.AudioClip)
         - audioClipSeleccion3 (AudioClip): L.A. STYLE - James Brown Is Dead (UnityEngine.AudioClip)
@@ -12700,6 +12909,17 @@ Scene: Experiencia
       [Component] Transform
       [Component] MeshFilter
       [Component] MeshRenderer
+  - cafe
+    [Component] Transform
+    - Retopo_Cylinder
+      [Component] Transform
+      [Component] MeshFilter
+      [Component] MeshRenderer
+      [Component] BoxCollider
+    - Retopo_Cylinder:002
+      [Component] Transform
+      [Component] MeshFilter
+      [Component] MeshRenderer
   - taza con te
     [Component] Transform
     - Retopo_Cylinder
@@ -12715,7 +12935,7 @@ Scene: Experiencia
       [Component] Transform
       [Component] MeshFilter
       [Component] MeshRenderer
-  - mate_1
+  - Mate
     [Component] Transform
     [Component] BoxCollider
     - Cylinder
@@ -12745,665 +12965,125 @@ Scene: Experiencia
       [Component] Transform
       [Component] MeshFilter
       [Component] MeshRenderer
-  - PanelLuces
-    [Component] Transform
-    - Base
-      [Component] Transform
-      - Base
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-      - BaseMarco
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-      - BasePalanquita
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-      - PantallaMarco
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-    - Palanquitas
-      [Component] Transform
-      - Palanquita1
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-      - Palanquita2
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-      - Palanquita3
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-      - Palanquita4
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-      - Palanquita5
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-    - Luces
-      [Component] Transform
-      - Luces verdes
-        [Component] Transform
-        - Luz1
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Luz2
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Luz3
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Luz4
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Luz5
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-      - Luces rojas
-        [Component] Transform
-        - Luz1
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Luz2
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Luz3
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Luz4
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Luz5
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-    - Pantallas
-      [Component] Transform
-      - PantallaDesconectado
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-      - PantallaConectado
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-  - pochoclo
-    [Component] Transform
-    - Circle
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-      [Component] BoxCollider
-    - Circle.001
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.001
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.002
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.003
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.004
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.005
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.006
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.007
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.008
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.009
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.010
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.011
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.012
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.013
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.014
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.015
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.016
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.017
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.018
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.019
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.020
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.021
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.022
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.023
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.024
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.025
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.026
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.027
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.028
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.029
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.030
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.031
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.032
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.034
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.035
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.036
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.037
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.038
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.039
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.040
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.041
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.042
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.043
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.044
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.045
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.046
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.047
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.048
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.049
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.050
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.051
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.052
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.053
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.054
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sphere.055
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - silla
-    [Component] Transform
-    [Component] MeshCollider
-    - Cylinder.001
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cylinder.002
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cylinder.003
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cylinder.004
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cylinder.005
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Retopo_Curve.002
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Retopo_Curve.003
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - luz
-    [Component] Transform
-    - Cube
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cube.001
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cube.002
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cylinder
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - luces emergencia
-    [Component] Transform
-    - Cube
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cylinder
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
   - robot
     [Component] Transform
-    [Component] MeshFilter
-    [Component] MeshRenderer
-    [Component] Animator
-    - Brazo
+    - robot
       [Component] Transform
       [Component] MeshFilter
       [Component] MeshRenderer
-      - Antebrazo
+      [Component] Animator
+      - Brazo
         [Component] Transform
         [Component] MeshFilter
         [Component] MeshRenderer
-        - Cube:009.045
+        - Antebrazo
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
-        - Cube:009.047
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.048
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.050
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.051
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.052
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.053
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.055
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.056
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.058
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Cube:009.064
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-        - Palma
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-          - Cube:009.005
+          - Cube:009.045
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
-          - Cube:009.025
+          - Cube:009.047
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
-    - Brazo old
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-      - Antebrazo old
+          - Cube:009.048
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cube:009.050
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cube:009.051
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cube:009.052
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cube:009.053
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cube:009.055
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cube:009.056
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cube:009.058
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Cube:009.064
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+          - Palma
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+            - Cube:009.005
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+            - Cube:009.025
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+      - Brazo old
         [Component] Transform
         [Component] MeshFilter
         [Component] MeshRenderer
-        - Cube:009.032
+        - Antebrazo old
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
-    - Cadera rot
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-      - Pierna arb
-        [Component] Transform
-        [Component] MeshFilter
-        [Component] MeshRenderer
-        - Pierna
-          [Component] Transform
-          [Component] MeshFilter
-          [Component] MeshRenderer
-          - Pie
+          - Cube:009.032
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
-    - Cadera rot old
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-      - Pierna arb old
+      - Cadera rot
         [Component] Transform
         [Component] MeshFilter
         [Component] MeshRenderer
-        - Pierna Old
+        - Pierna arb
           [Component] Transform
           [Component] MeshFilter
           [Component] MeshRenderer
-          - Pie old
+          - Pierna
             [Component] Transform
             [Component] MeshFilter
             [Component] MeshRenderer
-    - Cylinder:046.013
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Tirantes
-    [Component] Transform
-    - default
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Lianas-Sola
-    [Component] Transform
-    - default
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Liana-1
-    [Component] Transform
-    - NurbsCurve:040
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Plane:006
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Liana-2
-    [Component] Transform
-    - NurbsCurve:023
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Plane:004
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Liana-3
-    [Component] Transform
-    - NurbsCurve:009
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Plane:018
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Liana-4
-    [Component] Transform
-    - NurbsCurve:020
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Plane:025
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Alfombra-rinconera
-    [Component] Transform
-    - Peluche-bot
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Peluche-Top
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Pizza
-    [Component] Transform
-    - Empezada
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Entera
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Migas
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Ultima
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Empanadas
-    [Component] Transform
-    - Cube:006
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cube:012
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cube:017
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Tarta-3
-    [Component] Transform
-    - Cylinder:002
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Plane:002
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Tarta-2
-    [Component] Transform
-    - Cylinder:001
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Plane:001
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Tarta-1
-    [Component] Transform
-    - Cylinder
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Plane
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-  - Ventanas
-    [Component] Transform
-    - Ventana-left
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Ventana-right
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Marco
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Fondo
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Sosten
-      [Component] Transform
-      [Component] MeshFilter
-      [Component] MeshRenderer
-    - Cortinas-animadas
-      [Component] Transform
-      - Plane.003
+            - Pie
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+      - Cadera rot old
         [Component] Transform
-        [Component] SkinnedMeshRenderer
-      - Plane.004
+        [Component] MeshFilter
+        [Component] MeshRenderer
+        - Pierna arb old
+          [Component] Transform
+          [Component] MeshFilter
+          [Component] MeshRenderer
+          - Pierna Old
+            [Component] Transform
+            [Component] MeshFilter
+            [Component] MeshRenderer
+            - Pie old
+              [Component] Transform
+              [Component] MeshFilter
+              [Component] MeshRenderer
+      - Cylinder:046.013
         [Component] Transform
-        [Component] SkinnedMeshRenderer
+        [Component] MeshFilter
+        [Component] MeshRenderer
 - Luces descarte
   [Component] Transform
   - Point Light_1

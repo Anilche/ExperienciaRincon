@@ -18,13 +18,6 @@ public class IntDisruptiva : MonoBehaviour
     [SerializeField] public GameObject panelLucesDesconectado;
     [SerializeField] public GameObject panelLucesConectado;
 
-    [Header("Palanquitas")]
-    [SerializeField] public GameObject palanquita1;
-    [SerializeField] public GameObject palanquita2;
-    [SerializeField] public GameObject palanquita3;
-    [SerializeField] public GameObject palanquita4;
-    [SerializeField] public GameObject palanquita5;
-
     [Header("Animator Palanquitas")]
     [SerializeField] public Animator animPalanquita1;
     [SerializeField] public Animator animPalanquita2;
@@ -149,7 +142,7 @@ public class IntDisruptiva : MonoBehaviour
 
                             palanquita1Arriba = !palanquita1Arriba;
 
-                            animPalanquita1.SetBool("Palanquita1Arriba", palanquita1Arriba);
+                            animPalanquita1.SetBool("PalanquitaArriba", palanquita1Arriba);
 
                             Debug.Log("Palanquita1");
                             break;
@@ -160,7 +153,7 @@ public class IntDisruptiva : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             palanquita2Arriba = !palanquita2Arriba;
-                            animPalanquita2.SetBool("Palanquita2Arriba", palanquita2Arriba);
+                            animPalanquita2.SetBool("PalanquitaArriba", palanquita2Arriba);
 
                             Debug.Log("Palanquita2");
                             break;
@@ -171,7 +164,7 @@ public class IntDisruptiva : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             palanquita3Arriba = !palanquita3Arriba;
-                            animPalanquita3.SetBool("Palanquita3Arriba", palanquita3Arriba);
+                            animPalanquita3.SetBool("PalanquitaArriba", palanquita3Arriba);
 
                             Debug.Log("Palanquita3");
                             break;
@@ -182,7 +175,7 @@ public class IntDisruptiva : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             palanquita4Arriba = !palanquita4Arriba;
-                            animPalanquita3.SetBool("Palanquita4Arriba", palanquita4Arriba);
+                            animPalanquita3.SetBool("PalanquitaArriba", palanquita4Arriba);
 
                             Debug.Log("Palanquita4");
                             break;
@@ -193,7 +186,7 @@ public class IntDisruptiva : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             palanquita5Arriba = !palanquita5Arriba;
-                            animPalanquita5.SetBool("Palanquita5Arriba", palanquita5Arriba);
+                            animPalanquita5.SetBool("PalanquitaArriba", palanquita5Arriba);
 
                             Debug.Log("Palanquita5");
                             break;
