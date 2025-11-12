@@ -61,18 +61,24 @@ public class IntDisruptiva : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
-    }
 
+        panelLuces.SetActive(false);
+    }
 
     void Update()
     {
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
+        {
+            panelLuces.SetActive(true);
+        }
+
         if (palanquita1Arriba == true && palanquita2Arriba == true && palanquita3Arriba == false && palanquita4Arriba == true && palanquita5Arriba == false && GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             panelActivado = true;
             panelLucesDesconectado.SetActive(false);
             panelLucesConectado.SetActive(true);
 
-            //Animacion luces de vuelta
+            GameManager.GetInstance().EncenderLuces();
 
             GameManager.GetInstance().SetFaseActual(1);
         }
@@ -131,8 +137,6 @@ public class IntDisruptiva : MonoBehaviour
             luzRojaPalanquita5.SetActive(true);
             luzVerdePalanquita5.SetActive(false);
         }
-
-
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeInteraccion && panelActivado == false)
         {

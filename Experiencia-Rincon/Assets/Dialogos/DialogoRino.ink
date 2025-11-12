@@ -2,6 +2,7 @@ EXTERNAL SetFaseActual(nuevaFase)
 EXTERNAL GetFase()
 EXTERNAL ReproducirDialogo(numeroLineaDeVoz)
 EXTERNAL OcultarBotonesInst1()
+EXTERNAL ApagarLuces()
 
 -> elegir_fase
 
@@ -100,7 +101,7 @@ Vení seguime, esto te va a interesar bastante.
 Oh, oh ¿escuchás eso?
 ~ ReproducirDialogo(11)
 Parece que algo extraño está sucediendo
-//~ ApagarLuces (y esperar 2 segs)
+~ ApagarLuces()
 ~ ReproducirDialogo(12)
 Uh! Nos quedamos sin luz!
 ~ ReproducirDialogo(13)

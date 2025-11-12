@@ -84,6 +84,11 @@ public class DialogoManager : MonoBehaviour
         {
             GameManager.GetInstance().OcultarBotonesInst1();
         });
+
+        estaHistoria.BindExternalFunction("ApagarLuces", () =>
+        {
+            GameManager.GetInstance().ApagarLuces();
+        });
     }
 
     private void DejarDeRegistrarFuncionesExternas()

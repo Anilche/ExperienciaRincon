@@ -5370,7 +5370,15 @@ MonoBehaviour:
   eleccionActiva: 0
   botonesInst1: {fileID: 115760562}
   botonesInst2: {fileID: 2114662763}
+  lucesCalido: {fileID: 584407279}
+  postProCalido: {fileID: 1236868048}
+  lucesNeutro: {fileID: 781315092}
+  postProNeutro: {fileID: 102037523}
+  lucesNatural: {fileID: 1146143059}
+  postProNatural: {fileID: 52375140}
+  postProOscuro: {fileID: 415073181}
   vcamJugador: {fileID: 0}
+  eleccionLuces: Ninguna
 --- !u!1 &29161673
 GameObject:
   m_ObjectHideFlags: 0

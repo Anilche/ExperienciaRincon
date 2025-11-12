@@ -13,10 +13,24 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject botonesInst1;
     [SerializeField] public GameObject botonesInst2;
 
+    [Header("Iluminacion")]
+    [SerializeField] public GameObject lucesCalido;
+    [SerializeField] public GameObject postProCalido;
+
+    [SerializeField] public GameObject lucesNeutro;
+    [SerializeField] public GameObject postProNeutro;
+
+    [SerializeField] public GameObject lucesNatural;
+    [SerializeField] public GameObject postProNatural;
+
+    [SerializeField] public GameObject postProOscuro;
+
     private static GameManager instance;
 
     [SerializeField] private CinemachineVirtualCamera vcamJugador;
     //[SerializeField] private CinemachineVirtualCamera vcamHabilitarBonus;
+
+    public string eleccionLuces = "Ninguna";
 
     private void Update()
     {
@@ -54,6 +68,47 @@ public class GameManager : MonoBehaviour
         botonesInst1.SetActive(false);
         botonesInst2.SetActive(true);
     }
+
+    public void ApagarLuces()
+    {
+        if (eleccionLuces == "Calido")
+        {
+            lucesCalido.SetActive(false);
+            postProCalido.SetActive(false);
+        }
+        else if (eleccionLuces == "Neutro")
+        {
+            lucesNeutro.SetActive(false);
+            postProNeutro.SetActive(false);
+        }
+        else if (eleccionLuces == "Natural")
+        {
+            lucesNatural.SetActive(false);
+            postProNatural.SetActive(false);
+        }
+        postProOscuro.SetActive(true);
+    }
+
+    public void EncenderLuces()
+    {
+        if (eleccionLuces == "Calido")
+        {
+            lucesCalido.SetActive(true);
+            postProCalido.SetActive(true);
+        }
+        else if (eleccionLuces == "Neutro")
+        {
+            lucesNeutro.SetActive(true);
+            postProNeutro.SetActive(true);
+        }
+        else if (eleccionLuces == "Natural")
+        {
+            lucesNatural.SetActive(true);
+            postProNatural.SetActive(true);
+        }
+        postProOscuro.SetActive(false);
+    }
+
     /*
     private IEnumerator DesbloqueoSalaBonus()
     {

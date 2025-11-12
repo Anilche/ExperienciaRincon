@@ -160,7 +160,9 @@ public class OutlineSelection : MonoBehaviour
 
                                 audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            StartCoroutine(parpadearYCambiar(piso1, objeto1)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+                                StartCoroutine(parpadearYCambiar(piso1, objeto1)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+
+                                GameManager.GetInstance().eleccionLuces = "Calido"; // Guarda la elección de luces en el GameManager
                                 break;
 
                             case "BotonPortal2":
@@ -171,6 +173,8 @@ public class OutlineSelection : MonoBehaviour
                                 audioManager.PlaySFX(audioManager.seleccionSFX);
 
                                 StartCoroutine(parpadearYCambiar(piso2, objeto2)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+
+                                GameManager.GetInstance().eleccionLuces = "Neutro"; // Guarda la elección de luces en el GameManager
                                 break;
 
                             case "BotonPortal3":
@@ -181,6 +185,8 @@ public class OutlineSelection : MonoBehaviour
                                 audioManager.PlaySFX(audioManager.seleccionSFX);
 
                                 StartCoroutine(parpadearYCambiar(piso3, objeto3)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+
+                                GameManager.GetInstance().eleccionLuces = "Natural"; // Guarda la elección de luces en el GameManager
                                 break;
 
                             case "BotonConfirmar":
