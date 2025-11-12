@@ -11,12 +11,15 @@ public class IntDisruptiva : MonoBehaviour
 
     private bool estaEnAreaDeInteraccion = false;
 
-    //private string tagSeleccionable = "Seleccionable";
-
     [Header("Panel")]
     [SerializeField] public GameObject panelLuces;
+    [SerializeField] public Animator animPanelLuces;
     [SerializeField] public GameObject panelLucesDesconectado;
     [SerializeField] public GameObject panelLucesConectado;
+
+    [Header("Luces Emergencia")]
+    [SerializeField] public GameObject lucesEmergencia;
+    [SerializeField] public Animator animLucesEmergencia;
 
     [Header("Animator Palanquitas")]
     [SerializeField] public Animator animPalanquita1;
@@ -63,6 +66,7 @@ public class IntDisruptiva : MonoBehaviour
         camara = Camera.main;
 
         panelLuces.SetActive(false);
+        lucesEmergencia.SetActive(false);
     }
 
     void Update()
@@ -70,6 +74,11 @@ public class IntDisruptiva : MonoBehaviour
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             panelLuces.SetActive(true);
+            lucesEmergencia.SetActive(true);
+        }
+        else if (GameManager.GetInstance().faseAhora > numFaseNecesaria)
+        {
+            StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
         }
 
         if (palanquita1Arriba == true && palanquita2Arriba == true && palanquita3Arriba == false && palanquita4Arriba == true && palanquita5Arriba == false && GameManager.GetInstance().faseAhora == numFaseNecesaria)
@@ -296,5 +305,13 @@ public class IntDisruptiva : MonoBehaviour
             estaEnAreaDeInteraccion = false;
             Debug.Log("Jugador salio del area de interaccion juegos");
         }
+    }
+
+    IEnumerator DesactivarObjetosDespuesDeAnimacion()
+    {
+        animLucesEmergencia.SetBool("Salida", true);
+        yield return new WaitForSeconds(3f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
+        // Desactiva los objetos despues de la animacion
+        lucesEmergencia.SetActive(false);
     }
 }
