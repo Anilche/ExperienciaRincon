@@ -22,8 +22,12 @@ public class Inst2Futbol : MonoBehaviour
     [SerializeField] public GameObject ventanaNoche;
 
     [Header("Cortinas")]
-    [SerializeField] public Animator cortinaIzq;
-    [SerializeField] public Animator cortinaDer;
+    [SerializeField] public Animator animCortinaIzq;
+    [SerializeField] public Animator animCortinaDer;
+
+    [Header("Ventanas Corredizas")]
+    [SerializeField] public Animator animVentanaIzq;
+    [SerializeField] public Animator animVentanaDer;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -33,6 +37,12 @@ public class Inst2Futbol : MonoBehaviour
 
     private int contadorVentanas;
 
+    private bool cortinaDerCerrada = false;
+    private bool cortinaIzqCerrada = false;
+
+    private bool ventanaIzqCerrada = false;
+    private bool ventanaDerCerrada = false;
+
     private Camera camara;
 
     AudioManager audioManager;
@@ -41,6 +51,13 @@ public class Inst2Futbol : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
+
+        techoDia.SetActive(true);
+        techoTarde.SetActive(false);
+        techoNoche.SetActive(false);
+        ventanaDia.SetActive(true);
+        ventanaTarde.SetActive(false);
+        ventanaNoche.SetActive(false);
     }
 
 
@@ -49,9 +66,6 @@ public class Inst2Futbol : MonoBehaviour
         
         if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
         {
-            //botonComida1.tag = tagSeleccionable;
-            //botonComida2.tag = tagSeleccionable;
-            //botonComida3.tag = tagSeleccionable;
 
             // Highlight
             if (highlight != null)
@@ -111,22 +125,79 @@ public class Inst2Futbol : MonoBehaviour
                     //Se interactua con las cortinas y se cierran ambas y suman +1 al contador de ventanas, segun el numero es la hora del dia y si llega a 3 vuelve al inicio
                     switch (objetoSeleccionado)
                     {
-                        case "BotonPizza":
+                        case "CortinaDer":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
+                            if (cortinaDerCerrada == false)
+                            {
+                                animCortinaDer.SetBool("cerrarCortina", true);
+                                cortinaDerCerrada = true;
+
+                                StartCoroutine(CambiarCielo());
+                            }
+                            else if (cortinaDerCerrada == true)
+                            {
+                                animCortinaDer.SetBool("cerrarCortina", false);
+                                cortinaDerCerrada = false;
+                            }
                             break;
 
-                        case "BotonTarta":
+                        case "CortinaIzq":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
+                            if (cortinaIzqCerrada == false)
+                            {
+                                animCortinaIzq.SetBool("cerrarCortina", true);
+                                cortinaIzqCerrada = true;
+
+                                StartCoroutine(CambiarCielo());
+                            }
+                            else if (cortinaDerCerrada == true)
+                            {
+                                animCortinaIzq.SetBool("cerrarCortina", false);
+                                cortinaIzqCerrada = false;
+                            }
+                            break;
+
+                        case "VentanaIzq":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                            if (ventanaIzqCerrada == false)
+                            {
+                                animVentanaIzq.SetBool("abrirVentana", true);
+                                ventanaIzqCerrada = true;
+                            }
+                            else if (ventanaIzqCerrada == true)
+                            {
+                                animVentanaIzq.SetBool("abrirVentana", false);
+                                ventanaIzqCerrada = false;
+                            }
+                            break;
+
+                        case "VentanaDer":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                            if (ventanaDerCerrada == false)
+                            {
+                                animVentanaDer.SetBool("abrirVentana", true);
+                                ventanaDerCerrada = true;
+                            }
+                            else if (ventanaDerCerrada == true)
+                            {
+                                animVentanaDer.SetBool("abrirVentana", false);
+                                ventanaDerCerrada = false;
+                            }
                             break;
 
                         default:
-                            Debug.Log("Objeto no reconocido");
                             break;
                     }
 
@@ -145,17 +216,36 @@ public class Inst2Futbol : MonoBehaviour
         
     }
 
-    IEnumerator animacionComida(GameObject comida1, GameObject comida2, GameObject comida3)
+    IEnumerator CambiarCielo()
     {
-        audioManager.PlaySFX(audioManager.sonidoMordida);
-        comida1.SetActive(false);
-        comida2.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        audioManager.PlaySFX(audioManager.sonidoMordida);
-        comida2.SetActive(false);
-        comida3.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        audioManager.PlaySFX(audioManager.sonidoMordida);
-        comida3.SetActive(false);
+        if (cortinaDerCerrada == true && cortinaIzqCerrada == true)
+        {
+            contadorVentanas += 1;
+
+            yield return new WaitForSeconds(1f);
+
+            if (contadorVentanas == 1)
+            {
+                techoDia.SetActive(false);
+                techoTarde.SetActive(true);
+                ventanaDia.SetActive(false);
+                ventanaTarde.SetActive(true);
+            }
+            else if (contadorVentanas == 2)
+            {
+                techoTarde.SetActive(false);
+                techoNoche.SetActive(true);
+                ventanaTarde.SetActive(false);
+                ventanaNoche.SetActive(true);
+            }
+            else if (contadorVentanas >= 3)
+            {
+                techoNoche.SetActive(false);
+                techoDia.SetActive(true);
+                ventanaNoche.SetActive(false);
+                ventanaDia.SetActive(true);
+                contadorVentanas = 0;
+            }
+        }
     }
 }
