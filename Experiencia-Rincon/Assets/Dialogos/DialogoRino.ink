@@ -40,6 +40,22 @@ EXTERNAL ApagarLuces()
     -> F13
 - fase == 14:
     -> F14  
+- fase == 15:
+    -> F15
+- fase == 16:
+    -> F16 
+- fase == 17:
+    -> F17
+- fase == 18:
+    -> F18 
+- fase == 19:
+    -> F19
+- fase == 20:
+    -> F20  
+- fase == 21:
+    -> F21
+- fase == 22:
+    -> F22 
     
 - fase == 26:
     -> FB1  
@@ -153,41 +169,106 @@ Tremendo, lo dejaste impecable. De a poco ya va tomando forma este lugar. Contin
 ~ ReproducirDialogo(20)
 Elegí la música que quieras y volvé a hablarme cuando encuentres la que más te guste, igualmente podés cambiarla en cualquier momento.
 -> END
-
-//Cambiar a partir de aca
  
 === F12 ===
-//Instancia 5 - Después de colgar los marcos - Si se puede que aparezca automático mejor
-~ ReproducirDialogo(14)
-¿Qué opinas? Te preparé estos cuadros porque pensé que te podría llegar a gustar tenerlos a la vista.
-~ ReproducirDialogo(15)
-Ya casi terminas de armar tu rincón, me encanta cómo nos está quedando. Vení que hay una cosita más que te va a interesar.
+//Instancia 4 - Fin
+~ ReproducirDialogo(21)
+Uuuuh, que buena canción. Si que tenés buen gusto eeeh.
+~ ReproducirDialogo(22)
+Esto me está gustando cada vez más y empieza a parecerse más a vos. Ya se está sintiendo tuyo.
+~ ReproducirDialogo(23)
+No te olvides de interactuar un poco con tus alrededores.
 ~ SetFaseActual(1)
 -> END
 
-=== F122 ===
-//Instancia 6/7 - Antes del desbloqueo
-//Sonido de hambre
-~ ReproducirDialogo(16)
-Che tengo un poco de hambre, y supongo que vos también. ¿Te parece si terminamos con algo rico?
--> END
+//Instancia 4.1 - Al interactuar Fase+1 e Inicia instancia descanso
 
 === F13 ===
-//Instancia 6/7 Después de dar confirmación - Si se puede que aparezca automático mejor
-~ ReproducirDialogo(17)
-Ufff que ricooo. Me encantó. Bueno, ya llegamos al final, poco a poco fuiste personalizando ese lugar gris y oscuro en el que empezó todo. Me encanta cómo lo dejaste, te armaste un hermoso rincón.
-~ ReproducirDialogo(18)
-Antes de salir de tu rincón, me gustaría que hagas un pequeño recorrido extra para apreciarlo más a detalle y que sepas que este lugar es tuyo para siempre. Cuando termines de recorrerlo, vení que te llevo a un lugar que nos queda pendiente.
+//Instancia descanso
+~ ReproducirDialogo(24)
+Una parte importante de tu rincón también es el descanso.
+~ ReproducirDialogo(25)
+No sabía que te gustaba tomar, así que preparé de todo, ¿Con qué te relajás más?
 ~ SetFaseActual(1)
 -> END
 
 === F14 ===
-//Después de recorrer el resultado final
-~ ReproducirDialogo(19)
-Pasá sin miedo, yo te voy a estar esperando del otro lado.
-~ SetFaseActual(1)
-//Fase 15 usarla para que se mueva a traves de la puerta
+//Instancia descanso - Si intentas hablar durante la instancia
+~ ReproducirDialogo(25)
+No sabía que te gustaba tomar, así que preparé de todo, ¿Con qué te relajás más?
 -> END
+
+//F14 - Outlines en bebidas, animación bebida elegida, después F+1
+
+=== F15 ===
+//Instancia descanso - Fin
+~ ReproducirDialogo(26)
+¡Qué buena decisión! Ya tenemos las energías renovadas para continuar y hacer de este espacio tu lugar en el mundo. Vení seguime.
+~ SetFaseActual(1)
+-> END
+
+//f16 Rino se mueve a inst5
+
+=== F16 ===
+//Instancia 5 - Antes del desbloqueo
+~ ReproducirDialogo(27)
+Todavía no terminamos de arreglar el lugar eh, hay cosas que ni vimos. 
+~ ReproducirDialogo(28)
+Uh, había preparado unos cuadros pero al parecer se cayeron, ¿podrías ir a colgarlos de nuevo?
+~ SetFaseActual(1)
+-> END
+
+=== F17 ===
+//Instancia 5 - Si intentas hablar durante la instancia
+~ ReproducirDialogo(28)
+Uh, había preparado unos cuadros pero al parecer se cayeron, ¿podrías ir a colgarlos de nuevo?
+-> END
+
+=== F18 ===
+//Instancia 5 - Después de colgar los marcos - Si se puede que aparezca automático mejor
+~ ReproducirDialogo(29)
+¿Qué opinas? Te preparé estos cuadros porque pensé que te podría llegar a gustar tenerlos a la vista.
+~ ReproducirDialogo(30)
+Ya casi terminas de armar tu rincón, me encanta cómo nos está quedando. Vení que hay una cosita más que te va a interesar.
+~ SetFaseActual(1)
+-> END
+
+//F19 - Rino se mueve a instancia 6 - Base central
+
+=== F19 ===
+//Instancia 6 - Antes del desbloqueo
+~ ReproducirDialogo(31)
+Che tengo un poco de hambre, y supongo que vos también. ¿Te parece si terminamos con algo rico?
+~ SetFaseActual(1)
+-> END
+
+=== F20 ===
+//Instancia 6 - Si intentas hablar durante la instancia
+~ ReproducirDialogo(31)
+Che tengo un poco de hambre, y supongo que vos también. ¿Te parece si terminamos con algo rico?
+-> END
+
+//F20 - Aparece la pantalla para seleccionar la “comida” (base central) / Usamos el sistema de elección del prototipo. Desde acá aumenta a fase 21. Que no se pueda salir del seleccionador
+
+=== F21 ===
+//Instancia 6 Después de dar confirmación
+~ ReproducirDialogo(32)
+Ufff que ricooo. Me encantó. Bueno, ya llegamos al final, poco a poco fuiste personalizando ese lugar gris y oscuro en el que empezó todo. Me encanta cómo lo dejaste, te armaste un hermoso rincón.
+~ ReproducirDialogo(33)
+Antes de salir de tu rincón, me gustaría que hagas un pequeño recorrido extra para apreciarlo más a detalle y que sepas que este lugar es tuyo para siempre. Cuando termines de recorrerlo, vení que te llevo a un lugar que nos queda pendiente.
+~ SetFaseActual(1)
+-> END
+
+///F22 - Aparece la puerta del rincón bonus y Rino se mueve hasta la puerta del rincón bonus
+
+=== F22 ===
+//Después de recorrer el resultado final
+~ ReproducirDialogo(34)
+Pasá sin miedo, yo voy atrás tuyo.
+-> END
+
+//El jugador va hacia la puerta, cambia la escena
+
 
 === FB1 ===
 //RINCON BONUS

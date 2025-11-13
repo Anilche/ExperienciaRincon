@@ -2769,7 +2769,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1480451358}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2eaa09584b11a774bbbc36bab5cdf86c,
         type: 3}
@@ -2789,17 +2789,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2eaa09584b11a774bbbc36bab5cdf86c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.54
+      value: -14.883104
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2eaa09584b11a774bbbc36bab5cdf86c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.3953
+      value: -6.801764
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2eaa09584b11a774bbbc36bab5cdf86c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.74
+      value: 4.2919073
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2eaa09584b11a774bbbc36bab5cdf86c,
         type: 3}
@@ -2856,6 +2856,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eaa09584b11a774bbbc36bab5cdf86c, type: 3}
+--- !u!4 &843487857 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2eaa09584b11a774bbbc36bab5cdf86c,
+    type: 3}
+  m_PrefabInstance: {fileID: 843487856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &862789182
 GameObject:
   m_ObjectHideFlags: 0
@@ -5651,6 +5657,8 @@ Transform:
   - {fileID: 736734249}
   - {fileID: 1522788816}
   - {fileID: 1893871510}
+  - {fileID: 843487857}
+  - {fileID: 2062188846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1493236430
@@ -6144,7 +6152,15 @@ MonoBehaviour:
   eleccionActiva: 0
   botonesInst1: {fileID: 7172094371299030428}
   botonesInst2: {fileID: 7172094371299030428}
+  lucesCalido: {fileID: 0}
+  postProCalido: {fileID: 0}
+  lucesNeutro: {fileID: 0}
+  postProNeutro: {fileID: 0}
+  lucesNatural: {fileID: 0}
+  postProNatural: {fileID: 0}
+  postProOscuro: {fileID: 0}
   vcamJugador: {fileID: 1569671681}
+  eleccionLuces: Ninguna
 --- !u!4 &1509842058
 Transform:
   m_ObjectHideFlags: 0
@@ -7694,6 +7710,10 @@ MonoBehaviour:
   seleccionSFX: {fileID: 8300000, guid: ee3d3906f105f24479eeef596ae2aa96, type: 3}
   confirmacionSFX: {fileID: 8300000, guid: 9e9e8c6ba10645d43a36dfd57ba72a78, type: 3}
   sonidoMoneda: {fileID: 8300000, guid: 715d90009a5d10d4f903409dfe09baf6, type: 3}
+  sonidoMordida: {fileID: 0}
+  sonidoCampanaComida: {fileID: 0}
+  sonidoApagon: {fileID: 0}
+  sonidoPrenderLuces: {fileID: 0}
   f0: {fileID: 8300000, guid: 58712a0bb281655428dede55c2b17e56, type: 3}
   f02: {fileID: 8300000, guid: 34efd35f0c763da488c5ada1f47c6aff, type: 3}
   f1: {fileID: 8300000, guid: ddebe4a5dc2f43945bb38dff95652080, type: 3}
@@ -9443,7 +9463,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1480451358}
     m_Modifications:
     - target: {fileID: -8894274294359893303, guid: e20ccbfb8162b1e4288ef11130c6f6ef,
         type: 3}
@@ -9453,17 +9473,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e20ccbfb8162b1e4288ef11130c6f6ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9
+      value: 2.5568967
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e20ccbfb8162b1e4288ef11130c6f6ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.436
+      value: -6.842464
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e20ccbfb8162b1e4288ef11130c6f6ef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.63
+      value: 10.401907
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e20ccbfb8162b1e4288ef11130c6f6ef,
         type: 3}
@@ -9696,6 +9716,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &2062188846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e20ccbfb8162b1e4288ef11130c6f6ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 2062188843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2140152563
 GameObject:
   m_ObjectHideFlags: 0
@@ -10849,5 +10875,3 @@ SceneRoots:
   - {fileID: 874563688}
   - {fileID: 1725578471}
   - {fileID: 1480451358}
-  - {fileID: 2062188843}
-  - {fileID: 843487856}
