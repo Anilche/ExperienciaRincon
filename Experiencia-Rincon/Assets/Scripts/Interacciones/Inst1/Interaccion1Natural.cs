@@ -33,6 +33,7 @@ public class Interaccion1Natural : MonoBehaviour
     [Header("Regadera y hongos")]
     [SerializeField] public Animator animRegaderaHongos;
     [SerializeField] public GameObject regadera;
+    [SerializeField] public ParticleSystem partRegadera;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -55,6 +56,11 @@ public class Interaccion1Natural : MonoBehaviour
         manzanaCanasta4.SetActive(false);
         manzanaCanasta5.SetActive(false);
         manzanaCanasta6.SetActive(false);
+    }
+
+    private void Start()
+    {
+        partRegadera.GetComponent<ParticleSystem>().Stop();
     }
 
     void Update()
@@ -212,6 +218,7 @@ public class Interaccion1Natural : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
                             animRegaderaHongos.SetBool("regarHongos", true);
+                            StartCoroutine(RegaderaApagadoParticulas());
                             break;
 
                         default:
@@ -231,6 +238,13 @@ public class Interaccion1Natural : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator RegaderaApagadoParticulas()
+    {
+        partRegadera.GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(4f);
+        partRegadera.GetComponent<ParticleSystem>().Stop();
     }
 
     /*

@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
 
     public string eleccionLuces = "Ninguna";
 
+    private Camera camara;
+
+    AudioManager audioManager;
+
     private void Update()
     {
         /* final
@@ -51,6 +55,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        camara = Camera.main;
     }
 
     public static GameManager GetInstance()
@@ -71,6 +77,8 @@ public class GameManager : MonoBehaviour
 
     public void ApagarLuces()
     {
+        audioManager.PlaySFX(audioManager.sonidoApagon);
+
         if (eleccionLuces == "Calido")
         {
             lucesCalido.SetActive(false);
@@ -91,6 +99,8 @@ public class GameManager : MonoBehaviour
 
     public void EncenderLuces()
     {
+        audioManager.PlaySFX(audioManager.sonidoPrenderLuces);
+
         if (eleccionLuces == "Calido")
         {
             lucesCalido.SetActive(true);

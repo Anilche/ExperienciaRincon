@@ -42327,7 +42327,7 @@ GameObject:
   - component: {fileID: 523929383}
   - component: {fileID: 523929382}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: ParticulasRegadera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42431,7 +42431,7 @@ ParticleSystem:
   m_GameObject: {fileID: 523929380}
   serializedVersion: 8
   lengthInSec: 2
-  simulationSpeed: 0.1
+  simulationSpeed: 0.2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -49567,6 +49567,7 @@ MonoBehaviour:
   manzanaCanasta6: {fileID: 2027054026}
   animRegaderaHongos: {fileID: 652783681}
   regadera: {fileID: 1212053046}
+  partRegadera: {fileID: 523929383}
   distanciaMaxima: 3
   numFaseNecesaria: 2
 --- !u!1 &638054881
@@ -76635,6 +76636,8 @@ MonoBehaviour:
   sonidoMoneda: {fileID: 8300000, guid: 715d90009a5d10d4f903409dfe09baf6, type: 3}
   sonidoMordida: {fileID: 8300000, guid: f43b275c76085a645ac041f37aef5063, type: 3}
   sonidoCampanaComida: {fileID: 8300000, guid: 5acf1c52b1d22694ab260bfb22f89995, type: 3}
+  sonidoApagon: {fileID: 8300000, guid: 74d16fda2f5d09d4581359cc5baa2d14, type: 3}
+  sonidoPrenderLuces: {fileID: 8300000, guid: 486cc083de5e20e48a3ecfa4331b99ee, type: 3}
   f0: {fileID: 8300000, guid: a0d06a4d707a19a4ea9c272986f2bdd6, type: 3}
   f02: {fileID: 8300000, guid: 49c5f8a952666194e8fb23466abbdd42, type: 3}
   f1: {fileID: 8300000, guid: a2f8eb5fb96d1804aa7197b8accc7b62, type: 3}

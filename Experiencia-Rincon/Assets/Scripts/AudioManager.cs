@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoMoneda;
     public AudioClip sonidoMordida;
     public AudioClip sonidoCampanaComida;
+    public AudioClip sonidoApagon;
+    public AudioClip sonidoPrenderLuces;
 
     [Header("Audio Clips Dialogos")]
     public AudioClip f0;
@@ -66,6 +68,7 @@ public class AudioManager : MonoBehaviour
     public void PlayDialogo(int numClip)
     {
         switch (numClip) {
+            
             case 0:
                 dialogosSource.Stop();
                 dialogosSource.PlayOneShot(f0);
