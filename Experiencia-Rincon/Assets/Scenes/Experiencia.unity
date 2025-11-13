@@ -108203,6 +108203,105 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1585519475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2104947618
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2141137823}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.06505783
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.06505783
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.06505783
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.151
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.7999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.544
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4f947cee9175094e824bc0949b08b43, type: 2}
+    - target: {fileID: 919132149155446097, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_Name
+      value: Timbre Cocina
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: e46575d00845cde4b903b7e10cdc9036,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.35
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e46575d00845cde4b903b7e10cdc9036, type: 3}
+--- !u!4 &2104947619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e46575d00845cde4b903b7e10cdc9036,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104947618}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2106640658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109199,7 +109298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2141137823
 Transform:
   m_ObjectHideFlags: 0
@@ -109221,6 +109320,7 @@ Transform:
   - {fileID: 255621557}
   - {fileID: 935691530}
   - {fileID: 895276899}
+  - {fileID: 2104947619}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2141601020
