@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip seleccionSFX;
     public AudioClip confirmacionSFX;
     public AudioClip sonidoMoneda;
+    public AudioClip sonidoMordida;
+    public AudioClip sonidoCampanaComida;
 
     [Header("Audio Clips Dialogos")]
     public AudioClip f0;

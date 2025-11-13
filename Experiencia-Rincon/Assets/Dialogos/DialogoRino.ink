@@ -124,38 +124,39 @@ Ahora que ya está todo bien, continuemos.
 ~ SetFaseActual(1)
 -> END
 
-//Cambiar a partir de aca
+//Rino se mueve a inst3
 
 === F8 ===
-//Instancia 3 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
-~ ReproducirDialogo(9)
-Tremendo, lo dejaste impecable. De a poco ya va tomando forma este lugar. Continuemos. Podríamos escuchar unas canciones mientras, ¿No? Así se nos hace más divertido. Seguime.
+///Instancia 3 - Antes del desbloqueo
+~ ReproducirDialogo(17)
+Acá vamos a poner algunos objetos que te gustaría tener a la vista. Cosas tuyas. Cosas que te acompañen. Elegí lo que querés que viva en esta estantería.
 ~ SetFaseActual(1)
 -> END
 
 === F9 ===
-//Instancia 4 - Antes del desbloqueo
-~ ReproducirDialogo(10)
-Elegí la música que quieras y volvé a hablarme cuando encuentres la que más te guste, igualmente podés cambiarla en cualquier momento.
+//Instancia 3 - Si intentas hablar durante la instancia
+~ ReproducirDialogo(18)
+Está difícil elegir acá, ¿no? Son bastantes objetos, ni yo me decido jaja.
 -> END
 
 === F10 ===
-//Instancia 4 - Fin
-~ ReproducirDialogo(11)
-Uuuuh, que buena canción. Si que tenés buen gusto eeeh.
-Continuemos, esto me está gustando cada vez más y empieza a parecerse más a vos. Ya se está sintiendo tuyo.
+//Instancia 3 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
+~ ReproducirDialogo(19)
+Tremendo, lo dejaste impecable. De a poco ya va tomando forma este lugar. Continuemos. Podríamos escuchar unas canciones mientras, ¿No? Así se nos hace más divertido. Seguime.
 ~ SetFaseActual(1)
 -> END
 
+//Rino se mueve a la instancia 4
+
 === F11 ===
-//Instancia 5 - Antes del desbloqueo
-~ ReproducirDialogo(12)
-Todavía no terminamos de arreglar el lugar eh, hay cosas que ni vimos. 
-~ ReproducirDialogo(13)
-Uh, había preparado unos cuadros pero al parecer se cayeron, ¿podrías ir a colgarlos de nuevo?
+//Instancia 4
+~ ReproducirDialogo(20)
+Elegí la música que quieras y volvé a hablarme cuando encuentres la que más te guste, igualmente podés cambiarla en cualquier momento.
 -> END
 
-=== F111 ===
+//Cambiar a partir de aca
+ 
+=== F12 ===
 //Instancia 5 - Después de colgar los marcos - Si se puede que aparezca automático mejor
 ~ ReproducirDialogo(14)
 ¿Qué opinas? Te preparé estos cuadros porque pensé que te podría llegar a gustar tenerlos a la vista.
@@ -164,7 +165,7 @@ Ya casi terminas de armar tu rincón, me encanta cómo nos está quedando. Vení
 ~ SetFaseActual(1)
 -> END
 
-=== F12 ===
+=== F122 ===
 //Instancia 6/7 - Antes del desbloqueo
 //Sonido de hambre
 ~ ReproducirDialogo(16)
