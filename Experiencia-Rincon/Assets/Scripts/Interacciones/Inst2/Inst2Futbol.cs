@@ -60,7 +60,6 @@ public class Inst2Futbol : MonoBehaviour
         ventanaNoche.SetActive(false);
     }
 
-
     void Update()
     {
         
@@ -128,7 +127,7 @@ public class Inst2Futbol : MonoBehaviour
                         case "CortinaDer":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            audioManager.PlaySFX(audioManager.seleccionSFX);
+                            audioManager.PlaySFX(audioManager.sonidoCortina);
 
                             if (cortinaDerCerrada == false)
                             {
@@ -147,7 +146,7 @@ public class Inst2Futbol : MonoBehaviour
                         case "CortinaIzq":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            audioManager.PlaySFX(audioManager.seleccionSFX);
+                            audioManager.PlaySFX(audioManager.sonidoCortina);
 
                             if (cortinaIzqCerrada == false)
                             {
