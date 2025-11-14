@@ -9,8 +9,8 @@ public class DialogoTriggerOutline : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    [Header("Boton Interaccion")]
-    [SerializeField] private GameObject botonInteraccion;
+    /*[Header("Boton Interaccion")]
+    [SerializeField] private GameObject botonInteraccion;*/
 
     [Header("INK JSON")]
     [SerializeField] private TextAsset inkJSON;
@@ -21,7 +21,7 @@ public class DialogoTriggerOutline : MonoBehaviour
     private void Awake()
     {
         jugadorEnRango = false;
-        botonInteraccion.SetActive(false);
+        //botonInteraccion.SetActive(false);
     }
 
     private void Update()
@@ -108,7 +108,7 @@ public class DialogoTriggerOutline : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnRango = true;
-            botonInteraccion.SetActive(true);
+            //botonInteraccion.SetActive(true);
         }
     }
     
@@ -117,7 +117,7 @@ public class DialogoTriggerOutline : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnRango = true;
-            botonInteraccion.SetActive(true);
+            //botonInteraccion.SetActive(true);
         }
     }
 
@@ -127,7 +127,7 @@ public class DialogoTriggerOutline : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnRango = false;
-            botonInteraccion.SetActive(false);
+            //botonInteraccion.SetActive(false);
             if (selection != null)
             {
                 selection.gameObject.GetComponent<Outline>().enabled = false;
