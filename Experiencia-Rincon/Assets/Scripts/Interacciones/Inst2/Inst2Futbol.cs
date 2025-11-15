@@ -165,7 +165,7 @@ public class Inst2Futbol : MonoBehaviour
                         case "VentanaIzq":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            audioManager.PlaySFX(audioManager.seleccionSFX);
+                            audioManager.PlaySFX(audioManager.sonidoVentana);
 
                             if (ventanaIzqCerrada == false)
                             {
@@ -182,7 +182,7 @@ public class Inst2Futbol : MonoBehaviour
                         case "VentanaDer":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            audioManager.PlaySFX(audioManager.seleccionSFX);
+                            audioManager.PlaySFX(audioManager.sonidoVentana);
 
                             if (ventanaDerCerrada == false)
                             {

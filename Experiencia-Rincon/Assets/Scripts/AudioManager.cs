@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoApagon;
     public AudioClip sonidoPrenderLuces;
     public AudioClip sonidoCortina;
+    public AudioClip sonidoGol;
+    public AudioClip sonidoVentana;
 
     [Header("Audio Clips Dialogos")]
     public AudioClip f0;

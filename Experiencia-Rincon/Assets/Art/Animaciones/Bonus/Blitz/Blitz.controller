@@ -10,8 +10,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -4121912126909138500}
-    m_Position: {x: 290, y: 120, z: 0}
+    m_State: {fileID: -5548277831830266932}
+    m_Position: {x: 270, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -21,15 +21,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -4121912126909138500}
---- !u!1102 &-4121912126909138500
+  m_DefaultState: {fileID: -5548277831830266932}
+--- !u!1102 &-5548277831830266932
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PalanquitaArriba
+  m_Name: Scene
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -42,7 +42,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4d48e601b1dfb8e4b8bbc071a848eb42, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5ee7e79d40a87fa43917d2d1c4d04437, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

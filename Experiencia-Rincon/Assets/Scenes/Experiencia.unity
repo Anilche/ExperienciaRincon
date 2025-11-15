@@ -86035,6 +86035,8 @@ MonoBehaviour:
   sonidoApagon: {fileID: 8300000, guid: 74d16fda2f5d09d4581359cc5baa2d14, type: 3}
   sonidoPrenderLuces: {fileID: 8300000, guid: 486cc083de5e20e48a3ecfa4331b99ee, type: 3}
   sonidoCortina: {fileID: 8300000, guid: d3fe722aa2a4b7c40a63b6d79dab8f9e, type: 3}
+  sonidoGol: {fileID: 8300000, guid: 1ea165b634b0b6544b749abe17e1bba7, type: 3}
+  sonidoVentana: {fileID: 8300000, guid: 4377befe7c8d0ef4ba8928d3e14458c0, type: 3}
   f0: {fileID: 8300000, guid: a0d06a4d707a19a4ea9c272986f2bdd6, type: 3}
   f02: {fileID: 8300000, guid: 49c5f8a952666194e8fb23466abbdd42, type: 3}
   f1: {fileID: 8300000, guid: a2f8eb5fb96d1804aa7197b8accc7b62, type: 3}
