@@ -14,6 +14,7 @@ public class Instancia3 : MonoBehaviour
 
     [Header("Estanterias finales")]
     [SerializeField] public GameObject estanteriasFinales;
+    [SerializeField] public GameObject lucesEstanteriasFinales;
 
     [Header("Objetos Estanteria Final")]
     [SerializeField] public GameObject objeto1;
@@ -70,6 +71,7 @@ public class Instancia3 : MonoBehaviour
         objeto6.SetActive(false);
         objeto7.SetActive(false);
         objsExtras.SetActive(false);
+        lucesEstanteriasFinales.SetActive(false);
 
         //estanteriaSeleccion.SetActive(false);
         //estanteriasFinales.SetActive(false);
@@ -77,13 +79,13 @@ public class Instancia3 : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
+        /*if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             //particulas.SetActive(true);
 
             //estanteriaSeleccion.SetActive(true);
             //estanteriasFinales.SetActive(true);
-        }
+        }*/
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
         {
@@ -257,6 +259,8 @@ public class Instancia3 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.confirmacionSFX);
 
                             objsExtras.SetActive(true);
+
+                            lucesEstanteriasFinales.SetActive(true);
 
                             StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
 
