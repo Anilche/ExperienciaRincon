@@ -232,7 +232,7 @@ public class Instancia4 : MonoBehaviour
 
     private void cambiarFase()
     {
-        if (GameManager.GetInstance().faseAhora == 10)
+        if (GameManager.GetInstance().faseAhora == 11)
         {
             animatorTocadiscos.SetBool("CerrarTapa", true);
             GameManager.GetInstance().faseAhora += 1; // Cambia a la fase siguiente para que no se vuelva a llamar esta función

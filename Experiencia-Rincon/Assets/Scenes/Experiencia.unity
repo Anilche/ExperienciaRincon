@@ -34178,7 +34178,7 @@ MonoBehaviour:
   objsJBIS: {fileID: 1008006258}
   animatorTocadiscos: {fileID: 1323313803}
   particulas: {fileID: 173729482}
-  numFaseNecesaria: 10
+  numFaseNecesaria: 11
   audioClipSeleccion1: {fileID: 8300000, guid: ca193be8c45306e4883ea62ae003d913, type: 3}
   audioClipSeleccion2: {fileID: 8300000, guid: 45f7cb38564aed74aa7af1229512abbc, type: 3}
   audioClipSeleccion3: {fileID: 8300000, guid: 995ce85ae774580408dc92fec49352bf, type: 3}
@@ -119024,7 +119024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2141137823
 Transform:
   m_ObjectHideFlags: 0

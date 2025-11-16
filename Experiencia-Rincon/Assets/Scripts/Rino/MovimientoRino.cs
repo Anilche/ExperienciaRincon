@@ -53,7 +53,7 @@ public class MovimientoRino : MonoBehaviour
                 indicePuntoActual = 1;
                 break;
 
-            case 10:
+            case 11:
                 indicePuntoActual = 2;
                 break;
 
