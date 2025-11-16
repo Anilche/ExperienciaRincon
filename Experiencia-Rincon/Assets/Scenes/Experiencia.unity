@@ -56985,7 +56985,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2141137823}
+    m_TransformParent: {fileID: 1393146409}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2506cc90cf43b284aa63238245c92735,
         type: 3}
@@ -57005,17 +57005,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2506cc90cf43b284aa63238245c92735,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.754
+      value: 5.3143406
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2506cc90cf43b284aa63238245c92735,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.135
+      value: 0.2792859
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2506cc90cf43b284aa63238245c92735,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.882
+      value: -6.890259
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2506cc90cf43b284aa63238245c92735,
         type: 3}
@@ -57070,7 +57070,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2506cc90cf43b284aa63238245c92735,
         type: 3}
       propertyPath: m_Name
-      value: taza con te
+      value: Te
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2506cc90cf43b284aa63238245c92735,
+        type: 3}
+      propertyPath: m_TagString
+      value: Seleccionable
       objectReference: {fileID: 0}
     - target: {fileID: 5064578544286775295, guid: 2506cc90cf43b284aa63238245c92735,
         type: 3}
@@ -79763,7 +79768,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2141137823}
+    m_TransformParent: {fileID: 1393146409}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5da028dde23dcf94c89921f4b30e59fd,
         type: 3}
@@ -79783,17 +79788,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5da028dde23dcf94c89921f4b30e59fd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.742
+      value: 5.3023415
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5da028dde23dcf94c89921f4b30e59fd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.247
+      value: 0.39128542
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5da028dde23dcf94c89921f4b30e59fd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.137
+      value: -6.6352577
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5da028dde23dcf94c89921f4b30e59fd,
         type: 3}
@@ -79844,6 +79849,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5da028dde23dcf94c89921f4b30e59fd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Seleccionable
       objectReference: {fileID: 0}
     - target: {fileID: 3134838700606499506, guid: 5da028dde23dcf94c89921f4b30e59fd,
         type: 3}
@@ -88868,22 +88878,22 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2141137823}
+    m_TransformParent: {fileID: 1393146409}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: defc4725b9903004fbcc65cf875872de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.742086
+      value: 5.3024273
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: defc4725b9903004fbcc65cf875872de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.163742
+      value: 0.30802774
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: defc4725b9903004fbcc65cf875872de,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.92
+      value: -6.852257
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: defc4725b9903004fbcc65cf875872de,
         type: 3}
@@ -88928,7 +88938,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: defc4725b9903004fbcc65cf875872de,
         type: 3}
       propertyPath: m_Name
-      value: bandeja
+      value: Bandeja
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89524,6 +89534,41 @@ Transform:
   - {fileID: 85265551}
   - {fileID: 2141601021}
   m_Father: {fileID: 632483827}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1393146408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393146409}
+  m_Layer: 0
+  m_Name: Bandejas con bebidas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393146409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393146408}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.856, y: 0.36, z: 1.286}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1371643393}
+  - {fileID: 1857920698}
+  - {fileID: 699863267}
+  - {fileID: 1104022493}
+  m_Father: {fileID: 1505141160}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1397087937
 GameObject:
@@ -93147,6 +93192,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1404481259}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1505141159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505141160}
+  m_Layer: 0
+  m_Name: InstanciaDescanso
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1505141160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505141159}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.848362, y: 4.5446205, z: -38.06774}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1393146409}
+  m_Father: {fileID: 1646328172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1509500185
 GameObject:
@@ -97244,6 +97321,7 @@ Transform:
   - {fileID: 1850540256}
   - {fileID: 63987276}
   - {fileID: 1612940779}
+  - {fileID: 1505141160}
   - {fileID: 1034328624}
   - {fileID: 878867758}
   m_Father: {fileID: 0}
@@ -104231,7 +104309,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2141137823}
+    m_TransformParent: {fileID: 1393146409}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ac00553bc19eb8e4c814075c83e5a715,
         type: 3}
@@ -104251,17 +104329,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ac00553bc19eb8e4c814075c83e5a715,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.76502
+      value: 5.3253613
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ac00553bc19eb8e4c814075c83e5a715,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.142794
+      value: 0.28707933
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ac00553bc19eb8e4c814075c83e5a715,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.6635
+      value: -7.108757
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ac00553bc19eb8e4c814075c83e5a715,
         type: 3}
@@ -104306,7 +104384,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ac00553bc19eb8e4c814075c83e5a715,
         type: 3}
       propertyPath: m_Name
-      value: cafe
+      value: Cafe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac00553bc19eb8e4c814075c83e5a715,
+        type: 3}
+      propertyPath: m_TagString
+      value: Seleccionable
       objectReference: {fileID: 0}
     - target: {fileID: 5064578544286775295, guid: ac00553bc19eb8e4c814075c83e5a715,
         type: 3}
@@ -119024,7 +119107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2141137823
 Transform:
   m_ObjectHideFlags: 0
@@ -119038,11 +119121,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1371643393}
   - {fileID: 1255365339}
-  - {fileID: 1857920698}
-  - {fileID: 699863267}
-  - {fileID: 1104022493}
   - {fileID: 255621557}
   - {fileID: 935691530}
   - {fileID: 895276899}
