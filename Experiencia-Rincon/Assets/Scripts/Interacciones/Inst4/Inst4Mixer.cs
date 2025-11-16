@@ -86,7 +86,7 @@ public class Inst4Mixer : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    Debug.Log(highlight.gameObject);
+                    //Debug.Log(highlight.gameObject);
 
                     string objetoSeleccionado = highlight.gameObject.name;
 

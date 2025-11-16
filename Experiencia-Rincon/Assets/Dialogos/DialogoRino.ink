@@ -259,7 +259,7 @@ Antes de salir de tu rincón, me gustaría que hagas un pequeño recorrido extra
 ~ SetFaseActual(1)
 -> END
 
-///F22 - Aparece la puerta del rincón bonus y Rino se mueve hasta la puerta del rincón bonus
+//F22 - Aparece la puerta del rincón bonus y Rino se mueve hasta la puerta del rincón bonus
 
 === F22 ===
 //Después de recorrer el resultado final

@@ -102,7 +102,7 @@ public class Interaccion1Neutral : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    Debug.Log(highlight.gameObject);
+                    //Debug.Log(highlight.gameObject);
 
                     string objetoSeleccionado = highlight.gameObject.name;
 
@@ -112,7 +112,6 @@ public class Interaccion1Neutral : MonoBehaviour
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
-                            //animMoneda.SetBool("TirarMoneda", true);
                             StartCoroutine(animacionYSonido());
                             monedaTirada = true;
                             break;
