@@ -117914,7 +117914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animInstrumento: {fileID: 476338930}
-  distanciaMaxima: 3
+  distanciaMaxima: 5
   numFaseNecesaria: 11
 --- !u!1001 &2104947618
 PrefabInstance:
