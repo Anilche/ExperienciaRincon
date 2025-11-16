@@ -11,8 +11,8 @@ public class Inst4Weeknd : MonoBehaviour
 
     //private string tagSeleccionable = "Seleccionable";
 
-    //[Header("Animator Instrumento")]
-    //[SerializeField] public Animator animInstrumento;
+    [Header("Animator Instrumento")]
+    [SerializeField] public Animator animInstrumento;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -90,15 +90,12 @@ public class Inst4Weeknd : MonoBehaviour
 
                     string objetoSeleccionado = highlight.gameObject.name;
 
-
-                    //Se interactua con las cortinas y se cierran ambas y suman +1 al contador de ventanas, segun el numero es la hora del dia y si llega a 3 vuelve al inicio
                     switch (objetoSeleccionado)
                     {
-                        case "Piano":
+                        case "Teclas":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             StartCoroutine(hacerAnimacion());
-
                             break;
 
                         default:
@@ -117,14 +114,13 @@ public class Inst4Weeknd : MonoBehaviour
                 }
             }
         }
-
     }
 
     IEnumerator hacerAnimacion()
     {
-        audioManager.PlaySFX(audioManager.sonidoGuitarra);
-        //animInstrumento.SetBool("tocar", true);
-        yield return new WaitForSeconds(1f);
-        //animInstrumento.SetBool("tocar", false);
+        audioManager.PlaySFX(audioManager.sonidoPiano);
+        animInstrumento.SetBool("tocar", true);
+        yield return new WaitForSeconds(3f);
+        animInstrumento.SetBool("tocar", false);
     }
 }

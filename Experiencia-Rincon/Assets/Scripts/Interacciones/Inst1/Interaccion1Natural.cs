@@ -11,6 +11,8 @@ public class Interaccion1Natural : MonoBehaviour
     //private bool estaEnAreaDeInteraccion = false;
 
     private string tagSeleccionable = "Seleccionable";
+    private string tagNoSeleccionable = "Untagged";
+    private bool regaderaYaRego = false;
 
     private int contadorManzanasRecogidas = 0;
 
@@ -83,7 +85,14 @@ public class Interaccion1Natural : MonoBehaviour
             manzana4.tag = tagSeleccionable;
             manzana5.tag = tagSeleccionable;
             manzana6.tag = tagSeleccionable;
-            regadera.tag = tagSeleccionable;
+
+            if (regaderaYaRego == false)
+            {
+                regadera.tag = tagSeleccionable;
+            } else
+            {
+                regadera.tag = tagNoSeleccionable;
+            }
 
             // Highlight
             if (highlight != null)
@@ -219,10 +228,11 @@ public class Interaccion1Natural : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
                             animRegaderaHongos.SetBool("regarHongos", true);
                             StartCoroutine(RegaderaApagadoParticulas());
+                            regaderaYaRego = true;
                             break;
 
                         default:
-                            Debug.Log("Objeto no reconocido");
+                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 

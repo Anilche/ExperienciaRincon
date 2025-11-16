@@ -9,10 +9,10 @@ public class Inst4Mixer : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    //private string tagSeleccionable = "Seleccionable";
+    // private string tagSeleccionable = "Seleccionable";
 
-    //[Header("Animator Instrumento")]
-    //[SerializeField] public Animator animInstrumento;
+    [Header("Animator Instrumento")]
+    [SerializeField] public Animator animInstrumento;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -90,8 +90,6 @@ public class Inst4Mixer : MonoBehaviour
 
                     string objetoSeleccionado = highlight.gameObject.name;
 
-
-                    //Se interactua con las cortinas y se cierran ambas y suman +1 al contador de ventanas, segun el numero es la hora del dia y si llega a 3 vuelve al inicio
                     switch (objetoSeleccionado)
                     {
                         case "Mixer":
@@ -121,9 +119,8 @@ public class Inst4Mixer : MonoBehaviour
 
     IEnumerator hacerAnimacion()
     {
-        audioManager.PlaySFX(audioManager.sonidoGuitarra);
-        //animInstrumento.SetBool("tocar", true);
-        yield return new WaitForSeconds(1f);
-        //animInstrumento.SetBool("tocar", false);
+        animInstrumento.SetBool("tocar", true);
+        yield return new WaitForSeconds(2f);
+        animInstrumento.SetBool("tocar", false);
     }
 }

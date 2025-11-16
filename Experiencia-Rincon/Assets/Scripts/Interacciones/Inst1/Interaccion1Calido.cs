@@ -367,7 +367,7 @@ public class Interaccion1Calido : MonoBehaviour
                             break;
 
                         default:
-                            Debug.Log("Objeto no reconocido");
+                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 

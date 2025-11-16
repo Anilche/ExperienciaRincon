@@ -189,7 +189,7 @@ public class Inst2Menu : MonoBehaviour
                             break;
 
                         default:
-                            Debug.Log("Objeto no reconocido");
+                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 
