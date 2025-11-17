@@ -166,7 +166,7 @@ public class InstDescanso : MonoBehaviour
         bebidas.SetActive(false);
 
         animBandeja.SetBool("Salida", true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         bandeja.SetActive(false);
     }
 }
