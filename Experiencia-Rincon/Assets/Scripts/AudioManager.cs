@@ -22,6 +22,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoGuitarra;
     public AudioClip sonidoPiano;
     public AudioClip sonidoMixer;
+    public AudioClip sonidoMate;
+    public AudioClip sonidoTeCafe;
 
     [Header("Audio Clips Dialogos")]
     public AudioClip f0;

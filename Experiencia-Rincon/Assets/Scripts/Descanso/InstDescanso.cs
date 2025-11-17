@@ -10,9 +10,15 @@ public class InstDescanso : MonoBehaviour
     private RaycastHit raycastHit;
 
     // private string tagSeleccionable = "Seleccionable";
+    [Header("Bandej")]
+    [SerializeField] public Animator animBandeja;
+    [SerializeField] public GameObject bandeja;
 
-    //[Header("Animator Instrumento")]
-    //[SerializeField] public Animator animInstrumento;
+    [Header("Bebidas")]
+    [SerializeField] public GameObject bebidas;
+    [SerializeField] public GameObject cafe;
+    [SerializeField] public GameObject te;
+    [SerializeField] public GameObject mate;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -28,6 +34,8 @@ public class InstDescanso : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
+
+        bebidas.SetActive(false);
     }
 
     void Update()
@@ -96,20 +104,25 @@ public class InstDescanso : MonoBehaviour
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             Debug.Log("Seleccionaste el mate");
-                            //StartCoroutine(hacerAnimacion());
+                            GameManager.GetInstance().faseAhora += 1;
+                            StartCoroutine(hacerAnimacion(mate));
 
                             break;
 
                         case "Cafe":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
+
                             Debug.Log("Seleccionaste el café");
-                            //StartCoroutine(hacerAnimacion());
+                            GameManager.GetInstance().faseAhora += 1;
+                            StartCoroutine(hacerAnimacion(cafe));
                             break;
 
                         case "Te":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
+
                             Debug.Log("Seleccionaste el té");
-                            //StartCoroutine(hacerAnimacion());
+                            GameManager.GetInstance().faseAhora += 1;
+                            StartCoroutine(hacerAnimacion(te));
                             break;
 
                         default:
@@ -129,11 +142,31 @@ public class InstDescanso : MonoBehaviour
             }
         }
     }
-    /*
-    IEnumerator hacerAnimacion()
+    
+    IEnumerator hacerAnimacion(GameObject bebidaAElegir)
     {
-        animInstrumento.SetBool("tocar", true);
+        bebidas.SetActive(true);
+        te.SetActive(false);
+        mate.SetActive(false);
+        cafe.SetActive(false);
+        bebidaAElegir.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        if (bebidaAElegir.name == "Te" || bebidaAElegir.name == "Cafe")
+        {
+            audioManager.PlaySFX(audioManager.sonidoTeCafe);
+        }
+        if (bebidaAElegir.name == "Mate")
+        {
+            audioManager.PlaySFX(audioManager.sonidoMate);
+        }
+
         yield return new WaitForSeconds(2f);
-        animInstrumento.SetBool("tocar", false);
-    }*/
+        bebidas.SetActive(false);
+
+        animBandeja.SetBool("Salida", true);
+        yield return new WaitForSeconds(2f);
+        bandeja.SetActive(false);
+    }
 }

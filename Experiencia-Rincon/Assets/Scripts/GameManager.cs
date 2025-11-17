@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public int faseAhora; // Fase actual del jugador, se puede setear desde otro script
+    public int faseAhora = 0; // Fase actual del jugador, se puede setear desde otro script
 
     public bool eleccionActiva;
 
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        faseAhora = 0; // Inicializa la fase actual del jugador
+        //faseAhora = 0; // Inicializa la fase actual del jugador
         eleccionActiva = false; // Inicializa el estado de la elección como no activa
         Cursor.lockState = CursorLockMode.Locked;
     }
