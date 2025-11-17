@@ -11,8 +11,8 @@ public class InstDescanso : MonoBehaviour
 
     // private string tagSeleccionable = "Seleccionable";
 
-    [Header("Animator Instrumento")]
-    [SerializeField] public Animator animInstrumento;
+    //[Header("Animator Instrumento")]
+    //[SerializeField] public Animator animInstrumento;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -33,7 +33,7 @@ public class InstDescanso : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
         {
 
             // Highlight
@@ -92,11 +92,24 @@ public class InstDescanso : MonoBehaviour
 
                     switch (objetoSeleccionado)
                     {
-                        case "Mixer":
+                        case "Mate":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            StartCoroutine(hacerAnimacion());
+                            Debug.Log("Seleccionaste el mate");
+                            //StartCoroutine(hacerAnimacion());
 
+                            break;
+
+                        case "Cafe":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                            Debug.Log("Seleccionaste el café");
+                            //StartCoroutine(hacerAnimacion());
+                            break;
+
+                        case "Te":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                            Debug.Log("Seleccionaste el té");
+                            //StartCoroutine(hacerAnimacion());
                             break;
 
                         default:
@@ -116,11 +129,11 @@ public class InstDescanso : MonoBehaviour
             }
         }
     }
-
+    /*
     IEnumerator hacerAnimacion()
     {
         animInstrumento.SetBool("tocar", true);
         yield return new WaitForSeconds(2f);
         animInstrumento.SetBool("tocar", false);
-    }
+    }*/
 }

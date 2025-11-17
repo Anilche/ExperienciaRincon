@@ -25,12 +25,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public GameObject postProOscuro;
 
+    public string eleccionLuces = "Ninguna";
+
+    [Header("Instancia Descanso")]
+    [SerializeField] public GameObject bandejaBebidas;
+
     private static GameManager instance;
 
-    [SerializeField] private CinemachineVirtualCamera vcamJugador;
+    //[Header("Camara jugador")]
+    //[SerializeField] private CinemachineVirtualCamera vcamJugador;
     //[SerializeField] private CinemachineVirtualCamera vcamHabilitarBonus;
-
-    public string eleccionLuces = "Ninguna";
 
     private Camera camara;
 
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
+        bandejaBebidas.SetActive(false);
     }
 
     public static GameManager GetInstance()
@@ -117,6 +122,11 @@ public class GameManager : MonoBehaviour
             postProNatural.SetActive(true);
         }
         postProOscuro.SetActive(false);
+    }
+
+    public void ActivarBandejaBebidas()
+    {
+        bandejaBebidas.SetActive(true);
     }
 
     /*

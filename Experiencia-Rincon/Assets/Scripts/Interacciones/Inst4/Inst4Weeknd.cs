@@ -120,7 +120,7 @@ public class Inst4Weeknd : MonoBehaviour
     {
         audioManager.PlaySFX(audioManager.sonidoPiano);
         animInstrumento.SetBool("tocar", true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         animInstrumento.SetBool("tocar", false);
     }
 }

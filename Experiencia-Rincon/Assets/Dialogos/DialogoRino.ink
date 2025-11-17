@@ -3,6 +3,7 @@ EXTERNAL GetFase()
 EXTERNAL ReproducirDialogo(numeroLineaDeVoz)
 EXTERNAL OcultarBotonesInst1()
 EXTERNAL ApagarLuces()
+EXTERNAL ActivarBandejaBebidas()
 
 -> elegir_fase
 
@@ -187,6 +188,7 @@ No te olvides de interactuar un poco con tus alrededores.
 //Instancia descanso
 ~ ReproducirDialogo(24)
 Una parte importante de tu rincón también es el descanso.
+~ ActivarBandejaBebidas()
 ~ ReproducirDialogo(25)
 No sabía que te gustaba tomar, así que preparé de todo, ¿Con qué te relajás más?
 ~ SetFaseActual(1)

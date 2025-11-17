@@ -89,6 +89,11 @@ public class DialogoManager : MonoBehaviour
         {
             GameManager.GetInstance().ApagarLuces();
         });
+
+        estaHistoria.BindExternalFunction("ActivarBandejaBebidas", () =>
+        {
+            GameManager.GetInstance().ActivarBandejaBebidas();
+        });
     }
 
     private void DejarDeRegistrarFuncionesExternas()
