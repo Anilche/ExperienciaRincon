@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class DialogoManager : MonoBehaviour
@@ -93,6 +94,11 @@ public class DialogoManager : MonoBehaviour
         estaHistoria.BindExternalFunction("ActivarBandejaBebidas", () =>
         {
             GameManager.GetInstance().ActivarBandejaBebidas();
+        });
+
+        estaHistoria.BindExternalFunction("PasarEscenaA", (string escena) =>
+        {
+            SceneManager.LoadScene(escena);
         });
     }
 

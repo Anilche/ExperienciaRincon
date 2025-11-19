@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
         bandejaBebidas.SetActive(true);
     }
 
+
     /*
     private IEnumerator DesbloqueoSalaBonus()
     {
