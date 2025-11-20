@@ -9,47 +9,79 @@ public class Instancia5 : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeElecciones = false;
-
-    [Header("Cuadros tirados")]
-    [SerializeField] public GameObject cuadrosTirados;
-
-    [Header("Cuadros En Mano")]
-    [SerializeField] public GameObject cuadroMano1;
-    [SerializeField] public GameObject cuadroMano2;
-    [SerializeField] public GameObject cuadroMano3;
+    [Header("Cuadros Tirados")]
+    [SerializeField] public GameObject cuadroTirado1;
+    [SerializeField] public GameObject cuadroTirado2;
+    [SerializeField] public GameObject cuadroTirado3;
 
     [Header("Cuadros Colgando")]
     [SerializeField] public GameObject cuadroColgando1;
     [SerializeField] public GameObject cuadroColgando2;
     [SerializeField] public GameObject cuadroColgando3;
 
-    [Header("Indicador particulas")]
-    [SerializeField] public GameObject particulas;
-
     [Header("Requerimientos para utilizarse")]
-    [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
+    [SerializeField] public int numFaseNecesaria;
+
+    [Header("Distancia máxima de interacción")]
+    [SerializeField] private float distanciaMaxima = 3f;
+
+    private int contadorCuadrosColocados = 0;
+
+    private Camera camara;
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        camara = Camera.main;
+    }
 
     void Start()
     {
-        
+        cuadroColgando1.SetActive(false);
+        cuadroColgando2.SetActive(false);
+        cuadroColgando3.SetActive(false);
+        cuadroTirado1.SetActive(true);
+        cuadroTirado2.SetActive(true);
+        cuadroTirado3.SetActive(true);
     }
 
     void Update()
     {
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
+            if (contadorCuadrosColocados == 0)
+            {
+                cuadroColgando1.tag = "Seleccionable";
+                cuadroColgando2.tag = "Seleccionable";
+                cuadroColgando3.tag = "Seleccionable";
+            }
+
+            if (contadorCuadrosColocados == 3)
+            {
+                GameManager.GetInstance().SetFaseActual(numFaseNecesaria + 1);
+            }
+
             // Highlight
             if (highlight != null)
             {
                 highlight.gameObject.GetComponent<Outline>().enabled = false;
                 highlight = null;
             }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
+
+            if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit))
             {
                 highlight = raycastHit.transform;
-                if (highlight.CompareTag("Seleccionable") && highlight != selection)
+
+                float distanciaHighlight = Vector3.Distance(
+                    GameObject.FindGameObjectWithTag("Player").transform.position,
+                    highlight.position
+                );
+
+                if (highlight.CompareTag("Seleccionable") && distanciaHighlight <= distanciaMaxima)
                 {
                     if (highlight.gameObject.GetComponent<Outline>() != null)
                     {
@@ -69,38 +101,71 @@ public class Instancia5 : MonoBehaviour
                 }
             }
 
-            // Selection
+            // -------------------------
+            //   SECCIÓN CORREGIDA
+            // -------------------------
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (highlight)
+                // Primero: validar que HIGHLIGHT no sea null
+                if (highlight == null)
+                    return;
+
+                // Ahora que sabemos que highlight existe, medimos distancia
+                float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position,highlight.position);
+
+                if (distancia <= distanciaMaxima)
                 {
                     if (selection != null)
                     {
                         selection.gameObject.GetComponent<Outline>().enabled = false;
                     }
+
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    Debug.Log(highlight.gameObject);
-
                     string objetoSeleccionado = highlight.gameObject.name;
 
-                    /*
                     switch (objetoSeleccionado)
                     {
-                        case "BotonPortal1":
-                            objeto1.SetActive(true);
-                            objeto2.SetActive(false);
-                            objeto3.SetActive(false);
-
+                        case "CuadroTirado1":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
-                            animBoton1.SetTrigger("pulsarBoton");
+                            cuadroTirado1.SetActive(false);
+                            cuadroColgando1.SetActive(true);
+                            break;
+
+                        case "CuadroTirado2":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                            cuadroTirado2.SetActive(false);
+                            cuadroColgando2.SetActive(true);
+                            break;
+
+                        case "CuadroTirado3":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                            cuadroTirado3.SetActive(false);
+                            cuadroColgando3.SetActive(true);
+                            break;
+
+                        case "Cuadro1":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                            cuadroColgando1.tag = "Untagged";
+                            Debug.Log("Cuadro 1 seleccionado");
+                            break;
+
+                        case "Cuadro2":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                            cuadroColgando2.tag = "Untagged";
+                            Debug.Log("Cuadro 2 seleccionado");
+                            break;
+
+                        case "Cuadro3":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                            cuadroColgando3.tag = "Untagged";
+                            Debug.Log("Cuadro 3 seleccionado");
                             break;
 
                         default:
-                            Debug.Log("Objeto no reconocido");
                             break;
-                    }*/
+                    }
 
                     highlight = null;
                 }
@@ -113,21 +178,6 @@ public class Instancia5 : MonoBehaviour
                     }
                 }
             }
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-            //particulas.SetActive(true);
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            estaEnAreaDeElecciones = false;
         }
     }
 }
