@@ -31,7 +31,14 @@ public class BotonesInst5 : MonoBehaviour
 
         lienzoBaseCuadro.SetActive(false);
 
-        contadorSelecciones--;
+        contadorSelecciones = contadorSelecciones - 1;
+
+        if (contadorSelecciones <= 0)
+        {
+            contadorSelecciones = 3;
+        }
+
+        Debug.Log(contadorSelecciones);
 
         cambiarLienzo();
     }
@@ -44,16 +51,20 @@ public class BotonesInst5 : MonoBehaviour
 
         contadorSelecciones++;
 
+        Debug.Log(contadorSelecciones);
+
         cambiarLienzo();
     }
 
     private void cambiarLienzo()
     {
-        if (contadorSelecciones == 1)
+        if (contadorSelecciones == 1 || contadorSelecciones >= 4)
         {
             lienzo1.SetActive(true);
             lienzo2.SetActive(false);
             lienzo3.SetActive(false);
+
+            contadorSelecciones = 1;
         }
         else if (contadorSelecciones == 2)
         {
@@ -66,8 +77,6 @@ public class BotonesInst5 : MonoBehaviour
             lienzo1.SetActive(false);
             lienzo2.SetActive(false);
             lienzo3.SetActive(true);
-
-            contadorSelecciones = 0;
         }
     }
 

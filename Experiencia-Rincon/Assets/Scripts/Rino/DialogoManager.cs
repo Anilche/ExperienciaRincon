@@ -100,6 +100,11 @@ public class DialogoManager : MonoBehaviour
         {
             SceneManager.LoadScene(escena);
         });
+
+        estaHistoria.BindExternalFunction("ActivarCuadrosTirados", () =>
+        {
+            GameManager.GetInstance().ActivarCuadrosTirados();
+        });
     }
 
     private void DejarDeRegistrarFuncionesExternas()

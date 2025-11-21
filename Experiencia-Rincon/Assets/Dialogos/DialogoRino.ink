@@ -4,6 +4,7 @@ EXTERNAL ReproducirDialogo(numeroLineaDeVoz)
 EXTERNAL OcultarBotonesInst1()
 EXTERNAL ApagarLuces()
 EXTERNAL ActivarBandejaBebidas()
+EXTERNAL ActivarCuadrosTirados()
 
 -> elegir_fase
 
@@ -217,6 +218,7 @@ No sabía que te gustaba tomar, así que preparé de todo, ¿Con qué te relajá
 Todavía no terminamos de arreglar el lugar eh, hay cosas que ni vimos. 
 ~ ReproducirDialogo(28)
 Uh, había preparado unos cuadros pero al parecer se cayeron, ¿podrías ir a colgarlos de nuevo?
+~ ActivarCuadrosTirados()
 ~ SetFaseActual(1)
 -> END
 

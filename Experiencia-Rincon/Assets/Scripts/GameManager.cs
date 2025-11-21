@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     [Header("Instancia Descanso")]
     [SerializeField] public GameObject bandejaBebidas;
 
+    [Header("Cuadros tirados Instancia 5")]
+    [SerializeField] public GameObject cuadrosTirados;
+
     private static GameManager instance;
 
     //[Header("Camara jugador")]
@@ -127,6 +130,11 @@ public class GameManager : MonoBehaviour
     public void ActivarBandejaBebidas()
     {
         bandejaBebidas.SetActive(true);
+    }
+
+    public void ActivarCuadrosTirados()
+    {
+        cuadrosTirados.SetActive(true);
     }
 
 

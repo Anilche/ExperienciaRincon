@@ -69,18 +69,17 @@ public class Instancia5 : MonoBehaviour
         
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-
-            if (contadorCuadrosColocados == 0)
-            {
-                cuadroColgando1.tag = "Seleccionable";
-                cuadroColgando2.tag = "Seleccionable";
-                cuadroColgando3.tag = "Seleccionable";
-            }
+             cuadroColgando1.tag = "Seleccionable";
+             cuadroColgando2.tag = "Seleccionable";
+             cuadroColgando3.tag = "Seleccionable";
 
             if (contadorCuadrosColocados == 3)
             {
-                GameManager.GetInstance().SetFaseActual(numFaseNecesaria + 1);
-                contadorCuadrosColocados = 4;
+                GameManager.GetInstance().SetFaseActual(1);
+                cuadroColgando1.tag = "Untagged";
+                cuadroColgando2.tag = "Untagged";
+                cuadroColgando3.tag = "Untagged";
+                Debug.Log("Fase " + GameManager.GetInstance().faseAhora);
             }
 
             // Highlight
@@ -166,7 +165,7 @@ public class Instancia5 : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            cuadroColgando1.tag = "Untagged";
+                            //cuadroColgando1.tag = "Untagged";
 
                             IniciarEleccion(vcamLienzo1, uiEleccionesLienzo1);
                             break;
@@ -176,7 +175,7 @@ public class Instancia5 : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            cuadroColgando2.tag = "Untagged";
+                            //cuadroColgando2.tag = "Untagged";
 
                             IniciarEleccion(vcamLienzo2, uiEleccionesLienzo2);
                             break;
@@ -186,7 +185,7 @@ public class Instancia5 : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            cuadroColgando3.tag = "Untagged";
+                            //cuadroColgando3.tag = "Untagged";
 
                             eleccionActiva = "Lienzo3";
 
@@ -220,24 +219,12 @@ public class Instancia5 : MonoBehaviour
 
         ActivarCamaraEleccion(vcamEleccion); // Activa la cámara de elecciones
         
-        //uiElecciones.SetActive(true);
         StartCoroutine(esperarYPrenderUI(uiElecciones));
     }
 
     public void ConfirmarSeleccion()
     {
-        if (eleccionActiva == "Lienzo3")
-        {
-            ActivarCamaraJugador(vcamLienzo3);
-        }
-        if (eleccionActiva == "Lienzo2")
-        {
-            ActivarCamaraJugador(vcamLienzo2);
-        }
-        if (eleccionActiva == "Lienzo1")
-        {
-            ActivarCamaraJugador(vcamLienzo1);
-        }
+        ActivarCamaraJugador();
 
         uiEleccionesLienzo1.SetActive(false);
         uiEleccionesLienzo2.SetActive(false);
@@ -251,10 +238,12 @@ public class Instancia5 : MonoBehaviour
         contadorCuadrosColocados++; // Aumenta el contador de cuadros colocados
     }
 
-    private void ActivarCamaraJugador(CinemachineVirtualCamera vcamEleccion)
+    private void ActivarCamaraJugador()
     {
         vcamJugador.Priority = 10;
-        vcamEleccion.Priority = 0;
+        vcamLienzo1.Priority = 0;
+        vcamLienzo2.Priority = 0;
+        vcamLienzo3.Priority = 0;
     }
 
     private void ActivarCamaraEleccion(CinemachineVirtualCamera vcamEleccion)
@@ -265,7 +254,7 @@ public class Instancia5 : MonoBehaviour
 
     IEnumerator esperarYPrenderUI(GameObject ui)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         ui.SetActive(true);
     }
 }
