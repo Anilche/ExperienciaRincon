@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,17 +20,30 @@ public class Instancia5 : MonoBehaviour
     [SerializeField] public GameObject cuadroColgando2;
     [SerializeField] public GameObject cuadroColgando3;
 
+    [Header("Camaras")]
+    [SerializeField] private CinemachineVirtualCamera vcamJugador;
+    [SerializeField] private CinemachineVirtualCamera vcamLienzo1;
+    [SerializeField] private CinemachineVirtualCamera vcamLienzo2;
+    [SerializeField] private CinemachineVirtualCamera vcamLienzo3;
+
+    [Header("UI Elecciones")]
+    [SerializeField] private GameObject uiEleccionesLienzo1;
+    [SerializeField] private GameObject uiEleccionesLienzo2;
+    [SerializeField] private GameObject uiEleccionesLienzo3;
+
     [Header("Requerimientos para utilizarse")]
-    [SerializeField] public int numFaseNecesaria;
+    [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
     [Header("Distancia máxima de interacción")]
-    [SerializeField] private float distanciaMaxima = 3f;
+    [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
 
     private int contadorCuadrosColocados = 0;
 
     private Camera camara;
 
     AudioManager audioManager;
+
+    public string eleccionActiva = "";
 
     private void Awake()
     {
@@ -45,12 +59,17 @@ public class Instancia5 : MonoBehaviour
         cuadroTirado1.SetActive(true);
         cuadroTirado2.SetActive(true);
         cuadroTirado3.SetActive(true);
+        uiEleccionesLienzo1.SetActive(false);
+        uiEleccionesLienzo2.SetActive(false);
+        uiEleccionesLienzo3.SetActive(false);
     }
 
     void Update()
     {
+        
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
+
             if (contadorCuadrosColocados == 0)
             {
                 cuadroColgando1.tag = "Seleccionable";
@@ -61,6 +80,7 @@ public class Instancia5 : MonoBehaviour
             if (contadorCuadrosColocados == 3)
             {
                 GameManager.GetInstance().SetFaseActual(numFaseNecesaria + 1);
+                contadorCuadrosColocados = 4;
             }
 
             // Highlight
@@ -72,16 +92,13 @@ public class Instancia5 : MonoBehaviour
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit))
+            if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
             {
                 highlight = raycastHit.transform;
 
-                float distanciaHighlight = Vector3.Distance(
-                    GameObject.FindGameObjectWithTag("Player").transform.position,
-                    highlight.position
-                );
+                float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
 
-                if (highlight.CompareTag("Seleccionable") && distanciaHighlight <= distanciaMaxima)
+                if (highlight.CompareTag("Seleccionable") && distancia <= distanciaMaxima)
                 {
                     if (highlight.gameObject.GetComponent<Outline>() != null)
                     {
@@ -101,25 +118,18 @@ public class Instancia5 : MonoBehaviour
                 }
             }
 
-            // -------------------------
-            //   SECCIÓN CORREGIDA
-            // -------------------------
+            // Selection
             if (Input.GetKeyDown(KeyCode.E))
             {
-                // Primero: validar que HIGHLIGHT no sea null
-                if (highlight == null)
-                    return;
 
-                // Ahora que sabemos que highlight existe, medimos distancia
-                float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position,highlight.position);
+                float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
 
-                if (distancia <= distanciaMaxima)
+                if (highlight && distancia <= distanciaMaxima)
                 {
                     if (selection != null)
                     {
                         selection.gameObject.GetComponent<Outline>().enabled = false;
                     }
-
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
@@ -129,38 +139,58 @@ public class Instancia5 : MonoBehaviour
                     {
                         case "CuadroTirado1":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
                             cuadroTirado1.SetActive(false);
                             cuadroColgando1.SetActive(true);
                             break;
 
                         case "CuadroTirado2":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
                             cuadroTirado2.SetActive(false);
                             cuadroColgando2.SetActive(true);
                             break;
 
                         case "CuadroTirado3":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
                             cuadroTirado3.SetActive(false);
                             cuadroColgando3.SetActive(true);
                             break;
 
                         case "Cuadro1":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             cuadroColgando1.tag = "Untagged";
-                            Debug.Log("Cuadro 1 seleccionado");
+
+                            IniciarEleccion(vcamLienzo1, uiEleccionesLienzo1);
                             break;
 
                         case "Cuadro2":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             cuadroColgando2.tag = "Untagged";
-                            Debug.Log("Cuadro 2 seleccionado");
+
+                            IniciarEleccion(vcamLienzo2, uiEleccionesLienzo2);
                             break;
 
                         case "Cuadro3":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             cuadroColgando3.tag = "Untagged";
-                            Debug.Log("Cuadro 3 seleccionado");
+
+                            eleccionActiva = "Lienzo3";
+
+                            IniciarEleccion(vcamLienzo3, uiEleccionesLienzo3);
                             break;
 
                         default:
@@ -179,5 +209,63 @@ public class Instancia5 : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void IniciarEleccion(CinemachineVirtualCamera vcamEleccion, GameObject uiElecciones)
+    {
+        GameManager.GetInstance().eleccionActiva = true; // Marca que la elección está activa
+        
+        Cursor.visible = true; // Hace visible el cursor
+        Cursor.lockState = CursorLockMode.None;
+
+        ActivarCamaraEleccion(vcamEleccion); // Activa la cámara de elecciones
+        
+        //uiElecciones.SetActive(true);
+        StartCoroutine(esperarYPrenderUI(uiElecciones));
+    }
+
+    public void ConfirmarSeleccion()
+    {
+        if (eleccionActiva == "Lienzo3")
+        {
+            ActivarCamaraJugador(vcamLienzo3);
+        }
+        if (eleccionActiva == "Lienzo2")
+        {
+            ActivarCamaraJugador(vcamLienzo2);
+        }
+        if (eleccionActiva == "Lienzo1")
+        {
+            ActivarCamaraJugador(vcamLienzo1);
+        }
+
+        uiEleccionesLienzo1.SetActive(false);
+        uiEleccionesLienzo2.SetActive(false);
+        uiEleccionesLienzo3.SetActive(false);
+
+        GameManager.GetInstance().eleccionActiva = false; // Marca que la elección ya no está activa
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false; // Oculta el cursor
+
+        contadorCuadrosColocados++; // Aumenta el contador de cuadros colocados
+    }
+
+    private void ActivarCamaraJugador(CinemachineVirtualCamera vcamEleccion)
+    {
+        vcamJugador.Priority = 10;
+        vcamEleccion.Priority = 0;
+    }
+
+    private void ActivarCamaraEleccion(CinemachineVirtualCamera vcamEleccion)
+    {
+        vcamJugador.Priority = 0;
+        vcamEleccion.Priority = 10;
+    }
+
+    IEnumerator esperarYPrenderUI(GameObject ui)
+    {
+        yield return new WaitForSeconds(1f);
+        ui.SetActive(true);
     }
 }
