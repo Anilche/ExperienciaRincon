@@ -61,6 +61,15 @@ public class MovimientoRino : MonoBehaviour
                 indicePuntoActual = 3;
                 break;
 
+            case 19:
+                indicePuntoActual = 4;
+                break;
+
+            case 22:
+                //Rino se mueve al lado de la puerta del rincon bonus
+                indicePuntoActual = 5;
+                break;
+
             default:
                 // Lógica para otros puntos
                 break;

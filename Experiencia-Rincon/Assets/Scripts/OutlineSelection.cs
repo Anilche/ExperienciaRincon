@@ -263,6 +263,8 @@ public class OutlineSelection : MonoBehaviour
         objeto3.SetActive(false);
         objetosExtras.SetActive(true);
 
+        Debug.Log(objetosExtras + "está prendido");
+
         yield return new WaitForSeconds(1f);
         parpados.SetActive(false);
     }
