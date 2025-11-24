@@ -18,6 +18,7 @@ public class Instancia6 : MonoBehaviour
     [SerializeField] public GameObject botonSeleccion1;
     [SerializeField] public GameObject botonSeleccion2;
     [SerializeField] public GameObject botonSeleccion3;
+    [SerializeField] public GameObject botonSeleccionConfirmacion;
 
     [Header("Bases")]
     [SerializeField] public GameObject base1;
@@ -63,6 +64,8 @@ public class Instancia6 : MonoBehaviour
             //cuadroColgando1.tag = "Seleccionable";
             //cuadroColgando2.tag = "Seleccionable";
             //cuadroColgando3.tag = "Seleccionable";
+
+            pantallaSeleccion.SetActive(true);
 
             // Highlight
             if (highlight != null)
@@ -121,21 +124,41 @@ public class Instancia6 : MonoBehaviour
                         case "BotonHamburguesa":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            //Agregar que cuando se elija una opcion se oculte el objeto anterior (animator)
-
                             audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                            //Animacion salida base normal y entrada base hamburguesa
+                            //Agregar que cuando se elija una opcion se oculte el objeto anterior (animator)
                             break;
 
                         case "BotonPizza":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                            //Animacion salida base normal y entrada base pizza
                             break;
 
                         case "BotonTorta":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                            //Animacion salida base normal y entrada base torta
+                            break;
+
+                        case "BotonConfirmacion":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.sonidoPedido);
+
+                            //Aparece pantalla de listo y desaparecen los botones de seleccion
+
+                            pantallaListo.SetActive(true);
+
+                            botonSeleccion1.SetActive(false);
+                            botonSeleccion2.SetActive(false);
+                            botonSeleccion3.SetActive(false);
+                            botonSeleccionConfirmacion.SetActive(false);
                             break;
 
                         default:
