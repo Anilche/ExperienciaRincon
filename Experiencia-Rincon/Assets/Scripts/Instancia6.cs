@@ -26,10 +26,10 @@ public class Instancia6 : MonoBehaviour
     [SerializeField] public GameObject base3;
 
     [Header("Animators")]
-    [SerializeField] public GameObject animBase1;
-    [SerializeField] public GameObject animBase2;
-    [SerializeField] public GameObject animBase3;
-    [SerializeField] public GameObject animBaseInicio;
+    [SerializeField] public Animator animBases;
+    //[SerializeField] public Animator animBase2;
+    //[SerializeField] public Animator animBase3;
+    [SerializeField] public Animator animBaseInicio;
 
 
     [Header("Requerimientos para utilizarse")]
@@ -127,7 +127,13 @@ public class Instancia6 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             //Animacion salida base normal y entrada base hamburguesa
-                            //Agregar que cuando se elija una opcion se oculte el objeto anterior (animator)
+                            /*animBaseInicio.SetBool("SalidaBase", true);
+                            animBase1.SetBool("Entrada", true);
+                            animBase2.SetBool("Entrada", false);
+                            animBase3.SetBool("Entrada", false);¨*/
+                            StartCoroutine(AnimacionYOcultar(base2, base3, base1));
+
+                            Debug.Log("Seleccionaste hamburguesa");
                             break;
 
                         case "BotonPizza":
@@ -136,6 +142,11 @@ public class Instancia6 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             //Animacion salida base normal y entrada base pizza
+                            /*animBaseInicio.SetBool("SalidaBase", true);
+                            animBase1.SetBool("Entrada", false);
+                            animBase2.SetBool("Entrada", true);
+                            animBase3.SetBool("Entrada", false);*/
+                            StartCoroutine(AnimacionYOcultar(base1, base3, base2));
                             break;
 
                         case "BotonTorta":
@@ -144,6 +155,11 @@ public class Instancia6 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             //Animacion salida base normal y entrada base torta
+                            /*animBaseInicio.SetBool("SalidaBase", true);
+                            animBase1.SetBool("Entrada", false);
+                            animBase2.SetBool("Entrada", false);
+                            animBase3.SetBool("Entrada", true);*/
+                            StartCoroutine(AnimacionYOcultar(base1, base2, base3));
                             break;
 
                         case "BotonConfirmacion":
@@ -159,6 +175,7 @@ public class Instancia6 : MonoBehaviour
                             botonSeleccion2.SetActive(false);
                             botonSeleccion3.SetActive(false);
                             botonSeleccionConfirmacion.SetActive(false);
+                            GameManager.GetInstance().SetFaseActual(1);
                             break;
 
                         default:
@@ -178,4 +195,26 @@ public class Instancia6 : MonoBehaviour
             }
         }
     }
+    /*
+    IEnumerator animacionYOcultar(Animator base1AOcultar, Animator base2AOcultar, Animator baseAMostrar)
+    {
+        animBaseInicio.SetBool("SalidaBase", true);
+        base1AOcultar.SetBool("Entrada", false);
+        base2AOcultar.SetBool("Entrada", false);
+        yield return new WaitForSeconds(1f);
+        baseAMostrar.SetBool("Entrada", true);
+    }*/
+
+    IEnumerator AnimacionYOcultar(GameObject base1AOcultar, GameObject base2AOcultar, GameObject baseAMostrar)
+    {
+        animBaseInicio.SetBool("SalidaBase", true);
+        animBases.SetBool("Entrada", false);
+        Debug.Log("Haciendo aparecer base:" + baseAMostrar.name);
+        yield return new WaitForSeconds(0.5f);
+        base1AOcultar.SetActive(false);
+        base2AOcultar.SetActive(false);
+        baseAMostrar.SetActive(true);
+        animBases.SetBool("Entrada", true);
+    }
+
 }
