@@ -42,7 +42,7 @@ public class PortalFinal : MonoBehaviour
 
     public void FadeOut()
     {
-        StartCoroutine(FadeCanvasGroup(canvasGroupOut, canvasGroupOut.alpha, 0, fadeDuration));
+        //StartCoroutine(FadeCanvasGroup(canvasGroupOut, canvasGroupOut.alpha, 0, fadeDuration));
         SceneManager.LoadScene("RinconBonus");
     }
 

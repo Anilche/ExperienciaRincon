@@ -195,15 +195,6 @@ public class Instancia6 : MonoBehaviour
             }
         }
     }
-    /*
-    IEnumerator animacionYOcultar(Animator base1AOcultar, Animator base2AOcultar, Animator baseAMostrar)
-    {
-        animBaseInicio.SetBool("SalidaBase", true);
-        base1AOcultar.SetBool("Entrada", false);
-        base2AOcultar.SetBool("Entrada", false);
-        yield return new WaitForSeconds(1f);
-        baseAMostrar.SetBool("Entrada", true);
-    }*/
 
     IEnumerator AnimacionYOcultar(GameObject base1AOcultar, GameObject base2AOcultar, GameObject baseAMostrar)
     {
@@ -216,5 +207,4 @@ public class Instancia6 : MonoBehaviour
         baseAMostrar.SetActive(true);
         animBases.SetBool("Entrada", true);
     }
-
 }
