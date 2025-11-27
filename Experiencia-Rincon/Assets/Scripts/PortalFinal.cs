@@ -9,10 +9,6 @@ public class PortalFinal : MonoBehaviour
     [SerializeField] public GameObject portal;
     [SerializeField] public GameObject puertaTrigger;
 
-    [Header("Canvas Group")]
-    [SerializeField] private CanvasGroup canvasGroupOut;
-    [SerializeField] private float fadeDuration = 5.0f;
-
     private bool puedeEntrar = false;
 
     [Header("Requerimientos para utilizarse")]
@@ -36,25 +32,7 @@ public class PortalFinal : MonoBehaviour
     {
         if (other.CompareTag("Player") && puedeEntrar == true)
         {
-            FadeOut();
+            SceneManager.LoadScene("RinconBonus");
         }
-    }
-
-    public void FadeOut()
-    {
-        //StartCoroutine(FadeCanvasGroup(canvasGroupOut, canvasGroupOut.alpha, 0, fadeDuration));
-        SceneManager.LoadScene("RinconBonus");
-    }
-
-    private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)
-    {
-        float elapsedTime = 0.0f;
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            cg.alpha = Mathf.Lerp(start, end, elapsedTime / duration);
-            yield return null;
-        }
-        cg.alpha = end;
     }
 }

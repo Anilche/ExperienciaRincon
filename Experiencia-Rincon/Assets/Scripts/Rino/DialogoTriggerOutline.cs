@@ -50,7 +50,7 @@ public class DialogoTriggerOutline : MonoBehaviour
                     {
                         Outline outline = highlight.gameObject.AddComponent<Outline>();
                         outline.enabled = true;
-                        highlight.gameObject.GetComponent<Outline>().OutlineColor = Color.cyan;
+                        highlight.gameObject.GetComponent<Outline>().OutlineColor = Color.yellow;
                         highlight.gameObject.GetComponent<Outline>().OutlineWidth = 6.0f;
                     }
                 }

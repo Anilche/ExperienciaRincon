@@ -5401,7 +5401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7514f77d87bde464283d8fad35e15684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faseAhora: 20
+  faseAhora: 0
   eleccionActiva: 0
   botonesInst1: {fileID: 115760562}
   botonesInst2: {fileID: 2114662763}
@@ -79776,8 +79776,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: {fileID: 919132148542750947}
   puertaTrigger: {fileID: 5778579622796914427}
-  canvasGroupOut: {fileID: 91531761}
-  fadeDuration: 2
   numFaseNecesaria: 22
 --- !u!65 &1093141044
 BoxCollider:
@@ -87973,10 +87971,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bfdd876e1999d4d9e3e86fea6fc2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lienzoBaseCuadro: {fileID: 1376523472}
-  lienzo1: {fileID: 468658020}
-  lienzo2: {fileID: 1896275571}
-  lienzo3: {fileID: 805079699}
+  lienzoBaseCuadro: {fileID: 1631448588}
+  lienzo1: {fileID: 1159566329}
+  lienzo2: {fileID: 104867074}
+  lienzo3: {fileID: 1478450103}
   inst5: {fileID: 328805600}
 --- !u!114 &1344053271
 MonoBehaviour:
@@ -103424,7 +103422,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!4 &1793312694 stripped
 Transform:
@@ -104758,7 +104756,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8234352665861426402, guid: 90b7cd0222cc95940ba43257e1116855,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1843398323}
+      addedObject: {fileID: 1843398329}
   m_SourcePrefab: {fileID: 100100000, guid: 90b7cd0222cc95940ba43257e1116855, type: 3}
 --- !u!1 &1843398321 stripped
 GameObject:
@@ -104772,27 +104770,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1843398320}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1843398323
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843398321}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00787247, y: 0.040332995, z: 0.02143424}
-  m_Center: {x: 0.0064414553, y: -0.004780169, z: 5.094772e-17}
 --- !u!65 &1843398324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104820,6 +104797,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1843398320}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &1843398329
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843398321}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8068170164273810245, guid: 90b7cd0222cc95940ba43257e1116855, type: 3}
 --- !u!1 &1850540255
 GameObject:
   m_ObjectHideFlags: 0

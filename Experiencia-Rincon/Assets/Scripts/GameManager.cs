@@ -50,11 +50,15 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(DesbloqueoSalaBonus()); // Llama a la función para desbloquear la sala bonus si la fase actual es X
         }*/
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SetFaseActual(1);
+        }
     }
 
     void Start()
     {
-        //faseAhora = 0; // Inicializa la fase actual del jugador
         eleccionActiva = false; // Inicializa el estado de la elección como no activa
         Cursor.lockState = CursorLockMode.Locked;
     }
