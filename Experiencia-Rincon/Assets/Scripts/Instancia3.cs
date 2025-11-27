@@ -54,6 +54,8 @@ public class Instancia3 : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    private string noSeleccionable = "Untagged";
+
     AudioManager audioManager;
 
     void Awake()
@@ -263,6 +265,14 @@ public class Instancia3 : MonoBehaviour
                             lucesEstanteriasFinales.SetActive(true);
 
                             StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
+
+                            objeto1.tag = noSeleccionable;
+                            objeto2.tag = noSeleccionable;
+                            objeto3.tag = noSeleccionable;
+                            objeto4.tag = noSeleccionable;
+                            objeto5.tag = noSeleccionable;
+                            objeto6.tag = noSeleccionable;
+                            objeto7.tag = noSeleccionable;
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             break;

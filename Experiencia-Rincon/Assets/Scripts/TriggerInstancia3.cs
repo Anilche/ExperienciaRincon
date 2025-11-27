@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TriggerInstancia3 : MonoBehaviour
 {
-
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -29,6 +28,7 @@ public class TriggerInstancia3 : MonoBehaviour
             estanteriaSeleccion.SetActive(true);
             estanteriaFinal.SetActive(true);
             Debug.Log("Spawneando objetos");
+            Destroy(this.gameObject);
         }
     }
     

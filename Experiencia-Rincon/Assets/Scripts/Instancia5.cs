@@ -1,6 +1,7 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,7 +11,11 @@ public class Instancia5 : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
+    [Header("Animator Cuadros Tirados")]
+    [SerializeField] public Animator cuadrosAnim;
+
     [Header("Cuadros Tirados")]
+    [SerializeField] public GameObject cuadrosTirados;
     [SerializeField] public GameObject cuadroTirado1;
     [SerializeField] public GameObject cuadroTirado2;
     [SerializeField] public GameObject cuadroTirado3;
@@ -56,9 +61,10 @@ public class Instancia5 : MonoBehaviour
         cuadroColgando1.SetActive(false);
         cuadroColgando2.SetActive(false);
         cuadroColgando3.SetActive(false);
-        cuadroTirado1.SetActive(true);
-        cuadroTirado2.SetActive(true);
-        cuadroTirado3.SetActive(true);
+        cuadrosTirados.SetActive(false);
+        //cuadroTirado1.SetActive(true);
+        //cuadroTirado2.SetActive(true);
+        //cuadroTirado3.SetActive(true);
         uiEleccionesLienzo1.SetActive(false);
         uiEleccionesLienzo2.SetActive(false);
         uiEleccionesLienzo3.SetActive(false);
@@ -73,13 +79,16 @@ public class Instancia5 : MonoBehaviour
              cuadroColgando2.tag = "Seleccionable";
              cuadroColgando3.tag = "Seleccionable";
 
+            cuadrosTirados.SetActive(true);
+
             if (contadorCuadrosColocados == 3)
             {
                 GameManager.GetInstance().SetFaseActual(1);
                 cuadroColgando1.tag = "Untagged";
                 cuadroColgando2.tag = "Untagged";
                 cuadroColgando3.tag = "Untagged";
-                Debug.Log("Fase " + GameManager.GetInstance().faseAhora);
+
+                Destroy(this.gameObject);
             }
 
             // Highlight
@@ -257,4 +266,13 @@ public class Instancia5 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         ui.SetActive(true);
     }
+    /*
+    void LateUpdate()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+        {
+            Debug.Log("Hit (DEBUG): " + hit.collider.name);
+        }
+    }*/
 }
