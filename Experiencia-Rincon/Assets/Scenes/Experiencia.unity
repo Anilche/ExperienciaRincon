@@ -5401,7 +5401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7514f77d87bde464283d8fad35e15684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faseAhora: 16
+  faseAhora: 0
   eleccionActiva: 0
   botonesInst1: {fileID: 115760562}
   botonesInst2: {fileID: 2114662763}
@@ -80419,7 +80419,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 03445e5b94f93a741ba23aeba08a921d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.036021
+      value: 10.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03445e5b94f93a741ba23aeba08a921d,
         type: 3}
@@ -91470,7 +91470,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5b562999c8ca3a648b5a8101bdae3579,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.557
+      value: 14.19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b562999c8ca3a648b5a8101bdae3579,
         type: 3}
@@ -100578,7 +100578,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714546860}
   serializedVersion: 4
-  m_Mass: 0.2
+  m_Mass: 0.4
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -102755,7 +102755,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f2a30e8270b756543b2f8849cfd49249,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.98
+      value: 4.9876
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2a30e8270b756543b2f8849cfd49249,
         type: 3}
@@ -108747,7 +108747,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 924e6035619e81f4483e282bc9c2a159,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.9
+      value: 20.071
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 924e6035619e81f4483e282bc9c2a159,
         type: 3}
