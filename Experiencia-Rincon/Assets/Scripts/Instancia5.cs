@@ -241,7 +241,7 @@ public class Instancia5 : MonoBehaviour
 
         GameManager.GetInstance().eleccionActiva = false; // Marca que la elección ya no está activa
 
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; // Oculta el cursor
 
         contadorCuadrosColocados++; // Aumenta el contador de cuadros colocados

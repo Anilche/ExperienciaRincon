@@ -38,6 +38,8 @@ public class Instancia6 : MonoBehaviour
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
 
+    private bool puedeConfirmar = false;
+
     private Camera camara;
 
     AudioManager audioManager;
@@ -126,14 +128,9 @@ public class Instancia6 : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            //Animacion salida base normal y entrada base hamburguesa
-                            /*animBaseInicio.SetBool("SalidaBase", true);
-                            animBase1.SetBool("Entrada", true);
-                            animBase2.SetBool("Entrada", false);
-                            animBase3.SetBool("Entrada", false);¨*/
                             StartCoroutine(AnimacionYOcultar(base2, base3, base1));
 
-                            Debug.Log("Seleccionaste hamburguesa");
+                            puedeConfirmar = true;
                             break;
 
                         case "BotonPizza":
@@ -141,12 +138,9 @@ public class Instancia6 : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            //Animacion salida base normal y entrada base pizza
-                            /*animBaseInicio.SetBool("SalidaBase", true);
-                            animBase1.SetBool("Entrada", false);
-                            animBase2.SetBool("Entrada", true);
-                            animBase3.SetBool("Entrada", false);*/
                             StartCoroutine(AnimacionYOcultar(base1, base3, base2));
+
+                            puedeConfirmar = true;
                             break;
 
                         case "BotonTorta":
@@ -154,28 +148,27 @@ public class Instancia6 : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            //Animacion salida base normal y entrada base torta
-                            /*animBaseInicio.SetBool("SalidaBase", true);
-                            animBase1.SetBool("Entrada", false);
-                            animBase2.SetBool("Entrada", false);
-                            animBase3.SetBool("Entrada", true);*/
                             StartCoroutine(AnimacionYOcultar(base1, base2, base3));
+
+                            puedeConfirmar = true;
                             break;
 
                         case "BotonConfirmacion":
-                            selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            audioManager.PlaySFX(audioManager.sonidoPedido);
+                            if (puedeConfirmar == true)
+                            {
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            //Aparece pantalla de listo y desaparecen los botones de seleccion
+                                audioManager.PlaySFX(audioManager.sonidoPedido);
 
-                            pantallaListo.SetActive(true);
-
-                            botonSeleccion1.SetActive(false);
-                            botonSeleccion2.SetActive(false);
-                            botonSeleccion3.SetActive(false);
-                            botonSeleccionConfirmacion.SetActive(false);
-                            GameManager.GetInstance().SetFaseActual(1);
+                                //Aparece pantalla de listo y desaparecen los botones de seleccion
+                                pantallaListo.SetActive(true);
+                                botonSeleccion1.SetActive(false);
+                                botonSeleccion2.SetActive(false);
+                                botonSeleccion3.SetActive(false);
+                                botonSeleccionConfirmacion.SetActive(false);
+                                GameManager.GetInstance().SetFaseActual(1);
+                            }
                             break;
 
                         default:
@@ -200,7 +193,6 @@ public class Instancia6 : MonoBehaviour
     {
         animBaseInicio.SetBool("SalidaBase", true);
         animBases.SetBool("Entrada", false);
-        Debug.Log("Haciendo aparecer base:" + baseAMostrar.name);
         yield return new WaitForSeconds(0.5f);
         base1AOcultar.SetActive(false);
         base2AOcultar.SetActive(false);

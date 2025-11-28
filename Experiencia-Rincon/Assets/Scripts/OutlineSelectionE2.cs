@@ -63,9 +63,10 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public GameObject spotlightPantalla1;
     [SerializeField] public GameObject spotlightPantalla2;
     [SerializeField] public GameObject spotlightPantalla3;
-    [SerializeField] public Animator animSpotlight1;
-    [SerializeField] public Animator animSpotlight2;
-    [SerializeField] public Animator animSpotlight3;
+    //[SerializeField] public Animator animSpotlight1;
+    //[SerializeField] public Animator animSpotlight2;
+    //[SerializeField] public Animator animSpotlight3;
+
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -276,11 +277,11 @@ public class OutlineSelectionE2 : MonoBehaviour
         animPantalla1.SetBool("AnimacionSalida", true);
         animPantalla2.SetBool("AnimacionSalida", true);
         animPantalla3.SetBool("AnimacionSalida", true);
-        animSpotlight1.SetBool("AnimacionSalida", true);
-        animSpotlight2.SetBool("AnimacionSalida", true);
-        animSpotlight3.SetBool("AnimacionSalida", true);
+        //animSpotlight1.SetBool("AnimacionSalida", true);
+        //animSpotlight2.SetBool("AnimacionSalida", true);
+        //animSpotlight3.SetBool("AnimacionSalida", true);
         animTablero.SetBool("SalidaTablero", true);
-        yield return new WaitForSeconds(3f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
+        yield return new WaitForSeconds(4f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
         // Desactiva los objetos despues de la animacion
         pantalla1.SetActive(false);
         pantalla2.SetActive(false);
