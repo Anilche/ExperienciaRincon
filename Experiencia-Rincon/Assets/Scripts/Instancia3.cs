@@ -25,6 +25,9 @@ public class Instancia3 : MonoBehaviour
     [SerializeField] public GameObject objeto6;
     [SerializeField] public GameObject objeto7;
 
+    [Header("Anim Objetos Estanteria Final")]
+    [SerializeField] public Animator animObjetosFinal;
+
     [Header("Estanteria Seleccion")]
     [SerializeField] public GameObject estanteriaSeleccion;
     [SerializeField] public Animator animEstanteriaSeleccion;
@@ -323,6 +326,7 @@ public class Instancia3 : MonoBehaviour
     {
         animObjTerminar.SetBool("BotonPresionado", true);
         yield return new WaitForSeconds(1.5f);
+        animObjetosFinal.SetBool("ObjsSeleccionados", true);
         animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
         yield return new WaitForSeconds(6f); // Espera X segundos (ajustar el tiempo a la duracion de la animacion)
         // Desactiva los objetos despues de la animacion
