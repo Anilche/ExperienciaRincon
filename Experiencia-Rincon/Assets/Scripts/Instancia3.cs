@@ -50,10 +50,6 @@ public class Instancia3 : MonoBehaviour
     [Header("Animator Terminar Elecciones")]
     [SerializeField] public Animator animObjTerminar;
 
-
-    [Header("Indicador particulas")]
-    [SerializeField] public GameObject particulas;
-
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -94,6 +90,14 @@ public class Instancia3 : MonoBehaviour
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
         {
+            objetoSeleccion1.tag = "Seleccionable";
+            objetoSeleccion2.tag = "Seleccionable";
+            objetoSeleccion3.tag = "Seleccionable";
+            objetoSeleccion4.tag = "Seleccionable";
+            objetoSeleccion5.tag = "Seleccionable";
+            objetoSeleccion6.tag = "Seleccionable";
+            objetoSeleccion7.tag = "Seleccionable";
+            objTerminar.tag = "Seleccionable";
 
             // Highlight
             if (highlight != null)
@@ -328,7 +332,7 @@ public class Instancia3 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         animObjetosFinal.SetBool("ObjsSeleccionados", true);
         animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
-        yield return new WaitForSeconds(6f); // Espera X segundos (ajustar el tiempo a la duracion de la animacion)
+        yield return new WaitForSeconds(3.5f); // Espera X segundos (ajustar el tiempo a la duracion de la animacion)
         // Desactiva los objetos despues de la animacion
         estanteriaSeleccion.SetActive(false);
     }

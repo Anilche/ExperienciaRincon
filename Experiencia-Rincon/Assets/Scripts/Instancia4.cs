@@ -41,9 +41,6 @@ public class Instancia4 : MonoBehaviour
     [Header("Animaciones")]
     [SerializeField] public Animator animatorTocadiscos;
 
-    [Header("Indicador particulas")]
-    [SerializeField] public GameObject particulas;
-
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -58,7 +55,6 @@ public class Instancia4 : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
-        particulas.SetActive(false); // Desactiva las particulas al inicio
         disco1.SetActive(false);
         disco2.SetActive(false);
         disco3.SetActive(false);
@@ -140,7 +136,6 @@ public class Instancia4 : MonoBehaviour
                             //Cambio de musica
                             audioManager.ChangeMusic(audioClipSeleccion1);
 
-                            particulas.SetActive(false);
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
 
                             cambiarFase();
@@ -159,7 +154,6 @@ public class Instancia4 : MonoBehaviour
 
                             audioManager.ChangeMusic(audioClipSeleccion2);
 
-                            particulas.SetActive(false);
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
 
                             cambiarFase();
@@ -179,7 +173,6 @@ public class Instancia4 : MonoBehaviour
                             //Cambio de musica
                             audioManager.ChangeMusic(audioClipSeleccion3);
 
-                            particulas.SetActive(false);
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
 
                             cambiarFase();

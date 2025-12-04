@@ -337,8 +337,9 @@ MonoBehaviour:
   lucesNatural: {fileID: 0}
   postProNatural: {fileID: 0}
   postProOscuro: {fileID: 0}
-  vcamJugador: {fileID: 0}
   eleccionLuces: Ninguna
+  bandejaBebidas: {fileID: 0}
+  cuadrosTirados: {fileID: 0}
 --- !u!1 &35013375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 33896b6493af4e54ea613833a530822b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e07647122ee60f847b7ce69642252b4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
