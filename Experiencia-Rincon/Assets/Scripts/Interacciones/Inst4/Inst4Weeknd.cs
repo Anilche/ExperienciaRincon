@@ -22,6 +22,8 @@ public class Inst4Weeknd : MonoBehaviour
 
     private Camera camara;
 
+    private bool puedeTocar = true;
+
     AudioManager audioManager;
 
     private void Awake()
@@ -95,7 +97,10 @@ public class Inst4Weeknd : MonoBehaviour
                         case "Teclas":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            StartCoroutine(hacerAnimacion());
+                            if (puedeTocar)
+                            {
+                                StartCoroutine(hacerAnimacion());
+                            }
                             break;
 
                         default:
@@ -118,9 +123,11 @@ public class Inst4Weeknd : MonoBehaviour
 
     IEnumerator hacerAnimacion()
     {
+        puedeTocar = false;
         audioManager.PlaySFX(audioManager.sonidoPiano);
         animInstrumento.SetBool("tocar", true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         animInstrumento.SetBool("tocar", false);
+        puedeTocar = true;
     }
 }

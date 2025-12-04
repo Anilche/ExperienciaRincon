@@ -22,6 +22,8 @@ public class Inst4Mixer : MonoBehaviour
 
     private Camera camara;
 
+    private bool puedeTocar = true;
+
     AudioManager audioManager;
 
     private void Awake()
@@ -95,8 +97,10 @@ public class Inst4Mixer : MonoBehaviour
                         case "Mixer":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            StartCoroutine(hacerAnimacion());
-
+                            if (puedeTocar)
+                            {
+                                StartCoroutine(hacerAnimacion());
+                            }
                             break;
 
                         default:
@@ -119,8 +123,10 @@ public class Inst4Mixer : MonoBehaviour
 
     IEnumerator hacerAnimacion()
     {
+        puedeTocar = false;
         animInstrumento.SetBool("tocar", true);
         yield return new WaitForSeconds(2f);
         animInstrumento.SetBool("tocar", false);
+        puedeTocar = true;
     }
 }

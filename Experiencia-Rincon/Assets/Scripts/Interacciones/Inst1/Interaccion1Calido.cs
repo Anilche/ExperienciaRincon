@@ -153,7 +153,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita1.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas2":
@@ -163,7 +163,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita2.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas3":
@@ -173,7 +173,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita3.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas4":
@@ -183,7 +183,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita4.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas5":
@@ -193,7 +193,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita5.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas6":
@@ -203,7 +203,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita6.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas7":
@@ -213,7 +213,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita7.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas8":
@@ -223,7 +223,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita8.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas9":
@@ -233,7 +233,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita9.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas10":
@@ -243,7 +243,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita10.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas11":
@@ -253,7 +253,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita11.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Ramitas12":
@@ -263,7 +263,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             ramita12.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas1":
@@ -273,7 +273,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita1.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas2":
@@ -283,7 +283,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita2.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas3":
@@ -293,7 +293,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita3.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas4":
@@ -303,7 +303,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita4.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas5":
@@ -313,7 +313,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita5.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas6":
@@ -323,7 +323,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita6.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas7":
@@ -333,7 +333,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita7.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas8":
@@ -343,7 +343,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita8.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas9":
@@ -353,7 +353,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita9.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         case "Hojas10":
@@ -363,7 +363,7 @@ public class Interaccion1Calido : MonoBehaviour
 
                             hojita10.SetActive(false);
                             contadorRamitasRecogidas++;
-                            Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
+                            //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
                         default:
