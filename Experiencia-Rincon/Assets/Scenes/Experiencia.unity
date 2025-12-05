@@ -5333,13 +5333,15 @@ MonoBehaviour:
   eleccionActiva: 0
   botonesInst1: {fileID: 115760562}
   botonesInst2: {fileID: 2114662763}
+  postProOscuro: {fileID: 415073181}
   lucesCalido: {fileID: 584407279}
   postProCalido: {fileID: 1304520995}
   lucesNeutro: {fileID: 781315092}
   postProNeutro: {fileID: 959749965}
+  animFarolesNeutro: {fileID: 967739767}
   lucesNatural: {fileID: 1146143059}
   postProNatural: {fileID: 1483328001}
-  postProOscuro: {fileID: 415073181}
+  animFarolesNatural: {fileID: 1992013142}
   eleccionLuces: Ninguna
   bandejaBebidas: {fileID: 1393146408}
   cuadrosTirados: {fileID: 919132148734014329}
@@ -17691,7 +17693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &296374569
 Transform:
   m_ObjectHideFlags: 0
@@ -50266,6 +50268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967739766}
+  - component: {fileID: 967739767}
   m_Layer: 0
   m_Name: Faroles
   m_TagString: Untagged
@@ -50294,6 +50297,27 @@ Transform:
   - {fileID: 1238719433}
   m_Father: {fileID: 1949484492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &967739767
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967739765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 286a5f95ca76ee84c9df212ca1f368d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &969354754
 GameObject:
   m_ObjectHideFlags: 0
@@ -62710,7 +62734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1378718078
 Transform:
   m_ObjectHideFlags: 0
@@ -66419,6 +66443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1492612434}
+  - component: {fileID: 1492612435}
   m_Layer: 0
   m_Name: Futbol
   m_TagString: Untagged
@@ -66444,6 +66469,27 @@ Transform:
   - {fileID: 1313552092}
   m_Father: {fileID: 295718330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1492612435
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492612433}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6cf43a9aed525f646af65b2617829c72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1494689338
 GameObject:
   m_ObjectHideFlags: 0
@@ -68895,7 +68941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1582955090
 Transform:
   m_ObjectHideFlags: 0
@@ -81229,6 +81275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1992013141}
+  - component: {fileID: 1992013142}
   m_Layer: 0
   m_Name: Faroles
   m_TagString: Untagged
@@ -81257,6 +81304,27 @@ Transform:
   - {fileID: 796592818}
   m_Father: {fileID: 104303115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1992013142
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992013140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5fca295b0212974c803f88e15dd462d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1996584720
 GameObject:
   m_ObjectHideFlags: 0

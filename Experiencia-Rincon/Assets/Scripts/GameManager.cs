@@ -13,17 +13,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject botonesInst1;
     [SerializeField] public GameObject botonesInst2;
 
-    [Header("Iluminacion")]
+    [SerializeField] public GameObject postProOscuro;
+
+    [Header("Iluminacion Calido")]
     [SerializeField] public GameObject lucesCalido;
     [SerializeField] public GameObject postProCalido;
 
+    [Header("Iluminacion Neutro")]
     [SerializeField] public GameObject lucesNeutro;
     [SerializeField] public GameObject postProNeutro;
+    [SerializeField] public Animator animFarolesNeutro;
 
+    [Header("Iluminacion Natural")]
     [SerializeField] public GameObject lucesNatural;
     [SerializeField] public GameObject postProNatural;
-
-    [SerializeField] public GameObject postProOscuro;
+    [SerializeField] public Animator animFarolesNatural;
 
     public string eleccionLuces = "Ninguna";
 
@@ -100,11 +104,13 @@ public class GameManager : MonoBehaviour
         {
             lucesNeutro.SetActive(false);
             postProNeutro.SetActive(false);
+            animFarolesNeutro.SetBool("apagarLuces", true);
         }
         else if (eleccionLuces == "Natural")
         {
             lucesNatural.SetActive(false);
             postProNatural.SetActive(false);
+            animFarolesNatural.SetBool("apagarLuces", true);
         }
         postProOscuro.SetActive(true);
     }
@@ -122,11 +128,13 @@ public class GameManager : MonoBehaviour
         {
             lucesNeutro.SetActive(true);
             postProNeutro.SetActive(true);
+            animFarolesNeutro.SetBool("apagarLuces", false);
         }
         else if (eleccionLuces == "Natural")
         {
             lucesNatural.SetActive(true);
             postProNatural.SetActive(true);
+            animFarolesNatural.SetBool("apagarLuces", false);
         }
         postProOscuro.SetActive(false);
     }
