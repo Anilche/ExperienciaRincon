@@ -48,9 +48,6 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public Animator animPantalla2;
     [SerializeField] public Animator animPantalla3;
 
-    [Header("Indicador particulas")]
-    [SerializeField] public GameObject particulas;
-
     [Header("Animator Tablero")]
     [SerializeField] public Animator animTablero;
 
@@ -58,14 +55,11 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public GameObject transPelotas;
     [SerializeField] public GameObject transMedialunas;
     [SerializeField] public GameObject transMonedas;
-
+    /*
     [Header("Spotlights")]
     [SerializeField] public GameObject spotlightPantalla1;
     [SerializeField] public GameObject spotlightPantalla2;
-    [SerializeField] public GameObject spotlightPantalla3;
-    //[SerializeField] public Animator animSpotlight1;
-    //[SerializeField] public Animator animSpotlight2;
-    //[SerializeField] public Animator animSpotlight3;
+    [SerializeField] public GameObject spotlightPantalla3;*/
 
 
     [Header("Requerimientos para utilizarse")]
@@ -82,11 +76,10 @@ public class OutlineSelectionE2 : MonoBehaviour
         pantalla1.SetActive(false); // Desactiva la pantalla 1 al inicio
         pantalla2.SetActive(false); // Desactiva la pantalla 2 al inicio
         pantalla3.SetActive(false); // Desactiva la pantalla 3 al inicio
-        particulas.SetActive(false); // Desactiva las particulas al inicio
 
-        spotlightPantalla1.SetActive(false);
-        spotlightPantalla2.SetActive(false);
-        spotlightPantalla3.SetActive(false);
+        //spotlightPantalla1.SetActive(false);
+        //spotlightPantalla2.SetActive(false);
+        //spotlightPantalla3.SetActive(false);
     }
 
     void Update()
@@ -94,15 +87,13 @@ public class OutlineSelectionE2 : MonoBehaviour
         
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-            //particulas.SetActive(true);
-
             pantalla1.SetActive(true);
             pantalla2.SetActive(true);
             pantalla3.SetActive(true);
 
-            spotlightPantalla1.SetActive(true);
-            spotlightPantalla2.SetActive(true);
-            spotlightPantalla3.SetActive(true);
+            //spotlightPantalla1.SetActive(true);
+            //spotlightPantalla2.SetActive(true);
+            //spotlightPantalla3.SetActive(true);
         }
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
@@ -193,11 +184,7 @@ public class OutlineSelectionE2 : MonoBehaviour
                                 GameManager.GetInstance().SetFaseActual(1);
                                 selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
 
-                                particulas.SetActive(false);
-
                                 audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
-
-                                
 
                                 //Animaciones de salida de los portales/tablero
                                 StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
@@ -277,14 +264,12 @@ public class OutlineSelectionE2 : MonoBehaviour
         animPantalla1.SetBool("AnimacionSalida", true);
         animPantalla2.SetBool("AnimacionSalida", true);
         animPantalla3.SetBool("AnimacionSalida", true);
-        //animSpotlight1.SetBool("AnimacionSalida", true);
-        //animSpotlight2.SetBool("AnimacionSalida", true);
-        //animSpotlight3.SetBool("AnimacionSalida", true);
         animTablero.SetBool("SalidaTablero", true);
         yield return new WaitForSeconds(4f); // Espera 3 segundos (ajustar el tiempo a la duracion de la animacion)
         // Desactiva los objetos despues de la animacion
         pantalla1.SetActive(false);
         pantalla2.SetActive(false);
         pantalla3.SetActive(false);
+        Destroy(this.gameObject);
     }
 }

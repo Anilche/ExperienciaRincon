@@ -266,13 +266,4 @@ public class Instancia5 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         ui.SetActive(true);
     }
-    /*
-    void LateUpdate()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f))
-        {
-            Debug.Log("Hit (DEBUG): " + hit.collider.name);
-        }
-    }*/
 }

@@ -286,5 +286,6 @@ public class OutlineSelection : MonoBehaviour
         spotlightPortal2.SetActive(false);
         spotlightPortal3.SetActive(false);
         niebla.SetActive(false);
+        Destroy(this.gameObject);
     }
 }
