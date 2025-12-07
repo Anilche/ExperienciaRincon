@@ -20,9 +20,15 @@ public class Inst4Mixer : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    [Header("Pantallas")]
+    [SerializeField] public GameObject pantallaApagada;
+    [SerializeField] public GameObject pantallaVideo;
+
     private Camera camara;
 
     private bool puedeTocar = true;
+
+    private bool telePrendida = false;
 
     AudioManager audioManager;
 
@@ -100,6 +106,23 @@ public class Inst4Mixer : MonoBehaviour
                             if (puedeTocar)
                             {
                                 StartCoroutine(hacerAnimacion());
+                            }
+                            break;
+
+                        case "TV":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            if (telePrendida)
+                            {
+                                pantallaApagada.SetActive(true);
+                                pantallaVideo.SetActive(false);
+                                telePrendida = false;
+                            }
+                            else if (!telePrendida)
+                            {
+                                pantallaApagada.SetActive(false);
+                                pantallaVideo.SetActive(true);
+                                telePrendida = true;
                             }
                             break;
 

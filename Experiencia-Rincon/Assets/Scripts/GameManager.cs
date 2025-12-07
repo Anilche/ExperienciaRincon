@@ -54,11 +54,6 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(DesbloqueoSalaBonus()); // Llama a la función para desbloquear la sala bonus si la fase actual es X
         }*/
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SetFaseActual(1);
-        }
     }
 
     void Start()
