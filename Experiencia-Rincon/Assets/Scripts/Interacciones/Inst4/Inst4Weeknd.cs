@@ -114,12 +114,14 @@ public class Inst4Weeknd : MonoBehaviour
 
                             if (telePrendida)
                             {
+                                audioManager.PlaySFX(audioManager.sonidoTV);
                                 pantallaApagada.SetActive(true);
                                 pantallaVideo.SetActive(false);
                                 telePrendida = false;
                             }
                             else if (!telePrendida)
                             {
+                                audioManager.PlaySFX(audioManager.sonidoTV);
                                 pantallaApagada.SetActive(false);
                                 pantallaVideo.SetActive(true);
                                 telePrendida = true;

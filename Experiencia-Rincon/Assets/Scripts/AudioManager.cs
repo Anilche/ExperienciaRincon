@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoMate;
     public AudioClip sonidoTeCafe;
     public AudioClip sonidoPedido;
+    public AudioClip sonidoTV;
 
     [Header("Audio Clips Dialogos")]
     public AudioClip f0;

@@ -114,12 +114,14 @@ public class Inst4Mixer : MonoBehaviour
 
                             if (telePrendida)
                             {
+                                audioManager.PlaySFX(audioManager.sonidoTV);
                                 pantallaApagada.SetActive(true);
                                 pantallaVideo.SetActive(false);
                                 telePrendida = false;
                             }
                             else if (!telePrendida)
                             {
+                                audioManager.PlaySFX(audioManager.sonidoTV);
                                 pantallaApagada.SetActive(false);
                                 pantallaVideo.SetActive(true);
                                 telePrendida = true;
@@ -147,6 +149,7 @@ public class Inst4Mixer : MonoBehaviour
     IEnumerator hacerAnimacion()
     {
         puedeTocar = false;
+        audioManager.PlaySFX(audioManager.seleccionSFX);
         animInstrumento.SetBool("tocar", true);
         yield return new WaitForSeconds(2f);
         animInstrumento.SetBool("tocar", false);
