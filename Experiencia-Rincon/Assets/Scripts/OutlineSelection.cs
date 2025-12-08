@@ -9,7 +9,7 @@ public class OutlineSelection : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeElecciones = false;
+    //private bool estaEnAreaDeElecciones = false;
 
     [Header("Opciones de Pisos")]
     // Los objetos que se pueden elegir
@@ -65,6 +65,13 @@ public class OutlineSelection : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    [Header("Distancia máxima de interacción")]
+    [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
+
+    private bool puedeConfirmar = false;
+
+    private bool puedeTocar = true;
+
     AudioManager audioManager;
 
     private void Awake()
@@ -103,7 +110,7 @@ public class OutlineSelection : MonoBehaviour
             spotlightPortal3.SetActive(true);
         }
 
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria /*&& estaEnAreaDeElecciones*/)
         {
                 // Highlight
                 if (highlight != null)
@@ -111,11 +118,16 @@ public class OutlineSelection : MonoBehaviour
                     highlight.gameObject.GetComponent<Outline>().enabled = false;
                     highlight = null;
                 }
+
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
                 if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
                 {
                     highlight = raycastHit.transform;
-                    if (highlight.CompareTag("Seleccionable") && highlight != selection)
+
+                    float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
+
+                    if (highlight.CompareTag("Seleccionable") && distancia <= distanciaMaxima)
                     {
                         if (highlight.gameObject.GetComponent<Outline>() != null)
                         {
@@ -138,7 +150,10 @@ public class OutlineSelection : MonoBehaviour
                 // Selection
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (highlight)
+
+                    float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
+
+                    if (highlight && distancia <= distanciaMaxima)
                     {
                         if (selection != null)
                         {
@@ -146,8 +161,6 @@ public class OutlineSelection : MonoBehaviour
                         }
                         selection = raycastHit.transform;
                         selection.gameObject.GetComponent<Outline>().enabled = true;
-                        
-                        Debug.Log(highlight.gameObject);
 
                         string objetoSeleccionado = highlight.gameObject.name;
 
@@ -155,52 +168,67 @@ public class OutlineSelection : MonoBehaviour
                         {
                             case "BotonPortal1":
 
-                                selection.gameObject.GetComponent<Outline>().enabled = false;
-                                animBoton1.SetTrigger("pulsarBoton");
+                                if (puedeTocar)
+                                {
+                                    selection.gameObject.GetComponent<Outline>().enabled = false;
+                                    animBoton1.SetTrigger("pulsarBoton");
 
-                                audioManager.PlaySFX(audioManager.seleccionSFX);
+                                    audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                                StartCoroutine(parpadearYCambiar(piso1, objeto1)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+                                    StartCoroutine(parpadearYCambiar(piso1, objeto1)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
 
-                                GameManager.GetInstance().eleccionLuces = "Calido"; // Guarda la elección de luces en el GameManager
+                                    GameManager.GetInstance().eleccionLuces = "Calido"; // Guarda la elección de luces en el GameManager
+                                    puedeConfirmar = true;
+                                }
                                 break;
 
                             case "BotonPortal2":
 
-                                selection.gameObject.GetComponent<Outline>().enabled = false;
-                                animBoton2.SetTrigger("pulsarBoton");
+                                if (puedeTocar)
+                                {
+                                    selection.gameObject.GetComponent<Outline>().enabled = false;
+                                    animBoton2.SetTrigger("pulsarBoton");
 
-                                audioManager.PlaySFX(audioManager.seleccionSFX);
+                                    audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                                StartCoroutine(parpadearYCambiar(piso2, objeto2)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+                                    StartCoroutine(parpadearYCambiar(piso2, objeto2)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
 
-                                GameManager.GetInstance().eleccionLuces = "Neutro"; // Guarda la elección de luces en el GameManager
+                                    GameManager.GetInstance().eleccionLuces = "Neutro"; // Guarda la elección de luces en el GameManager
+                                    puedeConfirmar = true;
+                                }
                                 break;
 
                             case "BotonPortal3":
 
-                                selection.gameObject.GetComponent<Outline>().enabled = false;
-                                animBoton3.SetTrigger("pulsarBoton");
-                                
-                                audioManager.PlaySFX(audioManager.seleccionSFX);
+                                if (puedeTocar)
+                                {
+                                    selection.gameObject.GetComponent<Outline>().enabled = false;
+                                    animBoton3.SetTrigger("pulsarBoton");
 
-                                StartCoroutine(parpadearYCambiar(piso3, objeto3)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+                                    audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                                GameManager.GetInstance().eleccionLuces = "Natural"; // Guarda la elección de luces en el GameManager
+                                    StartCoroutine(parpadearYCambiar(piso3, objeto3)); //Inicia la corutina para parpadear y cambiar de piso, se le pasa por parámetro el piso a elegir
+
+                                    GameManager.GetInstance().eleccionLuces = "Natural"; // Guarda la elección de luces en el GameManager
+                                    puedeConfirmar = true;
+                                }
                                 break;
 
                             case "BotonConfirmar":
-                                Debug.Log("Eleccion Confirmada");
-                                GameManager.GetInstance().SetFaseActual(1);
-                                selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
+
+                                if (puedeConfirmar == true)
+                                {
+                                    GameManager.GetInstance().SetFaseActual(1);
+                                    selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
                                 
-                                animBotonConfirmar.SetTrigger("pulsarBoton");
+                                    animBotonConfirmar.SetTrigger("pulsarBoton");
 
-                                audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
+                                    audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
 
-                                //Animaciones de salida de niebla, portales y spotlights
-                                animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
-                                StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Inicia la corutina para desactivar los objetos luego de la animacion
+                                    //Animaciones de salida de niebla, portales y spotlights
+                                    animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
+                                    StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Inicia la corutina para desactivar los objetos luego de la animacion
+                                }
                                 break;
 
                             default:
@@ -221,7 +249,7 @@ public class OutlineSelection : MonoBehaviour
                 }
         }
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
@@ -244,9 +272,10 @@ public class OutlineSelection : MonoBehaviour
         {
             estaEnAreaDeElecciones = false;
         }
-    }
+    }*/
 
     IEnumerator parpadearYCambiar(GameObject pisoAElegir, GameObject objetosExtras) {
+        puedeTocar = false; // Evita que se puedan tocar más botones mientras se realiza la animación
         parpados.SetActive(false);
         parpados.SetActive(true);
         yield return new WaitForSeconds(0.3f);
@@ -263,10 +292,12 @@ public class OutlineSelection : MonoBehaviour
         objeto3.SetActive(false);
         objetosExtras.SetActive(true);
 
-        Debug.Log(objetosExtras + "está prendido");
+        //Debug.Log(objetosExtras + "está prendido");
 
         yield return new WaitForSeconds(1f);
         parpados.SetActive(false);
+
+        puedeTocar = true; // Vuelve a permitir tocar botones
     }
 
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
