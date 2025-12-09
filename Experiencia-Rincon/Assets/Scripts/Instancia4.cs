@@ -9,7 +9,7 @@ public class Instancia4 : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeElecciones = false;
+    //private bool estaEnAreaDeElecciones = false;
     
     [Header("AudioSource")]
     public AudioSource Source;
@@ -49,6 +49,9 @@ public class Instancia4 : MonoBehaviour
     [SerializeField] AudioClip audioClipSeleccion2;
     [SerializeField] AudioClip audioClipSeleccion3;
 
+    [Header("Distancia máxima de interacción")]
+    [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
+
     AudioManager audioManager;
 
     private void Awake()
@@ -74,7 +77,7 @@ public class Instancia4 : MonoBehaviour
             mesa.SetActive(true);
         }
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeElecciones)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeElecciones*/)
         {
             // Highlight
             if (highlight != null)
@@ -82,11 +85,16 @@ public class Instancia4 : MonoBehaviour
                 highlight.gameObject.GetComponent<Outline>().enabled = false;
                 highlight = null;
             }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
             if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
             {
                 highlight = raycastHit.transform;
-                if (highlight.CompareTag("Seleccionable") && highlight != selection)
+
+                float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
+
+                if (highlight.CompareTag("Seleccionable") && distancia <= distanciaMaxima)
                 {
                     if (highlight.gameObject.GetComponent<Outline>() != null)
                     {
@@ -109,7 +117,10 @@ public class Instancia4 : MonoBehaviour
             // Selection
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (highlight)
+
+                float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
+
+                if (highlight && distancia <= distanciaMaxima)
                 {
                     if (selection != null)
                     {
@@ -118,7 +129,7 @@ public class Instancia4 : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    Debug.Log(highlight.gameObject);
+                    //Debug.Log(highlight.gameObject);
 
                     string objetoSeleccionado = highlight.gameObject.name;
 
@@ -198,7 +209,7 @@ public class Instancia4 : MonoBehaviour
             }
         }
     }
-
+/*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
@@ -221,7 +232,7 @@ public class Instancia4 : MonoBehaviour
         {
             estaEnAreaDeElecciones = false;
         }
-    }
+    }*/
 
     private void cambiarFase()
     {
