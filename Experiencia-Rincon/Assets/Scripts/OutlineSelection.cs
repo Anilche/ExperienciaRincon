@@ -232,7 +232,7 @@ public class OutlineSelection : MonoBehaviour
                                 break;
 
                             default:
-                                Debug.Log("Objeto no reconocido");
+                                //Debug.Log("Objeto no reconocido");
                                 break;
                         }
 

@@ -9,7 +9,7 @@ public class Interaccion1Neutral : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeInteraccion = false;
+    //private bool estaEnAreaDeInteraccion = false;
 
     private string tagSeleccionable = "Seleccionable";
     private string tagNoSeleccionable = "Untagged";
@@ -41,7 +41,7 @@ public class Interaccion1Neutral : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeInteraccion)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
         {
             if (monedaTirada == false) { 
                 moneda.tag = tagSeleccionable;
@@ -117,7 +117,7 @@ public class Interaccion1Neutral : MonoBehaviour
                             break;
 
                         default:
-                            Debug.Log("Objeto no reconocido");
+                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 
@@ -134,7 +134,7 @@ public class Interaccion1Neutral : MonoBehaviour
             }
         }
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
@@ -159,7 +159,7 @@ public class Interaccion1Neutral : MonoBehaviour
             estaEnAreaDeInteraccion = false;
             Debug.Log("Jugador salio del area de interaccion natural");
         }
-    }
+    }*/
 
     IEnumerator animacionYSonido()
     {

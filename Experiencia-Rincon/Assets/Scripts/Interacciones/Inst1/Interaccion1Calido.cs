@@ -9,7 +9,7 @@ public class Interaccion1Calido : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeInteraccion = false;
+    //private bool estaEnAreaDeInteraccion = false;
 
     private string tagSeleccionable = "Seleccionable";
 
@@ -65,7 +65,7 @@ public class Interaccion1Calido : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria && estaEnAreaDeInteraccion)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
         {
             ramita1.tag = tagSeleccionable;
             ramita2.tag = tagSeleccionable;
@@ -395,7 +395,7 @@ public class Interaccion1Calido : MonoBehaviour
             montonRamitas3.SetActive(true);
         }
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
@@ -420,5 +420,5 @@ public class Interaccion1Calido : MonoBehaviour
             estaEnAreaDeInteraccion = false;
             Debug.Log("Jugador salio del area de interaccion calido");
         }
-    }
+    }*/
 }

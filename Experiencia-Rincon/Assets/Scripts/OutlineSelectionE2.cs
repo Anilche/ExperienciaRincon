@@ -9,7 +9,7 @@ public class OutlineSelectionE2 : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeElecciones = false;
+    //private bool estaEnAreaDeElecciones = false;
 
     [Header("Opciones de Objetos")]
     // Los objetos que se pueden elegir
@@ -65,6 +65,13 @@ public class OutlineSelectionE2 : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    [Header("Distancia máxima de interacción")]
+    [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
+
+    private bool puedeConfirmar = false;
+
+    private bool puedeTocar = true;
+
     AudioManager audioManager;
     private void Awake()
     {
@@ -96,7 +103,7 @@ public class OutlineSelectionE2 : MonoBehaviour
             //spotlightPantalla3.SetActive(true);
         }
 
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
                 // Highlight
                 if (highlight != null)
@@ -104,11 +111,16 @@ public class OutlineSelectionE2 : MonoBehaviour
                     highlight.gameObject.GetComponent<Outline>().enabled = false;
                     highlight = null;
                 }
+
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
                 if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
                 {
                     highlight = raycastHit.transform;
-                    if (highlight.CompareTag("Seleccionable") && highlight != selection)
+
+                    float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
+
+                    if (highlight.CompareTag("Seleccionable") && distancia <= distanciaMaxima)
                     {
                         if (highlight.gameObject.GetComponent<Outline>() != null)
                         {
@@ -131,7 +143,10 @@ public class OutlineSelectionE2 : MonoBehaviour
                 // Selection
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (highlight)
+
+                    float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
+
+                    if (highlight && distancia <= distanciaMaxima)
                     {
                         if (selection != null)
                         {
@@ -140,7 +155,7 @@ public class OutlineSelectionE2 : MonoBehaviour
                         selection = raycastHit.transform;
                         selection.gameObject.GetComponent<Outline>().enabled = true;
                         
-                        Debug.Log(highlight.gameObject);
+                        //Debug.Log(highlight.gameObject);
 
                         string objetoSeleccionado = highlight.gameObject.name;
 
@@ -148,50 +163,64 @@ public class OutlineSelectionE2 : MonoBehaviour
                         {
                             case "BotonPantalla1":
 
-                                selection.gameObject.GetComponent<Outline>().enabled = false;
+                                if (puedeTocar)
+                                {
+                                    selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                                animBoton1.SetTrigger("pulsarBoton");
+                                    animBoton1.SetTrigger("pulsarBoton");
 
-                                audioManager.PlaySFX(audioManager.seleccionSFX);
+                                    audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                                StartCoroutine(transicionYCambiar(transPelotas, pared1, techo1, objeto1));
+                                    StartCoroutine(transicionYCambiar(transPelotas, pared1, techo1, objeto1));
+                                    puedeConfirmar = true;
+                                }
                                 break;
 
                             case "BotonPantalla2":
 
-                                selection.gameObject.GetComponent<Outline>().enabled = false;
+                                if (puedeTocar)
+                                {
+                                    selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                                animBoton2.SetTrigger("pulsarBoton");
+                                    animBoton2.SetTrigger("pulsarBoton");
 
-                                audioManager.PlaySFX(audioManager.seleccionSFX);
+                                    audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                                StartCoroutine(transicionYCambiar(transMedialunas, pared2, techo2, objeto2));
+                                    StartCoroutine(transicionYCambiar(transMedialunas, pared2, techo2, objeto2));
+                                    puedeConfirmar = true;
+                                }
                                 break;
 
                             case "BotonPantalla3":
 
-                                selection.gameObject.GetComponent<Outline>().enabled = false;
+                                if (puedeTocar)
+                                {
+                                    selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                                animBoton3.SetTrigger("pulsarBoton");
+                                    animBoton3.SetTrigger("pulsarBoton");
 
-                                audioManager.PlaySFX(audioManager.seleccionSFX);
+                                    audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                                StartCoroutine(transicionYCambiar(transMonedas, pared3, techo3, objeto3));
+                                    StartCoroutine(transicionYCambiar(transMonedas, pared3, techo3, objeto3));
+                                    puedeConfirmar = true;
+                                }
                                 break;
 
                             case "BotonConfirmar":
-                                Debug.Log("Eleccion Confirmada");
-                                GameManager.GetInstance().SetFaseActual(1);
-                                selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
 
-                                audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
+                                if (puedeConfirmar == true)
+                                {
+                                    GameManager.GetInstance().SetFaseActual(1);
+                                    selection.gameObject.GetComponent<Outline>().enabled = false; //Se deselecciona el boton confirmar
 
-                                //Animaciones de salida de los portales/tablero
-                                StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
+                                    audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
+
+                                    StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Animaciones de salida de los portales/tablero
+                            }
                                 break;
 
                             default:
-                                Debug.Log("Objeto no reconocido");
+                                //Debug.Log("Objeto no reconocido");
                                 break;
                         }
 
@@ -208,7 +237,7 @@ public class OutlineSelectionE2 : MonoBehaviour
                 }
         }
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
@@ -230,10 +259,11 @@ public class OutlineSelectionE2 : MonoBehaviour
         {
             estaEnAreaDeElecciones = false;
         }
-    }
+    }*/
 
     IEnumerator transicionYCambiar(GameObject transicion, GameObject paredAElegir, GameObject techoAElegir, GameObject objetosExtras)
     {
+        puedeTocar = false; // Evita que se puedan tocar más botones mientras se realiza la animación
         transicion.SetActive(false);
         transicion.SetActive(true);
         yield return new WaitForSeconds(0.5f);
@@ -256,6 +286,7 @@ public class OutlineSelectionE2 : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         transicion.SetActive(false);
+        puedeTocar = true; // Vuelve a permitir tocar botones
     }
 
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
