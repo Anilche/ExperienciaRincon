@@ -10,7 +10,7 @@ public class Instancia3 : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeElecciones = false;
+    //private bool estaEnAreaDeElecciones = false;
 
     [Header("Estanterias finales")]
     [SerializeField] public GameObject estanteriasFinales;
@@ -53,7 +53,12 @@ public class Instancia3 : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    [Header("Distancia máxima de interacción")]
+    [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
+
     private string noSeleccionable = "Untagged";
+
+    private bool puedeConfirmar = false;
 
     AudioManager audioManager;
 
@@ -88,7 +93,7 @@ public class Instancia3 : MonoBehaviour
             //estanteriasFinales.SetActive(true);
         }*/
 
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria /*&& estaEnAreaDeElecciones*/)
         {
             objetoSeleccion1.tag = "Seleccionable";
             objetoSeleccion2.tag = "Seleccionable";
@@ -105,11 +110,16 @@ public class Instancia3 : MonoBehaviour
                 highlight.gameObject.GetComponent<Outline>().enabled = false;
                 highlight = null;
             }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
             if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
             {
                 highlight = raycastHit.transform;
-                if (highlight.CompareTag("Seleccionable") && highlight != selection)
+
+                float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
+
+                if (highlight.CompareTag("Seleccionable") && distancia <= distanciaMaxima)
                 {
                     if (highlight.gameObject.GetComponent<Outline>() != null)
                     {
@@ -132,7 +142,10 @@ public class Instancia3 : MonoBehaviour
             // Selection
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (highlight)
+
+                float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
+                
+                if (highlight && distancia <= distanciaMaxima)
                 {
                     if (selection != null)
                     {
@@ -153,6 +166,7 @@ public class Instancia3 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            puedeConfirmar = true;
                             break;
 
                         case "ObjSeleccion2":
@@ -161,6 +175,7 @@ public class Instancia3 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            puedeConfirmar = true;
                             break;
 
                         case "ObjSeleccion3":
@@ -169,6 +184,7 @@ public class Instancia3 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            puedeConfirmar = true;
                             break;
 
                         case "ObjSeleccion4":
@@ -177,6 +193,7 @@ public class Instancia3 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            puedeConfirmar = true;
                             break;
 
                         case "ObjSeleccion5":
@@ -185,6 +202,7 @@ public class Instancia3 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            puedeConfirmar = true;
                             break;
 
                         case "ObjSeleccion6":
@@ -193,6 +211,7 @@ public class Instancia3 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            puedeConfirmar = true;
                             break;
 
                         case "ObjSeleccion7":
@@ -201,6 +220,7 @@ public class Instancia3 : MonoBehaviour
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            puedeConfirmar = true;
                             break;
 
 
@@ -261,31 +281,35 @@ public class Instancia3 : MonoBehaviour
                             break;
 
                         case "TerminarElecciones":
-                            GameManager.GetInstance().SetFaseActual(1); // Cambia la fase
-                            
-                            //animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
 
-                            audioManager.PlaySFX(audioManager.confirmacionSFX);
+                            if (puedeConfirmar == true)
+                            {
+                                GameManager.GetInstance().SetFaseActual(1); // Cambia la fase
 
-                            objsExtras.SetActive(true);
+                                //animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
 
-                            lucesEstanteriasFinales.SetActive(true);
+                                audioManager.PlaySFX(audioManager.confirmacionSFX);
 
-                            StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
+                                objsExtras.SetActive(true);
 
-                            objeto1.tag = noSeleccionable;
-                            objeto2.tag = noSeleccionable;
-                            objeto3.tag = noSeleccionable;
-                            objeto4.tag = noSeleccionable;
-                            objeto5.tag = noSeleccionable;
-                            objeto6.tag = noSeleccionable;
-                            objeto7.tag = noSeleccionable;
+                                lucesEstanteriasFinales.SetActive(true);
 
-                            selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                                StartCoroutine(DesactivarObjetosDespuesDeAnimacion());
+
+                                objeto1.tag = noSeleccionable;
+                                objeto2.tag = noSeleccionable;
+                                objeto3.tag = noSeleccionable;
+                                objeto4.tag = noSeleccionable;
+                                objeto5.tag = noSeleccionable;
+                                objeto6.tag = noSeleccionable;
+                                objeto7.tag = noSeleccionable;
+
+                                selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
+                            }
                             break;
 
                         default:
-                            Debug.Log("Objeto no reconocido");
+                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 
@@ -302,7 +326,7 @@ public class Instancia3 : MonoBehaviour
             }
         }
     }
-    
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
@@ -324,7 +348,7 @@ public class Instancia3 : MonoBehaviour
         {
             estaEnAreaDeElecciones = false;
         }
-    }
+    }*/
 
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
     {

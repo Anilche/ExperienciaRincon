@@ -12,8 +12,7 @@ public class Interaccion1Natural : MonoBehaviour
 
     private string tagSeleccionable = "Seleccionable";
     private string tagNoSeleccionable = "Untagged";
-    private bool regaderaYaRego = false;
-
+    
     private int contadorManzanasRecogidas = 0;
 
     [Header("Manzanas")]
@@ -45,6 +44,9 @@ public class Interaccion1Natural : MonoBehaviour
 
     private Camera camara;
 
+    private bool regaderaYaRego = false;
+    private bool regando = false;
+
     AudioManager audioManager;
 
     private void Awake()
@@ -60,13 +62,13 @@ public class Interaccion1Natural : MonoBehaviour
         manzanaCanasta6.SetActive(false);
     }
 
-    private void Start()
-    {
-        partRegadera.GetComponent<ParticleSystem>().Stop();
-    }
-
     void Update()
     {
+        if (regando == false)
+        {
+            partRegadera.GetComponent<ParticleSystem>().Stop();
+        }
+
         if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             manzana1.GetComponent<Rigidbody>().isKinematic = false;
@@ -226,6 +228,7 @@ public class Interaccion1Natural : MonoBehaviour
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
+
                             animRegaderaHongos.SetBool("regarHongos", true);
                             StartCoroutine(RegaderaApagadoParticulas());
                             regaderaYaRego = true;
@@ -252,9 +255,11 @@ public class Interaccion1Natural : MonoBehaviour
 
     IEnumerator RegaderaApagadoParticulas()
     {
+        regando = true;
         partRegadera.GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(4f);
         partRegadera.GetComponent<ParticleSystem>().Stop();
+        regando = false;
     }
 
     /*

@@ -9639,7 +9639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7514f77d87bde464283d8fad35e15684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faseAhora: 0
+  faseAhora: 23
   eleccionActiva: 0
   botonesInst1: {fileID: 7172094371299030428}
   botonesInst2: {fileID: 7172094371299030428}
@@ -11721,6 +11721,7 @@ MonoBehaviour:
   sonidoMate: {fileID: 8300000, guid: 6b78930c2344c084daefc53e6688f71f, type: 3}
   sonidoTeCafe: {fileID: 8300000, guid: be15f245acf57b047a189f21279c962e, type: 3}
   sonidoPedido: {fileID: 0}
+  sonidoTV: {fileID: 0}
   f0: {fileID: 8300000, guid: 1936f96ff4619254ea331a4698c4f96f, type: 3}
   f1: {fileID: 8300000, guid: defd89ef6693adb4c9c293bf951c0ab9, type: 3}
   f2: {fileID: 8300000, guid: 405a30d1487e43f418a00645c1c84033, type: 3}
