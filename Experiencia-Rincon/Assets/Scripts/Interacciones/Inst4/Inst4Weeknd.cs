@@ -14,6 +14,9 @@ public class Inst4Weeknd : MonoBehaviour
     [Header("Animator Instrumento")]
     [SerializeField] public Animator animInstrumento;
 
+    [Header("Animator Semaforo")]
+    [SerializeField] public Animator animSemaforo;
+
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
 
@@ -128,6 +131,15 @@ public class Inst4Weeknd : MonoBehaviour
                             }
                             break;
 
+                        case "Semaforo":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            if (puedeTocar)
+                            {
+                                StartCoroutine(hacerAnimacionSemaforo());
+                            }
+                            break;
+
                         default:
                             break;
                     }
@@ -153,6 +165,16 @@ public class Inst4Weeknd : MonoBehaviour
         animInstrumento.SetBool("tocar", true);
         yield return new WaitForSeconds(3f);
         animInstrumento.SetBool("tocar", false);
+        puedeTocar = true;
+    }
+
+    IEnumerator hacerAnimacionSemaforo()
+    {
+        puedeTocar = false;
+        audioManager.PlaySFX(audioManager.seleccionSFX);
+        animSemaforo.SetBool("prenderLuces", true);
+        yield return new WaitForSeconds(1f);
+        animSemaforo.SetBool("prenderLuces", false);
         puedeTocar = true;
     }
 }

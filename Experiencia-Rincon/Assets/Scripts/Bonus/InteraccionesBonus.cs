@@ -3,35 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InstDescanso : MonoBehaviour
+public class InteraccionesBonus : MonoBehaviour
 {
     private Transform highlight;
     private Transform selection;
     private RaycastHit raycastHit;
 
-    // private string tagSeleccionable = "Seleccionable";
-    [Header("Bandej")]
-    [SerializeField] public Animator animBandeja;
-    [SerializeField] public GameObject bandeja;
-
-    [Header("Bebidas")]
-    [SerializeField] public GameObject bebidas;
-    [SerializeField] public GameObject cafe;
-    [SerializeField] public GameObject te;
-    [SerializeField] public GameObject mate;
-
-    [Header("Bebidas Escenario")]
-    [SerializeField] public GameObject cafeEscenario;
-    [SerializeField] public GameObject teEscenario;
-    [SerializeField] public GameObject mateEscenario;
-
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
+
+    [Header("Animacion The Notebook")]
+    [SerializeField] private Animator animNotebook;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
     private Camera camara;
+
+    private bool animacionEnCurso = false;
 
     AudioManager audioManager;
 
@@ -39,19 +28,12 @@ public class InstDescanso : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
-
-        bebidas.SetActive(false);
-        cafeEscenario.SetActive(false);
-        teEscenario.SetActive(false);
-        mateEscenario.SetActive(false);
     }
 
     void Update()
     {
-
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
-
             // Highlight
             if (highlight != null)
             {
@@ -102,40 +84,20 @@ public class InstDescanso : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    //Debug.Log(highlight.gameObject);
-
                     string objetoSeleccionado = highlight.gameObject.name;
 
                     switch (objetoSeleccionado)
                     {
-                        case "Mate":
-                            selection.gameObject.GetComponent<Outline>().enabled = false;
+                        case "Regadera":
 
-                            //Debug.Log("Seleccionaste el mate");
-                            GameManager.GetInstance().faseAhora += 1;
-                            StartCoroutine(hacerAnimacion(mate));
+                            if (animacionEnCurso == false)
+                            {
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            mateEscenario.SetActive(true);
-                            break;
+                                audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                        case "Cafe":
-                            selection.gameObject.GetComponent<Outline>().enabled = false;
-
-                            //Debug.Log("Seleccionaste el café");
-                            GameManager.GetInstance().faseAhora += 1;
-                            StartCoroutine(hacerAnimacion(cafe));
-
-                            cafeEscenario.SetActive(true);
-                            break;
-
-                        case "Te":
-                            selection.gameObject.GetComponent<Outline>().enabled = false;
-
-                            //Debug.Log("Seleccionaste el té");
-                            GameManager.GetInstance().faseAhora += 1;
-                            StartCoroutine(hacerAnimacion(te));
-
-                            teEscenario.SetActive(true);
+                                StartCoroutine(HacerAnimacion());
+                            }
                             break;
 
                         default:
@@ -155,31 +117,13 @@ public class InstDescanso : MonoBehaviour
             }
         }
     }
-    
-    IEnumerator hacerAnimacion(GameObject bebidaAElegir)
+
+    IEnumerator HacerAnimacion()
     {
-        bebidas.SetActive(true);
-        te.SetActive(false);
-        mate.SetActive(false);
-        cafe.SetActive(false);
-        bebidaAElegir.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-
-        if (bebidaAElegir.name == "Te" || bebidaAElegir.name == "Cafe")
-        {
-            audioManager.PlaySFX(audioManager.sonidoTeCafe);
-        }
-        if (bebidaAElegir.name == "Mate")
-        {
-            audioManager.PlaySFX(audioManager.sonidoMate);
-        }
-
-        yield return new WaitForSeconds(2f);
-        bebidas.SetActive(false);
-
-        animBandeja.SetBool("Salida", true);
-        yield return new WaitForSeconds(4f);
-        bandeja.SetActive(false);
+        animacionEnCurso = true;
+        animNotebook.SetBool("parpadearLuces", true);
+        yield return new WaitForSeconds(0.5f);
+        animNotebook.SetBool("parpadearLuces", false);
+        animacionEnCurso = false;
     }
 }

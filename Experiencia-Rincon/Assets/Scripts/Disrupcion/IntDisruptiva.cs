@@ -9,7 +9,7 @@ public class IntDisruptiva : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    private bool estaEnAreaDeInteraccion = false;
+    //private bool estaEnAreaDeInteraccion = false;
 
     [Header("Panel")]
     [SerializeField] public GameObject panelLuces;
@@ -147,7 +147,7 @@ public class IntDisruptiva : MonoBehaviour
             luzVerdePalanquita5.SetActive(false);
         }
 
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeInteraccion && panelActivado == false)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria /*&& estaEnAreaDeInteraccion*/ && panelActivado == false)
         {
 
             // Highlight
@@ -280,7 +280,7 @@ public class IntDisruptiva : MonoBehaviour
             }
         }
     }
-    
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
@@ -305,7 +305,7 @@ public class IntDisruptiva : MonoBehaviour
             estaEnAreaDeInteraccion = false;
             Debug.Log("Jugador salio del area de interaccion juegos");
         }
-    }
+    }*/
 
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
     {

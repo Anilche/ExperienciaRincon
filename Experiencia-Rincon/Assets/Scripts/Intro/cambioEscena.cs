@@ -24,5 +24,10 @@ public class VideoSceneChanger : MonoBehaviour
             Debug.Log("Video terminado, cargando escena: " + escenaACargar);
             SceneManager.LoadScene(escenaACargar);
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene("Experiencia");
+        }
     }
 }
