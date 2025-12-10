@@ -88,7 +88,7 @@ public class InteraccionesBonus : MonoBehaviour
 
                     switch (objetoSeleccionado)
                     {
-                        case "Regadera":
+                        case "cuadro notebook_1":
 
                             if (animacionEnCurso == false)
                             {

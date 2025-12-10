@@ -27,6 +27,7 @@ public class FirstPlayer : MonoBehaviour
 
     private void Start()
     {
+        _mouseX = -90;
         if (_myCam == null) _myCam = Camera.main.GetComponent<FirstPlayerCamera>();
 
         if( _myCam != null ) 
