@@ -26,6 +26,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoTeCafe;
     public AudioClip sonidoPedido;
     public AudioClip sonidoTV;
+    public AudioClip sonidoMoto;
+    public AudioClip sonidoLucesCuadro;
 
     [Header("Audio Clips Dialogos")]
     public AudioClip f0;
@@ -67,8 +69,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip f36;
     public AudioClip f37;
     public AudioClip f38;
-    //public AudioClip f39;
-    //public AudioClip f40;
 
     private void Start()
     {

@@ -15,6 +15,9 @@ public class InteraccionesBonus : MonoBehaviour
     [Header("Animacion The Notebook")]
     [SerializeField] private Animator animNotebook;
 
+    [Header("Animacion Moto")]
+    [SerializeField] private Animator animMoto;
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -94,9 +97,20 @@ public class InteraccionesBonus : MonoBehaviour
                             {
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                                audioManager.PlaySFX(audioManager.seleccionSFX);
+                                audioManager.PlaySFX(audioManager.sonidoLucesCuadro);
 
-                                StartCoroutine(HacerAnimacion());
+                                StartCoroutine(HacerAnimacionNotebook());
+                            }
+                            break;
+
+                        case "Moto":
+                            if (animacionEnCurso == false)
+                            {
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                                audioManager.PlaySFX(audioManager.sonidoMoto);
+
+                                StartCoroutine(HacerAnimacion(animMoto));
                             }
                             break;
 
@@ -118,12 +132,20 @@ public class InteraccionesBonus : MonoBehaviour
         }
     }
 
-    IEnumerator HacerAnimacion()
+    IEnumerator HacerAnimacionNotebook()
     {
         animacionEnCurso = true;
         animNotebook.SetBool("parpadearLuces", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         animNotebook.SetBool("parpadearLuces", false);
+        animacionEnCurso = false;
+    }
+
+    IEnumerator HacerAnimacion(Animator animacion) {
+        animacionEnCurso = true;
+        animacion.SetBool("animar", true);
+        yield return new WaitForSeconds(4f);
+        animacion.SetBool("animar", false);
         animacionEnCurso = false;
     }
 }
