@@ -18,10 +18,19 @@ public class InteraccionesBonus : MonoBehaviour
     [Header("Animacion Moto")]
     [SerializeField] private Animator animMoto;
 
+    [Header("Animacion Pato")]
+    [SerializeField] private Animator animPato;
+    
+    [Header("Animacion Nanachi")]
+    [SerializeField] public GameObject nanachi;
+    [SerializeField] public ParticleSystem partNanachi;
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
     private Camera camara;
+
+    //private string tagNoSeleccionable = "Untagged";
 
     private bool animacionEnCurso = false;
 
@@ -31,6 +40,8 @@ public class InteraccionesBonus : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
+
+        partNanachi.GetComponent<ParticleSystem>().Stop();
     }
 
     void Update()
@@ -99,7 +110,7 @@ public class InteraccionesBonus : MonoBehaviour
 
                                 audioManager.PlaySFX(audioManager.sonidoLucesCuadro);
 
-                                StartCoroutine(HacerAnimacionNotebook());
+                                StartCoroutine(HacerAnimacionNotebook(animNotebook));
                             }
                             break;
 
@@ -111,6 +122,30 @@ public class InteraccionesBonus : MonoBehaviour
                                 audioManager.PlaySFX(audioManager.sonidoMoto);
 
                                 StartCoroutine(HacerAnimacion(animMoto));
+                            }
+                            break;
+
+                        case "Patito":
+                            if (animacionEnCurso == false)
+                            {
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                                audioManager.PlaySFX(audioManager.sonidoPato);
+
+                                StartCoroutine(HacerAnimacionNotebook(animPato));
+                            }
+                            break;
+
+                        case "BolaNanachi":
+                            if (animacionEnCurso == false)
+                            {
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                                nanachi.tag = "Untagged";
+
+                                audioManager.PlaySFX(audioManager.sonidoCascabel);
+                                
+                                partNanachi.GetComponent<ParticleSystem>().Play();
                             }
                             break;
 
@@ -132,12 +167,12 @@ public class InteraccionesBonus : MonoBehaviour
         }
     }
 
-    IEnumerator HacerAnimacionNotebook()
+    IEnumerator HacerAnimacionNotebook(Animator animacion)
     {
         animacionEnCurso = true;
-        animNotebook.SetBool("parpadearLuces", true);
+        animacion.SetBool("animar", true);
         yield return new WaitForSeconds(1f);
-        animNotebook.SetBool("parpadearLuces", false);
+        animacion.SetBool("animar", false);
         animacionEnCurso = false;
     }
 

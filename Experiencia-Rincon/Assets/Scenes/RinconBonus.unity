@@ -10890,6 +10890,8 @@ MonoBehaviour:
   sonidoTV: {fileID: 0}
   sonidoMoto: {fileID: 0}
   sonidoLucesCuadro: {fileID: 0}
+  sonidoPato: {fileID: 0}
+  sonidoCascabel: {fileID: 0}
   f0: {fileID: 8300000, guid: 1936f96ff4619254ea331a4698c4f96f, type: 3}
   f1: {fileID: 8300000, guid: defd89ef6693adb4c9c293bf951c0ab9, type: 3}
   f2: {fileID: 8300000, guid: 405a30d1487e43f418a00645c1c84033, type: 3}
@@ -13378,6 +13380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blitz
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e20ccbfb8162b1e4288ef11130c6f6ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1834942775268339388, guid: e20ccbfb8162b1e4288ef11130c6f6ef,
         type: 3}

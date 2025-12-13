@@ -28,6 +28,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoTV;
     public AudioClip sonidoMoto;
     public AudioClip sonidoLucesCuadro;
+    public AudioClip sonidoPato;
+    public AudioClip sonidoCascabel;
 
     [Header("Audio Clips Dialogos")]
     public AudioClip f0;
