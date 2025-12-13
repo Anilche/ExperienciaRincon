@@ -12,9 +12,11 @@ EXTERNAL PasarEscenaA(escena)
 - fase == 23:
     -> FB1
 - fase == 24:
-    -> FB1
+    -> FB12
 - fase == 25:
     -> FB2
+- fase == 26:
+    -> FB22
 }
 
 === FB1 ===
@@ -24,8 +26,27 @@ Pasá y sentate cómodo, vamos a ver una peli. Dejame que te traigo unos pochocl
 ~ SetFaseActual(1)
 -> END
 
+=== FB12 ===
+//RINCON BONUS
+~ ReproducirDialogo(35)
+Pasá y sentate cómodo, vamos a ver una peli. Dejame que te traigo unos pochoclos.
+-> END
+
 === FB2 ===
 //RINCON BONUS
+~ ReproducirDialogo(36)
+Me alegra que hayas encontrado tu propio rincón.
+~ ReproducirDialogo(37)
+Antes de que te vayas, quería mostrarte el mío.
+~ ReproducirDialogo(38)
+Tomate tu tiempo para verlo y volvé a hablarme cuando ya estés listo para despedirnos.
+~ SetFaseActual(1)
+-> END
+
+=== FB22 ===
+//RINCON BONUS
+~ ReproducirDialogo(36)
+Bueno, llegó el momento.
 ~ ReproducirDialogo(36)
 Me alegra que hayas encontrado tu propio rincón.
 ~ ReproducirDialogo(37)

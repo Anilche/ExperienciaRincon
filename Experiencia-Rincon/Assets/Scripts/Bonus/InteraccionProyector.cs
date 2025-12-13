@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,15 @@ public class InteraccionProyector : MonoBehaviour
     private bool estaEnAreaDeElecciones = false;
 
     public GameObject pochoclos;
+    public GameObject silla;
+
+    [Header("Camaras")]
+    [SerializeField] private CinemachineVirtualCamera vcamJugador;
+    [SerializeField] private CinemachineVirtualCamera vcamSilla;
+    
+    [Header("Canvas Fade Out")]
+    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private float fadeDuration = 1.0f;
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -22,6 +32,10 @@ public class InteraccionProyector : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+    private void Start()
+    {
         pochoclos.SetActive(false);
     }
 
@@ -30,8 +44,8 @@ public class InteraccionProyector : MonoBehaviour
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             pochoclos.SetActive(true);
+            silla.tag = "Seleccionable";
         }
-
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria && estaEnAreaDeElecciones)
         {
@@ -88,8 +102,8 @@ public class InteraccionProyector : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            Debug.Log("Has seleccionado la silla del proyector. Pasa a video Manifiesto");
-                            SceneManager.LoadScene("Manifiesto");
+                            StartCoroutine(ActivarCamaraSilla());
+                            //SceneManager.LoadScene("Manifiesto");
                             break;
 
                         default:
@@ -109,6 +123,33 @@ public class InteraccionProyector : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator ActivarCamaraSilla()
+    {
+        vcamJugador.Priority = 0;
+        vcamSilla.Priority = 10;
+        yield return new WaitForSeconds(1.5f);
+        FadeOut();
+    }
+
+    public void FadeOut()
+    {
+        StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 1, fadeDuration));
+    }
+
+    private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)
+    {
+        float elapsedTime = 0.0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(start, end, elapsedTime / duration);
+            yield return null;
+        }
+        cg.alpha = end;
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Manifiesto");
     }
 
     private void OnTriggerEnter(Collider other)

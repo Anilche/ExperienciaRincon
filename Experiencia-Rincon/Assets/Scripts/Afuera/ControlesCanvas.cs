@@ -24,7 +24,7 @@ public class ControlesCanvas : MonoBehaviour
 
         panelControles.SetActive(true);
 
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(7.5f);
 
         animPanelControles.SetBool("controlesSalida", true);
     }
