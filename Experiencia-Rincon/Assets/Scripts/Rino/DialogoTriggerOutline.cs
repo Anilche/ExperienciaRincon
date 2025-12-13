@@ -9,11 +9,19 @@ public class DialogoTriggerOutline : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
+    [Header("Boton Interaccion")]
+    [SerializeField] private GameObject botonInteraccion;
+
     [Header("INK JSON")]
     [SerializeField] private TextAsset inkJSON;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
+
+    private void Start()
+    {
+        botonInteraccion.SetActive(false);
+    }
 
     private void Update()
     {
@@ -71,6 +79,8 @@ public class DialogoTriggerOutline : MonoBehaviour
                     }
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
+
+                    
 
                     string objetoSeleccionado = highlight.gameObject.name;
 

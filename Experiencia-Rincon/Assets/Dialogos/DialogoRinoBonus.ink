@@ -45,13 +45,11 @@ Tomate tu tiempo para verlo y volvé a hablarme cuando ya estés listo para desp
 
 === FB22 ===
 //RINCON BONUS
-~ ReproducirDialogo(36)
+~ ReproducirDialogo(39)
 Bueno, llegó el momento.
-~ ReproducirDialogo(36)
-Me alegra que hayas encontrado tu propio rincón.
-~ ReproducirDialogo(37)
+~ ReproducirDialogo(40)
 Mi trabajo termina acá, pero todavía hay más sorpresas para vos.
-~ ReproducirDialogo(38)
+~ ReproducirDialogo(41)
 ¿Te acordás de la caja en la que llegó la llave de tu Rincón? Mirá, te explico:
 ~ PasarEscenaA("VideoBoxset")
 -> END

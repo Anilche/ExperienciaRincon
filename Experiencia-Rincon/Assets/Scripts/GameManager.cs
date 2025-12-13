@@ -39,22 +39,9 @@ public class GameManager : MonoBehaviour
 
     private static GameManager instance;
 
-    //[Header("Camara jugador")]
-    //[SerializeField] private CinemachineVirtualCamera vcamJugador;
-    //[SerializeField] private CinemachineVirtualCamera vcamHabilitarBonus;
-
     private Camera camara;
 
     AudioManager audioManager;
-
-    private void Update()
-    {
-        /* final
-        if (faseAhora == 5)
-        {
-            StartCoroutine(DesbloqueoSalaBonus()); // Llama a la función para desbloquear la sala bonus si la fase actual es X
-        }*/
-    }
 
     void Start()
     {
@@ -143,34 +130,4 @@ public class GameManager : MonoBehaviour
     {
         cuadrosTirados.SetActive(true);
     }
-
-
-    /*
-    private IEnumerator DesbloqueoSalaBonus()
-    {
-        SetFaseActual(1); // Aumenta la fase actual en 1 al desbloquear la sala bonus (para que deje de llamarse la función en cada frame)
-
-        ActivarCamaraDesbloqueo(); // Cambia a la cámara de desbloqueo
-
-        ///////////////////// Acá va la animación de desbloqueo de la sala bonus
-
-        Debug.Log("Sala bonus desbloqueada");
-
-        yield return new WaitForSeconds(5f);
-
-        ActivarCamaraJugador(); // Vuelve a activar la cámara del jugador después de la animación de desbloqueo
-
-    }
-    
-    private void ActivarCamaraJugador()
-    {
-        vcamJugador.Priority = 10;
-        vcamHabilitarBonus.Priority = 0;
-    }
-
-    private void ActivarCamaraDesbloqueo()
-    {
-        vcamJugador.Priority = 0;
-        vcamHabilitarBonus.Priority = 10;
-    }*/
 }

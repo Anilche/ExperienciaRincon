@@ -30,7 +30,7 @@ public class InteraccionesBonus : MonoBehaviour
 
     private Camera camara;
 
-    //private string tagNoSeleccionable = "Untagged";
+    private string tagNoSeleccionable = "Untagged";
 
     private bool animacionEnCurso = false;
 
@@ -141,7 +141,7 @@ public class InteraccionesBonus : MonoBehaviour
                             {
                                 selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                                nanachi.tag = "Untagged";
+                                nanachi.tag = tagNoSeleccionable;
 
                                 audioManager.PlaySFX(audioManager.sonidoCascabel);
                                 

@@ -71,6 +71,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip f36;
     public AudioClip f37;
     public AudioClip f38;
+    public AudioClip f39;
+    public AudioClip f40;
+    public AudioClip f41;
 
     private void Start()
     {
