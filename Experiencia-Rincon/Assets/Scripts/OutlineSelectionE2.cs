@@ -213,12 +213,12 @@ public class OutlineSelectionE2 : MonoBehaviour
 
                                     audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
 
-                                    StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Animaciones de salida de los portales/tablero
-
                                     botonConfirmar.tag = tagNoSeleccionable;
                                     boton1.tag = tagNoSeleccionable;
                                     boton2.tag = tagNoSeleccionable;
                                     boton3.tag = tagNoSeleccionable;
+
+                                    StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Animaciones de salida de los portales/tablero
                                 }
                                 break;
 

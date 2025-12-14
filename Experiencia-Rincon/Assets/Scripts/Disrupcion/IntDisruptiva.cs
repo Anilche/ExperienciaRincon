@@ -9,7 +9,7 @@ public class IntDisruptiva : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    //private bool estaEnAreaDeInteraccion = false;
+    private string tagNoSeleccionable = "Untagged";
 
     [Header("Panel")]
     [SerializeField] public GameObject panelLuces;
@@ -27,6 +27,13 @@ public class IntDisruptiva : MonoBehaviour
     [SerializeField] public Animator animPalanquita3;
     [SerializeField] public Animator animPalanquita4;
     [SerializeField] public Animator animPalanquita5;
+
+    [Header("Palanquitas")]
+    [SerializeField] public GameObject palanquita1;
+    [SerializeField] public GameObject palanquita2;
+    [SerializeField] public GameObject palanquita3;
+    [SerializeField] public GameObject palanquita4;
+    [SerializeField] public GameObject palanquita5;
 
     [Header("Luces Rojas")]
     [SerializeField] public GameObject luzRojaPalanquita1;
@@ -90,6 +97,12 @@ public class IntDisruptiva : MonoBehaviour
             GameManager.GetInstance().EncenderLuces();
 
             GameManager.GetInstance().SetFaseActual(1);
+
+            palanquita1.tag = tagNoSeleccionable;
+            palanquita2.tag = tagNoSeleccionable;
+            palanquita3.tag = tagNoSeleccionable;
+            palanquita4.tag = tagNoSeleccionable;
+            palanquita5.tag = tagNoSeleccionable;
         }
 
         if (palanquita1Arriba == true)
@@ -147,7 +160,7 @@ public class IntDisruptiva : MonoBehaviour
             luzVerdePalanquita5.SetActive(false);
         }
 
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria /*&& estaEnAreaDeInteraccion*/ && panelActivado == false)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria && panelActivado == false)
         {
 
             // Highlight
@@ -280,33 +293,7 @@ public class IntDisruptiva : MonoBehaviour
             }
         }
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeInteraccion = true;
-            Debug.Log("Jugador en area de interaccion juegos");
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeInteraccion = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            estaEnAreaDeInteraccion = false;
-            Debug.Log("Jugador salio del area de interaccion juegos");
-        }
-    }*/
-
+   
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
     {
         animLucesEmergencia.SetBool("Salida", true);

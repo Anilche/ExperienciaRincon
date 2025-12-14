@@ -85,15 +85,8 @@ public class Instancia3 : MonoBehaviour
 
     void Update()
     {
-        /*if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
-        {
-            //particulas.SetActive(true);
 
-            //estanteriaSeleccion.SetActive(true);
-            //estanteriasFinales.SetActive(true);
-        }*/
-
-        if (GameManager.GetInstance().faseAhora == numFaseNecesaria /*&& estaEnAreaDeElecciones*/)
+        if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             objetoSeleccion1.tag = "Seleccionable";
             objetoSeleccion2.tag = "Seleccionable";
@@ -102,7 +95,6 @@ public class Instancia3 : MonoBehaviour
             objetoSeleccion5.tag = "Seleccionable";
             objetoSeleccion6.tag = "Seleccionable";
             objetoSeleccion7.tag = "Seleccionable";
-            objTerminar.tag = "Seleccionable";
 
             // Highlight
             if (highlight != null)
@@ -142,7 +134,6 @@ public class Instancia3 : MonoBehaviour
             // Selection
             if (Input.GetKeyDown(KeyCode.E))
             {
-
                 float distancia = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, highlight.position);
                 
                 if (highlight && distancia <= distanciaMaxima)
@@ -153,8 +144,6 @@ public class Instancia3 : MonoBehaviour
                     }
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
-
-                    //Debug.Log(highlight.gameObject);
 
                     string objetoSeleccionado = highlight.gameObject.name;
 
@@ -167,6 +156,7 @@ public class Instancia3 : MonoBehaviour
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             puedeConfirmar = true;
+                            objTerminar.tag = "Seleccionable";
                             break;
 
                         case "ObjSeleccion2":
@@ -176,6 +166,7 @@ public class Instancia3 : MonoBehaviour
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             puedeConfirmar = true;
+                            objTerminar.tag = "Seleccionable";
                             break;
 
                         case "ObjSeleccion3":
@@ -185,6 +176,7 @@ public class Instancia3 : MonoBehaviour
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             puedeConfirmar = true;
+                            objTerminar.tag = "Seleccionable";
                             break;
 
                         case "ObjSeleccion4":
@@ -194,6 +186,7 @@ public class Instancia3 : MonoBehaviour
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             puedeConfirmar = true;
+                            objTerminar.tag = "Seleccionable";
                             break;
 
                         case "ObjSeleccion5":
@@ -203,6 +196,7 @@ public class Instancia3 : MonoBehaviour
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             puedeConfirmar = true;
+                            objTerminar.tag = "Seleccionable";
                             break;
 
                         case "ObjSeleccion6":
@@ -212,6 +206,7 @@ public class Instancia3 : MonoBehaviour
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             puedeConfirmar = true;
+                            objTerminar.tag = "Seleccionable";
                             break;
 
                         case "ObjSeleccion7":
@@ -221,8 +216,8 @@ public class Instancia3 : MonoBehaviour
 
                             selection.gameObject.GetComponent<Outline>().enabled = false; // Quita el outline al seleccionar
                             puedeConfirmar = true;
+                            objTerminar.tag = "Seleccionable";
                             break;
-
 
                         case "ObjFinal1":
                             objeto1.SetActive(false);
@@ -286,8 +281,6 @@ public class Instancia3 : MonoBehaviour
                             {
                                 GameManager.GetInstance().SetFaseActual(1); // Cambia la fase
 
-                                //animEstanteriaSeleccion.SetBool("AnimacionSalida", true);
-
                                 audioManager.PlaySFX(audioManager.confirmacionSFX);
 
                                 objsExtras.SetActive(true);
@@ -309,7 +302,6 @@ public class Instancia3 : MonoBehaviour
                             break;
 
                         default:
-                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 
@@ -326,29 +318,6 @@ public class Instancia3 : MonoBehaviour
             }
         }
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            estaEnAreaDeElecciones = false;
-        }
-    }*/
 
     IEnumerator DesactivarObjetosDespuesDeAnimacion()
     {
