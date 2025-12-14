@@ -294,7 +294,7 @@ public class AudioManager : MonoBehaviour
                 dialogosSource.Stop();
                 dialogosSource.PlayOneShot(f38);
                 break;
-/*
+
             case 39:
                 dialogosSource.Stop();
                 dialogosSource.PlayOneShot(f39);
@@ -303,7 +303,12 @@ public class AudioManager : MonoBehaviour
             case 40:
                 dialogosSource.Stop();
                 dialogosSource.PlayOneShot(f40);
-                break;*/
+                break;
+
+            case 41:
+                dialogosSource.Stop();
+                dialogosSource.PlayOneShot(f41);
+                break;
         }
     }
 }
