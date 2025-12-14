@@ -44,16 +44,23 @@ public class Instancia5 : MonoBehaviour
 
     private int contadorCuadrosColocados = 0;
 
+    private string tagNoSeleccionable = "Untagged";
+
     private Camera camara;
 
     AudioManager audioManager;
 
     public string eleccionActiva = "";
 
+    private bool inicioDeInstancia = true;
+
+    private static Instancia5 instance;
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
+        instance = this;
     }
 
     void Start()
@@ -62,9 +69,7 @@ public class Instancia5 : MonoBehaviour
         cuadroColgando2.SetActive(false);
         cuadroColgando3.SetActive(false);
         cuadrosTirados.SetActive(false);
-        //cuadroTirado1.SetActive(true);
-        //cuadroTirado2.SetActive(true);
-        //cuadroTirado3.SetActive(true);
+
         uiEleccionesLienzo1.SetActive(false);
         uiEleccionesLienzo2.SetActive(false);
         uiEleccionesLienzo3.SetActive(false);
@@ -75,9 +80,12 @@ public class Instancia5 : MonoBehaviour
         
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-             cuadroColgando1.tag = "Seleccionable";
-             cuadroColgando2.tag = "Seleccionable";
-             cuadroColgando3.tag = "Seleccionable";
+            if (inicioDeInstancia)
+            {
+                cuadroColgando1.tag = "Seleccionable";
+                cuadroColgando2.tag = "Seleccionable";
+                cuadroColgando3.tag = "Seleccionable";
+            }
 
             cuadrosTirados.SetActive(true);
 
@@ -89,6 +97,13 @@ public class Instancia5 : MonoBehaviour
                 cuadroColgando3.tag = "Untagged";
 
                 Destroy(this.gameObject);
+            }
+
+            if (!GameManager.GetInstance().eleccionActiva)
+            {
+                uiEleccionesLienzo1.SetActive(false);
+                uiEleccionesLienzo2.SetActive(false);
+                uiEleccionesLienzo3.SetActive(false);
             }
 
             // Highlight
@@ -174,7 +189,7 @@ public class Instancia5 : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            //cuadroColgando1.tag = "Untagged";
+                            eleccionActiva = "Lienzo1";
 
                             IniciarEleccion(vcamLienzo1, uiEleccionesLienzo1);
                             break;
@@ -184,7 +199,7 @@ public class Instancia5 : MonoBehaviour
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
 
-                            //cuadroColgando2.tag = "Untagged";
+                            eleccionActiva = "Lienzo2";
 
                             IniciarEleccion(vcamLienzo2, uiEleccionesLienzo2);
                             break;
@@ -193,8 +208,6 @@ public class Instancia5 : MonoBehaviour
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
                             audioManager.PlaySFX(audioManager.seleccionSFX);
-
-                            //cuadroColgando3.tag = "Untagged";
 
                             eleccionActiva = "Lienzo3";
 
@@ -222,7 +235,9 @@ public class Instancia5 : MonoBehaviour
     private void IniciarEleccion(CinemachineVirtualCamera vcamEleccion, GameObject uiElecciones)
     {
         GameManager.GetInstance().eleccionActiva = true; // Marca que la elección está activa
-        
+
+        inicioDeInstancia = false;
+
         Cursor.visible = true; // Hace visible el cursor
         Cursor.lockState = CursorLockMode.None;
 
@@ -239,10 +254,27 @@ public class Instancia5 : MonoBehaviour
         uiEleccionesLienzo2.SetActive(false);
         uiEleccionesLienzo3.SetActive(false);
 
+        switch (eleccionActiva)
+        {
+            case "Lienzo1":
+                cuadroColgando1.tag = tagNoSeleccionable;
+                break;
+
+            case "Lienzo2":
+                cuadroColgando2.tag = tagNoSeleccionable;
+                break;
+
+            case "Lienzo3":
+                cuadroColgando3.tag = tagNoSeleccionable;
+                break;
+        }
+
         GameManager.GetInstance().eleccionActiva = false; // Marca que la elección ya no está activa
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; // Oculta el cursor
+
+        eleccionActiva = "";
 
         contadorCuadrosColocados++; // Aumenta el contador de cuadros colocados
     }
@@ -263,7 +295,12 @@ public class Instancia5 : MonoBehaviour
 
     IEnumerator esperarYPrenderUI(GameObject ui)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         ui.SetActive(true);
+    }
+
+    public static Instancia5 GetInstance()
+    {
+        return instance;
     }
 }

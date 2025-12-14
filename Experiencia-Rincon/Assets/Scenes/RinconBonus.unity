@@ -12399,7 +12399,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2007926566}
-  - component: {fileID: 2007926568}
   - component: {fileID: 2007926567}
   m_Layer: 0
   m_Name: Trigger_Outline
@@ -12438,27 +12437,6 @@ MonoBehaviour:
   botonInteraccion: {fileID: 355044359}
   inkJSON: {fileID: 4900000, guid: 6efc39309247db7468f456f12a448db6, type: 3}
   distanciaMaxima: 3
---- !u!65 &2007926568
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007926565}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.5, y: 1.5, z: 3.5}
-  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &2015331352
 GameObject:
   m_ObjectHideFlags: 0
