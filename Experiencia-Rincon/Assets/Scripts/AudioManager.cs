@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoGuitarra;
     public AudioClip sonidoPiano;
     public AudioClip sonidoMixer;
+    public AudioClip sonidoMicrofono;
     public AudioClip sonidoMate;
     public AudioClip sonidoTeCafe;
     public AudioClip sonidoPedido;

@@ -74003,15 +74003,16 @@ MonoBehaviour:
   sonidoVentana: {fileID: 8300000, guid: 4377befe7c8d0ef4ba8928d3e14458c0, type: 3}
   sonidoGuitarra: {fileID: 8300000, guid: 879823d22733fe94c96a4a634386901c, type: 3}
   sonidoPiano: {fileID: 8300000, guid: 8c39563ecce1afd4ea98861c6d432aea, type: 3}
-  sonidoMixer: {fileID: 8300000, guid: ee3d3906f105f24479eeef596ae2aa96, type: 3}
+  sonidoMixer: {fileID: 8300000, guid: e40420917cd36f84e896025840d01e88, type: 3}
+  sonidoMicrofono: {fileID: 8300000, guid: b61cdeb246f531341997cb5b3551f915, type: 3}
   sonidoMate: {fileID: 8300000, guid: 6b78930c2344c084daefc53e6688f71f, type: 3}
   sonidoTeCafe: {fileID: 8300000, guid: be15f245acf57b047a189f21279c962e, type: 3}
   sonidoPedido: {fileID: 8300000, guid: 6cb528dfc602d0f4288fbb843fae39ca, type: 3}
   sonidoTV: {fileID: 8300000, guid: 07d70ed6c0622974eb1436f8e9fd2792, type: 3}
-  sonidoMoto: {fileID: 0}
-  sonidoLucesCuadro: {fileID: 0}
-  sonidoPato: {fileID: 0}
-  sonidoCascabel: {fileID: 0}
+  sonidoMoto: {fileID: 8300000, guid: 8f4e8caceda51ce4e9688b534e8b11c8, type: 3}
+  sonidoLucesCuadro: {fileID: 8300000, guid: 41edb28e05f4aeb43bf5eee715f6ce4c, type: 3}
+  sonidoPato: {fileID: 8300000, guid: d178d28e023f4fc4a8fb34fef1de89a8, type: 3}
+  sonidoCascabel: {fileID: 8300000, guid: f97a163b5f7a9ee49ac2549d58a0f476, type: 3}
   f0: {fileID: 8300000, guid: 1936f96ff4619254ea331a4698c4f96f, type: 3}
   f1: {fileID: 8300000, guid: defd89ef6693adb4c9c293bf951c0ab9, type: 3}
   f2: {fileID: 8300000, guid: 405a30d1487e43f418a00645c1c84033, type: 3}
@@ -74049,11 +74050,11 @@ MonoBehaviour:
   f34: {fileID: 8300000, guid: 5382587192e1bbb48af740abf39b339f, type: 3}
   f35: {fileID: 8300000, guid: 9be63adfa99c9ef4b85f7ae7ab7482ea, type: 3}
   f36: {fileID: 8300000, guid: 9de66a11044f71248b26a190283310ca, type: 3}
-  f37: {fileID: 8300000, guid: d18231df99d2188448a9fbf08da897d5, type: 3}
-  f38: {fileID: 8300000, guid: f3f355dd6bbd25a43a566ebd799856f9, type: 3}
-  f39: {fileID: 0}
-  f40: {fileID: 0}
-  f41: {fileID: 0}
+  f37: {fileID: 8300000, guid: e5bded89fd1aebb458e9ec758033ce4d, type: 3}
+  f38: {fileID: 8300000, guid: 1ed041d3ea524044fa1b70a5e867ce75, type: 3}
+  f39: {fileID: 8300000, guid: 5c7e2de052dbe4547b706edb34b20c38, type: 3}
+  f40: {fileID: 8300000, guid: d18231df99d2188448a9fbf08da897d5, type: 3}
+  f41: {fileID: 8300000, guid: f3f355dd6bbd25a43a566ebd799856f9, type: 3}
 --- !u!1 &1313552091
 GameObject:
   m_ObjectHideFlags: 0

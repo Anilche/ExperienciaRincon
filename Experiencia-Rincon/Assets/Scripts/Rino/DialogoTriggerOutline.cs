@@ -47,6 +47,8 @@ public class DialogoTriggerOutline : MonoBehaviour
 
                 if (highlight.CompareTag("Seleccionable") && distancia <= distanciaMaxima)
                 {
+                    botonInteraccion.SetActive(true);
+
                     if (highlight.gameObject.GetComponent<Outline>() != null)
                     {
                         highlight.gameObject.GetComponent<Outline>().enabled = true;
@@ -61,8 +63,13 @@ public class DialogoTriggerOutline : MonoBehaviour
                 }
                 else
                 {
+                    botonInteraccion.SetActive(false);
                     highlight = null;
                 }
+            }
+            else
+            {
+                botonInteraccion.SetActive(false);
             }
 
             // Selection
@@ -80,13 +87,12 @@ public class DialogoTriggerOutline : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    
-
                     string objetoSeleccionado = highlight.gameObject.name;
 
                     switch (objetoSeleccionado)
                     {
                         case "Rino":
+                            botonInteraccion.SetActive(false);
                             DialogoManager.GetInstance().EntrarModoDialogo(inkJSON);
                             selection.gameObject.GetComponent<Outline>().enabled = false;
                             break;

@@ -93,8 +93,6 @@ public class Inst4Spinetta : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    //Debug.Log(highlight.gameObject);
-
                     string objetoSeleccionado = highlight.gameObject.name;
 
                     switch (objetoSeleccionado)
@@ -126,6 +124,15 @@ public class Inst4Spinetta : MonoBehaviour
                             }
                             break;
 
+                        case "Microfono":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            if (puedeTocar)
+                            {
+                                StartCoroutine(tocarMicrofono());
+                            }
+                            break;
+
                         default:
                             break;
                     }
@@ -152,6 +159,14 @@ public class Inst4Spinetta : MonoBehaviour
         animInstrumento.SetBool("tocar", true);
         yield return new WaitForSeconds(1.5f);
         animInstrumento.SetBool("tocar", false);
+        puedeTocar = true;
+    }
+
+    IEnumerator tocarMicrofono()
+    {
+        puedeTocar = false;
+        audioManager.PlaySFX(audioManager.sonidoMicrofono);
+        yield return new WaitForSeconds(7f);
         puedeTocar = true;
     }
 }

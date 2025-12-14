@@ -94,8 +94,6 @@ public class Inst4Mixer : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    //Debug.Log(highlight.gameObject);
-
                     string objetoSeleccionado = highlight.gameObject.name;
 
                     switch (objetoSeleccionado)
@@ -149,7 +147,7 @@ public class Inst4Mixer : MonoBehaviour
     IEnumerator hacerAnimacion()
     {
         puedeTocar = false;
-        audioManager.PlaySFX(audioManager.seleccionSFX);
+        audioManager.PlaySFX(audioManager.sonidoMixer);
         animInstrumento.SetBool("tocar", true);
         yield return new WaitForSeconds(2f);
         animInstrumento.SetBool("tocar", false);
