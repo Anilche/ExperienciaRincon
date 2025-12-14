@@ -78808,6 +78808,10 @@ MonoBehaviour:
   animBoton2: {fileID: 13221395}
   animBoton3: {fileID: 1852433581}
   animBotonConfirmar: {fileID: 8786217465285426018}
+  boton1: {fileID: 566341768}
+  boton2: {fileID: 13221393}
+  boton3: {fileID: 1852433579}
+  botonConfirmar: {fileID: 6322799708806692363}
   pantalla1: {fileID: 919132147701155412}
   pantalla2: {fileID: 919132149188700049}
   pantalla3: {fileID: 919132147485725138}
@@ -83568,6 +83572,10 @@ MonoBehaviour:
   animBoton2: {fileID: 7717048257210240234}
   animBoton3: {fileID: 8805891783181725249}
   animBotonConfirmar: {fileID: 8786217465285426018}
+  boton1: {fileID: 5805736167194865281}
+  boton2: {fileID: 7717048257210240232}
+  boton3: {fileID: 3943439972440485121}
+  botonConfirmar: {fileID: 6322799708806692363}
   portal1: {fileID: 919132148899474613}
   portal2: {fileID: 919132147867825486}
   portal3: {fileID: 919132147817272115}
@@ -116739,7 +116747,7 @@ GameObject:
   - component: {fileID: 8786217465285426018}
   m_Layer: 0
   m_Name: BotonConfirmar
-  m_TagString: Seleccionable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

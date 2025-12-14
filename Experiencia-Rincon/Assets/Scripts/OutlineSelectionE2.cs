@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,7 +10,7 @@ public class OutlineSelectionE2 : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    //private bool estaEnAreaDeElecciones = false;
+    private string tagNoSeleccionable = "Untagged";
 
     [Header("Opciones de Objetos")]
     // Los objetos que se pueden elegir
@@ -24,7 +25,6 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public GameObject pared2;
     [SerializeField] public GameObject pared3;
 
-
     [Header("Opciones de Techos")]
     // Los objetos que se pueden elegir
     [SerializeField] public GameObject techoBase;
@@ -38,6 +38,12 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public Animator animBoton2;
     [SerializeField] public Animator animBoton3;
     [SerializeField] public Animator animBotonConfirmar;
+
+    [Header("Botones")]
+    [SerializeField] public GameObject boton1;
+    [SerializeField] public GameObject boton2;
+    [SerializeField] public GameObject boton3;
+    [SerializeField] public GameObject botonConfirmar;
 
     [Header("Pantallas")]
     // Pantallas que tendran animacion luego
@@ -55,12 +61,6 @@ public class OutlineSelectionE2 : MonoBehaviour
     [SerializeField] public GameObject transPelotas;
     [SerializeField] public GameObject transMedialunas;
     [SerializeField] public GameObject transMonedas;
-    /*
-    [Header("Spotlights")]
-    [SerializeField] public GameObject spotlightPantalla1;
-    [SerializeField] public GameObject spotlightPantalla2;
-    [SerializeField] public GameObject spotlightPantalla3;*/
-
 
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
@@ -83,10 +83,6 @@ public class OutlineSelectionE2 : MonoBehaviour
         pantalla1.SetActive(false); // Desactiva la pantalla 1 al inicio
         pantalla2.SetActive(false); // Desactiva la pantalla 2 al inicio
         pantalla3.SetActive(false); // Desactiva la pantalla 3 al inicio
-
-        //spotlightPantalla1.SetActive(false);
-        //spotlightPantalla2.SetActive(false);
-        //spotlightPantalla3.SetActive(false);
     }
 
     void Update()
@@ -97,10 +93,6 @@ public class OutlineSelectionE2 : MonoBehaviour
             pantalla1.SetActive(true);
             pantalla2.SetActive(true);
             pantalla3.SetActive(true);
-
-            //spotlightPantalla1.SetActive(true);
-            //spotlightPantalla2.SetActive(true);
-            //spotlightPantalla3.SetActive(true);
         }
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
@@ -173,6 +165,8 @@ public class OutlineSelectionE2 : MonoBehaviour
 
                                     StartCoroutine(transicionYCambiar(transPelotas, pared1, techo1, objeto1));
                                     puedeConfirmar = true;
+
+                                    botonConfirmar.tag = "Seleccionable";
                                 }
                                 break;
 
@@ -188,6 +182,8 @@ public class OutlineSelectionE2 : MonoBehaviour
 
                                     StartCoroutine(transicionYCambiar(transMedialunas, pared2, techo2, objeto2));
                                     puedeConfirmar = true;
+
+                                    botonConfirmar.tag = "Seleccionable";
                                 }
                                 break;
 
@@ -203,6 +199,8 @@ public class OutlineSelectionE2 : MonoBehaviour
 
                                     StartCoroutine(transicionYCambiar(transMonedas, pared3, techo3, objeto3));
                                     puedeConfirmar = true;
+
+                                    botonConfirmar.tag = "Seleccionable";
                                 }
                                 break;
 
@@ -216,11 +214,15 @@ public class OutlineSelectionE2 : MonoBehaviour
                                     audioManager.PlaySFX(audioManager.confirmacionSFX); //Efecto de sonido
 
                                     StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Animaciones de salida de los portales/tablero
-                            }
+
+                                    botonConfirmar.tag = tagNoSeleccionable;
+                                    boton1.tag = tagNoSeleccionable;
+                                    boton2.tag = tagNoSeleccionable;
+                                    boton3.tag = tagNoSeleccionable;
+                                }
                                 break;
 
                             default:
-                                //Debug.Log("Objeto no reconocido");
                                 break;
                         }
 
@@ -237,29 +239,6 @@ public class OutlineSelectionE2 : MonoBehaviour
                 }
         }
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            estaEnAreaDeElecciones = false;
-        }
-    }*/
 
     IEnumerator transicionYCambiar(GameObject transicion, GameObject paredAElegir, GameObject techoAElegir, GameObject objetosExtras)
     {

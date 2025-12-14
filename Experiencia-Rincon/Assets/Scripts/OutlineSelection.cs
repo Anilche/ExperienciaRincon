@@ -9,7 +9,7 @@ public class OutlineSelection : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    //private bool estaEnAreaDeElecciones = false;
+    private string tagNoSeleccionable = "Untagged";
 
     [Header("Opciones de Pisos")]
     // Los objetos que se pueden elegir
@@ -25,11 +25,16 @@ public class OutlineSelection : MonoBehaviour
     [SerializeField] public GameObject objeto3;
 
     [Header("Animator Botones")]
-    // Los objetos que se pueden elegir
     [SerializeField] public Animator animBoton1;
     [SerializeField] public Animator animBoton2;
     [SerializeField] public Animator animBoton3;
     [SerializeField] public Animator animBotonConfirmar;
+
+    [Header("Botones")]
+    [SerializeField] public GameObject boton1;
+    [SerializeField] public GameObject boton2;
+    [SerializeField] public GameObject boton3;
+    [SerializeField] public GameObject botonConfirmar;
 
     [Header("Portales")]
     // Portales que tendran animacion luego
@@ -97,7 +102,6 @@ public class OutlineSelection : MonoBehaviour
     {
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-
             //Animacion de entrada de los portales
             portal1.SetActive(true); //Activa el portal 1
             portal2.SetActive(true);
@@ -179,6 +183,8 @@ public class OutlineSelection : MonoBehaviour
 
                                     GameManager.GetInstance().eleccionLuces = "Calido"; // Guarda la elección de luces en el GameManager
                                     puedeConfirmar = true;
+
+                                    botonConfirmar.tag = "Seleccionable";
                                 }
                                 break;
 
@@ -195,7 +201,9 @@ public class OutlineSelection : MonoBehaviour
 
                                     GameManager.GetInstance().eleccionLuces = "Neutro"; // Guarda la elección de luces en el GameManager
                                     puedeConfirmar = true;
-                                }
+
+                                    botonConfirmar.tag = "Seleccionable";
+                            }
                                 break;
 
                             case "BotonPortal3":
@@ -211,6 +219,8 @@ public class OutlineSelection : MonoBehaviour
 
                                     GameManager.GetInstance().eleccionLuces = "Natural"; // Guarda la elección de luces en el GameManager
                                     puedeConfirmar = true;
+
+                                    botonConfirmar.tag = "Seleccionable";
                                 }
                                 break;
 
@@ -228,11 +238,15 @@ public class OutlineSelection : MonoBehaviour
                                     //Animaciones de salida de niebla, portales y spotlights
                                     animControllerNiebla.SetBool("bajarNiebla", true); //Animacion de salida de la niebla
                                     StartCoroutine(DesactivarObjetosDespuesDeAnimacion()); //Inicia la corutina para desactivar los objetos luego de la animacion
+
+                                    botonConfirmar.tag = tagNoSeleccionable;
+                                    boton1.tag = tagNoSeleccionable;
+                                    boton2.tag = tagNoSeleccionable;
+                                    boton3.tag = tagNoSeleccionable;
                                 }
                                 break;
 
                             default:
-                                //Debug.Log("Objeto no reconocido");
                                 break;
                         }
 
@@ -249,30 +263,6 @@ public class OutlineSelection : MonoBehaviour
                 }
         }
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            estaEnAreaDeElecciones = false;
-        }
-    }*/
 
     IEnumerator parpadearYCambiar(GameObject pisoAElegir, GameObject objetosExtras) {
         puedeTocar = false; // Evita que se puedan tocar más botones mientras se realiza la animación
@@ -291,8 +281,6 @@ public class OutlineSelection : MonoBehaviour
         objeto2.SetActive(false);
         objeto3.SetActive(false);
         objetosExtras.SetActive(true);
-
-        //Debug.Log(objetosExtras + "está prendido");
 
         yield return new WaitForSeconds(1f);
         parpados.SetActive(false);
