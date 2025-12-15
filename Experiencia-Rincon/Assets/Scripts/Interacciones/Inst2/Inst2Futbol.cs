@@ -9,7 +9,7 @@ public class Inst2Futbol : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    //private string tagSeleccionable = "Seleccionable";
+    private string tagSeleccionable = "Seleccionable";
 
     [Header("Techos")]
     [SerializeField] public GameObject techoDia;
@@ -22,10 +22,14 @@ public class Inst2Futbol : MonoBehaviour
     [SerializeField] public GameObject ventanaNoche;
 
     [Header("Cortinas")]
+    [SerializeField] public GameObject cortinaIzq;
+    [SerializeField] public GameObject cortinaDer;
     [SerializeField] public Animator animCortinaIzq;
     [SerializeField] public Animator animCortinaDer;
 
     [Header("Ventanas Corredizas")]
+    [SerializeField] public GameObject ventanaIzq;
+    [SerializeField] public GameObject ventanaDer;
     [SerializeField] public Animator animVentanaIzq;
     [SerializeField] public Animator animVentanaDer;
 
@@ -62,9 +66,12 @@ public class Inst2Futbol : MonoBehaviour
 
     void Update()
     {
-        
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
+            cortinaDer.tag = tagSeleccionable;
+            cortinaIzq.tag = tagSeleccionable;
+            ventanaIzq.tag = tagSeleccionable;
+            ventanaDer.tag = tagSeleccionable;
 
             // Highlight
             if (highlight != null)

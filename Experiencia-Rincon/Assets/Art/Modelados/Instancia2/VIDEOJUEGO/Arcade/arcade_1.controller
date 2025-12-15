@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-6898833636099310050
+--- !u!1102 &-8891066293237561698
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Scene
+  m_Name: Arcade
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,8 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -623603649343465320, guid: 7a4ae8baec6cbd94e9e89d865c15ce35,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: bfb9ea61b5bb2514a88996b0f4a9a74e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -59,8 +58,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -6898833636099310050}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_State: {fileID: -8891066293237561698}
+    m_Position: {x: 310, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -70,4 +69,4 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -6898833636099310050}
+  m_DefaultState: {fileID: -8891066293237561698}
