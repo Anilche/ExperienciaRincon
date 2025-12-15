@@ -17528,6 +17528,7 @@ MonoBehaviour:
   backgroundMusic: {fileID: 8300000, guid: ee677781adea23440b13dd115258406d, type: 3}
   seleccionSFX: {fileID: 8300000, guid: ee3d3906f105f24479eeef596ae2aa96, type: 3}
   confirmacionSFX: {fileID: 8300000, guid: 9e9e8c6ba10645d43a36dfd57ba72a78, type: 3}
+  sonidoCaldero: {fileID: 8300000, guid: d1bd4fe8d469f1845b074920c6e4b619, type: 3}
   sonidoMoneda: {fileID: 8300000, guid: 715d90009a5d10d4f903409dfe09baf6, type: 3}
   sonidoMordida: {fileID: 8300000, guid: f43b275c76085a645ac041f37aef5063, type: 3}
   sonidoCampanaComida: {fileID: 8300000, guid: 5acf1c52b1d22694ab260bfb22f89995, type: 3}

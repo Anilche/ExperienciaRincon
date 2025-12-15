@@ -27,8 +27,6 @@ public class Instancia6 : MonoBehaviour
 
     [Header("Animators")]
     [SerializeField] public Animator animBases;
-    //[SerializeField] public Animator animBase2;
-    //[SerializeField] public Animator animBase3;
     [SerializeField] public Animator animBaseInicio;
 
 
@@ -63,9 +61,6 @@ public class Instancia6 : MonoBehaviour
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-            //cuadroColgando1.tag = "Seleccionable";
-            //cuadroColgando2.tag = "Seleccionable";
-            //cuadroColgando3.tag = "Seleccionable";
 
             pantallaSeleccion.SetActive(true);
 

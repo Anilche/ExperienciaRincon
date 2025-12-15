@@ -46,6 +46,10 @@ public class Interaccion1Calido : MonoBehaviour
     [SerializeField] public GameObject montonRamitas2;
     [SerializeField] public GameObject montonRamitas3;
 
+    [Header("Caldero")]
+    [SerializeField] public GameObject caldero;
+    [SerializeField] public ParticleSystem partCaldero;
+
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
 
@@ -53,6 +57,8 @@ public class Interaccion1Calido : MonoBehaviour
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
     private Camera camara;
+
+    private bool cocinando = false;
 
     AudioManager audioManager;
 
@@ -64,8 +70,12 @@ public class Interaccion1Calido : MonoBehaviour
 
     void Update()
     {
+        if (cocinando == false)
+        {
+            partCaldero.GetComponent<ParticleSystem>().Stop();
+        }
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             ramita1.tag = tagSeleccionable;
             ramita2.tag = tagSeleccionable;
@@ -89,6 +99,7 @@ public class Interaccion1Calido : MonoBehaviour
             hojita8.tag = tagSeleccionable;
             hojita9.tag = tagSeleccionable;
             hojita10.tag = tagSeleccionable;
+            caldero.tag = tagSeleccionable;
 
             // Highlight
             if (highlight != null)
@@ -364,8 +375,19 @@ public class Interaccion1Calido : MonoBehaviour
                             //Debug.Log("Hojas y Ramitas recogidas: " + contadorRamitasRecogidas);
                             break;
 
+                        case "Caldero":
+
+                            if (cocinando == false)
+                            {
+                                selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                                audioManager.PlaySFX(audioManager.sonidoCaldero);
+
+                                StartCoroutine(ReproducirParticulas());
+                            }
+                            break;
+
                         default:
-                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 
@@ -395,6 +417,16 @@ public class Interaccion1Calido : MonoBehaviour
             montonRamitas3.SetActive(true);
         }
     }
+
+    IEnumerator ReproducirParticulas()
+    {
+        cocinando = true;
+        partCaldero.GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(4f);
+        partCaldero.GetComponent<ParticleSystem>().Stop();
+        cocinando = false;
+    }
+
     /*
     private void OnTriggerEnter(Collider other)
     {

@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip backgroundMusic;
     public AudioClip seleccionSFX;
     public AudioClip confirmacionSFX;
+    public AudioClip sonidoCaldero;
     public AudioClip sonidoMoneda;
     public AudioClip sonidoMordida;
     public AudioClip sonidoCampanaComida;

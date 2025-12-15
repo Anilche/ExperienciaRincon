@@ -146,8 +146,6 @@ public class Interaccion1Natural : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    //Debug.Log(highlight.gameObject);
-
                     string objetoSeleccionado = highlight.gameObject.name;
 
                     switch (objetoSeleccionado)
@@ -235,7 +233,6 @@ public class Interaccion1Natural : MonoBehaviour
                             break;
 
                         default:
-                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 
@@ -261,31 +258,4 @@ public class Interaccion1Natural : MonoBehaviour
         partRegadera.GetComponent<ParticleSystem>().Stop();
         regando = false;
     }
-
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeInteraccion = true;
-            Debug.Log("Jugador en area de interaccion natural");
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeInteraccion = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            estaEnAreaDeInteraccion = false;
-            Debug.Log("Jugador salio del area de interaccion natural");
-        }
-    }*/
 }
