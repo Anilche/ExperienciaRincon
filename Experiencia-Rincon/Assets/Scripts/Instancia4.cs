@@ -8,8 +8,6 @@ public class Instancia4 : MonoBehaviour
     private Transform highlight;
     private Transform selection;
     private RaycastHit raycastHit;
-
-    //private bool estaEnAreaDeElecciones = false;
     
     [Header("AudioSource")]
     public AudioSource Source;
@@ -73,11 +71,10 @@ public class Instancia4 : MonoBehaviour
 
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
-            //particulas.SetActive(true);
             mesa.SetActive(true);
         }
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeElecciones*/)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             // Highlight
             if (highlight != null)
@@ -128,8 +125,6 @@ public class Instancia4 : MonoBehaviour
                     }
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
-
-                    //Debug.Log(highlight.gameObject);
 
                     string objetoSeleccionado = highlight.gameObject.name;
 
@@ -209,30 +204,6 @@ public class Instancia4 : MonoBehaviour
             }
         }
     }
-/*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeElecciones = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            estaEnAreaDeElecciones = false;
-        }
-    }*/
 
     private void cambiarFase()
     {

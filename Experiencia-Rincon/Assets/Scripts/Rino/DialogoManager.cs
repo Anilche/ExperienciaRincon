@@ -105,6 +105,11 @@ public class DialogoManager : MonoBehaviour
         {
             GameManager.GetInstance().ActivarCuadrosTirados();
         });
+
+        estaHistoria.BindExternalFunction("FadeOutVideoBoxset", () =>
+        {
+            InteraccionesBonus.GetInstance().FadeOutVideoBoxset();
+        });
     }
 
     private void DejarDeRegistrarFuncionesExternas()

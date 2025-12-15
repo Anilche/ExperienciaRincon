@@ -103,7 +103,7 @@ Ahora levantá la mirada. Lo que te rodea también es importante. Los colores, l
 === F5 ===
 //Instancia 2 - Fin - Después de dar confirmación - Si se puede que aparezca automático mejor
 ~ ReproducirDialogo(7)
-Esoooo, me gusta me gusta. Yo hubiera elegido lo mismo jajaja.
+Esoooo, me gusta me gusta. Yo hubiera elegido lo mismo.
 ~ ReproducirDialogo(8)
 Me encanta como va tomando forma el lugar, ya se va pareciendo más a vos.
 ~ ReproducirDialogo(9)
@@ -247,14 +247,14 @@ Che tengo un poco de hambre, y supongo que vos también. ¿Te parece si terminam
 Che tengo un poco de hambre, y supongo que vos también. ¿Te parece si terminamos con algo rico?
 -> END
 
-//F20 - Aparece la pantalla para seleccionar la “comida” (base central) / Usamos el sistema de elección del prototipo. Desde acá aumenta a fase 21. Que no se pueda salir del seleccionador
+//F20 - Aparece la pantalla para seleccionar la “comida” (base central) / Usamos el sistema de elección del prototipo. Desde acá aumenta a fase 21.
 
 === F21 ===
 //Instancia 6 Después de dar confirmación
 ~ ReproducirDialogo(32)
 Ufff que ricooo. Me encantó. Bueno, ya llegamos al final, poco a poco fuiste personalizando ese lugar gris y oscuro en el que empezó todo. Me encanta cómo lo dejaste, te armaste un hermoso rincón.
 ~ ReproducirDialogo(33)
-Antes de salir de tu rincón, me gustaría que hagas un pequeño recorrido extra para apreciarlo más a detalle y que sepas que este lugar es tuyo para siempre. Cuando termines de recorrerlo, vení que te llevo a un lugar que nos queda pendiente.
+Antes de salir de tu rincón, me gustaría que hagas un pequeño recorrido extra para apreciarlo más a detalle y quiero que sepas que este lugar es tuyo para siempre. Cuando termines de recorrerlo, vení que te llevo a un lugar que nos queda pendiente.
 ~ SetFaseActual(1)
 -> END
 

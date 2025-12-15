@@ -2,10 +2,10 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
     public int faseAhora = 0; // Fase actual del jugador, se puede setear desde otro script
 
     public bool eleccionActiva;

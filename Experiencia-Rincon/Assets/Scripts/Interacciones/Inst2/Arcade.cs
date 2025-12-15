@@ -9,7 +9,7 @@ public class Arcade : MonoBehaviour
     private Transform selection;
     private RaycastHit raycastHit;
 
-    //private bool estaEnAreaDeInteraccion = false;
+    private bool puedeTocar = true;
 
     private string tagSeleccionable = "Seleccionable";
 
@@ -22,6 +22,10 @@ public class Arcade : MonoBehaviour
     [SerializeField] public GameObject pantalla1;
     [SerializeField] public GameObject pantalla2;
     [SerializeField] public GameObject pantalla3;
+
+    [Header("Brujula")]
+    [SerializeField] public GameObject brujula;
+    [SerializeField] public Animator animBrujula;
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -39,15 +43,15 @@ public class Arcade : MonoBehaviour
         camara = Camera.main;
     }
 
-
     void Update()
     {
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             botonPantalla1.tag = tagSeleccionable;
             botonPantalla2.tag = tagSeleccionable;
             botonPantalla3.tag = tagSeleccionable;
+            brujula.tag = tagSeleccionable;
 
             // Highlight
             if (highlight != null)
@@ -99,8 +103,6 @@ public class Arcade : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
 
-                    //Debug.Log(highlight.gameObject);
-
                     string objetoSeleccionado = highlight.gameObject.name;
 
                     switch (objetoSeleccionado)
@@ -116,8 +118,6 @@ public class Arcade : MonoBehaviour
                             botonPantalla1.SetActive(false);
                             botonPantalla2.SetActive(false);
                             botonPantalla3.SetActive(false);
-
-                            Debug.Log("Tetris");
                             break;
 
                         case "BotonPacman":
@@ -131,8 +131,6 @@ public class Arcade : MonoBehaviour
                             botonPantalla1.SetActive(false);
                             botonPantalla2.SetActive(false);
                             botonPantalla3.SetActive(false);
-
-                            Debug.Log("Pacman");
                             break;
 
                         case "BotonPuzzleBobble":
@@ -146,12 +144,19 @@ public class Arcade : MonoBehaviour
                             botonPantalla1.SetActive(false);
                             botonPantalla2.SetActive(false);
                             botonPantalla3.SetActive(false);
+                            break;
 
-                            Debug.Log("Puzzle");
+                        case "Brujula":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            audioManager.PlaySFX(audioManager.seleccionSFX);
+
+                            if (puedeTocar) {
+                                StartCoroutine(hacerAnimacion());
+                            }
                             break;
 
                         default:
-                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 
@@ -168,30 +173,14 @@ public class Arcade : MonoBehaviour
             }
         }
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeInteraccion = true;
-            Debug.Log("Jugador en area de interaccion juegos");
-        }
-    }
 
-    private void OnTriggerStay(Collider other)
+    IEnumerator hacerAnimacion()
     {
-        if (other.CompareTag("Player") && GameManager.GetInstance().faseAhora >= numFaseNecesaria)
-        {
-            estaEnAreaDeInteraccion = true;
-        }
+        puedeTocar = false;
+        audioManager.PlaySFX(audioManager.sonidoGuitarra);
+        animBrujula.SetBool("tocar", true);
+        yield return new WaitForSeconds(1.2f);
+        animBrujula.SetBool("tocar", false);
+        puedeTocar = true;
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            estaEnAreaDeInteraccion = false;
-            Debug.Log("Jugador salio del area de interaccion juegos");
-        }
-    }*/
 }

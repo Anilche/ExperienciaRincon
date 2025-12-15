@@ -36,6 +36,10 @@ public class Instancia5 : MonoBehaviour
     [SerializeField] private GameObject uiEleccionesLienzo2;
     [SerializeField] private GameObject uiEleccionesLienzo3;
 
+    [Header("UI Tutorial")]
+    [SerializeField] private GameObject uiTutorial;
+    [SerializeField] private Animator animUiTutorial;
+
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
@@ -45,6 +49,8 @@ public class Instancia5 : MonoBehaviour
     private int contadorCuadrosColocados = 0;
 
     private string tagNoSeleccionable = "Untagged";
+
+    private bool uiTutorialMostrado = false;
 
     private Camera camara;
 
@@ -73,11 +79,12 @@ public class Instancia5 : MonoBehaviour
         uiEleccionesLienzo1.SetActive(false);
         uiEleccionesLienzo2.SetActive(false);
         uiEleccionesLienzo3.SetActive(false);
+
+        uiTutorial.SetActive(false);
     }
 
     void Update()
     {
-        
         if (GameManager.GetInstance().faseAhora == numFaseNecesaria)
         {
             if (inicioDeInstancia)
@@ -297,10 +304,27 @@ public class Instancia5 : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         ui.SetActive(true);
+        if (uiTutorialMostrado == false)
+        {
+            StartCoroutine(MostrarTutorial());
+        }
     }
 
     public static Instancia5 GetInstance()
     {
         return instance;
+    }
+
+    IEnumerator MostrarTutorial()
+    {
+        //yield return new WaitForSeconds(1.5f);
+
+        uiTutorial.SetActive(true);
+
+        yield return new WaitForSeconds(10f);
+
+        animUiTutorial.SetBool("controlesSalida", true);
+
+        uiTutorialMostrado = true;
     }
 }

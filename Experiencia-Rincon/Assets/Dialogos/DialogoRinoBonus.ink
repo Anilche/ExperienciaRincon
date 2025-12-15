@@ -2,6 +2,7 @@ EXTERNAL SetFaseActual(nuevaFase)
 EXTERNAL GetFase()
 EXTERNAL ReproducirDialogo(numeroLineaDeVoz)
 EXTERNAL PasarEscenaA(escena)
+EXTERNAL FadeOutVideoBoxset()
 
 -> elegir_fase
 
@@ -51,5 +52,6 @@ Bueno, llegó el momento.
 Mi trabajo termina acá, pero todavía hay más sorpresas para vos.
 ~ ReproducirDialogo(41)
 ¿Te acordás de la caja en la que llegó la llave de tu Rincón? Mirá, te explico:
-~ PasarEscenaA("VideoBoxset")
+~ FadeOutVideoBoxset()
+//~ PasarEscenaA("VideoBoxset")
 -> END

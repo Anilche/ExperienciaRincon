@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class InteraccionesBonus : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class InteraccionesBonus : MonoBehaviour
     [Header("Requerimientos para utilizarse")]
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
+    [Header("Fade Out")]
+    [SerializeField] private GameObject transicion;
+
+    private static InteraccionesBonus instance;
+
     private Camera camara;
 
     private string tagNoSeleccionable = "Untagged";
@@ -40,8 +46,14 @@ public class InteraccionesBonus : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         camara = Camera.main;
+        instance = this;
 
         partNanachi.GetComponent<ParticleSystem>().Stop();
+    }
+
+    private void Start()
+    {
+        transicion.SetActive(false);
     }
 
     void Update()
@@ -166,6 +178,10 @@ public class InteraccionesBonus : MonoBehaviour
             }
         }
     }
+    public static InteraccionesBonus GetInstance()
+    {
+        return instance;
+    }
 
     IEnumerator HacerAnimacionNotebook(Animator animacion)
     {
@@ -182,5 +198,17 @@ public class InteraccionesBonus : MonoBehaviour
         yield return new WaitForSeconds(4f);
         animacion.SetBool("animar", false);
         animacionEnCurso = false;
+    }
+
+    public void FadeOutVideoBoxset()
+    {
+        StartCoroutine(Transicion());
+    }
+
+    IEnumerator Transicion()
+    {
+        transicion.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("VideoBoxset");
     }
 }
