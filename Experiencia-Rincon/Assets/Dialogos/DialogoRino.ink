@@ -170,7 +170,7 @@ Elegí la música que quieras y volvé a hablarme cuando encuentres la que más 
 === F12 ===
 //Instancia 4 - Fin
 ~ ReproducirDialogo(21)
-Uuuuh, que buena canción. Si que tenés buen gusto eeeh.
+Uuuuh, que buena canción. Si que tenés buen gusto.
 ~ ReproducirDialogo(22)
 Esto me está gustando cada vez más y empieza a parecerse más a vos. Ya se está sintiendo tuyo.
 ~ ReproducirDialogo(23)
