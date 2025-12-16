@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoApagon;
     public AudioClip sonidoPrenderLuces;
     public AudioClip sonidoCortina;
+    public AudioClip sonidoPatadaPelota;
     public AudioClip sonidoGol;
     public AudioClip sonidoVentana;
     public AudioClip sonidoGuitarra;

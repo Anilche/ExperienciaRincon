@@ -376,7 +376,6 @@ public class Interaccion1Calido : MonoBehaviour
                             break;
 
                         case "Caldero":
-
                             if (cocinando == false)
                             {
                                 selection.gameObject.GetComponent<Outline>().enabled = false;

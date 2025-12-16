@@ -6,6 +6,12 @@ public class Inst2Arco : MonoBehaviour
     [Header("Partículas del gol")]
     [SerializeField] private ParticleSystem particulasGol;
 
+    [Header("Pelota")]
+    [SerializeField] private GameObject pelota;
+
+    [Header("Requerimientos para utilizarse")]
+    [SerializeField] public int numFaseNecesaria;
+
     private Camera camara;
 
     AudioManager audioManager;
@@ -16,6 +22,14 @@ public class Inst2Arco : MonoBehaviour
         camara = Camera.main;
     }
 
+    void Update()
+    {
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
+        {
+            pelota.GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pelota"))
@@ -23,6 +37,7 @@ public class Inst2Arco : MonoBehaviour
             StartCoroutine(prenderParticulas(particulasGol));
         }
     }
+
     IEnumerator prenderParticulas(ParticleSystem ps)
     {
         ps.Play();
@@ -31,4 +46,3 @@ public class Inst2Arco : MonoBehaviour
         ps.Stop();
     }
 }
-
