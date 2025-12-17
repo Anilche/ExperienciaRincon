@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoMoneda;
     public AudioClip sonidoMordida;
     public AudioClip sonidoCampanaComida;
+    public AudioClip sonidoPava;
     public AudioClip sonidoApagon;
     public AudioClip sonidoPrenderLuces;
     public AudioClip sonidoCortina;

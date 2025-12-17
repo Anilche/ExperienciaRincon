@@ -31,6 +31,10 @@ public class Inst2Menu : MonoBehaviour
 
     [SerializeField] public GameObject migajas;
 
+    [Header("Pava")]
+    [SerializeField] public GameObject pava;
+    [SerializeField] public ParticleSystem partHumo;
+
 
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
@@ -39,6 +43,9 @@ public class Inst2Menu : MonoBehaviour
     [SerializeField] public int numFaseNecesaria; // Requerimiento para poder activar el trigger de elecciones
 
     private Camera camara;
+
+    private bool reproduciendoPart = false;
+    private bool hirviendo = false;
 
     AudioManager audioManager;
 
@@ -59,15 +66,19 @@ public class Inst2Menu : MonoBehaviour
         migajas.SetActive(false);
     }
 
-
     void Update()
     {
+        if (hirviendo == false)
+        {
+            partHumo.GetComponent<ParticleSystem>().Stop();
+        }
 
-        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria /*&& estaEnAreaDeInteraccion*/)
+        if (GameManager.GetInstance().faseAhora >= numFaseNecesaria)
         {
             botonComida1.tag = tagSeleccionable;
             botonComida2.tag = tagSeleccionable;
             botonComida3.tag = tagSeleccionable;
+            pava.tag = tagSeleccionable;
 
             // Highlight
             if (highlight != null)
@@ -118,8 +129,6 @@ public class Inst2Menu : MonoBehaviour
                     }
                     selection = raycastHit.transform;
                     selection.gameObject.GetComponent<Outline>().enabled = true;
-
-                    //Debug.Log(highlight.gameObject);
 
                     string objetoSeleccionado = highlight.gameObject.name;
 
@@ -188,8 +197,17 @@ public class Inst2Menu : MonoBehaviour
                             StartCoroutine(animacionComida(empanadas1, empanadas2, empanadas3));
                             break;
 
+                        case "Pava":
+                            selection.gameObject.GetComponent<Outline>().enabled = false;
+
+                            if (reproduciendoPart == false)
+                            {
+                                audioManager.PlaySFX(audioManager.sonidoPava);
+                                StartCoroutine(PavaParticulas());
+                            }
+                            break;
+
                         default:
-                            //Debug.Log("Objeto no reconocido");
                             break;
                     }
 
@@ -220,5 +238,14 @@ public class Inst2Menu : MonoBehaviour
         yield return new WaitForSeconds(1f);
         audioManager.PlaySFX(audioManager.sonidoMordida);
         comida3.SetActive(false);
+    }
+
+    IEnumerator PavaParticulas()
+    {
+        hirviendo = true;
+        partHumo.GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(5f);
+        partHumo.GetComponent<ParticleSystem>().Stop();
+        hirviendo = false;
     }
 }
