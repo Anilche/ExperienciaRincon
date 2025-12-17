@@ -5611,6 +5611,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base-PJs-FBX_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0cf47c0c83cd99d42a0def69a15abf97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2452693754832760736, guid: 0cf47c0c83cd99d42a0def69a15abf97,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -17642,6 +17647,7 @@ MonoBehaviour:
   sonidoMoneda: {fileID: 8300000, guid: 715d90009a5d10d4f903409dfe09baf6, type: 3}
   sonidoMordida: {fileID: 8300000, guid: f43b275c76085a645ac041f37aef5063, type: 3}
   sonidoCampanaComida: {fileID: 8300000, guid: 5acf1c52b1d22694ab260bfb22f89995, type: 3}
+  sonidoPava: {fileID: 0}
   sonidoApagon: {fileID: 8300000, guid: 74d16fda2f5d09d4581359cc5baa2d14, type: 3}
   sonidoPrenderLuces: {fileID: 8300000, guid: 486cc083de5e20e48a3ecfa4331b99ee, type: 3}
   sonidoCortina: {fileID: 8300000, guid: d3fe722aa2a4b7c40a63b6d79dab8f9e, type: 3}

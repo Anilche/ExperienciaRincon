@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip sonidoPatadaPelota;
     public AudioClip sonidoGol;
     public AudioClip sonidoVentana;
+    public AudioClip sonidoSpin;
     public AudioClip sonidoGuitarra;
     public AudioClip sonidoPiano;
     public AudioClip sonidoMixer;

@@ -149,9 +149,8 @@ public class Arcade : MonoBehaviour
                         case "Brujula":
                             selection.gameObject.GetComponent<Outline>().enabled = false;
 
-                            audioManager.PlaySFX(audioManager.seleccionSFX);
-
                             if (puedeTocar) {
+                                audioManager.PlaySFX(audioManager.sonidoSpin);
                                 StartCoroutine(hacerAnimacion());
                             }
                             break;
@@ -177,7 +176,6 @@ public class Arcade : MonoBehaviour
     IEnumerator hacerAnimacion()
     {
         puedeTocar = false;
-        audioManager.PlaySFX(audioManager.sonidoGuitarra);
         animBrujula.SetBool("tocar", true);
         yield return new WaitForSeconds(1.2f);
         animBrujula.SetBool("tocar", false);
