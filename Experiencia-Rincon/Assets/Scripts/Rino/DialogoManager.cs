@@ -110,6 +110,11 @@ public class DialogoManager : MonoBehaviour
         {
             InteraccionesBonus.GetInstance().FadeOutVideoBoxset();
         });
+
+        estaHistoria.BindExternalFunction("ActivarVinilos", () =>
+        {
+            Instancia4.GetInstance().ActivarVinilos();
+        });
     }
 
     private void DejarDeRegistrarFuncionesExternas()

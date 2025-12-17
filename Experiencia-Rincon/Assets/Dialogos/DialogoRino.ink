@@ -5,6 +5,7 @@ EXTERNAL OcultarBotonesInst1()
 EXTERNAL ApagarLuces()
 EXTERNAL ActivarBandejaBebidas()
 EXTERNAL ActivarCuadrosTirados()
+EXTERNAL ActivarVinilos()
 
 -> elegir_fase
 
@@ -165,6 +166,7 @@ Tremendo, lo dejaste impecable. De a poco ya va tomando forma este lugar. Contin
 //Instancia 4
 ~ ReproducirDialogo(20)
 Elegí la música que quieras y volvé a hablarme cuando encuentres la que más te guste, igualmente podés cambiarla en cualquier momento.
+~ ActivarVinilos()
 -> END
  
 === F12 ===

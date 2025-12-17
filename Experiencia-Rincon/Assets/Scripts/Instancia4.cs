@@ -47,14 +47,22 @@ public class Instancia4 : MonoBehaviour
     [SerializeField] AudioClip audioClipSeleccion2;
     [SerializeField] AudioClip audioClipSeleccion3;
 
+    [Header("Vinilos Instancia 4")]
+    [SerializeField] public GameObject vinilo1;
+    [SerializeField] public GameObject vinilo2;
+    [SerializeField] public GameObject vinilo3;
+
     [Header("Distancia máxima de interacción")]
     [SerializeField] private float distanciaMaxima = 3f; // límite de alcance
+
+    private static Instancia4 instance;
 
     AudioManager audioManager;
 
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        instance = this;
 
         disco1.SetActive(false);
         disco2.SetActive(false);
@@ -205,6 +213,11 @@ public class Instancia4 : MonoBehaviour
         }
     }
 
+    public static Instancia4 GetInstance()
+    {
+        return instance;
+    }
+
     private void cambiarFase()
     {
         if (GameManager.GetInstance().faseAhora == 11)
@@ -212,5 +225,12 @@ public class Instancia4 : MonoBehaviour
             animatorTocadiscos.SetBool("CerrarTapa", true);
             GameManager.GetInstance().faseAhora += 1; // Cambia a la fase siguiente para que no se vuelva a llamar esta función
         }
+    }
+
+    public void ActivarVinilos()
+    {
+        vinilo1.tag = "Seleccionable";
+        vinilo2.tag = "Seleccionable";
+        vinilo3.tag = "Seleccionable";
     }
 }
